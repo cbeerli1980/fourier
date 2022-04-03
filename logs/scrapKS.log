@@ -1,0 +1,21 @@
+do login
+selectCourse
+switchToTab(): failed
+select Study Tools
+select SchweserNotes
+select Schweser Notes Book
+counting Topics
+getting Topics
+check FoldStatus
+folded
+unfold [[FirefoxDriver: firefox on LINUX (23523a4f-e5bf-47d3-87cd-23662adcf6c3)] -> xpath: //*[@id='root']/div[2]/div/div[1]/div[2]/div]
+counting StudySessions in book
+getting StudySessions in book
+check FoldStatus
+folded
+unfold [[FirefoxDriver: firefox on LINUX (23523a4f-e5bf-47d3-87cd-23662adcf6c3)] -> xpath: //button]
+counting StudySessions in book
+getting StudySessions in book
+check FoldStatus
+folded
+unfold [[FirefoxDriver: firefox on LINUX (23523a4f-e5bf-47d3-87cd-23662adcf6c3)] -> xpath: //button]

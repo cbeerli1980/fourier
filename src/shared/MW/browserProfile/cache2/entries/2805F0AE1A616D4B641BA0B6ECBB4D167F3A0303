@@ -1,0 +1,652 @@
+  /*--------------*/
+ /* =  Buttons = */
+/*-----------------------------------------------------------------------------*/
+
+/*Default button style*/
+
+	a.button {
+	  border:0;
+	  display:inline-block;
+	  padding-left:11px;
+	  margin:6px 0 5px 0;
+	  color:#000;
+	  line-height:15px;
+	  font-weight:bold;
+	  text-decoration:none;
+	  cursor:pointer;
+	}
+
+	a.button span.left,
+	a.button span.middle,
+	a.button span.right {height: 19px;float:left;}
+
+	a.button span.left {background-repeat:no-repeat; width:14px;}
+	a.button span.middle {background-repeat:repeat-x; font-size:10px; margin-top:0; line-height:19px;}
+	a.button span.right {background-repeat:no-repeat;width: 18px;}
+
+	a.button span.left {background-image: url('../images/action/btn_simple_left.gif');}
+	a.button span.middle {background-image: url('../images/action/btn_simple_middle.gif');}
+	a.button span.right {background-image: url('../images/action/btn_simple_right.gif');}
+
+	a.button:hover span.left {background-image:url('../images/action/btnH_simple_left.gif');}
+	a.button:hover span.middle {background-image:url('../images/action/btnH_simple_middle.gif'); color: #000; text-decoration: none;}
+	a.button:hover span.right {background-image:url('../images/action/btnH_simple_right.gif');}
+
+
+/*MODERNIZR*/
+	/*remove default background images*/
+	.cssgradients a.button span,
+	.cssgradients a.button:hover span {background-image:none;}
+
+	.cssgradients a.button span.left,
+	.cssgradients a.button span.right{width:0px;}
+
+	/*only for cssgradients browsers*/
+	.cssgradients a.button span.middle,
+	.cssgradients a.button:hover span.middle {
+		padding:0 17px 0 14px;
+		overflow:hidden;
+		white-space: nowrap;
+	}
+	
+	
+	.cssgradients a.button span.middle {
+		-webkit-border-radius: 6px;
+		   -moz-border-radius: 6px;
+		 		border-radius: 6px;
+
+
+		background-image: url('../images/action/btn_arrow.gif'), -webkit-gradient(linear, 0% 0%, 0% 100%, from( #efefef), to(#cacaca)); /* Saf 4 */
+		background-image: url('../images/action/btn_arrow.gif'), -webkit-linear-gradient(top, #efefef, #cacaca); /* Chrome 10+, Saf5.1+, iOS 5+ */
+		background-image: url('../images/action/btn_arrow.gif'),   -moz-linear-gradient(top, #efefef, #cacaca); /* FF3.6 */
+		background-image: url('../images/action/btn_arrow.gif'),    -ms-linear-gradient(top, #efefef, #cacaca); /* IE10 */
+		background-image: url('../images/action/btn_arrow.gif'),     -o-linear-gradient(top, #efefef, #cacaca); /* Opera 11.10+ */
+		background-image: url('../images/action/btn_arrow.gif'),        linear-gradient(top, #efefef, #cacaca);
+
+		background-repeat: no-repeat;
+		background-position: 94% 50%;
+	}
+
+	/*Hover*/
+	.cssgradients a.button:hover span.middle {
+		background-image: url('../images/action/btn_arrow.gif'), -webkit-gradient(linear, 0% 0%, 0% 100%, from( #e2e2e2), to(#cacaca)); /* Saf4 */
+		background-image: url('../images/action/btn_arrow.gif'), -webkit-linear-gradient(top, #e2e2e2, #cacaca); /* Chrome 10+, Saf5.1+, iOS 5+ */
+		background-image: url('../images/action/btn_arrow.gif'),   -moz-linear-gradient(top, #e2e2e2, #cacaca); /* FF3.6 */
+		background-image: url('../images/action/btn_arrow.gif'),    -ms-linear-gradient(top, #e2e2e2, #cacaca); /* IE10 */
+		background-image: url('../images/action/btn_arrow.gif'),     -o-linear-gradient(top, #e2e2e2, #cacaca); /* Opera 11.10+ */
+		background-image: url('../images/action/btn_arrow.gif'),        linear-gradient(top, #e2e2e2, #cacaca);
+	}
+
+/*end MODERNIZR*/
+
+
+
+/* HighLight */
+
+
+	a.button.highlight span.left,
+	a.button.highlight span.middle,
+	a.button.highlight span.right {height: 25px; float:left; color: #000; text-decoration: none;}
+
+	a.button.highlight span.left {background-repeat:no-repeat; width: 18px;}
+	a.button.highlight span.middle {font-size:10px; line-height:26px;}
+	a.button.highlight span.right {background-repeat:no-repeat; width: 27px;}
+
+	a.button.highlight span.left {background-image: url('../images/action/btn_highlight_left.gif');}
+	a.button.highlight span.middle {background-image: url('../images/action/btn_highlight_middle.gif');}
+	a.button.highlight span.right {background-image: url('../images/action/btn_highlight_right.gif');}
+
+	a.button.highlight:hover span.left {background-image:url('../images/action/btnH_highlight_left.gif');}
+	a.button.highlight:hover span.middle {background-image:url('../images/action/btnH_highlight_middle.gif');}
+	a.button.highlight:hover span.right {background-image:url('../images/action/btnH_highlight_right.gif');}
+
+
+
+/*MODERNIZR HighLight*/
+	/*remove default background images*/
+	.cssgradients a.button.highlight span,
+	.cssgradients a.button.highlight:hover span {background-image:none;}
+
+	.cssgradients a.button.highlight span.left,
+	.cssgradients a.button.highlight span.right{width:0px;}
+
+	/*only for cssgradients browsers*/
+	.cssgradients a.button.highlight span.middle {
+		padding:0 23px 0 18px;
+
+		-webkit-border-radius: 6px;
+		   -moz-border-radius: 6px;
+		 		border-radius: 6px;
+
+		background-image: url('../images/action/btn_arrow_highlight.gif'), -webkit-gradient(linear, 0% 0%, 0% 100%, from( #efefef), to(#cacaca)); /* Saf4 */
+		background-image: url('../images/action/btn_arrow_highlight.gif'), -webkit-linear-gradient(top, #efefef, #cacaca); /* Chrome 10+, Saf5.1+, iOS 5+ */
+		background-image: url('../images/action/btn_arrow_highlight.gif'),   -moz-linear-gradient(top, #efefef, #cacaca); /* FF3.6 */
+		background-image: url('../images/action/btn_arrow_highlight.gif'),    -ms-linear-gradient(top, #efefef, #cacaca); /* IE10 */
+		background-image: url('../images/action/btn_arrow_highlight.gif'),     -o-linear-gradient(top, #efefef, #cacaca); /* Opera 11.10+ */
+		background-image: url('../images/action/btn_arrow_highlight.gif'),        linear-gradient(top, #efefef, #cacaca);
+
+		background-repeat: no-repeat;
+		background-position: 94% 50%;
+	}
+
+	/*Hover*/
+	.cssgradients a.button.highlight:hover span.middle {
+		background-image: url('../images/action/btn_arrow_highlight.gif'), -webkit-gradient(linear, 0% 0%, 0% 100%, from( #e2e2e2), to(#cacaca)); /* Saf 4 */
+		background-image: url('../images/action/btn_arrow_highlight.gif'), -webkit-linear-gradient(top, #e2e2e2, #cacaca); /* Chrome 10+, Saf5.1+, iOS 5+ */
+		background-image: url('../images/action/btn_arrow_highlight.gif'),   -moz-linear-gradient(top, #e2e2e2, #cacaca); /* FF3.6 */
+		background-image: url('../images/action/btn_arrow_highlight.gif'),    -ms-linear-gradient(top, #e2e2e2, #cacaca); /* IE10 */
+		background-image: url('../images/action/btn_arrow_highlight.gif'),     -o-linear-gradient(top, #e2e2e2, #cacaca); /* Opera 11.10+ */
+		background-image: url('../images/action/btn_arrow_highlight.gif'),        linear-gradient(top, #e2e2e2, #cacaca);
+	}
+
+/*end MODERNIZR*/
+
+
+
+
+/*Default open account style*/
+	a.button.openAccount span.left,
+	a.button.openAccount span.middle,
+	a.button.openAccount span.right{display:block; float:left; height:25px;}
+
+
+	a.button.openAccount span.left {
+	  background-repeat: no-repeat;
+	  width: 18px;
+	  margin-right:-2px
+	}
+
+	a.button.openAccount span.middle {
+	  background-repeat: repeat-x;
+	  font-size: 12px;
+	  line-height: 22px;
+	  color: #ffffff;
+	  margin-top: 0;
+	}
+	a.button.openAccount span.right {
+	  background-repeat: no-repeat;
+	  width: 23px;
+	}
+
+	/*Open account skins*/
+	/*Trading*/
+		a.button.openAccount span.left {background-image: url('../images/action/img_trading_left.gif');}
+		a.button.openAccount span.middle {background-image: url('../images/action/img_trading_middle.gif');}
+		a.button.openAccount span.right {background-image: url('../images/action/img_trading_right.gif');}
+
+		a.button.openAccount:hover span.left {background-image: url('../images/action/imgH_trading_left.gif');}
+		a.button.openAccount:hover span.middle {background-image: url('../images/action/imgH_trading_middle.gif');}
+		a.button.openAccount:hover span.right {background-image: url('../images/action/imgH_trading_right.gif');}
+
+
+/*Default left Menu open account style*/
+
+
+		#leftcolumn a.button.openAccount{text-transform: uppercase; padding-top:4px; margin:0;width:179px;height:31px;background-repeat:no-repeat;color: #fff; font-size: 13px;}
+		#leftcolumn a.button.openAccount{background-image:url("../images/action/open_account_trading.gif")}
+
+		#leftcolumn a.button.openAccount span.left {display:none; background-image:none;}
+		#leftcolumn a.button.openAccount span.middle {background-image:none}
+		#leftcolumn a.button.openAccount span.right {display:none; background-image:none}
+
+		#leftcolumn a.button.openAccount:hover span.left {display:none; background-image:none}
+		#leftcolumn a.button.openAccount:hover span.middle {background-image:none}
+		#leftcolumn a.button.openAccount:hover span.right {display:none; background-image:none}
+
+
+
+/*MODERNIZR open account*/
+	/*remove default background images*/
+	.cssgradients a.button.openAccount span,
+	.cssgradients a.button.openAccount:hover span {background-image:none;}
+
+	.cssgradients a.button.openAccount span.left,
+	.cssgradients a.button.openAccount span.right{width:0px;}
+
+	/*only for cssgradients browsers*/
+	.cssgradients a.button.openAccount span.middle {
+		padding:0 23px 0 16px;
+		height:25px;
+		color:#fff;
+
+		-webkit-border-radius: 8px;
+		   -moz-border-radius: 8px;
+		 		border-radius: 8px;
+
+		background-image: url('../images/action/btn_arrow_account.gif'), -webkit-gradient(linear, 0% 0%, 0% 100%, from( #ffd2b5), to(#fd7626)); /* Saf 4 */
+		background-image: url('../images/action/btn_arrow_account.gif'), -webkit-linear-gradient(top, #ffd2b5, #fd7626); /* Chrome 10+, Saf5.1+, iOS 5+ */
+		background-image: url('../images/action/btn_arrow_account.gif'),   -moz-linear-gradient(top, #ffd2b5, #fd7626); /* FF3.6 */
+		background-image: url('../images/action/btn_arrow_account.gif'),    -ms-linear-gradient(top, #ffd2b5, #fd7626); /* IE10 */
+		background-image: url('../images/action/btn_arrow_account.gif'),     -o-linear-gradient(top, #ffd2b5, #fd7626); /* Opera 11.10+ */
+		background-image: url('../images/action/btn_arrow_account.gif'),        linear-gradient(top, #ffd2b5, #fd7626);
+
+		background-repeat: no-repeat;
+		background-position: 94% 50%;
+	}
+
+	/*Hover*/
+	.cssgradients a.button.openAccount:hover span.middle {
+		background-image: url('../images/action/btn_arrow_account.gif'), -webkit-gradient(linear, 0% 0%, 0% 100%, from( #fe833a), to(#fe833a)); /* Saf4 */
+		background-image: url('../images/action/btn_arrow_account.gif'), -webkit-linear-gradient(top, #fe833a, #fe833a); /* Chrome 10+, Saf5.1+, iOS 5+ */
+		background-image: url('../images/action/btn_arrow_account.gif'),   -moz-linear-gradient(top, #fe833a, #fe833a); /* FF3.6 */
+		background-image: url('../images/action/btn_arrow_account.gif'),    -ms-linear-gradient(top, #fe833a, #fe833a); /* IE10 */
+		background-image: url('../images/action/btn_arrow_account.gif'),     -o-linear-gradient(top, #fe833a, #fe833a); /* Opera 11.10+ */
+		background-image: url('../images/action/btn_arrow_account.gif'),        linear-gradient(top, #fe833a, #fe833a);
+	}
+
+/*end MODERNIZR*/
+
+
+
+
+
+
+
+/* My Account */
+		a.my_account span.right,
+		a.my_account span.middle,
+		a.my_account span.left{	float:left;	display:block;}
+
+		a.my_account {  text-decoration:none;  margin:0;}
+
+		a.my_account span.left,
+		a.my_account:hover span.left {	background-image:url("../images/action/btn_account_left.png");	background-repeat:no-repeat;	color:#4e4c4c;	font-size:12px;	font-weight:bold;	width:30px;	height:28px;	padding:0;}
+
+		a.my_account span.middle,
+		a.my_account:hover span.middle {	background-image:url("../images/action/btn_account_middle.png");	background-repeat:repeat;	color:#4e4c4c;	font-size:12px;	font-weight:bold;	height:28px;	line-height:27px;	padding:0 5px;}
+
+		a.my_account span.right,
+		a.my_account:hover span.right {	background-image:url("../images/action/btn_account_right.png");	background-repeat:no-repeat;	color:#4e4c4c;	font-size:12px;	font-weight:bold;	width:18px;	height:28px;	padding:0 5px;}
+
+
+/*MODERNIZR my account*/
+
+	/*remove default background images*/
+	.cssgradients a.button.my_account span,
+	.cssgradients a.button.my_account:hover span {background-image:none;}
+
+	.cssgradients a.button.my_account span.left,
+	.cssgradients a.button.my_account span.right{width:0px;}
+
+
+
+
+	/*override button css3*/
+	.cssgradients a.button.my_account span.middle{
+		padding:0 20px 0 35px;
+		height:28px;
+		color:#4e4c4c;
+
+
+		-webkit-border-radius: 8px;
+		   -moz-border-radius: 8px;
+		 		border-radius: 8px;
+
+		-webkit-border-top-left-radius: 0;
+			-moz-border-radius-topleft: 0;
+				border-top-left-radius: 0;
+
+		background-image: url('../images/action/icon_my_account.gif'), -webkit-gradient(linear, 0% 0%, 0% 100%, from( #ffd2b5), to(#fd7626)); /* Saf4 */
+		background-image: url('../images/action/icon_my_account.gif'), -webkit-linear-gradient(top, #ffd2b5, #fd7626); /* Chrome 10+, Saf5.1+, iOS 5+ */
+		background-image: url('../images/action/icon_my_account.gif'),   -moz-linear-gradient(top, #f5f1eb, #aea59b); /* FF3.6 */
+		background-image: url('../images/action/icon_my_account.gif'),    -ms-linear-gradient(top, #ffd2b5, #fd7626); /* IE10 */
+		background-image: url('../images/action/icon_my_account.gif'),     -o-linear-gradient(top, #ffd2b5, #fd7626); /* Opera 11.10+ */
+		background-image: url('../images/action/icon_my_account.gif'),        linear-gradient(top, #ffd2b5, #fd7626);
+
+		background-repeat: no-repeat;
+		background-position: 8% 40%;
+	}
+
+	/*Hover*/
+	.cssgradients a.button.my_account:hover span.middle {
+		background-image: url('../images/action/icon_my_account.gif'), -webkit-gradient(linear, 0% 0%, 0% 100%, from( #ffd2b5), to(#fd7626)); /* Saf4 */
+		background-image: url('../images/action/icon_my_account.gif'), -webkit-linear-gradient(top, #ffd2b5, #fd7626); /* Chrome 10+, Saf5.1+, iOS 5+ */
+		background-image: url('../images/action/icon_my_account.gif'),   -moz-linear-gradient(top, #f5f1eb, #aea59b); /* FF3.6 */
+		background-image: url('../images/action/icon_my_account.gif'),    -ms-linear-gradient(top, #ffd2b5, #fd7626); /* IE10 */
+		background-image: url('../images/action/icon_my_account.gif'),     -o-linear-gradient(top, #ffd2b5, #fd7626); /* Opera 11.10+ */
+		background-image: url('../images/action/icon_my_account.gif'),        linear-gradient(top, #ffd2b5, #fd7626);
+	}
+
+
+
+	/*-----------*/
+	/* = Link = */
+	/*-----------------------------------------------------------------------------*/
+
+	a.noDecoration {
+		text-decoration: none;
+	}
+
+	/*-----------*/
+	/* = SUBMIT = */
+	/*-----------------------------------------------------------------------------*/
+	a.button.submit span.left {background-image: url('../images/action/btn_cancel.png'); width:14px;}
+	a.button.submit span.middle {background-image: url('../images/action/btn_cancel.png');}
+	a.button.submit span.right {background-image: url('../images/action/btn_cancel.png'); width:14px;}
+
+	a.button.submit span.left,
+	a.button.submit span.middle,
+	a.button.submit span.right{height:30px;line-height:30px;}
+
+
+	/*MODERNIZR SUBMIT*/
+		/*remove default background images*/
+		.cssgradients a.button.submit span{background-image:none;}
+
+		.cssgradients a.button.submit span.left,
+		.cssgradients a.button.submit span.right{width:0px;}
+
+		/*only for cssgradients browsers*/
+		.cssgradients a.button.submit span.middle {
+			padding:0 14px;
+
+			-webkit-border-radius: 0px;
+			   -moz-border-radius: 0px;
+			 		border-radius: 0px;
+
+			background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from( #F7F7F7), to(#b1b1b1)); /* Saf4 */
+			background-image: -webkit-linear-gradient(top, #F7F7F7, #b1b1b1); /* Chrome 10+, Saf5.1+, iOS 5+ */
+			background-image:    -moz-linear-gradient(top, #F7F7F7, #b1b1b1); /* FF3.6 */
+			background-image:     -ms-linear-gradient(top, #F7F7F7, #b1b1b1); /* IE10 */
+			background-image:      -o-linear-gradient(top, #F7F7F7, #b1b1b1); /* Opera 11.10+ */
+			background-image:         linear-gradient(top, #F7F7F7, #b1b1b1);
+		}
+
+		/*Hover*/
+		.cssgradients a.button.submit:hover span.middle {
+			background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from( #b1b1b1), to(#b1b1b1)); /* Saf4 */
+			background-image: -webkit-linear-gradient(top, #b1b1b1, #b1b1b1); /* Chrome 10+, Saf5.1+, iOS 5+ */
+			background-image:    -moz-linear-gradient(top, #b1b1b1, #b1b1b1); /* FF3.6 */
+			background-image:     -ms-linear-gradient(top, #b1b1b1, #b1b1b1); /* IE10 */
+			background-image:      -o-linear-gradient(top, #b1b1b1, #b1b1b1); /* Opera 11.10+ */
+			background-image:         linear-gradient(top, #b1b1b1, #b1b1b1);
+		}
+
+	/*end MODERNIZR*/
+
+
+
+
+
+
+	/*-----------*/
+	/* = CANCEL = */
+	/*-----------------------------------------------------------------------------*/
+	a.button.cancel span.left {background-image: url('../images/action/btn_cancel.png'); width:14px;}
+	a.button.cancel span.middle {background-image: url('../images/action/btn_cancel.png');}
+	a.button.cancel span.right {background-image: url('../images/action/btn_cancel.png'); width:14px;}
+
+	a.button.cancel span.left,
+	a.button.cancel span.middle,
+	a.button.cancel span.right{height:30px;line-height:30px;}
+
+	/*MODERNIZR CANCEL*/
+		/*remove default background images*/
+		.cssgradients a.button.cancel span{background-image:none;}
+
+		.cssgradients a.button.cancel span.left,
+		.cssgradients a.button.cancel span.right{width:0px;}
+
+		/*only for cssgradients browsers*/
+		.cssgradients a.button.cancel span.middle {
+			padding:0 14px;
+
+			-webkit-border-radius: 0px;
+			   -moz-border-radius: 0px;
+			 		border-radius: 0px;
+
+			background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from( #F7F7F7), to(#b1b1b1)); /* Saf4 */ 
+			background-image: -webkit-linear-gradient(top, #F7F7F7, #b1b1b1); /* Chrome 10+, Saf5.1+, iOS 5+ */
+			background-image:    -moz-linear-gradient(top, #F7F7F7, #b1b1b1); /* FF3.6 */
+			background-image:     -ms-linear-gradient(top, #F7F7F7, #b1b1b1); /* IE10 */
+			background-image:      -o-linear-gradient(top, #F7F7F7, #b1b1b1); /* Opera 11.10+ */
+			background-image:         linear-gradient(top, #F7F7F7, #b1b1b1);
+		}
+
+	/*end MODERNIZR*/
+
+
+	/*-----------*/
+	/* = BUY = */
+	/*-----------------------------------------------------------------------------*/
+	a.button.buy:hover span.left,
+	a.button.buy span.left {background-image: url('../images/action/btnPlaceOrderBuy.png'); width:14px;}
+
+	a.button.buy:hover span.middle,
+	a.button.buy span.middle {background-image: url('../images/action/btnPlaceOrderBuy.png');}
+
+	a.button.buy:hover span.right,
+	a.button.buy span.right {background-image: url('../images/action/btnPlaceOrderBuy.png'); width:14px;}
+
+	a.button.buy span.left,
+	a.button.buy span.middle,
+	a.button.buy span.right,
+	a.button.buy:hover span.left,
+	a.button.buy:hover span.middle,
+	a.button.buy:hover span.right{height:30px;line-height:30px; color:#ffffff;}
+
+
+/*MODERNIZR BUY*/
+	/*remove default background images*/
+	.cssgradients a.button.buy span{background-image:none;}
+
+	.cssgradients a.button.buy span.left,
+	.cssgradients a.button.buy span.right{width:0px;}
+
+	/*only for cssgradients browsers*/
+	.cssgradients a.button.buy span.middle {
+		padding:0 14px;
+
+		-webkit-border-radius: 0px;
+		   -moz-border-radius: 0px;
+		 		border-radius: 0px;
+
+		background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from( #abb8d3), to(#275aa0)); /* Saf4 */
+		background-image: -webkit-linear-gradient(top, #abb8d3, #275aa0); /* Chrome 10+, Saf5.1+, iOS 5+ */
+		background-image:    -moz-linear-gradient(top, #abb8d3, #275aa0); /* FF3.6 */
+		background-image:     -ms-linear-gradient(top, #abb8d3, #275aa0); /* IE10 */
+		background-image:      -o-linear-gradient(top, #abb8d3, #275aa0); /* Opera 11.10+ */
+		background-image:         linear-gradient(top, #abb8d3, #275aa0);
+
+		background-repeat: no-repeat;
+		background-position: 94% 50%;
+	}
+
+	/*Hover*/
+	.cssgradients a.button.buy:hover span.middle {
+		background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from( #275aa0), to(#275aa0)); /* Saf4 */
+		background-image: -webkit-linear-gradient(top, #275aa0, #275aa0); /* Chrome 10+, Saf5.1+, iOS 5+ */
+		background-image:    -moz-linear-gradient(top, #275aa0, #275aa0); /* FF3.6 */
+		background-image:     -ms-linear-gradient(top, #275aa0, #275aa0); /* IE10 */
+		background-image:      -o-linear-gradient(top, #275aa0, #275aa0); /* Opera 11.10+ */
+		background-image:         linear-gradient(top, #275aa0, #275aa0);
+	}
+
+/*end MODERNIZR*/
+
+
+	/*-----------*/
+	/* = SELL = */
+	/*-----------------------------------------------------------------------------*/
+	a.button.sell:hover span.left,
+	a.button.sell span.left {background-image: url('../images/action/btnPlaceOrderSell.png'); width:14px;}
+
+	a.button.sell:hover span.middle,
+	a.button.sell span.middle {background-image: url('../images/action/btnPlaceOrderSell.png');}
+
+	a.button.sell:hover span.right,
+	a.button.sell span.right {background-image: url('../images/action/btnPlaceOrderSell.png'); width:14px;}
+
+	a.button.sell span.left,
+	a.button.sell span.middle,
+	a.button.sell span.right,
+	a.button.sell:hover span.left,
+	a.button.sell:hover span.middle,
+	a.button.sell:hover span.right{height:30px;line-height:30px; color:#ffffff;}
+
+	/*MODERNIZR SELL*/
+		/*remove default background images*/
+		.cssgradients a.button.sell span{background-image:none;}
+
+		.cssgradients a.button.sell span.left,
+		.cssgradients a.button.sell span.right{width:0px;}
+
+		/*only for cssgradients browsers*/
+		.cssgradients a.button.sell span.middle {
+			padding:0 14px;
+
+			-webkit-border-radius: 0px;
+			   -moz-border-radius: 0px;
+			 		border-radius: 0px;
+
+			background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from( #f1bfb6), to(#d12809)); /* Saf4 */
+			background-image: -webkit-linear-gradient(top, #f1bfb6, #d12809); /* Chrome 10+, Saf5.1+, iOS 5+ */
+			background-image:    -moz-linear-gradient(top, #f1bfb6, #d12809); /* FF3.6 */
+			background-image:     -ms-linear-gradient(top, #f1bfb6, #d12809); /* IE10 */
+			background-image:      -o-linear-gradient(top, #f1bfb6, #d12809); /* Opera 11.10+ */
+			background-image:         linear-gradient(top, #f1bfb6, #d12809);
+
+			background-repeat: no-repeat;
+			background-position: 94% 50%;
+		}
+
+		/*Hover*/
+		.cssgradients a.button.sell:hover span.middle {
+			background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from( #d12809), to(#d12809)); /* Saf4 */
+			background-image: -webkit-linear-gradient(top, #d12809, #d12809); /* Chrome 10+, Saf5.1+, iOS 5+ */
+			background-image:    -moz-linear-gradient(top, #d12809, #d12809); /* FF3.6 */
+			background-image:     -ms-linear-gradient(top, #d12809, #d12809); /* IE10 */
+			background-image:      -o-linear-gradient(top, #d12809, #d12809); /* Opera 11.10+ */
+			background-image:         linear-gradient(top, #d12809, #d12809);
+		}
+
+	/*end MODERNIZR*/
+
+
+
+	/*-----------*/
+	/* = DELETE = */
+	/*-----------------------------------------------------------------------------*/
+	a.button.delete span.left {background-image: url('../images/action/btn_delete_l.gif'); width:3px;}
+	a.button.delete span.middle {background-image: url('../images/action/btn_delete_m.gif');}
+	a.button.delete span.right {background-image: url('../images/action/btn_delete_r.gif'); width:3px;}
+
+	a.button.delete span.left,
+	a.button.delete span.middle,
+	a.button.delete span.right{height:14px;line-height:16px; color:#ffffff; font-weight: bold;}
+
+	/*----------------------*/
+	/* = DISABLED BUTTON = */
+	/*-----------------------------------------------------------------------------*/
+
+
+	a.button.disabled span.middle,
+	.cssgradients .buttonHolder a.button.submit.disabled span.middle{color: #999}
+
+	a.button.disabled span.middle:hover,
+	.cssgradients .buttonHolder a.button.submit.disabled:hover span.middle{
+		color: #999;
+
+		background-image: -moz-linear-gradient(center top , #F7F7F7, #B1B1B1);
+	}
+
+	/*--------------*/
+	/* = SQWFORM = */
+	/*-----------------------------------------------------------------------------*/
+
+	.buttonHolder a.button span.left {background-image: url('../images/action/btn_form_left.png'); width:4px;}
+	.buttonHolder a.button span.middle {background-image: url('../images/action/btn_form_middle.png');}
+	.buttonHolder a.button span.right {background-image: url('../images/action/btn_form_right.png'); width:4px;}
+
+	.buttonHolder a.button span.left,
+	.buttonHolder a.button span.middle,
+	.buttonHolder a.button span.right{height:26px;line-height:28px;}
+
+	.buttonHolder a.button span.middle{padding:0 5px; font-size: 13px; color:#666; font-weight: normal; text-transform: uppercase;}
+
+	.buttonHolder a.button:hover span.left {background-image: url('../images/action/btn_form_left_hover.png'); width:4px;}
+	.buttonHolder a.button:hover span.middle {background-image: url('../images/action/btn_form_middle_hover.png');}
+	.buttonHolder a.button:hover span.right {background-image: url('../images/action/btn_form_right_hover.png'); width:4px;}
+
+	.buttonHolder a.button:active span.left {background-image: url('../images/action/btn_form_left_active.png'); width:4px;}
+	.buttonHolder a.button:active span.middle {background-image: url('../images/action/btn_form_middle_active.png');}
+	.buttonHolder a.button:active span.right {background-image: url('../images/action/btn_form_right_active.png'); width:4px;}
+
+
+
+	/*MODERNIZR sqwform*/
+		/*remove default background images*/
+		.cssgradients .buttonHolder a.button span,
+		.cssgradients .buttonHolder a.button:hover span {background-image:none;}
+
+		.cssgradients .buttonHolder a.button span.left,
+		.cssgradients .buttonHolder a.button span.right{width:0px;}
+
+
+
+		/*only for cssgradients browsers*/
+		.cssgradients .buttonHolder a.button span.middle,
+		.cssgradients .buttonHolder a.button.submit span.middle{
+		padding:0 14px; /*removed !important cause bug in skin_action for wl*/
+			overflow:hidden;
+			line-height:24px ;
+
+			-webkit-border-radius: 6px;
+			   -moz-border-radius: 6px;
+			 		border-radius: 6px;
+
+
+			background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from( #efefef), to(#cacaca)); /* Saf4 */
+			background-image: -webkit-linear-gradient(top, #efefef, #cacaca); /* Chrome 10+, Saf5.1+, iOS 5+ */
+			background-image: 	 -moz-linear-gradient(top, #efefef, #cacaca); /* FF3.6 */
+			background-image:     -ms-linear-gradient(top, #efefef, #cacaca); /* IE10 */
+			background-image:      -o-linear-gradient(top, #efefef, #cacaca); /* Opera 11.10+ */
+			background-image:         linear-gradient(top, #efefef, #cacaca);
+
+			background-repeat: no-repeat;
+			background-position: 94% 50%;
+		}
+
+		/*Hover*/
+		.cssgradients .buttonHolder a.button.submit:hover span.middle {
+
+			background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from( #b1b1b1), to(#b1b1b1)); /* Saf4 */
+			background-image: -webkit-linear-gradient(top, #b1b1b1, #b1b1b1); /* Chrome 10+, Saf5.1+, iOS 5+ */
+			background-image:    -moz-linear-gradient(top, #b1b1b1, #b1b1b1); /* FF3.6 */
+			background-image:     -ms-linear-gradient(top, #b1b1b1, #b1b1b1); /* IE10 */
+			background-image:      -o-linear-gradient(top, #b1b1b1, #b1b1b1); /* Opera 11.10+ */
+			background-image:         linear-gradient(top, #b1b1b1, #b1b1b1);
+		}
+
+
+
+	/*end MODERNIZR*/
+
+
+
+
+
+
+
+
+
+´sÓ¤‡Ó      aø\/aø\/Cêª„aùçL   v    O^partitionKey=%28https%2Cswissquote.ch%29,:https://premium.swissquote.ch/sqw-navigation/sqw-components/css/action.css necko:classified 1 strongly-framed 1 security-info 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 request-method GET response-head HTTP/1.1 200 OK
+Date: Mon, 31 Jan 2022 18:48:19 GMT
+Cache-Control: private
+Content-Language: en
+ETag: "/oe8ScCtcsc"
+Last-Modified: Tue, 18 Jan 2022 17:40:03 GMT
+Content-Type: text/css; charset=ISO-8859-1
+Content-Length: 27587
+Strict-Transport-Security: max-age=300; includeSubDomains
+ original-response-headers Date: Mon, 31 Jan 2022 18:48:19 GMT
+Cache-Control: private
+Content-Language: en
+ETag: "/oe8ScCtcsc"
+Last-Modified: Tue, 18 Jan 2022 17:40:03 GMT
+Content-Type: text/css; charset=ISO-8859-1
+Content-Length: 27587
+Keep-Alive: timeout=5, max=99
+Connection: Keep-Alive
+Strict-Transport-Security: max-age=300; includeSubDomains
+ ctid 5 uncompressed-len 0 net-response-time-onstart 90 net-response-time-onstop 94   kÃ

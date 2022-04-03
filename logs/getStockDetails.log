@@ -1,0 +1,2378 @@
+-headless
+getDBconnection(): successful
+SELECT * FROM stocks
+SELECT titleSQ FROM candidates WHERE isin='CH0108503795'
+SELECT * FROM titles WHERE title='MEYER BURGER N'
+INSERT INTO titles(title) VALUES('MEYER BURGER N')
+https://www.marketwatch.com/investing/stock/MYBUF/company-profile?mod=mw_quote_tab
+getSector(): 
+UPDATE titles SET exchange='Swiss ',sectorYF='Technology',industryYF='Semiconductor Equipment & Materials' WHERE title='MEYER BURGER N'
+UPDATE titles SET sectorMW='',industryMW='' WHERE title='MEYER BURGER N'
+SELECT titleSQ FROM candidates WHERE isin='CH0043238366'
+SELECT * FROM titles WHERE title='ARYZTA N'
+INSERT INTO titles(title) VALUES('ARYZTA N')
+https://www.marketwatch.com/investing/stock/ARYN/company-profile?countrycode=CH&mod=mw_quote_tab
+getSector(): Consumer Goods
+UPDATE titles SET exchange='Swiss ',sectorYF='Consumer Defensive',industryYF='Packaged Foods' WHERE title='ARYZTA N'
+UPDATE titles SET sectorMW='Consumer Goods',industryMW='Food Products' WHERE title='ARYZTA N'
+SELECT titleSQ FROM candidates WHERE isin='JE00B4T3BW64'
+SELECT * FROM titles WHERE title='GLENCORE ORD'
+INSERT INTO titles(title) VALUES('GLENCORE ORD')
+https://www.marketwatch.com/investing/stock/GLCNF/company-profile?mod=mw_quote_tab
+getSector(): Basic Materials/Resources
+UPDATE titles SET exchange='LSE ',sectorYF='Basic Materials',industryYF='Other Industrial Metals & Mining' WHERE title='GLENCORE ORD'
+UPDATE titles SET sectorMW='Basic Materials/Resources',industryMW='General Mining' WHERE title='GLENCORE ORD'
+SELECT titleSQ FROM candidates WHERE isin='GB0031348658'
+SELECT * FROM titles WHERE title='BARCLAYS ORD'
+INSERT INTO titles(title) VALUES('BARCLAYS ORD')
+https://www.marketwatch.com/investing/stock/BARC/company-profile?countrycode=UK&mod=mw_quote_tab
+getSector(): Financial Services
+UPDATE titles SET exchange='LSE ',sectorYF='Financial Services',industryYF='Banks—Diversified' WHERE title='BARCLAYS ORD'
+UPDATE titles SET sectorMW='Financial Services',industryMW='Major International Banks' WHERE title='BARCLAYS ORD'
+SELECT titleSQ FROM candidates WHERE isin='DE000CBK1001'
+SELECT * FROM titles WHERE title='COMMERZBANK ORD'
+INSERT INTO titles(title) VALUES('COMMERZBANK ORD')
+https://www.marketwatch.com/investing/stock/CRZBF/company-profile?mod=mw_quote_tab
+getSector(): Financial Services
+UPDATE titles SET exchange='XETRA ',sectorYF='Financial Services',industryYF='Banks—Regional' WHERE title='COMMERZBANK ORD'
+UPDATE titles SET sectorMW='Financial Services',industryMW='Major International Banks' WHERE title='COMMERZBANK ORD'
+SELECT titleSQ FROM candidates WHERE isin='CH0102659627'
+SELECT * FROM titles WHERE title='GAM N'
+INSERT INTO titles(title) VALUES('GAM N')
+https://www.marketwatch.com/investing/stock/GMHLF/company-profile?mod=mw_quote_tab
+getSector(): Financial Services
+UPDATE titles SET exchange='Swiss ',sectorYF='Financial Services',industryYF='Asset Management' WHERE title='GAM N'
+UPDATE titles SET sectorMW='Financial Services',industryMW='Investment Advisors' WHERE title='GAM N'
+SELECT titleSQ FROM candidates WHERE isin='GB00BNC5T391'
+SELECT * FROM titles WHERE title='DELIVEROO ORD CLASS A'
+INSERT INTO titles(title) VALUES('DELIVEROO ORD CLASS A')
+https://www.marketwatch.com/investing/stock/ROO/company-profile?countrycode=UK&mod=mw_quote_tab
+getSector(): failed GB00BNC5T391
+getIndustry(): failed GB00BNC5T391
+UPDATE titles SET exchange='LSE ',sectorYF='Consumer Cyclical',industryYF='Internet Retail' WHERE title='DELIVEROO ORD CLASS A'
+UPDATE titles SET sectorMW='void',industryMW='void' WHERE title='DELIVEROO ORD CLASS A'
+SELECT titleSQ FROM candidates WHERE isin='IT0000072618'
+SELECT * FROM titles WHERE title='INTESA SANPAOLO ORD'
+INSERT INTO titles(title) VALUES('INTESA SANPAOLO ORD')
+https://www.marketwatch.com/investing/stock/IITSF/company-profile?mod=mw_quote_tab
+getSector(): Financial Services
+UPDATE titles SET exchange='Milan ',sectorYF='Financial Services',industryYF='Banks—Regional' WHERE title='INTESA SANPAOLO ORD'
+UPDATE titles SET sectorMW='Financial Services',industryMW='Banking' WHERE title='INTESA SANPAOLO ORD'
+SELECT titleSQ FROM candidates WHERE isin='ES0113900J37'
+SELECT * FROM titles WHERE title='BANCO SANTANDER ORD'
+INSERT INTO titles(title) VALUES('BANCO SANTANDER ORD')
+https://www.marketwatch.com/investing/stock/BCDRF/company-profile?mod=mw_quote_tab
+getSector(): Financial Services
+UPDATE titles SET exchange='MCE ',sectorYF='Financial Services',industryYF='Banks—Diversified' WHERE title='BANCO SANTANDER ORD'
+UPDATE titles SET sectorMW='Financial Services',industryMW='Major International Banks' WHERE title='BANCO SANTANDER ORD'
+SELECT titleSQ FROM candidates WHERE isin='DE0005140008'
+SELECT * FROM titles WHERE title='DEUTSCHE BANK N ORD'
+INSERT INTO titles(title) VALUES('DEUTSCHE BANK N ORD')
+https://www.marketwatch.com/investing/stock/DB/company-profile?mod=mw_quote_tab
+getSector(): Financial Services
+UPDATE titles SET exchange='XETRA ',sectorYF='Financial Services',industryYF='Banks—Regional' WHERE title='DEUTSCHE BANK N ORD'
+UPDATE titles SET sectorMW='Financial Services',industryMW='Major International Banks' WHERE title='DEUTSCHE BANK N ORD'
+SELECT titleSQ FROM candidates WHERE isin='DE0007257503'
+SELECT * FROM titles WHERE title='CECONOMY ORD'
+INSERT INTO titles(title) VALUES('CECONOMY ORD')
+https://www.marketwatch.com/investing/stock/MTAGF/company-profile?mod=mw_quote_tab
+getSector(): Retail/Wholesale
+UPDATE titles SET exchange='XETRA ',sectorYF='Consumer Cyclical',industryYF='Specialty Retail' WHERE title='CECONOMY ORD'
+UPDATE titles SET sectorMW='Retail/Wholesale',industryMW='Food Retail' WHERE title='CECONOMY ORD'
+SELECT titleSQ FROM candidates WHERE isin='DE0008232125'
+SELECT * FROM titles WHERE title='DEUTSCHE LUFTHANSA ORD'
+INSERT INTO titles(title) VALUES('DEUTSCHE LUFTHANSA ORD')
+https://www.marketwatch.com/investing/stock/LHA/company-profile?countrycode=XE&mod=mw_quote_tab
+getSector(): Transportation/Logistics
+UPDATE titles SET exchange='XETRA ',sectorYF='Industrials',industryYF='Airlines' WHERE title='DEUTSCHE LUFTHANSA ORD'
+UPDATE titles SET sectorMW='Transportation/Logistics',industryMW='Passenger Airlines' WHERE title='DEUTSCHE LUFTHANSA ORD'
+SELECT titleSQ FROM candidates WHERE isin='GB0007980591'
+SELECT * FROM titles WHERE title='BP ORD'
+INSERT INTO titles(title) VALUES('BP ORD')
+https://www.marketwatch.com/investing/stock/BPAQF/company-profile?mod=mw_quote_tab
+getSector(): Companies on the Energy Service
+UPDATE titles SET exchange='LSE ',sectorYF='Energy',industryYF='Oil & Gas Integrated' WHERE title='BP ORD'
+UPDATE titles SET sectorMW='Companies on the Energy Service',industryMW='Major Oil & Gas' WHERE title='BP ORD'
+SELECT titleSQ FROM candidates WHERE isin='FI0009000681'
+SELECT * FROM titles WHERE title='NOKIA ORD'
+INSERT INTO titles(title) VALUES('NOKIA ORD')
+https://www.marketwatch.com/investing/stock/NOKBF/company-profile?mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='Helsinki ',sectorYF='Technology',industryYF='Communication Equipment' WHERE title='NOKIA ORD'
+UPDATE titles SET sectorMW='Technology',industryMW='Networking' WHERE title='NOKIA ORD'
+SELECT titleSQ FROM candidates WHERE isin='ES0113211835'
+SELECT * FROM titles WHERE title='BANCO BILBAO VIZCAYA ARGENTARIA ORD'
+INSERT INTO titles(title) VALUES('BANCO BILBAO VIZCAYA ARGENTARIA ORD')
+https://www.marketwatch.com/investing/stock/BBVXF/company-profile?mod=mw_quote_tab
+getSector(): Financial Services
+UPDATE titles SET exchange='MCE ',sectorYF='Financial Services',industryYF='Banks—Diversified' WHERE title='BANCO BILBAO VIZCAYA ARGENTARIA ORD'
+UPDATE titles SET sectorMW='Financial Services',industryMW='Major International Banks' WHERE title='BANCO BILBAO VIZCAYA ARGENTARIA ORD'
+SELECT titleSQ FROM candidates WHERE isin='US3682872078'
+SELECT * FROM titles WHERE title='PJSC GAZPROM ADR'
+INSERT INTO titles(title) VALUES('PJSC GAZPROM ADR')
+https://www.marketwatch.com/investing/stock/OGZPY/company-profile?mod=mw_quote_tab
+getSector(): Companies on the Energy Service
+UPDATE titles SET exchange='Frankfurt ',sectorYF='Energy',industryYF='Oil & Gas Integrated' WHERE title='PJSC GAZPROM ADR'
+UPDATE titles SET sectorMW='Companies on the Energy Service',industryMW='Major Oil & Gas' WHERE title='PJSC GAZPROM ADR'
+SELECT titleSQ FROM candidates WHERE isin='NL0011821202'
+SELECT * FROM titles WHERE title='ING GROEP ORD'
+INSERT INTO titles(title) VALUES('ING GROEP ORD')
+https://www.marketwatch.com/investing/stock/INGVF/company-profile?mod=mw_quote_tab
+getSector(): Financial Services
+UPDATE titles SET exchange='Amsterdam ',sectorYF='Financial Services',industryYF='Banks—Diversified' WHERE title='ING GROEP ORD'
+UPDATE titles SET sectorMW='Financial Services',industryMW='Banking' WHERE title='ING GROEP ORD'
+SELECT titleSQ FROM candidates WHERE isin='CH0012138530'
+SELECT * FROM titles WHERE title='CS GROUP N'
+INSERT INTO titles(title) VALUES('CS GROUP N')
+https://www.marketwatch.com/investing/stock/CSGKF/company-profile?mod=mw_quote_tab
+getSector(): Financial Services
+UPDATE titles SET exchange='Swiss ',sectorYF='Financial Services',industryYF='Banks—Diversified' WHERE title='CS GROUP N'
+UPDATE titles SET sectorMW='Financial Services',industryMW='Major International Banks' WHERE title='CS GROUP N'
+SELECT titleSQ FROM candidates WHERE isin='DE0007500001'
+SELECT * FROM titles WHERE title='THYSSENKRUPP ORD'
+INSERT INTO titles(title) VALUES('THYSSENKRUPP ORD')
+https://www.marketwatch.com/investing/stock/TYEKF/company-profile?mod=mw_quote_tab
+getSector(): Business/Consumer Services
+UPDATE titles SET exchange='XETRA ',sectorYF='Industrials',industryYF='Metal Fabrication' WHERE title='THYSSENKRUPP ORD'
+UPDATE titles SET sectorMW='Business/Consumer Services',industryMW='Diversified Holding Companies' WHERE title='THYSSENKRUPP ORD'
+SELECT titleSQ FROM candidates WHERE isin='CH0244767585'
+SELECT * FROM titles WHERE title='UBS GROUP N'
+INSERT INTO titles(title) VALUES('UBS GROUP N')
+https://www.marketwatch.com/investing/stock/UBS/company-profile?mod=mw_quote_tab
+getSector(): Financial Services
+UPDATE titles SET exchange='Swiss ',sectorYF='Financial Services',industryYF='Banks—Diversified' WHERE title='UBS GROUP N'
+UPDATE titles SET sectorMW='Financial Services',industryMW='Major International Banks' WHERE title='UBS GROUP N'
+SELECT titleSQ FROM candidates WHERE isin='US83304A1060'
+SELECT * FROM titles WHERE title='SNAP CL A ORD'
+INSERT INTO titles(title) VALUES('SNAP CL A ORD')
+https://www.marketwatch.com/investing/stock/SNAP/company-profile?mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='NYSE ',sectorYF='Communication Services',industryYF='Internet Content & Information' WHERE title='SNAP CL A ORD'
+UPDATE titles SET sectorMW='Technology',industryMW='Software' WHERE title='SNAP CL A ORD'
+SELECT titleSQ FROM candidates WHERE isin='US67421J1088'
+SELECT * FROM titles WHERE title='OATLY GROUP ADS REP ORD'
+INSERT INTO titles(title) VALUES('OATLY GROUP ADS REP ORD')
+https://www.marketwatch.com/investing/stock/OTLY/company-profile?mod=mw_quote_tab
+getSector(): Consumer Goods
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Consumer Defensive',industryYF='Beverages—Non-Alcoholic' WHERE title='OATLY GROUP ADS REP ORD'
+UPDATE titles SET sectorMW='Consumer Goods',industryMW='Food Products' WHERE title='OATLY GROUP ADS REP ORD'
+SELECT titleSQ FROM candidates WHERE isin='CH0000816824'
+SELECT * FROM titles WHERE title='OC OERLIKON N'
+INSERT INTO titles(title) VALUES('OC OERLIKON N')
+https://www.marketwatch.com/investing/stock/0QO3/company-profile?countrycode=UK&mod=mw_quote_tab
+getSector(): Industrial Goods
+UPDATE titles SET exchange='Swiss ',sectorYF='Industrials',industryYF='Specialty Industrial Machinery' WHERE title='OC OERLIKON N'
+UPDATE titles SET sectorMW='Industrial Goods',industryMW='Industrial Electronics' WHERE title='OC OERLIKON N'
+SELECT titleSQ FROM candidates WHERE isin='IT0005239360'
+SELECT * FROM titles WHERE title='UNICREDIT ORD'
+INSERT INTO titles(title) VALUES('UNICREDIT ORD')
+https://www.marketwatch.com/investing/stock/UNCFF/company-profile?mod=mw_quote_tab
+getSector(): Financial Services
+UPDATE titles SET exchange='Milan ',sectorYF='Financial Services',industryYF='Banks—Regional' WHERE title='UNICREDIT ORD'
+UPDATE titles SET sectorMW='Financial Services',industryMW='Banking' WHERE title='UNICREDIT ORD'
+SELECT titleSQ FROM candidates WHERE isin='US35952H6018'
+SELECT * FROM titles WHERE title='FUELCELL ENERGY ORD'
+INSERT INTO titles(title) VALUES('FUELCELL ENERGY ORD')
+https://www.marketwatch.com/investing/stock/FCEL/company-profile?mod=mw_quote_tab
+getSector(): Industrial Goods
+UPDATE titles SET exchange='NasdaqGM ',sectorYF='Industrials',industryYF='Electrical Equipment & Parts' WHERE title='FUELCELL ENERGY ORD'
+UPDATE titles SET sectorMW='Industrial Goods',industryMW='Industrial Electronics' WHERE title='FUELCELL ENERGY ORD'
+SELECT titleSQ FROM candidates WHERE isin='CH0012268360'
+SELECT * FROM titles WHERE title='KUDELSKI I'
+INSERT INTO titles(title) VALUES('KUDELSKI I')
+https://www.marketwatch.com/investing/stock/KUD/company-profile?countrycode=CH&mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='Swiss ',sectorYF='Communication Services',industryYF='Entertainment' WHERE title='KUDELSKI I'
+UPDATE titles SET sectorMW='Technology',industryMW='Software' WHERE title='KUDELSKI I'
+SELECT titleSQ FROM candidates WHERE isin='AT0000A18XM4'
+SELECT * FROM titles WHERE title='AMS'
+INSERT INTO titles(title) VALUES('AMS')
+https://www.marketwatch.com/investing/stock/AUKUF/company-profile?mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='Swiss ',sectorYF='Technology',industryYF='Semiconductors' WHERE title='AMS'
+UPDATE titles SET sectorMW='Technology',industryMW='Semiconductors' WHERE title='AMS'
+SELECT titleSQ FROM candidates WHERE isin='DE0005557508'
+SELECT * FROM titles WHERE title='DEUTSCHE TELEKOM N ORD'
+INSERT INTO titles(title) VALUES('DEUTSCHE TELEKOM N ORD')
+https://www.marketwatch.com/investing/stock/DTEGF/company-profile?mod=mw_quote_tab
+getSector(): Telecommunication Services
+UPDATE titles SET exchange='XETRA ',sectorYF='Communication Services',industryYF='Telecom Services' WHERE title='DEUTSCHE TELEKOM N ORD'
+UPDATE titles SET sectorMW='Telecommunication Services',industryMW='Wireless Telecommunications Services' WHERE title='DEUTSCHE TELEKOM N ORD'
+SELECT titleSQ FROM candidates WHERE isin='DE000ENAG999'
+SELECT * FROM titles WHERE title='E.ON N ORD'
+INSERT INTO titles(title) VALUES('E.ON N ORD')
+https://www.marketwatch.com/investing/stock/ENAKF/company-profile?mod=mw_quote_tab
+getSector(): Companies on the Energy Service
+UPDATE titles SET exchange='XETRA ',sectorYF='Utilities',industryYF='Utilities—Diversified' WHERE title='E.ON N ORD'
+UPDATE titles SET sectorMW='Companies on the Energy Service',industryMW='Multiutilities' WHERE title='E.ON N ORD'
+SELECT titleSQ FROM candidates WHERE isin='US69608A1088'
+SELECT * FROM titles WHERE title='PALANTIR TECHNOLOGIES CL A ORD'
+INSERT INTO titles(title) VALUES('PALANTIR TECHNOLOGIES CL A ORD')
+https://www.marketwatch.com/investing/stock/PLTR/company-profile?mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='NYSE ',sectorYF='Technology',industryYF='Software—Infrastructure' WHERE title='PALANTIR TECHNOLOGIES CL A ORD'
+UPDATE titles SET sectorMW='Technology',industryMW='Software' WHERE title='PALANTIR TECHNOLOGIES CL A ORD'
+SELECT titleSQ FROM candidates WHERE isin='DE000A2YN900'
+SELECT * FROM titles WHERE title='TEAMVIEWER ORD'
+INSERT INTO titles(title) VALUES('TEAMVIEWER ORD')
+https://www.marketwatch.com/investing/stock/TMV/company-profile?countrycode=XE&mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='XETRA ',sectorYF='Technology',industryYF='Software—Application' WHERE title='TEAMVIEWER ORD'
+UPDATE titles SET sectorMW='Technology',industryMW='Software' WHERE title='TEAMVIEWER ORD'
+SELECT titleSQ FROM candidates WHERE isin='KYG9830T1067'
+SELECT * FROM titles WHERE title='XIAOMI-W ORD'
+INSERT INTO titles(title) VALUES('XIAOMI-W ORD')
+https://www.marketwatch.com/investing/stock/XIACF/company-profile?mod=mw_quote_tab
+getSector(): failed KYG9830T1067
+getIndustry(): failed KYG9830T1067
+UPDATE titles SET exchange='HKSE ',sectorYF='Technology',industryYF='Consumer Electronics' WHERE title='XIAOMI-W ORD'
+UPDATE titles SET sectorMW='void',industryMW='void' WHERE title='XIAOMI-W ORD'
+SELECT titleSQ FROM candidates WHERE isin='DE000PSM7770'
+SELECT * FROM titles WHERE title='PROSIEBENSAT1 MEDIA N ORD'
+INSERT INTO titles(title) VALUES('PROSIEBENSAT1 MEDIA N ORD')
+https://www.marketwatch.com/investing/stock/PSM/company-profile?countrycode=XE&mod=mw_quote_tab
+getSector(): Media/Entertainment
+UPDATE titles SET exchange='XETRA ',sectorYF='Communication Services',industryYF='Broadcasting' WHERE title='PROSIEBENSAT1 MEDIA N ORD'
+UPDATE titles SET sectorMW='Media/Entertainment',industryMW='Broadcasting' WHERE title='PROSIEBENSAT1 MEDIA N ORD'
+SELECT titleSQ FROM candidates WHERE isin='FR0000133308'
+SELECT * FROM titles WHERE title='ORANGE ORD'
+INSERT INTO titles(title) VALUES('ORANGE ORD')
+https://www.marketwatch.com/investing/stock/FNCTF/company-profile?mod=mw_quote_tab
+getSector(): Telecommunication Services
+UPDATE titles SET exchange='Paris ',sectorYF='Communication Services',industryYF='Telecom Services' WHERE title='ORANGE ORD'
+UPDATE titles SET sectorMW='Telecommunication Services',industryMW='Wireless Telecommunications Services' WHERE title='ORANGE ORD'
+SELECT titleSQ FROM candidates WHERE isin='US92766K1060'
+SELECT * FROM titles WHERE title='VIRGIN GALACTIC HOLDINGS CL A'
+INSERT INTO titles(title) VALUES('VIRGIN GALACTIC HOLDINGS CL A')
+https://www.marketwatch.com/investing/stock/SPCE/company-profile?mod=mw_quote_tab
+getSector(): Transportation/Logistics
+UPDATE titles SET exchange='NYSE ',sectorYF='Industrials',industryYF='Aerospace & Defense' WHERE title='VIRGIN GALACTIC HOLDINGS CL A'
+UPDATE titles SET sectorMW='Transportation/Logistics',industryMW='Passenger Airlines' WHERE title='VIRGIN GALACTIC HOLDINGS CL A'
+SELECT titleSQ FROM candidates WHERE isin='DE0006095003'
+SELECT * FROM titles WHERE title='ENCAVIS ORD'
+INSERT INTO titles(title) VALUES('ENCAVIS ORD')
+https://www.marketwatch.com/investing/stock/ECV/company-profile?countrycode=XE&mod=mw_quote_tab
+getSector(): 
+UPDATE titles SET exchange='XETRA ',sectorYF='Utilities',industryYF='Utilities—Renewable' WHERE title='ENCAVIS ORD'
+UPDATE titles SET sectorMW='',industryMW='' WHERE title='ENCAVIS ORD'
+SELECT titleSQ FROM candidates WHERE isin='FR0010208488'
+SELECT * FROM titles WHERE title='ENGIE ORD'
+INSERT INTO titles(title) VALUES('ENGIE ORD')
+https://www.marketwatch.com/investing/stock/ENGQF/company-profile?mod=mw_quote_tab
+getSector(): Companies on the Energy Service
+UPDATE titles SET exchange='Paris ',sectorYF='Utilities',industryYF='Utilities—Diversified' WHERE title='ENGIE ORD'
+UPDATE titles SET sectorMW='Companies on the Energy Service',industryMW='Multiutilities' WHERE title='ENGIE ORD'
+SELECT titleSQ FROM candidates WHERE isin='US7707001027'
+SELECT * FROM titles WHERE title='ROBINHOOD MARKETS CL A ORD'
+INSERT INTO titles(title) VALUES('ROBINHOOD MARKETS CL A ORD')
+https://www.marketwatch.com/investing/stock/HOOD/company-profile?mod=mw_quote_tab
+getSector(): Financial Services
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Technology',industryYF='Software—Infrastructure' WHERE title='ROBINHOOD MARKETS CL A ORD'
+UPDATE titles SET sectorMW='Financial Services',industryMW='Securities' WHERE title='ROBINHOOD MARKETS CL A ORD'
+SELECT titleSQ FROM candidates WHERE isin='GB00B03MLX29'
+SELECT * FROM titles WHERE title='ROYAL DUTCH SHELL CL A ORD'
+INSERT INTO titles(title) VALUES('ROYAL DUTCH SHELL CL A ORD')
+https://www.marketwatch.com/investing/stock/RYDAF/company-profile?mod=mw_quote_tab
+getSector(): Companies on the Energy Service
+UPDATE titles SET exchange='Amsterdam ',sectorYF='Energy',industryYF='Oil & Gas Integrated' WHERE title='ROYAL DUTCH SHELL CL A ORD'
+UPDATE titles SET sectorMW='Companies on the Energy Service',industryMW='Major Oil & Gas' WHERE title='ROYAL DUTCH SHELL CL A ORD'
+SELECT titleSQ FROM candidates WHERE isin='DE0006231004'
+SELECT * FROM titles WHERE title='INFINEON TECHNOLOGIES N ORD'
+INSERT INTO titles(title) VALUES('INFINEON TECHNOLOGIES N ORD')
+https://www.marketwatch.com/investing/stock/IFNNF/company-profile?mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='XETRA ',sectorYF='Technology',industryYF='Semiconductors' WHERE title='INFINEON TECHNOLOGIES N ORD'
+UPDATE titles SET sectorMW='Technology',industryMW='Semiconductors' WHERE title='INFINEON TECHNOLOGIES N ORD'
+SELECT titleSQ FROM candidates WHERE isin='US90184L1026'
+SELECT * FROM titles WHERE title='TWITTER ORD'
+INSERT INTO titles(title) VALUES('TWITTER ORD')
+https://www.marketwatch.com/investing/stock/TWTR/company-profile?mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='NYSE ',sectorYF='Communication Services',industryYF='Internet Content & Information' WHERE title='TWITTER ORD'
+UPDATE titles SET sectorMW='Technology',industryMW='Internet/Online' WHERE title='TWITTER ORD'
+SELECT titleSQ FROM candidates WHERE isin='NL00150001Q9'
+SELECT * FROM titles WHERE title='STELLANTIS ORD'
+INSERT INTO titles(title) VALUES('STELLANTIS ORD')
+https://www.marketwatch.com/investing/stock/STLA/company-profile?mod=mw_quote_tab
+getSector(): Automotive
+UPDATE titles SET exchange='Milan ',sectorYF='Consumer Cyclical',industryYF='Auto Manufacturers' WHERE title='STELLANTIS ORD'
+UPDATE titles SET sectorMW='Automotive',industryMW='Automobiles' WHERE title='STELLANTIS ORD'
+SELECT titleSQ FROM candidates WHERE isin='US74767V1098'
+SELECT * FROM titles WHERE title='QUANTUMSCAPE CL A ORD'
+INSERT INTO titles(title) VALUES('QUANTUMSCAPE CL A ORD')
+https://www.marketwatch.com/investing/stock/QS/company-profile?mod=mw_quote_tab
+getSector(): Automotive
+UPDATE titles SET exchange='NYSE ',sectorYF='Consumer Cyclical',industryYF='Auto Parts' WHERE title='QUANTUMSCAPE CL A ORD'
+UPDATE titles SET sectorMW='Automotive',industryMW='Motor Vehicle Parts' WHERE title='QUANTUMSCAPE CL A ORD'
+SELECT titleSQ FROM candidates WHERE isin='IT0000062072'
+SELECT * FROM titles WHERE title='ASSICURAZIONI GENERALI ORD'
+INSERT INTO titles(title) VALUES('ASSICURAZIONI GENERALI ORD')
+https://www.marketwatch.com/investing/stock/ARZGF/company-profile?mod=mw_quote_tab
+getSector(): Financial Services
+UPDATE titles SET exchange='Milan ',sectorYF='Financial Services',industryYF='Insurance—Diversified' WHERE title='ASSICURAZIONI GENERALI ORD'
+UPDATE titles SET sectorMW='Financial Services',industryMW='Full-Line Insurance' WHERE title='ASSICURAZIONI GENERALI ORD'
+SELECT titleSQ FROM candidates WHERE isin='CH0012221716'
+SELECT * FROM titles WHERE title='ABB LTD N'
+INSERT INTO titles(title) VALUES('ABB LTD N')
+https://www.marketwatch.com/investing/stock/ABLZF/company-profile?mod=mw_quote_tab
+getSector(): Industrial Goods
+UPDATE titles SET exchange='Swiss ',sectorYF='Industrials',industryYF='Electrical Equipment & Parts' WHERE title='ABB LTD N'
+UPDATE titles SET sectorMW='Industrial Goods',industryMW='Precision Products' WHERE title='ABB LTD N'
+SELECT titleSQ FROM candidates WHERE isin='CH0363463438'
+SELECT * FROM titles WHERE title='IDORSIA N'
+INSERT INTO titles(title) VALUES('IDORSIA N')
+https://www.marketwatch.com/investing/stock/IDRSF/company-profile?mod=mw_quote_tab
+getSector(): Health Care/Life Sciences
+UPDATE titles SET exchange='Swiss ',sectorYF='Healthcare',industryYF='Biotechnology' WHERE title='IDORSIA N'
+UPDATE titles SET sectorMW='Health Care/Life Sciences',industryMW='Pharmaceuticals' WHERE title='IDORSIA N'
+SELECT titleSQ FROM candidates WHERE isin='US72919P2020'
+SELECT * FROM titles WHERE title='PLUG POWER ORD'
+INSERT INTO titles(title) VALUES('PLUG POWER ORD')
+https://www.marketwatch.com/investing/stock/PLUG/company-profile?mod=mw_quote_tab
+getSector(): Companies on the Energy Service
+UPDATE titles SET exchange='NasdaqCM ',sectorYF='Industrials',industryYF='Electrical Equipment & Parts' WHERE title='PLUG POWER ORD'
+UPDATE titles SET sectorMW='Companies on the Energy Service',industryMW='Alternative Fuels' WHERE title='PLUG POWER ORD'
+SELECT titleSQ FROM candidates WHERE isin='BMG667211046'
+SELECT * FROM titles WHERE title='NORWEGIAN CRUISE LINE HOLDINGS'
+INSERT INTO titles(title) VALUES('NORWEGIAN CRUISE LINE HOLDINGS')
+https://www.marketwatch.com/investing/stock/NCLH/company-profile?mod=mw_quote_tab
+getSector(): Leisure/Arts/Hospitality
+UPDATE titles SET exchange='NYSE ',sectorYF='Consumer Cyclical',industryYF='Travel Services' WHERE title='NORWEGIAN CRUISE LINE HOLDINGS'
+UPDATE titles SET sectorMW='Leisure/Arts/Hospitality',industryMW='Tourism' WHERE title='NORWEGIAN CRUISE LINE HOLDINGS'
+SELECT titleSQ FROM candidates WHERE isin='CA0679011084'
+SELECT * FROM titles WHERE title='BARRICK GOLD ORD'
+INSERT INTO titles(title) VALUES('BARRICK GOLD ORD')
+https://www.marketwatch.com/investing/stock/GOLD/company-profile?mod=mw_quote_tab
+getSector(): Basic Materials/Resources
+UPDATE titles SET exchange='Toronto ',sectorYF='Basic Materials',industryYF='Gold' WHERE title='BARRICK GOLD ORD'
+UPDATE titles SET sectorMW='Basic Materials/Resources',industryMW='Gold' WHERE title='BARRICK GOLD ORD'
+SELECT titleSQ FROM candidates WHERE isin='DE000A0WMPJ6'
+SELECT * FROM titles WHERE title='AIXTRON NA ORD'
+INSERT INTO titles(title) VALUES('AIXTRON NA ORD')
+https://www.marketwatch.com/investing/stock/AIXXF/company-profile?mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='XETRA ',sectorYF='Technology',industryYF='Semiconductor Equipment & Materials' WHERE title='AIXTRON NA ORD'
+UPDATE titles SET sectorMW='Technology',industryMW='Semiconductors' WHERE title='AIXTRON NA ORD'
+SELECT titleSQ FROM candidates WHERE isin='CH0012142631'
+SELECT * FROM titles WHERE title='CLARIANT N'
+INSERT INTO titles(title) VALUES('CLARIANT N')
+https://www.marketwatch.com/investing/stock/CLN/company-profile?countrycode=CH&mod=mw_quote_tab
+getSector(): Basic Materials/Resources
+UPDATE titles SET exchange='Swiss ',sectorYF='Basic Materials',industryYF='Specialty Chemicals' WHERE title='CLARIANT N'
+UPDATE titles SET sectorMW='Basic Materials/Resources',industryMW='Chemicals' WHERE title='CLARIANT N'
+SELECT titleSQ FROM candidates WHERE isin='FR0000130809'
+SELECT * FROM titles WHERE title='SOCIETE GENERALE ORD'
+INSERT INTO titles(title) VALUES('SOCIETE GENERALE ORD')
+https://www.marketwatch.com/investing/stock/SCGLF/company-profile?mod=mw_quote_tab
+getSector(): Financial Services
+UPDATE titles SET exchange='Paris ',sectorYF='Financial Services',industryYF='Banks—Regional' WHERE title='SOCIETE GENERALE ORD'
+UPDATE titles SET sectorMW='Financial Services',industryMW='Major International Banks' WHERE title='SOCIETE GENERALE ORD'
+SELECT titleSQ FROM candidates WHERE isin='FR0000120172'
+SELECT * FROM titles WHERE title='CARREFOUR ORD'
+INSERT INTO titles(title) VALUES('CARREFOUR ORD')
+https://www.marketwatch.com/investing/stock/CRERF/company-profile?mod=mw_quote_tab
+getSector(): Retail/Wholesale
+UPDATE titles SET exchange='Paris ',sectorYF='Consumer Defensive',industryYF='Grocery Stores' WHERE title='CARREFOUR ORD'
+UPDATE titles SET sectorMW='Retail/Wholesale',industryMW='Food Retail' WHERE title='CARREFOUR ORD'
+SELECT titleSQ FROM candidates WHERE isin='GB00BH0P3Z91'
+SELECT * FROM titles WHERE title='BHP GROUP ORD SHS'
+INSERT INTO titles(title) VALUES('BHP GROUP ORD SHS')
+https://www.marketwatch.com/investing/stock/BHPBF/company-profile?mod=mw_quote_tab
+getSector(): Basic Materials/Resources
+UPDATE titles SET exchange='LSE ',sectorYF='Basic Materials',industryYF='Other Industrial Metals & Mining' WHERE title='BHP GROUP ORD SHS'
+UPDATE titles SET sectorMW='Basic Materials/Resources',industryMW='General Mining' WHERE title='BHP GROUP ORD SHS'
+SELECT titleSQ FROM candidates WHERE isin='DE000A3CNK42'
+SELECT * FROM titles WHERE title='ABOUT YOU HLD ORD'
+INSERT INTO titles(title) VALUES('ABOUT YOU HLD ORD')
+https://www.marketwatch.com/investing/stock/YOU/company-profile?countrycode=XE&mod=mw_quote_tab
+getSector(): failed DE000A3CNK42
+getIndustry(): failed DE000A3CNK42
+UPDATE titles SET exchange='Frankfurt ',sectorYF='Consumer Cyclical',industryYF='Internet Retail' WHERE title='ABOUT YOU HLD ORD'
+UPDATE titles SET sectorMW='void',industryMW='void' WHERE title='ABOUT YOU HLD ORD'
+SELECT titleSQ FROM candidates WHERE isin='FR0000120628'
+SELECT * FROM titles WHERE title='AXA ORD'
+INSERT INTO titles(title) VALUES('AXA ORD')
+https://www.marketwatch.com/investing/stock/AXAHF/company-profile?mod=mw_quote_tab
+getSector(): Financial Services
+UPDATE titles SET exchange='Paris ',sectorYF='Financial Services',industryYF='Insurance—Diversified' WHERE title='AXA ORD'
+UPDATE titles SET sectorMW='Financial Services',industryMW='Full-Line Insurance' WHERE title='AXA ORD'
+SELECT titleSQ FROM candidates WHERE isin='FR0000031122'
+SELECT * FROM titles WHERE title='AIR FRANCE-KLM ORD'
+INSERT INTO titles(title) VALUES('AIR FRANCE-KLM ORD')
+https://www.marketwatch.com/investing/stock/AFRAF/company-profile?mod=mw_quote_tab
+getSector(): Transportation/Logistics
+UPDATE titles SET exchange='Paris ',sectorYF='Industrials',industryYF='Airlines' WHERE title='AIR FRANCE-KLM ORD'
+UPDATE titles SET sectorMW='Transportation/Logistics',industryMW='Passenger Airlines' WHERE title='AIR FRANCE-KLM ORD'
+SELECT titleSQ FROM candidates WHERE isin='US7672921050'
+SELECT * FROM titles WHERE title='RIOT BLOCKCHAIN ORD'
+INSERT INTO titles(title) VALUES('RIOT BLOCKCHAIN ORD')
+https://www.marketwatch.com/investing/stock/RIOT/company-profile?mod=mw_quote_tab
+getSector(): Financial Services
+UPDATE titles SET exchange='NasdaqCM ',sectorYF='Technology',industryYF='Software—Application' WHERE title='RIOT BLOCKCHAIN ORD'
+UPDATE titles SET sectorMW='Financial Services',industryMW='Securities' WHERE title='RIOT BLOCKCHAIN ORD'
+SELECT titleSQ FROM candidates WHERE isin='NO0010081235'
+SELECT * FROM titles WHERE title='NEL ORD'
+INSERT INTO titles(title) VALUES('NEL ORD')
+https://www.marketwatch.com/investing/stock/NLLSF/company-profile?mod=mw_quote_tab
+getSector(): Companies on the Energy Service
+UPDATE titles SET exchange='Oslo ',sectorYF='Industrials',industryYF='Specialty Industrial Machinery' WHERE title='NEL ORD'
+UPDATE titles SET sectorMW='Companies on the Energy Service',industryMW='Renewable Energy Generation' WHERE title='NEL ORD'
+SELECT titleSQ FROM candidates WHERE isin='DE000ENER6Y0'
+SELECT * FROM titles WHERE title='SIEMENS ENERGY N ORD'
+INSERT INTO titles(title) VALUES('SIEMENS ENERGY N ORD')
+https://www.marketwatch.com/investing/stock/SMEGF/company-profile?mod=mw_quote_tab
+getSector(): Industrial Goods
+UPDATE titles SET exchange='XETRA ',sectorYF='Utilities',industryYF='Utilities—Independent Power Producers' WHERE title='SIEMENS ENERGY N ORD'
+UPDATE titles SET sectorMW='Industrial Goods',industryMW='Industrial Electronics' WHERE title='SIEMENS ENERGY N ORD'
+SELECT titleSQ FROM candidates WHERE isin='CA6979001089'
+SELECT * FROM titles WHERE title='PAN AMER SILVER ORD'
+INSERT INTO titles(title) VALUES('PAN AMER SILVER ORD')
+https://www.marketwatch.com/investing/stock/PAAS/company-profile?mod=mw_quote_tab
+getSector(): Basic Materials/Resources
+UPDATE titles SET exchange='Toronto ',sectorYF='Basic Materials',industryYF='Silver' WHERE title='PAN AMER SILVER ORD'
+UPDATE titles SET sectorMW='Basic Materials/Resources',industryMW='Precious Metals' WHERE title='PAN AMER SILVER ORD'
+SELECT titleSQ FROM candidates WHERE isin='CH0496451508'
+SELECT * FROM titles WHERE title='SOFTWAREONE N'
+INSERT INTO titles(title) VALUES('SOFTWAREONE N')
+https://www.marketwatch.com/investing/stock/void/company-profile?mod=mw_quote_tab
+getSector(): failed CH0496451508
+getIndustry(): failed CH0496451508
+UPDATE titles SET exchange='Swiss ',sectorYF='Technology',industryYF='Software—Application' WHERE title='SOFTWAREONE N'
+UPDATE titles SET sectorMW='void',industryMW='void' WHERE title='SOFTWAREONE N'
+SELECT titleSQ FROM candidates WHERE isin='US22266T1097'
+SELECT * FROM titles WHERE title='COUPANG CL A ORD'
+INSERT INTO titles(title) VALUES('COUPANG CL A ORD')
+https://www.marketwatch.com/investing/stock/CPNG/company-profile?mod=mw_quote_tab
+getSector(): Retail/Wholesale
+UPDATE titles SET exchange='NYSE ',sectorYF='Consumer Cyclical',industryYF='Internet Retail' WHERE title='COUPANG CL A ORD'
+UPDATE titles SET sectorMW='Retail/Wholesale',industryMW='Mixed Retailing' WHERE title='COUPANG CL A ORD'
+SELECT titleSQ FROM candidates WHERE isin='LU1598757687'
+SELECT * FROM titles WHERE title='ARCELORMITTAL ORD'
+INSERT INTO titles(title) VALUES('ARCELORMITTAL ORD')
+https://www.marketwatch.com/investing/stock/AMSYF/company-profile?mod=mw_quote_tab
+getSector(): Basic Materials/Resources
+UPDATE titles SET exchange='Amsterdam ',sectorYF='Basic Materials',industryYF='Steel' WHERE title='ARCELORMITTAL ORD'
+UPDATE titles SET sectorMW='Basic Materials/Resources',industryMW='Iron/Steel' WHERE title='ARCELORMITTAL ORD'
+SELECT titleSQ FROM candidates WHERE isin='FR0000131906'
+SELECT * FROM titles WHERE title='RENAULT ORD'
+INSERT INTO titles(title) VALUES('RENAULT ORD')
+https://www.marketwatch.com/investing/stock/RNSDF/company-profile?mod=mw_quote_tab
+getSector(): Automotive
+UPDATE titles SET exchange='Paris ',sectorYF='Consumer Cyclical',industryYF='Auto Manufacturers' WHERE title='RENAULT ORD'
+UPDATE titles SET sectorMW='Automotive',industryMW='Automobiles' WHERE title='RENAULT ORD'
+SELECT titleSQ FROM candidates WHERE isin='US22266M1045'
+SELECT * FROM titles WHERE title='COURSERA ORD'
+INSERT INTO titles(title) VALUES('COURSERA ORD')
+https://www.marketwatch.com/investing/stock/COUR/company-profile?mod=mw_quote_tab
+getSector(): Business/Consumer Services
+UPDATE titles SET exchange='NYSE ',sectorYF='Consumer Defensive',industryYF='Education & Training Services' WHERE title='COURSERA ORD'
+UPDATE titles SET sectorMW='Business/Consumer Services',industryMW='Consumer Services' WHERE title='COURSERA ORD'
+SELECT titleSQ FROM candidates WHERE isin='GB00B1XZS820'
+SELECT * FROM titles WHERE title='ANGLO AMERICAN ORD'
+INSERT INTO titles(title) VALUES('ANGLO AMERICAN ORD')
+https://www.marketwatch.com/investing/stock/AAL/company-profile?countrycode=UK&mod=mw_quote_tab
+getSector(): Basic Materials/Resources
+UPDATE titles SET exchange='LSE ',sectorYF='Basic Materials',industryYF='Other Industrial Metals & Mining' WHERE title='ANGLO AMERICAN ORD'
+UPDATE titles SET sectorMW='Basic Materials/Resources',industryMW='General Mining' WHERE title='ANGLO AMERICAN ORD'
+SELECT titleSQ FROM candidates WHERE isin='US02376R1023'
+SELECT * FROM titles WHERE title='AMERICAN AIRLINES GROUP ORD'
+INSERT INTO titles(title) VALUES('AMERICAN AIRLINES GROUP ORD')
+https://www.marketwatch.com/investing/stock/AAL/company-profile?mod=mw_quote_tab
+getSector(): Transportation/Logistics
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Industrials',industryYF='Airlines' WHERE title='AMERICAN AIRLINES GROUP ORD'
+UPDATE titles SET sectorMW='Transportation/Logistics',industryMW='Passenger Airlines' WHERE title='AMERICAN AIRLINES GROUP ORD'
+SELECT titleSQ FROM candidates WHERE isin='DE000BAY0017'
+SELECT * FROM titles WHERE title='BAYER N ORD'
+INSERT INTO titles(title) VALUES('BAYER N ORD')
+https://www.marketwatch.com/investing/stock/BAYZF/company-profile?mod=mw_quote_tab
+getSector(): Health Care/Life Sciences
+UPDATE titles SET exchange='XETRA ',sectorYF='Healthcare',industryYF='Drug Manufacturers—General' WHERE title='BAYER N ORD'
+UPDATE titles SET sectorMW='Health Care/Life Sciences',industryMW='Pharmaceuticals' WHERE title='BAYER N ORD'
+SELECT titleSQ FROM candidates WHERE isin='PA1436583006'
+SELECT * FROM titles WHERE title='CARNIVAL ORD'
+INSERT INTO titles(title) VALUES('CARNIVAL ORD')
+https://www.marketwatch.com/investing/stock/CCL/company-profile?mod=mw_quote_tab
+getSector(): Leisure/Arts/Hospitality
+UPDATE titles SET exchange='NYSE ',sectorYF='Consumer Cyclical',industryYF='Travel Services' WHERE title='CARNIVAL ORD'
+UPDATE titles SET sectorMW='Leisure/Arts/Hospitality',industryMW='Tourism' WHERE title='CARNIVAL ORD'
+SELECT titleSQ FROM candidates WHERE isin='KYG3777B1032'
+SELECT * FROM titles WHERE title='GEELY AUTO ORD'
+INSERT INTO titles(title) VALUES('GEELY AUTO ORD')
+https://www.marketwatch.com/investing/stock/GELYF/company-profile?mod=mw_quote_tab
+getSector(): Automotive
+UPDATE titles SET exchange='HKSE ',sectorYF='Consumer Cyclical',industryYF='Auto Manufacturers' WHERE title='GEELY AUTO ORD'
+UPDATE titles SET sectorMW='Automotive',industryMW='Automobiles' WHERE title='GEELY AUTO ORD'
+SELECT titleSQ FROM candidates WHERE isin='NL0000009538'
+SELECT * FROM titles WHERE title='PHILIPS KON ORD'
+INSERT INTO titles(title) VALUES('PHILIPS KON ORD')
+https://www.marketwatch.com/investing/stock/RYLPF/company-profile?mod=mw_quote_tab
+getSector(): Health Care/Life Sciences
+UPDATE titles SET exchange='Amsterdam ',sectorYF='Healthcare',industryYF='Medical Devices' WHERE title='PHILIPS KON ORD'
+UPDATE titles SET sectorMW='Health Care/Life Sciences',industryMW='Medical Equipment/Supplies' WHERE title='PHILIPS KON ORD'
+SELECT titleSQ FROM candidates WHERE isin='CH1134540470'
+SELECT * FROM titles WHERE title='ON HOLDING CL A ORD'
+INSERT INTO titles(title) VALUES('ON HOLDING CL A ORD')
+https://www.marketwatch.com/investing/stock/ONON/company-profile?mod=mw_quote_tab
+getSector(): Consumer Goods
+UPDATE titles SET exchange='NYSE ',sectorYF='Consumer Cyclical',industryYF='Apparel Retail' WHERE title='ON HOLDING CL A ORD'
+UPDATE titles SET sectorMW='Consumer Goods',industryMW='Footwear' WHERE title='ON HOLDING CL A ORD'
+SELECT titleSQ FROM candidates WHERE isin='ES0148396007'
+SELECT * FROM titles WHERE title='INDITEX ORD'
+INSERT INTO titles(title) VALUES('INDITEX ORD')
+https://www.marketwatch.com/investing/stock/IDEXF/company-profile?mod=mw_quote_tab
+getSector(): Retail/Wholesale
+UPDATE titles SET exchange='MCE ',sectorYF='Consumer Cyclical',industryYF='Apparel Retail' WHERE title='INDITEX ORD'
+UPDATE titles SET sectorMW='Retail/Wholesale',industryMW='Clothing Retail' WHERE title='INDITEX ORD'
+SELECT titleSQ FROM candidates WHERE isin='DE0007037129'
+SELECT * FROM titles WHERE title='RWE ORD'
+INSERT INTO titles(title) VALUES('RWE ORD')
+https://www.marketwatch.com/investing/stock/RWNFF/company-profile?mod=mw_quote_tab
+getSector(): Companies on the Energy Service
+UPDATE titles SET exchange='XETRA ',sectorYF='Utilities',industryYF='Utilities—Diversified' WHERE title='RWE ORD'
+UPDATE titles SET sectorMW='Companies on the Energy Service',industryMW='Multiutilities' WHERE title='RWE ORD'
+SELECT titleSQ FROM candidates WHERE isin='US0079031078'
+SELECT * FROM titles WHERE title='ADVANCED MICRO DEVICES ORD'
+INSERT INTO titles(title) VALUES('ADVANCED MICRO DEVICES ORD')
+https://www.marketwatch.com/investing/stock/AMD/company-profile?mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Technology',industryYF='Semiconductors' WHERE title='ADVANCED MICRO DEVICES ORD'
+UPDATE titles SET sectorMW='Technology',industryMW='Semiconductors' WHERE title='ADVANCED MICRO DEVICES ORD'
+SELECT titleSQ FROM candidates WHERE isin='CH0435377954'
+SELECT * FROM titles WHERE title='SIG Combibloc Grp N'
+INSERT INTO titles(title) VALUES('SIG Combibloc Grp N')
+https://www.marketwatch.com/investing/stock/SCBGF/company-profile?mod=mw_quote_tab
+getSector(): Industrial Goods
+UPDATE titles SET exchange='Swiss ',sectorYF='Consumer Cyclical',industryYF='Packaging & Containers' WHERE title='SIG Combibloc Grp N'
+UPDATE titles SET sectorMW='Industrial Goods',industryMW='Containers/Packaging' WHERE title='SIG Combibloc Grp N'
+SELECT titleSQ FROM candidates WHERE isin='US0605051046'
+SELECT * FROM titles WHERE title='BANK OF AMERICA ORD'
+INSERT INTO titles(title) VALUES('BANK OF AMERICA ORD')
+https://www.marketwatch.com/investing/stock/BAC/company-profile?mod=mw_quote_tab
+getSector(): Financial Services
+UPDATE titles SET exchange='NYSE ',sectorYF='Financial Services',industryYF='Banks—Diversified' WHERE title='BANK OF AMERICA ORD'
+UPDATE titles SET sectorMW='Financial Services',industryMW='Major International Banks' WHERE title='BANK OF AMERICA ORD'
+SELECT titleSQ FROM candidates WHERE isin='US62914V1061'
+SELECT * FROM titles WHERE title='NIO ADS REP 1 CL A ORD'
+INSERT INTO titles(title) VALUES('NIO ADS REP 1 CL A ORD')
+https://www.marketwatch.com/investing/stock/NIO/company-profile?mod=mw_quote_tab
+getSector(): Automotive
+UPDATE titles SET exchange='Mexico ',sectorYF='',industryYF='' WHERE title='NIO ADS REP 1 CL A ORD'
+UPDATE titles SET sectorMW='Automotive',industryMW='Automobiles' WHERE title='NIO ADS REP 1 CL A ORD'
+SELECT titleSQ FROM candidates WHERE isin='DE0005552004'
+SELECT * FROM titles WHERE title='DEUTSCHE POST N ORD'
+INSERT INTO titles(title) VALUES('DEUTSCHE POST N ORD')
+https://www.marketwatch.com/investing/stock/DPSTF/company-profile?mod=mw_quote_tab
+getSector(): Transportation/Logistics
+UPDATE titles SET exchange='XETRA ',sectorYF='Industrials',industryYF='Integrated Freight & Logistics' WHERE title='DEUTSCHE POST N ORD'
+UPDATE titles SET sectorMW='Transportation/Logistics',industryMW='Air Freight' WHERE title='DEUTSCHE POST N ORD'
+SELECT titleSQ FROM candidates WHERE isin='CH0023405456'
+SELECT * FROM titles WHERE title='DUFRY N'
+INSERT INTO titles(title) VALUES('DUFRY N')
+https://www.marketwatch.com/investing/stock/DFRYF/company-profile?mod=mw_quote_tab
+getSector(): Retail/Wholesale
+UPDATE titles SET exchange='Swiss ',sectorYF='Consumer Cyclical',industryYF='Specialty Retail' WHERE title='DUFRY N'
+UPDATE titles SET sectorMW='Retail/Wholesale',industryMW='Mixed Retailing' WHERE title='DUFRY N'
+SELECT titleSQ FROM candidates WHERE isin='NL0015436031'
+SELECT * FROM titles WHERE title='CUREVAC N V ORD'
+INSERT INTO titles(title) VALUES('CUREVAC N V ORD')
+https://www.marketwatch.com/investing/stock/CVAC/company-profile?mod=mw_quote_tab
+getSector(): Health Care/Life Sciences
+UPDATE titles SET exchange='NasdaqGM ',sectorYF='Healthcare',industryYF='Biotechnology' WHERE title='CUREVAC N V ORD'
+UPDATE titles SET sectorMW='Health Care/Life Sciences',industryMW='Biotechnology' WHERE title='CUREVAC N V ORD'
+SELECT titleSQ FROM candidates WHERE isin='DE0007100000'
+SELECT * FROM titles WHERE title='DAIMLER N ORD'
+INSERT INTO titles(title) VALUES('DAIMLER N ORD')
+https://www.marketwatch.com/investing/stock/DAI/company-profile?countrycode=XE&mod=mw_quote_tab
+getSector(): Automotive
+UPDATE titles SET exchange='XETRA ',sectorYF='Consumer Cyclical',industryYF='Auto Manufacturers' WHERE title='DAIMLER N ORD'
+UPDATE titles SET sectorMW='Automotive',industryMW='Automobiles' WHERE title='DAIMLER N ORD'
+SELECT titleSQ FROM candidates WHERE isin='FR0000131104'
+SELECT * FROM titles WHERE title='BNP PARIBAS ACT.A ORD'
+INSERT INTO titles(title) VALUES('BNP PARIBAS ACT.A ORD')
+https://www.marketwatch.com/investing/stock/BNPQF/company-profile?mod=mw_quote_tab
+getSector(): Financial Services
+UPDATE titles SET exchange='Paris ',sectorYF='Financial Services',industryYF='Banks—Regional' WHERE title='BNP PARIBAS ACT.A ORD'
+UPDATE titles SET sectorMW='Financial Services',industryMW='Major International Banks' WHERE title='BNP PARIBAS ACT.A ORD'
+SELECT titleSQ FROM candidates WHERE isin='FR0000120271'
+SELECT * FROM titles WHERE title='TOTALENERGIES ORD'
+INSERT INTO titles(title) VALUES('TOTALENERGIES ORD')
+https://www.marketwatch.com/investing/stock/TTE/company-profile?countrycode=FR&mod=mw_quote_tab
+getSector(): Companies on the Energy Service
+UPDATE titles SET exchange='Paris ',sectorYF='Energy',industryYF='Oil & Gas Integrated' WHERE title='TOTALENERGIES ORD'
+UPDATE titles SET sectorMW='Companies on the Energy Service',industryMW='Major Oil & Gas' WHERE title='TOTALENERGIES ORD'
+SELECT titleSQ FROM candidates WHERE isin='DE0005785604'
+SELECT * FROM titles WHERE title='FRESENIUS ORD'
+INSERT INTO titles(title) VALUES('FRESENIUS ORD')
+https://www.marketwatch.com/investing/stock/FSNUF/company-profile?mod=mw_quote_tab
+getSector(): Health Care/Life Sciences
+UPDATE titles SET exchange='XETRA ',sectorYF='Healthcare',industryYF='Medical Care Facilities' WHERE title='FRESENIUS ORD'
+UPDATE titles SET sectorMW='Health Care/Life Sciences',industryMW='Healthcare Provision' WHERE title='FRESENIUS ORD'
+SELECT titleSQ FROM candidates WHERE isin='CH0012214059'
+SELECT * FROM titles WHERE title='HOLCIM N'
+INSERT INTO titles(title) VALUES('HOLCIM N')
+https://www.marketwatch.com/investing/stock/HOLN/company-profile?countrycode=CH&mod=mw_quote_tab
+getSector(): Real Estate/Construction
+UPDATE titles SET exchange='Swiss ',sectorYF='Basic Materials',industryYF='Building Materials' WHERE title='HOLCIM N'
+UPDATE titles SET sectorMW='Real Estate/Construction',industryMW='Building Materials/Products' WHERE title='HOLCIM N'
+SELECT * FROM titles WHERE title='Holcim'
+INSERT INTO titles(title) VALUES('Holcim')
+https://www.marketwatch.com/investing/stock/HOLN/company-profile?countrycode=CH&mod=mw_quote_tab
+getSector(): Real Estate/Construction
+UPDATE titles SET exchange='Swiss ',sectorYF='Basic Materials',industryYF='Building Materials' WHERE title='Holcim'
+UPDATE titles SET sectorMW='Real Estate/Construction',industryMW='Building Materials/Products' WHERE title='Holcim'
+SELECT titleSQ FROM candidates WHERE isin='CH0102484968'
+SELECT * FROM titles WHERE title='JULIUS BAER N'
+INSERT INTO titles(title) VALUES('JULIUS BAER N')
+https://www.marketwatch.com/investing/stock/BAER/company-profile?countrycode=CH&mod=mw_quote_tab
+getSector(): Financial Services
+UPDATE titles SET exchange='Swiss ',sectorYF='Financial Services',industryYF='Asset Management' WHERE title='JULIUS BAER N'
+UPDATE titles SET sectorMW='Financial Services',industryMW='Investment Advisors' WHERE title='JULIUS BAER N'
+SELECT titleSQ FROM candidates WHERE isin='DE0005439004'
+SELECT * FROM titles WHERE title='CONTINENTAL ORD'
+INSERT INTO titles(title) VALUES('CONTINENTAL ORD')
+https://www.marketwatch.com/investing/stock/CON/company-profile?countrycode=XE&mod=mw_quote_tab
+getSector(): Automotive
+UPDATE titles SET exchange='XETRA ',sectorYF='Consumer Cyclical',industryYF='Auto Parts' WHERE title='CONTINENTAL ORD'
+UPDATE titles SET sectorMW='Automotive',industryMW='Tires' WHERE title='CONTINENTAL ORD'
+SELECT titleSQ FROM candidates WHERE isin='US90353T1007'
+SELECT * FROM titles WHERE title='UBER TECHNOLOGIES ORD'
+INSERT INTO titles(title) VALUES('UBER TECHNOLOGIES ORD')
+https://www.marketwatch.com/investing/stock/UBER/company-profile?mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='NYSE ',sectorYF='Technology',industryYF='Software—Application' WHERE title='UBER TECHNOLOGIES ORD'
+UPDATE titles SET sectorMW='Technology',industryMW='Emerging Technologies' WHERE title='UBER TECHNOLOGIES ORD'
+SELECT titleSQ FROM candidates WHERE isin='US70614W1009'
+SELECT * FROM titles WHERE title='PELOTON INTERACTIVE ORD'
+INSERT INTO titles(title) VALUES('PELOTON INTERACTIVE ORD')
+https://www.marketwatch.com/investing/stock/PTON/company-profile?mod=mw_quote_tab
+getSector(): Consumer Goods
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Consumer Cyclical',industryYF='Leisure' WHERE title='PELOTON INTERACTIVE ORD'
+UPDATE titles SET sectorMW='Consumer Goods',industryMW='Sports Goods' WHERE title='PELOTON INTERACTIVE ORD'
+SELECT titleSQ FROM candidates WHERE isin='US55087P1049'
+SELECT * FROM titles WHERE title='LYFT CL A ORD'
+INSERT INTO titles(title) VALUES('LYFT CL A ORD')
+https://www.marketwatch.com/investing/stock/LYFT/company-profile?mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Technology',industryYF='Software—Application' WHERE title='LYFT CL A ORD'
+UPDATE titles SET sectorMW='Technology',industryMW='Emerging Technologies' WHERE title='LYFT CL A ORD'
+SELECT titleSQ FROM candidates WHERE isin='US26210C1045'
+SELECT * FROM titles WHERE title='DROPBOX CL A ORD'
+INSERT INTO titles(title) VALUES('DROPBOX CL A ORD')
+https://www.marketwatch.com/investing/stock/DBX/company-profile?mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Technology',industryYF='Software—Infrastructure' WHERE title='DROPBOX CL A ORD'
+UPDATE titles SET sectorMW='Technology',industryMW='Internet/Online' WHERE title='DROPBOX CL A ORD'
+SELECT titleSQ FROM candidates WHERE isin='CH0012138605'
+SELECT * FROM titles WHERE title='ADECCO N'
+INSERT INTO titles(title) VALUES('ADECCO N')
+https://www.marketwatch.com/investing/stock/AHEXF/company-profile?mod=mw_quote_tab
+getSector(): Business/Consumer Services
+UPDATE titles SET exchange='Swiss ',sectorYF='Industrials',industryYF='Staffing & Employment Services' WHERE title='ADECCO N'
+UPDATE titles SET sectorMW='Business/Consumer Services',industryMW='Employment/Training Services' WHERE title='ADECCO N'
+SELECT titleSQ FROM candidates WHERE isin='GB0007188757'
+SELECT * FROM titles WHERE title='RIO TINTO ORD'
+INSERT INTO titles(title) VALUES('RIO TINTO ORD')
+https://www.marketwatch.com/investing/stock/RTPPF/company-profile?mod=mw_quote_tab
+getSector(): Basic Materials/Resources
+UPDATE titles SET exchange='LSE ',sectorYF='Basic Materials',industryYF='Other Industrial Metals & Mining' WHERE title='RIO TINTO ORD'
+UPDATE titles SET sectorMW='Basic Materials/Resources',industryMW='General Mining' WHERE title='RIO TINTO ORD'
+SELECT titleSQ FROM candidates WHERE isin='DE0005190003'
+SELECT * FROM titles WHERE title='BMW ORD'
+INSERT INTO titles(title) VALUES('BMW ORD')
+https://www.marketwatch.com/investing/stock/BAMXF/company-profile?mod=mw_quote_tab
+getSector(): Automotive
+UPDATE titles SET exchange='XETRA ',sectorYF='Consumer Cyclical',industryYF='Auto Manufacturers' WHERE title='BMW ORD'
+UPDATE titles SET sectorMW='Automotive',industryMW='Automobiles' WHERE title='BMW ORD'
+SELECT titleSQ FROM candidates WHERE isin='DE000PAH0038'
+SELECT * FROM titles WHERE title='PORSCHE AUTOMOBIL HOLDING PRF'
+INSERT INTO titles(title) VALUES('PORSCHE AUTOMOBIL HOLDING PRF')
+https://www.marketwatch.com/investing/stock/POAHF/company-profile?mod=mw_quote_tab
+getSector(): Automotive
+UPDATE titles SET exchange='XETRA ',sectorYF='Consumer Cyclical',industryYF='Auto Manufacturers' WHERE title='PORSCHE AUTOMOBIL HOLDING PRF'
+UPDATE titles SET sectorMW='Automotive',industryMW='Automobiles' WHERE title='PORSCHE AUTOMOBIL HOLDING PRF'
+SELECT titleSQ FROM candidates WHERE isin='US47759T1007'
+SELECT * FROM titles WHERE title='JINKOSOLAR HLDG ADR REP 4 ORD'
+INSERT INTO titles(title) VALUES('JINKOSOLAR HLDG ADR REP 4 ORD')
+https://www.marketwatch.com/investing/stock/JKS/company-profile?mod=mw_quote_tab
+getSector(): Industrial Goods
+UPDATE titles SET exchange='Frankfurt ',sectorYF='Technology',industryYF='Solar' WHERE title='JINKOSOLAR HLDG ADR REP 4 ORD'
+UPDATE titles SET sectorMW='Industrial Goods',industryMW='Industrial Electronics' WHERE title='JINKOSOLAR HLDG ADR REP 4 ORD'
+SELECT titleSQ FROM candidates WHERE isin='BE0974293251'
+SELECT * FROM titles WHERE title='AB INBEV ORD'
+INSERT INTO titles(title) VALUES('AB INBEV ORD')
+https://www.marketwatch.com/investing/stock/BUDFF/company-profile?mod=mw_quote_tab
+getSector(): Consumer Goods
+UPDATE titles SET exchange='Brussels ',sectorYF='Consumer Defensive',industryYF='Beverages—Brewers' WHERE title='AB INBEV ORD'
+UPDATE titles SET sectorMW='Consumer Goods',industryMW='Alcoholic Beverages/Drinks' WHERE title='AB INBEV ORD'
+SELECT titleSQ FROM candidates WHERE isin='US7170811035'
+SELECT * FROM titles WHERE title='PFIZER ORD'
+INSERT INTO titles(title) VALUES('PFIZER ORD')
+https://www.marketwatch.com/investing/stock/PFE/company-profile?mod=mw_quote_tab
+getSector(): Health Care/Life Sciences
+UPDATE titles SET exchange='NYSE ',sectorYF='Healthcare',industryYF='Drug Manufacturers—General' WHERE title='PFIZER ORD'
+UPDATE titles SET sectorMW='Health Care/Life Sciences',industryMW='Pharmaceuticals' WHERE title='PFIZER ORD'
+SELECT titleSQ FROM candidates WHERE isin='US3696043013'
+SELECT * FROM titles WHERE title='GENERAL ELECTRIC ORD'
+INSERT INTO titles(title) VALUES('GENERAL ELECTRIC ORD')
+https://www.marketwatch.com/investing/stock/GEC/company-profile?countrycode=UK&mod=mw_quote_tab
+getSector(): Business/Consumer Services
+UPDATE titles SET exchange='NYSE ',sectorYF='Industrials',industryYF='Specialty Industrial Machinery' WHERE title='GENERAL ELECTRIC ORD'
+UPDATE titles SET sectorMW='Business/Consumer Services',industryMW='Diversified Holding Companies' WHERE title='GENERAL ELECTRIC ORD'
+SELECT titleSQ FROM candidates WHERE isin='DE000A1ML7J1'
+SELECT * FROM titles WHERE title='VONOVIA ORD'
+INSERT INTO titles(title) VALUES('VONOVIA ORD')
+https://www.marketwatch.com/investing/stock/VNA/company-profile?countrycode=XE&mod=mw_quote_tab
+getSector(): Real Estate/Construction
+UPDATE titles SET exchange='XETRA ',sectorYF='Real Estate',industryYF='Real Estate Services' WHERE title='VONOVIA ORD'
+UPDATE titles SET sectorMW='Real Estate/Construction',industryMW='Real Estate Developers' WHERE title='VONOVIA ORD'
+SELECT titleSQ FROM candidates WHERE isin='DE000BASF111'
+SELECT * FROM titles WHERE title='BASF N ORD'
+INSERT INTO titles(title) VALUES('BASF N ORD')
+https://www.marketwatch.com/investing/stock/BFFAF/company-profile?mod=mw_quote_tab
+getSector(): Basic Materials/Resources
+UPDATE titles SET exchange='XETRA ',sectorYF='Basic Materials',industryYF='Chemicals' WHERE title='BASF N ORD'
+UPDATE titles SET sectorMW='Basic Materials/Resources',industryMW='Chemicals' WHERE title='BASF N ORD'
+SELECT titleSQ FROM candidates WHERE isin='DE0005470405'
+SELECT * FROM titles WHERE title='LANXESS ORD'
+INSERT INTO titles(title) VALUES('LANXESS ORD')
+https://www.marketwatch.com/investing/stock/LNXSF/company-profile?mod=mw_quote_tab
+getSector(): Basic Materials/Resources
+UPDATE titles SET exchange='XETRA ',sectorYF='Basic Materials',industryYF='Specialty Chemicals' WHERE title='LANXESS ORD'
+UPDATE titles SET sectorMW='Basic Materials/Resources',industryMW='Chemicals' WHERE title='LANXESS ORD'
+SELECT titleSQ FROM candidates WHERE isin='CH0025751329'
+SELECT * FROM titles WHERE title='LOGITECH N'
+INSERT INTO titles(title) VALUES('LOGITECH N')
+https://www.marketwatch.com/investing/stock/LOGI/company-profile?mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='Swiss ',sectorYF='Technology',industryYF='Computer Hardware' WHERE title='LOGITECH N'
+UPDATE titles SET sectorMW='Technology',industryMW='Computers/Consumer Electronics' WHERE title='LOGITECH N'
+SELECT titleSQ FROM candidates WHERE isin='US4581401001'
+SELECT * FROM titles WHERE title='INTEL ORD'
+INSERT INTO titles(title) VALUES('INTEL ORD')
+https://www.marketwatch.com/investing/stock/INTC/company-profile?mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Technology',industryYF='Semiconductors' WHERE title='INTEL ORD'
+UPDATE titles SET sectorMW='Technology',industryMW='Semiconductors' WHERE title='INTEL ORD'
+SELECT titleSQ FROM candidates WHERE isin='US83570H1086'
+SELECT * FROM titles WHERE title='SONOS ORD'
+INSERT INTO titles(title) VALUES('SONOS ORD')
+https://www.marketwatch.com/investing/stock/SONO/company-profile?mod=mw_quote_tab
+getSector(): Consumer Goods
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Technology',industryYF='Consumer Electronics' WHERE title='SONOS ORD'
+UPDATE titles SET sectorMW='Consumer Goods',industryMW='Audio/Video Equipment' WHERE title='SONOS ORD'
+SELECT titleSQ FROM candidates WHERE isin='US30231G1022'
+SELECT * FROM titles WHERE title='EXXON MOBIL ORD'
+INSERT INTO titles(title) VALUES('EXXON MOBIL ORD')
+https://www.marketwatch.com/investing/stock/XOM/company-profile?mod=mw_quote_tab
+getSector(): Companies on the Energy Service
+UPDATE titles SET exchange='NYSE ',sectorYF='Energy',industryYF='Oil & Gas Integrated' WHERE title='EXXON MOBIL ORD'
+UPDATE titles SET sectorMW='Companies on the Energy Service',industryMW='Major Oil & Gas' WHERE title='EXXON MOBIL ORD'
+SELECT titleSQ FROM candidates WHERE isin='DE0005785802'
+SELECT * FROM titles WHERE title='FRESENIUS MEDICAL CARE ORD'
+INSERT INTO titles(title) VALUES('FRESENIUS MEDICAL CARE ORD')
+https://www.marketwatch.com/investing/stock/FMCQF/company-profile?mod=mw_quote_tab
+getSector(): Health Care/Life Sciences
+UPDATE titles SET exchange='XETRA ',sectorYF='Healthcare',industryYF='Medical Care Facilities' WHERE title='FRESENIUS MEDICAL CARE ORD'
+UPDATE titles SET sectorMW='Health Care/Life Sciences',industryMW='Healthcare Provision' WHERE title='FRESENIUS MEDICAL CARE ORD'
+SELECT titleSQ FROM candidates WHERE isin='US09075V1026'
+SELECT * FROM titles WHERE title='BIONTECH SE ADR'
+INSERT INTO titles(title) VALUES('BIONTECH SE ADR')
+https://www.marketwatch.com/investing/stock/BNTX/company-profile?mod=mw_quote_tab
+getSector(): Health Care/Life Sciences
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Healthcare',industryYF='Biotechnology' WHERE title='BIONTECH SE ADR'
+UPDATE titles SET sectorMW='Health Care/Life Sciences',industryMW='Biotechnology' WHERE title='BIONTECH SE ADR'
+SELECT titleSQ FROM candidates WHERE isin='DE0006062144'
+SELECT * FROM titles WHERE title='COVESTRO AG'
+INSERT INTO titles(title) VALUES('COVESTRO AG')
+https://www.marketwatch.com/investing/stock/CVVTF/company-profile?mod=mw_quote_tab
+getSector(): Basic Materials/Resources
+UPDATE titles SET exchange='XETRA ',sectorYF='Basic Materials',industryYF='Specialty Chemicals' WHERE title='COVESTRO AG'
+UPDATE titles SET sectorMW='Basic Materials/Resources',industryMW='Chemicals' WHERE title='COVESTRO AG'
+SELECT titleSQ FROM candidates WHERE isin='CH0011432447'
+SELECT * FROM titles WHERE title='BASILEA N'
+INSERT INTO titles(title) VALUES('BASILEA N')
+https://www.marketwatch.com/investing/stock/BPMUF/company-profile?mod=mw_quote_tab
+getSector(): Health Care/Life Sciences
+UPDATE titles SET exchange='Swiss ',sectorYF='Healthcare',industryYF='Biotechnology' WHERE title='BASILEA N'
+UPDATE titles SET sectorMW='Health Care/Life Sciences',industryMW='Biotechnology' WHERE title='BASILEA N'
+SELECT titleSQ FROM candidates WHERE isin='DE000A0TGJ55'
+SELECT * FROM titles WHERE title='VARTA ORD'
+INSERT INTO titles(title) VALUES('VARTA ORD')
+https://www.marketwatch.com/investing/stock/VAR1/company-profile?countrycode=XE&mod=mw_quote_tab
+getSector(): Industrial Goods
+UPDATE titles SET exchange='XETRA ',sectorYF='Industrials',industryYF='Electrical Equipment & Parts' WHERE title='VARTA ORD'
+UPDATE titles SET sectorMW='Industrial Goods',industryMW='Industrial Electronics' WHERE title='VARTA ORD'
+SELECT titleSQ FROM candidates WHERE isin='CA1366351098'
+SELECT * FROM titles WHERE title='CANADIAN SOLAR ORD'
+INSERT INTO titles(title) VALUES('CANADIAN SOLAR ORD')
+https://www.marketwatch.com/investing/stock/CSIQ/company-profile?mod=mw_quote_tab
+getSector(): Industrial Goods
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Technology',industryYF='Solar' WHERE title='CANADIAN SOLAR ORD'
+UPDATE titles SET sectorMW='Industrial Goods',industryMW='Industrial Electronics' WHERE title='CANADIAN SOLAR ORD'
+SELECT titleSQ FROM candidates WHERE isin='US2473617023'
+SELECT * FROM titles WHERE title='DELTA AIR LINES ORD'
+INSERT INTO titles(title) VALUES('DELTA AIR LINES ORD')
+https://www.marketwatch.com/investing/stock/DAL/company-profile?mod=mw_quote_tab
+getSector(): Transportation/Logistics
+UPDATE titles SET exchange='NYSE ',sectorYF='Industrials',industryYF='Airlines' WHERE title='DELTA AIR LINES ORD'
+UPDATE titles SET sectorMW='Transportation/Logistics',industryMW='Passenger Airlines' WHERE title='DELTA AIR LINES ORD'
+SELECT titleSQ FROM candidates WHERE isin='GB00B10RZP78'
+SELECT * FROM titles WHERE title='UNILEVER ORD'
+INSERT INTO titles(title) VALUES('UNILEVER ORD')
+https://www.marketwatch.com/investing/stock/UNLYF/company-profile?mod=mw_quote_tab
+getSector(): Consumer Goods
+UPDATE titles SET exchange='LSE ',sectorYF='Consumer Defensive',industryYF='Household & Personal Products' WHERE title='UNILEVER ORD'
+UPDATE titles SET sectorMW='Consumer Goods',industryMW='Food Products' WHERE title='UNILEVER ORD'
+SELECT titleSQ FROM candidates WHERE isin='DE000SHL1006'
+SELECT * FROM titles WHERE title='SIEMENS HEALTHINEERS ORD'
+INSERT INTO titles(title) VALUES('SIEMENS HEALTHINEERS ORD')
+https://www.marketwatch.com/investing/stock/SEMHF/company-profile?mod=mw_quote_tab
+getSector(): Health Care/Life Sciences
+UPDATE titles SET exchange='XETRA ',sectorYF='Healthcare',industryYF='Diagnostics & Research' WHERE title='SIEMENS HEALTHINEERS ORD'
+UPDATE titles SET sectorMW='Health Care/Life Sciences',industryMW='Medical Equipment/Supplies' WHERE title='SIEMENS HEALTHINEERS ORD'
+SELECT titleSQ FROM candidates WHERE isin='CH0002178181'
+SELECT * FROM titles WHERE title='STADLER RAIL N'
+INSERT INTO titles(title) VALUES('STADLER RAIL N')
+https://www.marketwatch.com/investing/stock/0A0C/company-profile?countrycode=UK&mod=mw_quote_tab
+getSector(): Transportation/Logistics
+UPDATE titles SET exchange='Swiss ',sectorYF='Industrials',industryYF='Railroads' WHERE title='STADLER RAIL N'
+UPDATE titles SET sectorMW='Transportation/Logistics',industryMW='Railroads' WHERE title='STADLER RAIL N'
+SELECT titleSQ FROM candidates WHERE isin='US3755581036'
+SELECT * FROM titles WHERE title='GILEAD SCIENCES ORD'
+INSERT INTO titles(title) VALUES('GILEAD SCIENCES ORD')
+https://www.marketwatch.com/investing/stock/GILD/company-profile?mod=mw_quote_tab
+getSector(): Health Care/Life Sciences
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Healthcare',industryYF='Drug Manufacturers—General' WHERE title='GILEAD SCIENCES ORD'
+UPDATE titles SET sectorMW='Health Care/Life Sciences',industryMW='Biotechnology' WHERE title='GILEAD SCIENCES ORD'
+SELECT titleSQ FROM candidates WHERE isin='CH0432492467'
+SELECT * FROM titles WHERE title='ALCON N'
+INSERT INTO titles(title) VALUES('ALCON N')
+https://www.marketwatch.com/investing/stock/ALC/company-profile?mod=mw_quote_tab
+getSector(): failed CH0432492467
+getIndustry(): failed CH0432492467
+UPDATE titles SET exchange='Swiss ',sectorYF='Healthcare',industryYF='Medical Instruments & Supplies' WHERE title='ALCON N'
+UPDATE titles SET sectorMW='void',industryMW='void' WHERE title='ALCON N'
+SELECT titleSQ FROM candidates WHERE isin='US60770K1079'
+SELECT * FROM titles WHERE title='MODERNA ORD'
+INSERT INTO titles(title) VALUES('MODERNA ORD')
+https://www.marketwatch.com/investing/stock/MRNA/company-profile?mod=mw_quote_tab
+getSector(): N/A
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Healthcare',industryYF='Biotechnology' WHERE title='MODERNA ORD'
+UPDATE titles SET sectorMW='N/A',industryMW='N/A' WHERE title='MODERNA ORD'
+SELECT titleSQ FROM candidates WHERE isin='DE0005772206'
+SELECT * FROM titles WHERE title='FIELMANN ORD'
+INSERT INTO titles(title) VALUES('FIELMANN ORD')
+https://www.marketwatch.com/investing/stock/FIE/company-profile?countrycode=XE&mod=mw_quote_tab
+getSector(): Retail/Wholesale
+UPDATE titles SET exchange='XETRA ',sectorYF='Consumer Cyclical',industryYF='Specialty Retail' WHERE title='FIELMANN ORD'
+UPDATE titles SET sectorMW='Retail/Wholesale',industryMW='Specialty Retail' WHERE title='FIELMANN ORD'
+SELECT titleSQ FROM candidates WHERE isin='FR0000120644'
+SELECT * FROM titles WHERE title='DANONE ORD'
+INSERT INTO titles(title) VALUES('DANONE ORD')
+https://www.marketwatch.com/investing/stock/GPDNF/company-profile?mod=mw_quote_tab
+getSector(): Consumer Goods
+UPDATE titles SET exchange='Paris ',sectorYF='Consumer Defensive',industryYF='Packaged Foods' WHERE title='DANONE ORD'
+UPDATE titles SET sectorMW='Consumer Goods',industryMW='Food Products' WHERE title='DANONE ORD'
+SELECT titleSQ FROM candidates WHERE isin='DE0006047004'
+SELECT * FROM titles WHERE title='HEIDELBERGCEMENT ORD'
+INSERT INTO titles(title) VALUES('HEIDELBERGCEMENT ORD')
+https://www.marketwatch.com/investing/stock/HLBZF/company-profile?mod=mw_quote_tab
+getSector(): Real Estate/Construction
+UPDATE titles SET exchange='XETRA ',sectorYF='Basic Materials',industryYF='Building Materials' WHERE title='HEIDELBERGCEMENT ORD'
+UPDATE titles SET sectorMW='Real Estate/Construction',industryMW='Building Materials/Products' WHERE title='HEIDELBERGCEMENT ORD'
+SELECT titleSQ FROM candidates WHERE isin='US88160R1014'
+SELECT * FROM titles WHERE title='TESLA ORD'
+INSERT INTO titles(title) VALUES('TESLA ORD')
+https://www.marketwatch.com/investing/stock/TSLA/company-profile?mod=mw_quote_tab
+getSector(): Automotive
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Consumer Cyclical',industryYF='Auto Manufacturers' WHERE title='TESLA ORD'
+UPDATE titles SET sectorMW='Automotive',industryMW='Automobiles' WHERE title='TESLA ORD'
+SELECT titleSQ FROM candidates WHERE isin='US1912161007'
+SELECT * FROM titles WHERE title='COCA-COLA ORD'
+INSERT INTO titles(title) VALUES('COCA-COLA ORD')
+https://www.marketwatch.com/investing/stock/KO/company-profile?mod=mw_quote_tab
+getSector(): Consumer Goods
+UPDATE titles SET exchange='NYSE ',sectorYF='Consumer Defensive',industryYF='Beverages—Non-Alcoholic' WHERE title='COCA-COLA ORD'
+UPDATE titles SET sectorMW='Consumer Goods',industryMW='Non-Alcoholic Beverages/Drinks' WHERE title='COCA-COLA ORD'
+SELECT titleSQ FROM candidates WHERE isin='US37045V1008'
+SELECT * FROM titles WHERE title='GENERAL MOTORS ORD'
+INSERT INTO titles(title) VALUES('GENERAL MOTORS ORD')
+https://www.marketwatch.com/investing/stock/GM/company-profile?mod=mw_quote_tab
+getSector(): Automotive
+UPDATE titles SET exchange='NYSE ',sectorYF='Consumer Cyclical',industryYF='Auto Manufacturers' WHERE title='GENERAL MOTORS ORD'
+UPDATE titles SET sectorMW='Automotive',industryMW='Automobiles' WHERE title='GENERAL MOTORS ORD'
+SELECT titleSQ FROM candidates WHERE isin='US17275R1023'
+SELECT * FROM titles WHERE title='CISCO SYSTEMS ORD'
+INSERT INTO titles(title) VALUES('CISCO SYSTEMS ORD')
+https://www.marketwatch.com/investing/stock/CSCO/company-profile?mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Technology',industryYF='Communication Equipment' WHERE title='CISCO SYSTEMS ORD'
+UPDATE titles SET sectorMW='Technology',industryMW='Networking' WHERE title='CISCO SYSTEMS ORD'
+SELECT titleSQ FROM candidates WHERE isin='US08862E1091'
+SELECT * FROM titles WHERE title='BEYOND MEAT ORD'
+INSERT INTO titles(title) VALUES('BEYOND MEAT ORD')
+https://www.marketwatch.com/investing/stock/BYND/company-profile?mod=mw_quote_tab
+getSector(): Consumer Goods
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Consumer Defensive',industryYF='Packaged Foods' WHERE title='BEYOND MEAT ORD'
+UPDATE titles SET sectorMW='Consumer Goods',industryMW='Food Products' WHERE title='BEYOND MEAT ORD'
+SELECT titleSQ FROM candidates WHERE isin='US98422D1054'
+SELECT * FROM titles WHERE title='XPENG ADR REP 2 ORD'
+INSERT INTO titles(title) VALUES('XPENG ADR REP 2 ORD')
+https://www.marketwatch.com/investing/stock/XPEV/company-profile?mod=mw_quote_tab
+getSector(): N/A
+UPDATE titles SET exchange='NYSE ',sectorYF='Consumer Cyclical',industryYF='Auto Manufacturers' WHERE title='XPENG ADR REP 2 ORD'
+UPDATE titles SET sectorMW='N/A',industryMW='N/A' WHERE title='XPENG ADR REP 2 ORD'
+SELECT titleSQ FROM candidates WHERE isin='CH0038389992'
+SELECT * FROM titles WHERE title='BB BIOTECH N'
+INSERT INTO titles(title) VALUES('BB BIOTECH N')
+https://www.marketwatch.com/investing/stock/0JYO/company-profile?countrycode=UK&mod=mw_quote_tab
+getSector(): Health Care/Life Sciences
+UPDATE titles SET exchange='Swiss ',sectorYF='Healthcare',industryYF='Biotechnology' WHERE title='BB BIOTECH N'
+UPDATE titles SET sectorMW='Health Care/Life Sciences',industryMW='Biotechnology' WHERE title='BB BIOTECH N'
+SELECT * FROM titles WHERE title='BB BIOTECH ORD'
+INSERT INTO titles(title) VALUES('BB BIOTECH ORD')
+https://www.marketwatch.com/investing/stock/0JYO/company-profile?countrycode=UK&mod=mw_quote_tab
+getSector(): Health Care/Life Sciences
+UPDATE titles SET exchange='Swiss ',sectorYF='Healthcare',industryYF='Biotechnology' WHERE title='BB BIOTECH ORD'
+UPDATE titles SET sectorMW='Health Care/Life Sciences',industryMW='Biotechnology' WHERE title='BB BIOTECH ORD'
+SELECT titleSQ FROM candidates WHERE isin='US67066G1040'
+SELECT * FROM titles WHERE title='NVIDIA ORD'
+INSERT INTO titles(title) VALUES('NVIDIA ORD')
+https://www.marketwatch.com/investing/stock/NVDA/company-profile?mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Technology',industryYF='Semiconductors' WHERE title='NVIDIA ORD'
+UPDATE titles SET sectorMW='Technology',industryMW='Semiconductors' WHERE title='NVIDIA ORD'
+SELECT titleSQ FROM candidates WHERE isin='FR0000051732'
+SELECT * FROM titles WHERE title='ATOS ORD'
+INSERT INTO titles(title) VALUES('ATOS ORD')
+https://www.marketwatch.com/investing/stock/AEXAF/company-profile?mod=mw_quote_tab
+getSector(): Business/Consumer Services
+UPDATE titles SET exchange='Paris ',sectorYF='Technology',industryYF='Information Technology Services' WHERE title='ATOS ORD'
+UPDATE titles SET sectorMW='Business/Consumer Services',industryMW='Computer Services' WHERE title='ATOS ORD'
+SELECT titleSQ FROM candidates WHERE isin='US72352L1061'
+SELECT * FROM titles WHERE title='PINTEREST CL A ORD'
+INSERT INTO titles(title) VALUES('PINTEREST CL A ORD')
+https://www.marketwatch.com/investing/stock/PINS/company-profile?mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='NYSE ',sectorYF='Communication Services',industryYF='Internet Content & Information' WHERE title='PINTEREST CL A ORD'
+UPDATE titles SET sectorMW='Technology',industryMW='Internet/Online' WHERE title='PINTEREST CL A ORD'
+SELECT titleSQ FROM candidates WHERE isin='US9100471096'
+SELECT * FROM titles WHERE title='UNITED AIRLINES HOLDINGS ORD'
+INSERT INTO titles(title) VALUES('UNITED AIRLINES HOLDINGS ORD')
+https://www.marketwatch.com/investing/stock/UAL/company-profile?mod=mw_quote_tab
+getSector(): Transportation/Logistics
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Industrials',industryYF='Airlines' WHERE title='UNITED AIRLINES HOLDINGS ORD'
+UPDATE titles SET sectorMW='Transportation/Logistics',industryMW='Passenger Airlines' WHERE title='UNITED AIRLINES HOLDINGS ORD'
+SELECT titleSQ FROM candidates WHERE isin='US0378331005'
+SELECT * FROM titles WHERE title='APPLE ORD'
+INSERT INTO titles(title) VALUES('APPLE ORD')
+https://www.marketwatch.com/investing/stock/AAPL/company-profile?mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Technology',industryYF='Consumer Electronics' WHERE title='APPLE ORD'
+UPDATE titles SET sectorMW='Technology',industryMW='Computers/Consumer Electronics' WHERE title='APPLE ORD'
+SELECT titleSQ FROM candidates WHERE isin='CH0012005267'
+SELECT * FROM titles WHERE title='NOVARTIS N'
+INSERT INTO titles(title) VALUES('NOVARTIS N')
+https://www.marketwatch.com/investing/stock/NVSEF/company-profile?mod=mw_quote_tab
+getSector(): Health Care/Life Sciences
+UPDATE titles SET exchange='Swiss ',sectorYF='Healthcare',industryYF='Drug Manufacturers—General' WHERE title='NOVARTIS N'
+UPDATE titles SET sectorMW='Health Care/Life Sciences',industryMW='Pharmaceuticals' WHERE title='NOVARTIS N'
+SELECT titleSQ FROM candidates WHERE isin='US00507V1098'
+SELECT * FROM titles WHERE title='ACTIVISION BLIZZARD ORD'
+INSERT INTO titles(title) VALUES('ACTIVISION BLIZZARD ORD')
+https://www.marketwatch.com/investing/stock/ATVI/company-profile?mod=mw_quote_tab
+getSector(): Consumer Goods
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Communication Services',industryYF='Electronic Gaming & Multimedia' WHERE title='ACTIVISION BLIZZARD ORD'
+UPDATE titles SET sectorMW='Consumer Goods',industryMW='Toys & Games' WHERE title='ACTIVISION BLIZZARD ORD'
+SELECT titleSQ FROM candidates WHERE isin='NL0012015705'
+SELECT * FROM titles WHERE title='JUST EAT TAKEAWAY ORD'
+INSERT INTO titles(title) VALUES('JUST EAT TAKEAWAY ORD')
+https://www.marketwatch.com/investing/stock/TKAYF/company-profile?mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='Amsterdam ',sectorYF='Consumer Cyclical',industryYF='Internet Retail' WHERE title='JUST EAT TAKEAWAY ORD'
+UPDATE titles SET sectorMW='Technology',industryMW='Emerging Technologies' WHERE title='JUST EAT TAKEAWAY ORD'
+SELECT titleSQ FROM candidates WHERE isin='CH0190891181'
+SELECT * FROM titles WHERE title='LEONTEQ N'
+INSERT INTO titles(title) VALUES('LEONTEQ N')
+https://www.marketwatch.com/investing/stock/LEON/company-profile?countrycode=CH&mod=mw_quote_tab
+getSector(): Financial Services
+UPDATE titles SET exchange='Swiss ',sectorYF='Financial Services',industryYF='Financial Conglomerates' WHERE title='LEONTEQ N'
+UPDATE titles SET sectorMW='Financial Services',industryMW='Investment Advisors' WHERE title='LEONTEQ N'
+SELECT titleSQ FROM candidates WHERE isin='DE0006070006'
+SELECT * FROM titles WHERE title='HOCHTIEF ORD'
+INSERT INTO titles(title) VALUES('HOCHTIEF ORD')
+https://www.marketwatch.com/investing/stock/0EPW/company-profile?countrycode=UK&mod=mw_quote_tab
+getSector(): Real Estate/Construction
+UPDATE titles SET exchange='XETRA ',sectorYF='Industrials',industryYF='Engineering & Construction' WHERE title='HOCHTIEF ORD'
+UPDATE titles SET sectorMW='Real Estate/Construction',industryMW='Construction' WHERE title='HOCHTIEF ORD'
+SELECT titleSQ FROM candidates WHERE isin='US7710491033'
+SELECT * FROM titles WHERE title='ROBLOX CL A ORD'
+INSERT INTO titles(title) VALUES('ROBLOX CL A ORD')
+https://www.marketwatch.com/investing/stock/RBLX/company-profile?mod=mw_quote_tab
+getSector(): Consumer Goods
+UPDATE titles SET exchange='NYSE ',sectorYF='Communication Services',industryYF='Electronic Gaming & Multimedia' WHERE title='ROBLOX CL A ORD'
+UPDATE titles SET sectorMW='Consumer Goods',industryMW='Toys & Games' WHERE title='ROBLOX CL A ORD'
+SELECT titleSQ FROM candidates WHERE isin='DE000A161408'
+SELECT * FROM titles WHERE title='HELLOFRESH ORD'
+INSERT INTO titles(title) VALUES('HELLOFRESH ORD')
+https://www.marketwatch.com/investing/stock/HLFFF/company-profile?mod=mw_quote_tab
+getSector(): N/A
+UPDATE titles SET exchange='XETRA ',sectorYF='Consumer Cyclical',industryYF='Restaurants' WHERE title='HELLOFRESH ORD'
+UPDATE titles SET sectorMW='N/A',industryMW='N/A' WHERE title='HELLOFRESH ORD'
+SELECT titleSQ FROM candidates WHERE isin='US2786421030'
+SELECT * FROM titles WHERE title='EBAY ORD'
+INSERT INTO titles(title) VALUES('EBAY ORD')
+https://www.marketwatch.com/investing/stock/EBAY/company-profile?mod=mw_quote_tab
+getSector(): Retail/Wholesale
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Consumer Cyclical',industryYF='Internet Retail' WHERE title='EBAY ORD'
+UPDATE titles SET sectorMW='Retail/Wholesale',industryMW='Mixed Retailing' WHERE title='EBAY ORD'
+SELECT titleSQ FROM candidates WHERE isin='CH0210483332'
+SELECT * FROM titles WHERE title='RICHEMONT N'
+INSERT INTO titles(title) VALUES('RICHEMONT N')
+https://www.marketwatch.com/investing/stock/CFRHF/company-profile?mod=mw_quote_tab
+getSector(): Consumer Goods
+UPDATE titles SET exchange='Swiss ',sectorYF='Consumer Cyclical',industryYF='Luxury Goods' WHERE title='RICHEMONT N'
+UPDATE titles SET sectorMW='Consumer Goods',industryMW='Luxury Goods' WHERE title='RICHEMONT N'
+SELECT titleSQ FROM candidates WHERE isin='US8962391004'
+SELECT * FROM titles WHERE title='TRIMBLE ORD'
+INSERT INTO titles(title) VALUES('TRIMBLE ORD')
+https://www.marketwatch.com/investing/stock/TRMB/company-profile?mod=mw_quote_tab
+getSector(): Industrial Goods
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Technology',industryYF='Scientific & Technical Instruments' WHERE title='TRIMBLE ORD'
+UPDATE titles SET sectorMW='Industrial Goods',industryMW='Precision Products' WHERE title='TRIMBLE ORD'
+SELECT titleSQ FROM candidates WHERE isin='CH0012335540'
+SELECT * FROM titles WHERE title='VONTOBEL N'
+INSERT INTO titles(title) VALUES('VONTOBEL N')
+https://www.marketwatch.com/investing/stock/VONN/company-profile?countrycode=CH&mod=mw_quote_tab
+getSector(): Financial Services
+UPDATE titles SET exchange='Swiss ',sectorYF='Financial Services',industryYF='Asset Management' WHERE title='VONTOBEL N'
+UPDATE titles SET sectorMW='Financial Services',industryMW='Investment Advisors' WHERE title='VONTOBEL N'
+SELECT titleSQ FROM candidates WHERE isin='DE0006048432'
+SELECT * FROM titles WHERE title='HENKEL  KGAA PRF'
+INSERT INTO titles(title) VALUES('HENKEL  KGAA PRF')
+https://www.marketwatch.com/investing/stock/HENOF/company-profile?mod=mw_quote_tab
+getSector(): Consumer Goods
+UPDATE titles SET exchange='XETRA ',sectorYF='Consumer Defensive',industryYF='Household & Personal Products' WHERE title='HENKEL  KGAA PRF'
+UPDATE titles SET sectorMW='Consumer Goods',industryMW='Nondurable Household Products' WHERE title='HENKEL  KGAA PRF'
+SELECT titleSQ FROM candidates WHERE isin='CH0126881561'
+SELECT * FROM titles WHERE title='SWISS RE N'
+INSERT INTO titles(title) VALUES('SWISS RE N')
+https://www.marketwatch.com/investing/stock/SREN/company-profile?countrycode=CH&mod=mw_quote_tab
+getSector(): Financial Services
+UPDATE titles SET exchange='Swiss ',sectorYF='Financial Services',industryYF='Insurance—Reinsurance' WHERE title='SWISS RE N'
+UPDATE titles SET sectorMW='Financial Services',industryMW='Reinsurance' WHERE title='SWISS RE N'
+SELECT titleSQ FROM candidates WHERE isin='NL0000235190'
+SELECT * FROM titles WHERE title='AIRBUS ORD'
+INSERT INTO titles(title) VALUES('AIRBUS ORD')
+https://www.marketwatch.com/investing/stock/EADSF/company-profile?mod=mw_quote_tab
+getSector(): Industrial Goods
+UPDATE titles SET exchange='Paris ',sectorYF='Industrials',industryYF='Aerospace & Defense' WHERE title='AIRBUS ORD'
+UPDATE titles SET sectorMW='Industrial Goods',industryMW='Aerospace Products/Parts' WHERE title='AIRBUS ORD'
+SELECT titleSQ FROM candidates WHERE isin='CH0033361673'
+SELECT * FROM titles WHERE title='U-BLOX N'
+INSERT INTO titles(title) VALUES('U-BLOX N')
+https://www.marketwatch.com/investing/stock/UBXN/company-profile?countrycode=CH&mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='Swiss ',sectorYF='Technology',industryYF='Communication Equipment' WHERE title='U-BLOX N'
+UPDATE titles SET sectorMW='Technology',industryMW='Semiconductors' WHERE title='U-BLOX N'
+SELECT titleSQ FROM candidates WHERE isin='US01609W1027'
+SELECT * FROM titles WHERE title='ALIBABA GROUP HOLDING ADR REP'
+INSERT INTO titles(title) VALUES('ALIBABA GROUP HOLDING ADR REP')
+https://www.marketwatch.com/investing/stock/BABA/company-profile?mod=mw_quote_tab
+getSector(): Retail/Wholesale
+UPDATE titles SET exchange='NYSE ',sectorYF='Consumer Cyclical',industryYF='Internet Retail' WHERE title='ALIBABA GROUP HOLDING ADR REP'
+UPDATE titles SET sectorMW='Retail/Wholesale',industryMW='Mixed Retailing' WHERE title='ALIBABA GROUP HOLDING ADR REP'
+SELECT titleSQ FROM candidates WHERE isin='CNE100000296'
+SELECT * FROM titles WHERE title='BYD COMPANY ORD H'
+INSERT INTO titles(title) VALUES('BYD COMPANY ORD H')
+https://www.marketwatch.com/investing/stock/BYDDF/company-profile?mod=mw_quote_tab
+getSector(): Automotive
+UPDATE titles SET exchange='HKSE ',sectorYF='Consumer Cyclical',industryYF='Auto Manufacturers' WHERE title='BYD COMPANY ORD H'
+UPDATE titles SET sectorMW='Automotive',industryMW='Automobiles' WHERE title='BYD COMPANY ORD H'
+SELECT titleSQ FROM candidates WHERE isin='FR0000120578'
+SELECT * FROM titles WHERE title='SANOFI ORD'
+INSERT INTO titles(title) VALUES('SANOFI ORD')
+https://www.marketwatch.com/investing/stock/SNYNF/company-profile?mod=mw_quote_tab
+getSector(): Health Care/Life Sciences
+UPDATE titles SET exchange='Paris ',sectorYF='Healthcare',industryYF='Drug Manufacturers—General' WHERE title='SANOFI ORD'
+UPDATE titles SET sectorMW='Health Care/Life Sciences',industryMW='Pharmaceuticals' WHERE title='SANOFI ORD'
+SELECT titleSQ FROM candidates WHERE isin='US6516391066'
+SELECT * FROM titles WHERE title='NEWMONT ORD'
+INSERT INTO titles(title) VALUES('NEWMONT ORD')
+https://www.marketwatch.com/investing/stock/NEM/company-profile?mod=mw_quote_tab
+getSector(): Basic Materials/Resources
+UPDATE titles SET exchange='NYSE ',sectorYF='Basic Materials',industryYF='Gold' WHERE title='NEWMONT ORD'
+UPDATE titles SET sectorMW='Basic Materials/Resources',industryMW='Gold' WHERE title='NEWMONT ORD'
+SELECT titleSQ FROM candidates WHERE isin='GB0009895292'
+SELECT * FROM titles WHERE title='ASTRAZENECA ORD'
+INSERT INTO titles(title) VALUES('ASTRAZENECA ORD')
+https://www.marketwatch.com/investing/stock/AZNCF/company-profile?mod=mw_quote_tab
+getSector(): Health Care/Life Sciences
+UPDATE titles SET exchange='LSE ',sectorYF='Healthcare',industryYF='Drug Manufacturers—General' WHERE title='ASTRAZENECA ORD'
+UPDATE titles SET sectorMW='Health Care/Life Sciences',industryMW='Biotechnology' WHERE title='ASTRAZENECA ORD'
+SELECT titleSQ FROM candidates WHERE isin='CH0360674466'
+SELECT * FROM titles WHERE title='GALENICA N'
+INSERT INTO titles(title) VALUES('GALENICA N')
+https://www.marketwatch.com/investing/stock/GALE/company-profile?countrycode=CH&mod=mw_quote_tab
+getSector(): Retail/Wholesale
+UPDATE titles SET exchange='Swiss ',sectorYF='Healthcare',industryYF='Medical Distribution' WHERE title='GALENICA N'
+UPDATE titles SET sectorMW='Retail/Wholesale',industryMW='Drug Retail' WHERE title='GALENICA N'
+SELECT titleSQ FROM candidates WHERE isin='US0090661010'
+SELECT * FROM titles WHERE title='AIRBNB CL A ORD'
+INSERT INTO titles(title) VALUES('AIRBNB CL A ORD')
+https://www.marketwatch.com/investing/stock/ABNB/company-profile?mod=mw_quote_tab
+getSector(): Leisure/Arts/Hospitality
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Communication Services',industryYF='Internet Content & Information' WHERE title='AIRBNB CL A ORD'
+UPDATE titles SET sectorMW='Leisure/Arts/Hospitality',industryMW='Hotels' WHERE title='AIRBNB CL A ORD'
+SELECT titleSQ FROM candidates WHERE isin='US5951121038'
+SELECT * FROM titles WHERE title='MICRON TECHNOLOGY ORD'
+INSERT INTO titles(title) VALUES('MICRON TECHNOLOGY ORD')
+https://www.marketwatch.com/investing/stock/MU/company-profile?mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Technology',industryYF='Semiconductors' WHERE title='MICRON TECHNOLOGY ORD'
+UPDATE titles SET sectorMW='Technology',industryMW='Semiconductors' WHERE title='MICRON TECHNOLOGY ORD'
+SELECT titleSQ FROM candidates WHERE isin='DE0005200000'
+SELECT * FROM titles WHERE title='BEIERSDORF ORD'
+INSERT INTO titles(title) VALUES('BEIERSDORF ORD')
+https://www.marketwatch.com/investing/stock/BDRFF/company-profile?mod=mw_quote_tab
+getSector(): Consumer Goods
+UPDATE titles SET exchange='XETRA ',sectorYF='Consumer Defensive',industryYF='Household & Personal Products' WHERE title='BEIERSDORF ORD'
+UPDATE titles SET sectorMW='Consumer Goods',industryMW='Personal Care Products/Appliances' WHERE title='BEIERSDORF ORD'
+SELECT titleSQ FROM candidates WHERE isin='US1729674242'
+SELECT * FROM titles WHERE title='CITIGROUP ORD'
+INSERT INTO titles(title) VALUES('CITIGROUP ORD')
+https://www.marketwatch.com/investing/stock/C/company-profile?mod=mw_quote_tab
+getSector(): Financial Services
+UPDATE titles SET exchange='NYSE ',sectorYF='Financial Services',industryYF='Banks—Diversified' WHERE title='CITIGROUP ORD'
+UPDATE titles SET sectorMW='Financial Services',industryMW='Major International Banks' WHERE title='CITIGROUP ORD'
+SELECT titleSQ FROM candidates WHERE isin='US3364331070'
+SELECT * FROM titles WHERE title='FIRST SOLAR ORD'
+INSERT INTO titles(title) VALUES('FIRST SOLAR ORD')
+https://www.marketwatch.com/investing/stock/FSLR/company-profile?mod=mw_quote_tab
+getSector(): Industrial Goods
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Technology',industryYF='Solar' WHERE title='FIRST SOLAR ORD'
+UPDATE titles SET sectorMW='Industrial Goods',industryMW='Industrial Electronics' WHERE title='FIRST SOLAR ORD'
+SELECT titleSQ FROM candidates WHERE isin='NL0013267909'
+SELECT * FROM titles WHERE title='AKZO NOBEL ORD'
+INSERT INTO titles(title) VALUES('AKZO NOBEL ORD')
+https://www.marketwatch.com/investing/stock/AKZOF/company-profile?mod=mw_quote_tab
+getSector(): Basic Materials/Resources
+UPDATE titles SET exchange='Amsterdam ',sectorYF='Basic Materials',industryYF='Specialty Chemicals' WHERE title='AKZO NOBEL ORD'
+UPDATE titles SET sectorMW='Basic Materials/Resources',industryMW='Chemicals' WHERE title='AKZO NOBEL ORD'
+SELECT titleSQ FROM candidates WHERE isin='CH0225173167'
+SELECT * FROM titles WHERE title='CEMBRA MONEY BANK N'
+INSERT INTO titles(title) VALUES('CEMBRA MONEY BANK N')
+https://www.marketwatch.com/investing/stock/CMBN/company-profile?countrycode=CH&mod=mw_quote_tab
+getSector(): Financial Services
+UPDATE titles SET exchange='Swiss ',sectorYF='Financial Services',industryYF='Banks—Regional' WHERE title='CEMBRA MONEY BANK N'
+UPDATE titles SET sectorMW='Financial Services',industryMW='Banking' WHERE title='CEMBRA MONEY BANK N'
+SELECT titleSQ FROM candidates WHERE isin='CH0126673539'
+SELECT * FROM titles WHERE title='DKSH N'
+INSERT INTO titles(title) VALUES('DKSH N')
+https://www.marketwatch.com/investing/stock/DKSH/company-profile?countrycode=CH&mod=mw_quote_tab
+getSector(): Business/Consumer Services
+UPDATE titles SET exchange='Swiss ',sectorYF='Industrials',industryYF='Consulting Services' WHERE title='DKSH N'
+UPDATE titles SET sectorMW='Business/Consumer Services',industryMW='Advertising/Marketing/Public Relations' WHERE title='DKSH N'
+SELECT titleSQ FROM candidates WHERE isin='DE000A288904'
+SELECT * FROM titles WHERE title='COMPUGROUP MEDICAL N ORD'
+INSERT INTO titles(title) VALUES('COMPUGROUP MEDICAL N ORD')
+https://www.marketwatch.com/investing/stock/COP/company-profile?countrycode=XE&mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='XETRA ',sectorYF='Healthcare',industryYF='Health Information Services' WHERE title='COMPUGROUP MEDICAL N ORD'
+UPDATE titles SET sectorMW='Technology',industryMW='Software' WHERE title='COMPUGROUP MEDICAL N ORD'
+SELECT titleSQ FROM candidates WHERE isin='DE0006969603'
+SELECT * FROM titles WHERE title='PUMA ORD'
+INSERT INTO titles(title) VALUES('PUMA ORD')
+https://www.marketwatch.com/investing/stock/PMMAF/company-profile?mod=mw_quote_tab
+getSector(): Consumer Goods
+UPDATE titles SET exchange='XETRA ',sectorYF='Consumer Cyclical',industryYF='Footwear & Accessories' WHERE title='PUMA ORD'
+UPDATE titles SET sectorMW='Consumer Goods',industryMW='Footwear' WHERE title='PUMA ORD'
+SELECT titleSQ FROM candidates WHERE isin='US68389X1054'
+SELECT * FROM titles WHERE title='ORACLE ORD'
+INSERT INTO titles(title) VALUES('ORACLE ORD')
+https://www.marketwatch.com/investing/stock/ORCL/company-profile?mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='NYSE ',sectorYF='Technology',industryYF='Software—Infrastructure' WHERE title='ORACLE ORD'
+UPDATE titles SET sectorMW='Technology',industryMW='Software' WHERE title='ORACLE ORD'
+SELECT titleSQ FROM candidates WHERE isin='DE000A2E4K43'
+SELECT * FROM titles WHERE title='DELIVERY HERO ORD'
+INSERT INTO titles(title) VALUES('DELIVERY HERO ORD')
+https://www.marketwatch.com/investing/stock/DLVHF/company-profile?mod=mw_quote_tab
+getSector(): Leisure/Arts/Hospitality
+UPDATE titles SET exchange='XETRA ',sectorYF='Consumer Cyclical',industryYF='Internet Retail' WHERE title='DELIVERY HERO ORD'
+UPDATE titles SET sectorMW='Leisure/Arts/Hospitality',industryMW='Restaurants' WHERE title='DELIVERY HERO ORD'
+SELECT titleSQ FROM candidates WHERE isin='FR0000125486'
+SELECT * FROM titles WHERE title='VINCI ORD'
+INSERT INTO titles(title) VALUES('VINCI ORD')
+https://www.marketwatch.com/investing/stock/VCISF/company-profile?mod=mw_quote_tab
+getSector(): Real Estate/Construction
+UPDATE titles SET exchange='Paris ',sectorYF='Industrials',industryYF='Engineering & Construction' WHERE title='VINCI ORD'
+UPDATE titles SET sectorMW='Real Estate/Construction',industryMW='Construction' WHERE title='VINCI ORD'
+SELECT titleSQ FROM candidates WHERE isin='NL0013654783'
+SELECT * FROM titles WHERE title='PROSUS ORD'
+INSERT INTO titles(title) VALUES('PROSUS ORD')
+https://www.marketwatch.com/investing/stock/PROSF/company-profile?mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='Amsterdam ',sectorYF='Communication Services',industryYF='Internet Content & Information' WHERE title='PROSUS ORD'
+UPDATE titles SET sectorMW='Technology',industryMW='Internet/Online' WHERE title='PROSUS ORD'
+SELECT titleSQ FROM candidates WHERE isin='US6541061031'
+SELECT * FROM titles WHERE title='NIKE CL B ORD'
+INSERT INTO titles(title) VALUES('NIKE CL B ORD')
+https://www.marketwatch.com/investing/stock/NKE/company-profile?mod=mw_quote_tab
+getSector(): Consumer Goods
+UPDATE titles SET exchange='NYSE ',sectorYF='Consumer Cyclical',industryYF='Footwear & Accessories' WHERE title='NIKE CL B ORD'
+UPDATE titles SET sectorMW='Consumer Goods',industryMW='Footwear' WHERE title='NIKE CL B ORD'
+SELECT titleSQ FROM candidates WHERE isin='CH0038863350'
+SELECT * FROM titles WHERE title='NESTLE N'
+INSERT INTO titles(title) VALUES('NESTLE N')
+https://www.marketwatch.com/investing/stock/NSRGF/company-profile?mod=mw_quote_tab
+getSector(): Consumer Goods
+UPDATE titles SET exchange='Swiss ',sectorYF='Consumer Defensive',industryYF='Packaged Foods' WHERE title='NESTLE N'
+UPDATE titles SET sectorMW='Consumer Goods',industryMW='Food Products' WHERE title='NESTLE N'
+SELECT titleSQ FROM candidates WHERE isin='US47215P1066'
+SELECT * FROM titles WHERE title='JD.COM ADR REP 2 CL A ORD'
+INSERT INTO titles(title) VALUES('JD.COM ADR REP 2 CL A ORD')
+https://www.marketwatch.com/investing/stock/JD/company-profile?mod=mw_quote_tab
+getSector(): Retail/Wholesale
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Consumer Cyclical',industryYF='Internet Retail' WHERE title='JD.COM ADR REP 2 CL A ORD'
+UPDATE titles SET sectorMW='Retail/Wholesale',industryMW='Mixed Retailing' WHERE title='JD.COM ADR REP 2 CL A ORD'
+SELECT titleSQ FROM candidates WHERE isin='CH0364749348'
+SELECT * FROM titles WHERE title='VIFOR N'
+INSERT INTO titles(title) VALUES('VIFOR N')
+https://www.marketwatch.com/investing/stock/GNHAF/company-profile?mod=mw_quote_tab
+getSector(): Health Care/Life Sciences
+UPDATE titles SET exchange='Swiss ',sectorYF='Healthcare',industryYF='Drug Manufacturers—Specialty & Generic' WHERE title='VIFOR N'
+UPDATE titles SET sectorMW='Health Care/Life Sciences',industryMW='Pharmaceuticals' WHERE title='VIFOR N'
+SELECT titleSQ FROM candidates WHERE isin='DE0007164600'
+SELECT * FROM titles WHERE title='SAP ORD'
+INSERT INTO titles(title) VALUES('SAP ORD')
+https://www.marketwatch.com/investing/stock/SAPGF/company-profile?mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='XETRA ',sectorYF='Technology',industryYF='Software—Application' WHERE title='SAP ORD'
+UPDATE titles SET sectorMW='Technology',industryMW='Software' WHERE title='SAP ORD'
+SELECT titleSQ FROM candidates WHERE isin='FR0000125338'
+SELECT * FROM titles WHERE title='CAPGEMINI ORD'
+INSERT INTO titles(title) VALUES('CAPGEMINI ORD')
+https://www.marketwatch.com/investing/stock/CAPMF/company-profile?mod=mw_quote_tab
+getSector(): Business/Consumer Services
+UPDATE titles SET exchange='Paris ',sectorYF='Technology',industryYF='Information Technology Services' WHERE title='CAPGEMINI ORD'
+UPDATE titles SET sectorMW='Business/Consumer Services',industryMW='Computer Services' WHERE title='CAPGEMINI ORD'
+SELECT titleSQ FROM candidates WHERE isin='FR0000125007'
+SELECT * FROM titles WHERE title='SAINT GOBAIN ORD'
+INSERT INTO titles(title) VALUES('SAINT GOBAIN ORD')
+https://www.marketwatch.com/investing/stock/CODGF/company-profile?mod=mw_quote_tab
+getSector(): Real Estate/Construction
+UPDATE titles SET exchange='Paris ',sectorYF='Industrials',industryYF='Building Products & Equipment' WHERE title='SAINT GOBAIN ORD'
+UPDATE titles SET sectorMW='Real Estate/Construction',industryMW='Building Materials/Products' WHERE title='SAINT GOBAIN ORD'
+SELECT titleSQ FROM candidates WHERE isin='CH0003671440'
+SELECT * FROM titles WHERE title='RIETER N'
+INSERT INTO titles(title) VALUES('RIETER N')
+https://www.marketwatch.com/investing/stock/RIEN/company-profile?countrycode=CH&mod=mw_quote_tab
+getSector(): Industrial Goods
+UPDATE titles SET exchange='Swiss ',sectorYF='Industrials',industryYF='Specialty Industrial Machinery' WHERE title='RIETER N'
+UPDATE titles SET sectorMW='Industrial Goods',industryMW='Industrial Machinery' WHERE title='RIETER N'
+SELECT titleSQ FROM candidates WHERE isin='US30303M1027'
+SELECT * FROM titles WHERE title='META PLATFORMS CL A ORD'
+INSERT INTO titles(title) VALUES('META PLATFORMS CL A ORD')
+https://www.marketwatch.com/investing/stock/FB/company-profile?mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Communication Services',industryYF='Internet Content & Information' WHERE title='META PLATFORMS CL A ORD'
+UPDATE titles SET sectorMW='Technology',industryMW='Internet/Online' WHERE title='META PLATFORMS CL A ORD'
+SELECT titleSQ FROM candidates WHERE isin='US1491231015'
+SELECT * FROM titles WHERE title='CATERPILLAR ORD'
+INSERT INTO titles(title) VALUES('CATERPILLAR ORD')
+https://www.marketwatch.com/investing/stock/CAT/company-profile?mod=mw_quote_tab
+getSector(): Industrial Goods
+UPDATE titles SET exchange='NYSE ',sectorYF='Industrials',industryYF='Farm & Heavy Construction Machinery' WHERE title='CATERPILLAR ORD'
+UPDATE titles SET sectorMW='Industrial Goods',industryMW='Mobile Machinery' WHERE title='CATERPILLAR ORD'
+SELECT titleSQ FROM candidates WHERE isin='DE0007236101'
+SELECT * FROM titles WHERE title='SIEMENS N ORD'
+INSERT INTO titles(title) VALUES('SIEMENS N ORD')
+https://www.marketwatch.com/investing/stock/SMAWF/company-profile?mod=mw_quote_tab
+getSector(): Business/Consumer Services
+UPDATE titles SET exchange='XETRA ',sectorYF='Industrials',industryYF='Specialty Industrial Machinery' WHERE title='SIEMENS N ORD'
+UPDATE titles SET sectorMW='Business/Consumer Services',industryMW='Diversified Holding Companies' WHERE title='SIEMENS N ORD'
+SELECT titleSQ FROM candidates WHERE isin='US6700024010'
+SELECT * FROM titles WHERE title='NOVAVAX ORD'
+INSERT INTO titles(title) VALUES('NOVAVAX ORD')
+https://www.marketwatch.com/investing/stock/NVAX/company-profile?mod=mw_quote_tab
+getSector(): Health Care/Life Sciences
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Healthcare',industryYF='Biotechnology' WHERE title='NOVAVAX ORD'
+UPDATE titles SET sectorMW='Health Care/Life Sciences',industryMW='Pharmaceuticals' WHERE title='NOVAVAX ORD'
+SELECT titleSQ FROM candidates WHERE isin='FR0000073272'
+SELECT * FROM titles WHERE title='SAFRAN ORD'
+INSERT INTO titles(title) VALUES('SAFRAN ORD')
+https://www.marketwatch.com/investing/stock/SAFRF/company-profile?mod=mw_quote_tab
+getSector(): Industrial Goods
+UPDATE titles SET exchange='Paris ',sectorYF='Industrials',industryYF='Aerospace & Defense' WHERE title='SAFRAN ORD'
+UPDATE titles SET sectorMW='Industrial Goods',industryMW='Aerospace Products/Parts' WHERE title='SAFRAN ORD'
+SELECT titleSQ FROM candidates WHERE isin='DE0007664039'
+SELECT * FROM titles WHERE title='VOLKSWAGEN NV PRF'
+INSERT INTO titles(title) VALUES('VOLKSWAGEN NV PRF')
+https://www.marketwatch.com/investing/stock/VLKPF/company-profile?mod=mw_quote_tab
+getSector(): failed DE0007664039
+getIndustry(): failed DE0007664039
+UPDATE titles SET exchange='XETRA ',sectorYF='Consumer Cyclical',industryYF='Auto Manufacturers' WHERE title='VOLKSWAGEN NV PRF'
+UPDATE titles SET sectorMW='void',industryMW='void' WHERE title='VOLKSWAGEN NV PRF'
+SELECT titleSQ FROM candidates WHERE isin='CH0012453913'
+SELECT * FROM titles WHERE title='TEMENOS N'
+INSERT INTO titles(title) VALUES('TEMENOS N')
+https://www.marketwatch.com/investing/stock/TEMN/company-profile?countrycode=CH&mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='Swiss ',sectorYF='Technology',industryYF='Software—Application' WHERE title='TEMENOS N'
+UPDATE titles SET sectorMW='Technology',industryMW='Software' WHERE title='TEMENOS N'
+SELECT titleSQ FROM candidates WHERE isin='CH0466642201'
+SELECT * FROM titles WHERE title='HELVETIA HOLDING N'
+INSERT INTO titles(title) VALUES('HELVETIA HOLDING N')
+https://www.marketwatch.com/investing/stock/HELN/company-profile?countrycode=CH&mod=mw_quote_tab
+getSector(): 
+UPDATE titles SET exchange='Swiss ',sectorYF='Financial Services',industryYF='Insurance—Diversified' WHERE title='HELVETIA HOLDING N'
+UPDATE titles SET sectorMW='',industryMW='' WHERE title='HELVETIA HOLDING N'
+SELECT titleSQ FROM candidates WHERE isin='CH0038388911'
+SELECT * FROM titles WHERE title='SULZER N'
+INSERT INTO titles(title) VALUES('SULZER N')
+https://www.marketwatch.com/investing/stock/SUN/company-profile?countrycode=CH&mod=mw_quote_tab
+getSector(): Industrial Goods
+UPDATE titles SET exchange='Swiss ',sectorYF='Industrials',industryYF='Specialty Industrial Machinery' WHERE title='SULZER N'
+UPDATE titles SET sectorMW='Industrial Goods',industryMW='Industrial Machinery' WHERE title='SULZER N'
+SELECT titleSQ FROM candidates WHERE isin='US8552441094'
+SELECT * FROM titles WHERE title='STARBUCKS ORD'
+INSERT INTO titles(title) VALUES('STARBUCKS ORD')
+https://www.marketwatch.com/investing/stock/SBUX/company-profile?mod=mw_quote_tab
+getSector(): Leisure/Arts/Hospitality
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Consumer Cyclical',industryYF='Restaurants' WHERE title='STARBUCKS ORD'
+UPDATE titles SET sectorMW='Leisure/Arts/Hospitality',industryMW='Restaurants' WHERE title='STARBUCKS ORD'
+SELECT titleSQ FROM candidates WHERE isin='DE0005810055'
+SELECT * FROM titles WHERE title='DEUTSCHE BOERSE N ORD'
+INSERT INTO titles(title) VALUES('DEUTSCHE BOERSE N ORD')
+https://www.marketwatch.com/investing/stock/DBOEF/company-profile?mod=mw_quote_tab
+getSector(): Financial Services
+UPDATE titles SET exchange='XETRA ',sectorYF='Financial Services',industryYF='Financial Data & Stock Exchanges' WHERE title='DEUTSCHE BOERSE N ORD'
+UPDATE titles SET sectorMW='Financial Services',industryMW='Securities' WHERE title='DEUTSCHE BOERSE N ORD'
+SELECT titleSQ FROM candidates WHERE isin='GB00BH4HKS39'
+SELECT * FROM titles WHERE title='VODAFONE GROUP ORD'
+INSERT INTO titles(title) VALUES('VODAFONE GROUP ORD')
+https://www.marketwatch.com/investing/stock/VODPF/company-profile?mod=mw_quote_tab
+getSector(): Telecommunication Services
+UPDATE titles SET exchange='LSE ',sectorYF='Communication Services',industryYF='Telecom Services' WHERE title='VODAFONE GROUP ORD'
+UPDATE titles SET sectorMW='Telecommunication Services',industryMW='Wireless Telecommunications Services' WHERE title='VODAFONE GROUP ORD'
+SELECT titleSQ FROM candidates WHERE isin='CH0012410517'
+SELECT * FROM titles WHERE title='BALOISE N'
+INSERT INTO titles(title) VALUES('BALOISE N')
+https://www.marketwatch.com/investing/stock/BALN/company-profile?countrycode=CH&mod=mw_quote_tab
+getSector(): Financial Services
+UPDATE titles SET exchange='Swiss ',sectorYF='Financial Services',industryYF='Insurance—Diversified' WHERE title='BALOISE N'
+UPDATE titles SET sectorMW='Financial Services',industryMW='Full-Line Insurance' WHERE title='BALOISE N'
+SELECT titleSQ FROM candidates WHERE isin='SE0006425815'
+SELECT * FROM titles WHERE title='POWERCELL SWEDEN ORD'
+INSERT INTO titles(title) VALUES('POWERCELL SWEDEN ORD')
+https://www.marketwatch.com/investing/stock/PCELF/company-profile?mod=mw_quote_tab
+getSector(): Industrial Goods
+UPDATE titles SET exchange='Stockholm ',sectorYF='Industrials',industryYF='Electrical Equipment & Parts' WHERE title='POWERCELL SWEDEN ORD'
+UPDATE titles SET sectorMW='Industrial Goods',industryMW='Industrial Electronics' WHERE title='POWERCELL SWEDEN ORD'
+SELECT titleSQ FROM candidates WHERE isin='US1773761002'
+SELECT * FROM titles WHERE title='CITRIX SYSTEMS ORD'
+INSERT INTO titles(title) VALUES('CITRIX SYSTEMS ORD')
+https://www.marketwatch.com/investing/stock/CTXS/company-profile?mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Technology',industryYF='Software—Application' WHERE title='CITRIX SYSTEMS ORD'
+UPDATE titles SET sectorMW='Technology',industryMW='Software' WHERE title='CITRIX SYSTEMS ORD'
+SELECT titleSQ FROM candidates WHERE isin='CH0012255151'
+SELECT * FROM titles WHERE title='SWATCH GROUP I'
+INSERT INTO titles(title) VALUES('SWATCH GROUP I')
+https://www.marketwatch.com/investing/stock/SWGAF/company-profile?mod=mw_quote_tab
+getSector(): Consumer Goods
+UPDATE titles SET exchange='Swiss ',sectorYF='Consumer Cyclical',industryYF='Luxury Goods' WHERE title='SWATCH GROUP I'
+UPDATE titles SET sectorMW='Consumer Goods',industryMW='Jewelry & Watches' WHERE title='SWATCH GROUP I'
+SELECT titleSQ FROM candidates WHERE isin='CH0239229302'
+SELECT * FROM titles WHERE title='SFS Group N'
+INSERT INTO titles(title) VALUES('SFS Group N')
+https://www.marketwatch.com/investing/stock/SFSN/company-profile?countrycode=CH&mod=mw_quote_tab
+getSector(): Industrial Goods
+UPDATE titles SET exchange='Swiss ',sectorYF='Industrials',industryYF='Tools & Accessories' WHERE title='SFS Group N'
+UPDATE titles SET sectorMW='Industrial Goods',industryMW='Industrial Products' WHERE title='SFS Group N'
+SELECT titleSQ FROM candidates WHERE isin='CH0130293662'
+SELECT * FROM titles WHERE title='BKW N'
+INSERT INTO titles(title) VALUES('BKW N')
+https://www.marketwatch.com/investing/stock/BKW/company-profile?countrycode=CH&mod=mw_quote_tab
+getSector(): Companies on the Energy Service
+UPDATE titles SET exchange='Swiss ',sectorYF='Utilities',industryYF='Utilities—Renewable' WHERE title='BKW N'
+UPDATE titles SET sectorMW='Companies on the Energy Service',industryMW='Electric Utilities' WHERE title='BKW N'
+SELECT titleSQ FROM candidates WHERE isin='FR0000120073'
+SELECT * FROM titles WHERE title='AIR LIQUIDE ORD'
+INSERT INTO titles(title) VALUES('AIR LIQUIDE ORD')
+https://www.marketwatch.com/investing/stock/AIQUF/company-profile?mod=mw_quote_tab
+getSector(): Basic Materials/Resources
+UPDATE titles SET exchange='Paris ',sectorYF='Basic Materials',industryYF='Specialty Chemicals' WHERE title='AIR LIQUIDE ORD'
+UPDATE titles SET sectorMW='Basic Materials/Resources',industryMW='Chemicals' WHERE title='AIR LIQUIDE ORD'
+SELECT titleSQ FROM candidates WHERE isin='US98980L1017'
+SELECT * FROM titles WHERE title='ZOOM VIDEO COMMUNICATIONS CL A'
+INSERT INTO titles(title) VALUES('ZOOM VIDEO COMMUNICATIONS CL A')
+https://www.marketwatch.com/investing/stock/ZM/company-profile?mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Technology',industryYF='Software—Application' WHERE title='ZOOM VIDEO COMMUNICATIONS CL A'
+UPDATE titles SET sectorMW='Technology',industryMW='Software' WHERE title='ZOOM VIDEO COMMUNICATIONS CL A'
+SELECT titleSQ FROM candidates WHERE isin='US25809K1051'
+SELECT * FROM titles WHERE title='DOORDASH CL A ORD'
+INSERT INTO titles(title) VALUES('DOORDASH CL A ORD')
+https://www.marketwatch.com/investing/stock/DASH/company-profile?mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='NYSE ',sectorYF='Communication Services',industryYF='Internet Content & Information' WHERE title='DOORDASH CL A ORD'
+UPDATE titles SET sectorMW='Technology',industryMW='Emerging Technologies' WHERE title='DOORDASH CL A ORD'
+SELECT titleSQ FROM candidates WHERE isin='US76954A1034'
+SELECT * FROM titles WHERE title='RIVIAN AUTOMOTIVE CL A ORD'
+INSERT INTO titles(title) VALUES('RIVIAN AUTOMOTIVE CL A ORD')
+https://www.marketwatch.com/investing/stock/RIVN/company-profile?mod=mw_quote_tab
+getSector(): failed US76954A1034
+getIndustry(): failed US76954A1034
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Consumer Cyclical',industryYF='Auto Manufacturers' WHERE title='RIVIAN AUTOMOTIVE CL A ORD'
+UPDATE titles SET sectorMW='void',industryMW='void' WHERE title='RIVIAN AUTOMOTIVE CL A ORD'
+SELECT titleSQ FROM candidates WHERE isin='US0567521085'
+SELECT * FROM titles WHERE title='BAIDU ADS REP 8 CL A ORD'
+INSERT INTO titles(title) VALUES('BAIDU ADS REP 8 CL A ORD')
+https://www.marketwatch.com/investing/stock/BIDU/company-profile?mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Communication Services',industryYF='Internet Content & Information' WHERE title='BAIDU ADS REP 8 CL A ORD'
+UPDATE titles SET sectorMW='Technology',industryMW='Internet/Online' WHERE title='BAIDU ADS REP 8 CL A ORD'
+SELECT titleSQ FROM candidates WHERE isin='US8740391003'
+SELECT * FROM titles WHERE title='TAIWAN SEMICONDUCTOR MNFTG ADR'
+INSERT INTO titles(title) VALUES('TAIWAN SEMICONDUCTOR MNFTG ADR')
+https://www.marketwatch.com/investing/stock/TSM/company-profile?mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='NYSE ',sectorYF='Technology',industryYF='Semiconductors' WHERE title='TAIWAN SEMICONDUCTOR MNFTG ADR'
+UPDATE titles SET sectorMW='Technology',industryMW='Semiconductors' WHERE title='TAIWAN SEMICONDUCTOR MNFTG ADR'
+SELECT titleSQ FROM candidates WHERE isin='CH0319416936'
+SELECT * FROM titles WHERE title='FLUGHAFEN ZUERICH N'
+INSERT INTO titles(title) VALUES('FLUGHAFEN ZUERICH N')
+https://www.marketwatch.com/investing/stock/UZAPF/company-profile?mod=mw_quote_tab
+getSector(): Transportation/Logistics
+UPDATE titles SET exchange='Swiss ',sectorYF='Industrials',industryYF='Airports & Air Services' WHERE title='FLUGHAFEN ZUERICH N'
+UPDATE titles SET sectorMW='Transportation/Logistics',industryMW='Transportation Services' WHERE title='FLUGHAFEN ZUERICH N'
+SELECT titleSQ FROM candidates WHERE isin='US8522341036'
+SELECT * FROM titles WHERE title='BLOCK CL A ORD'
+INSERT INTO titles(title) VALUES('BLOCK CL A ORD')
+https://www.marketwatch.com/investing/stock/SQ/company-profile?mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='NYSE ',sectorYF='Technology',industryYF='Software—Infrastructure' WHERE title='BLOCK CL A ORD'
+UPDATE titles SET sectorMW='Technology',industryMW='Computers/Consumer Electronics' WHERE title='BLOCK CL A ORD'
+SELECT titleSQ FROM candidates WHERE isin='US7427181091'
+SELECT * FROM titles WHERE title='PROCTER   GAMBLE ORD'
+INSERT INTO titles(title) VALUES('PROCTER   GAMBLE ORD')
+https://www.marketwatch.com/investing/stock/PG/company-profile?mod=mw_quote_tab
+getSector(): Consumer Goods
+UPDATE titles SET exchange='NYSE ',sectorYF='Consumer Defensive',industryYF='Household & Personal Products' WHERE title='PROCTER   GAMBLE ORD'
+UPDATE titles SET sectorMW='Consumer Goods',industryMW='Personal Care Products/Appliances' WHERE title='PROCTER   GAMBLE ORD'
+SELECT titleSQ FROM candidates WHERE isin='US7475251036'
+SELECT * FROM titles WHERE title='QUALCOMM ORD'
+INSERT INTO titles(title) VALUES('QUALCOMM ORD')
+https://www.marketwatch.com/investing/stock/QCOM/company-profile?mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Technology',industryYF='Semiconductors' WHERE title='QUALCOMM ORD'
+UPDATE titles SET sectorMW='Technology',industryMW='Semiconductors' WHERE title='QUALCOMM ORD'
+SELECT titleSQ FROM candidates WHERE isin='NL0011585146'
+SELECT * FROM titles WHERE title='Ferrari N.V.'
+INSERT INTO titles(title) VALUES('Ferrari N.V.')
+https://www.marketwatch.com/investing/stock/RACE/company-profile?mod=mw_quote_tab
+getSector(): failed NL0011585146
+getIndustry(): failed NL0011585146
+UPDATE titles SET exchange='NYSE ',sectorYF='Consumer Cyclical',industryYF='Auto Manufacturers' WHERE title='Ferrari N.V.'
+UPDATE titles SET sectorMW='void',industryMW='void' WHERE title='Ferrari N.V.'
+SELECT titleSQ FROM candidates WHERE isin='US0258161092'
+SELECT * FROM titles WHERE title='AMERICAN EXPRESS ORD'
+INSERT INTO titles(title) VALUES('AMERICAN EXPRESS ORD')
+https://www.marketwatch.com/investing/stock/AXP/company-profile?mod=mw_quote_tab
+getSector(): Financial Services
+UPDATE titles SET exchange='NYSE ',sectorYF='Financial Services',industryYF='Credit Services' WHERE title='AMERICAN EXPRESS ORD'
+UPDATE titles SET sectorMW='Financial Services',industryMW='Consumer Finance' WHERE title='AMERICAN EXPRESS ORD'
+SELECT titleSQ FROM candidates WHERE isin='US2855121099'
+SELECT * FROM titles WHERE title='ELECTRONIC ARTS ORD'
+INSERT INTO titles(title) VALUES('ELECTRONIC ARTS ORD')
+https://www.marketwatch.com/investing/stock/EA/company-profile?mod=mw_quote_tab
+getSector(): Consumer Goods
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Communication Services',industryYF='Electronic Gaming & Multimedia' WHERE title='ELECTRONIC ARTS ORD'
+UPDATE titles SET sectorMW='Consumer Goods',industryMW='Toys & Games' WHERE title='ELECTRONIC ARTS ORD'
+SELECT titleSQ FROM candidates WHERE isin='US70450Y1038'
+SELECT * FROM titles WHERE title='PAYPAL HOLDINGS ORD'
+INSERT INTO titles(title) VALUES('PAYPAL HOLDINGS ORD')
+https://www.marketwatch.com/investing/stock/PYPL/company-profile?mod=mw_quote_tab
+getSector(): Financial Services
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Financial Services',industryYF='Credit Services' WHERE title='PAYPAL HOLDINGS ORD'
+UPDATE titles SET sectorMW='Financial Services',industryMW='Consumer Finance' WHERE title='PAYPAL HOLDINGS ORD'
+SELECT titleSQ FROM candidates WHERE isin='DE0008404005'
+SELECT * FROM titles WHERE title='ALLIANZ ORD'
+INSERT INTO titles(title) VALUES('ALLIANZ ORD')
+https://www.marketwatch.com/investing/stock/ALV/company-profile?countrycode=XE&mod=mw_quote_tab
+getSector(): Financial Services
+UPDATE titles SET exchange='XETRA ',sectorYF='Financial Services',industryYF='Insurance—Diversified' WHERE title='ALLIANZ ORD'
+UPDATE titles SET sectorMW='Financial Services',industryMW='Full-Line Insurance' WHERE title='ALLIANZ ORD'
+SELECT titleSQ FROM candidates WHERE isin='US46625H1005'
+SELECT * FROM titles WHERE title='JPMORGAN CHASE ORD'
+INSERT INTO titles(title) VALUES('JPMORGAN CHASE ORD')
+https://www.marketwatch.com/investing/stock/JPM/company-profile?mod=mw_quote_tab
+getSector(): Financial Services
+UPDATE titles SET exchange='NYSE ',sectorYF='Financial Services',industryYF='Banks—Diversified' WHERE title='JPMORGAN CHASE ORD'
+UPDATE titles SET sectorMW='Financial Services',industryMW='Major International Banks' WHERE title='JPMORGAN CHASE ORD'
+SELECT titleSQ FROM candidates WHERE isin='DE0006599905'
+SELECT * FROM titles WHERE title='MERCK ORD'
+INSERT INTO titles(title) VALUES('MERCK ORD')
+https://www.marketwatch.com/investing/stock/MKGAF/company-profile?mod=mw_quote_tab
+getSector(): Health Care/Life Sciences
+UPDATE titles SET exchange='XETRA ',sectorYF='Healthcare',industryYF='Drug Manufacturers—Specialty & Generic' WHERE title='MERCK ORD'
+UPDATE titles SET sectorMW='Health Care/Life Sciences',industryMW='Pharmaceuticals' WHERE title='MERCK ORD'
+SELECT titleSQ FROM candidates WHERE isin='US19260Q1076'
+SELECT * FROM titles WHERE title='COINBASE GLOBAL CL A ORD'
+INSERT INTO titles(title) VALUES('COINBASE GLOBAL CL A ORD')
+https://www.marketwatch.com/investing/stock/COIN/company-profile?mod=mw_quote_tab
+getSector(): failed US19260Q1076
+getIndustry(): failed US19260Q1076
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Technology',industryYF='Software—Application' WHERE title='COINBASE GLOBAL CL A ORD'
+UPDATE titles SET sectorMW='void',industryMW='void' WHERE title='COINBASE GLOBAL CL A ORD'
+SELECT titleSQ FROM candidates WHERE isin='US9311421039'
+SELECT * FROM titles WHERE title='WALMART ORD'
+INSERT INTO titles(title) VALUES('WALMART ORD')
+https://www.marketwatch.com/investing/stock/WMT/company-profile?mod=mw_quote_tab
+getSector(): Retail/Wholesale
+UPDATE titles SET exchange='NYSE ',sectorYF='Consumer Defensive',industryYF='Discount Stores' WHERE title='WALMART ORD'
+UPDATE titles SET sectorMW='Retail/Wholesale',industryMW='Mixed Retailing' WHERE title='WALMART ORD'
+SELECT titleSQ FROM candidates WHERE isin='NL0012044747'
+SELECT * FROM titles WHERE title='SHOP APOTHEKE EUROPE ORD'
+INSERT INTO titles(title) VALUES('SHOP APOTHEKE EUROPE ORD')
+https://www.marketwatch.com/investing/stock/SHPPF/company-profile?mod=mw_quote_tab
+getSector(): failed NL0012044747
+getIndustry(): failed NL0012044747
+UPDATE titles SET exchange='XETRA ',sectorYF='Healthcare',industryYF='Pharmaceutical Retailers' WHERE title='SHOP APOTHEKE EUROPE ORD'
+UPDATE titles SET sectorMW='void',industryMW='void' WHERE title='SHOP APOTHEKE EUROPE ORD'
+SELECT titleSQ FROM candidates WHERE isin='DK0061539921'
+SELECT * FROM titles WHERE title='VESTAS WIND SYSTEMS ORD'
+INSERT INTO titles(title) VALUES('VESTAS WIND SYSTEMS ORD')
+https://www.marketwatch.com/investing/stock/0NMK/company-profile?countrycode=UK&mod=mw_quote_tab
+getSector(): Industrial Goods
+UPDATE titles SET exchange='Copenhagen ',sectorYF='Industrials',industryYF='Specialty Industrial Machinery' WHERE title='VESTAS WIND SYSTEMS ORD'
+UPDATE titles SET sectorMW='Industrial Goods',industryMW='Industrial Electronics' WHERE title='VESTAS WIND SYSTEMS ORD'
+SELECT titleSQ FROM candidates WHERE isin='US77543R1023'
+SELECT * FROM titles WHERE title='ROKU CL A ORD'
+INSERT INTO titles(title) VALUES('ROKU CL A ORD')
+https://www.marketwatch.com/investing/stock/ROKU/company-profile?mod=mw_quote_tab
+getSector(): Consumer Goods
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Communication Services',industryYF='Entertainment' WHERE title='ROKU CL A ORD'
+UPDATE titles SET sectorMW='Consumer Goods',industryMW='Audio/Video Equipment' WHERE title='ROKU CL A ORD'
+SELECT titleSQ FROM candidates WHERE isin='CH0311864901'
+SELECT * FROM titles WHERE title='VAT GROUP N'
+INSERT INTO titles(title) VALUES('VAT GROUP N')
+https://www.marketwatch.com/investing/stock/VACN/company-profile?countrycode=CH&mod=mw_quote_tab
+getSector(): Industrial Goods
+UPDATE titles SET exchange='Swiss ',sectorYF='Industrials',industryYF='Specialty Industrial Machinery' WHERE title='VAT GROUP N'
+UPDATE titles SET sectorMW='Industrial Goods',industryMW='Industrial Machinery' WHERE title='VAT GROUP N'
+SELECT titleSQ FROM candidates WHERE isin='CH0011075394'
+SELECT * FROM titles WHERE title='ZURICH INSURANCE N'
+INSERT INTO titles(title) VALUES('ZURICH INSURANCE N')
+https://www.marketwatch.com/investing/stock/ZFSVF/company-profile?mod=mw_quote_tab
+getSector(): Financial Services
+UPDATE titles SET exchange='Swiss ',sectorYF='Financial Services',industryYF='Insurance—Diversified' WHERE title='ZURICH INSURANCE N'
+UPDATE titles SET sectorMW='Financial Services',industryMW='Full-Line Insurance' WHERE title='ZURICH INSURANCE N'
+SELECT titleSQ FROM candidates WHERE isin='CH0127480363'
+SELECT * FROM titles WHERE title='AUTONEUM N'
+INSERT INTO titles(title) VALUES('AUTONEUM N')
+https://www.marketwatch.com/investing/stock/AUTN/company-profile?countrycode=CH&mod=mw_quote_tab
+getSector(): Automotive
+UPDATE titles SET exchange='Swiss ',sectorYF='Consumer Cyclical',industryYF='Auto Parts' WHERE title='AUTONEUM N'
+UPDATE titles SET sectorMW='Automotive',industryMW='Motor Vehicle Parts' WHERE title='AUTONEUM N'
+SELECT titleSQ FROM candidates WHERE isin='CH0406705126'
+SELECT * FROM titles WHERE title='SENSIRION N'
+INSERT INTO titles(title) VALUES('SENSIRION N')
+https://www.marketwatch.com/investing/stock/SENS/company-profile?countrycode=CH&mod=mw_quote_tab
+getSector(): Industrial Goods
+UPDATE titles SET exchange='Swiss ',sectorYF='Technology',industryYF='Scientific & Technical Instruments' WHERE title='SENSIRION N'
+UPDATE titles SET sectorMW='Industrial Goods',industryMW='Precision Products' WHERE title='SENSIRION N'
+SELECT titleSQ FROM candidates WHERE isin='LU1778762911'
+SELECT * FROM titles WHERE title='SPOTIFY TECHNOLOGY ORD'
+INSERT INTO titles(title) VALUES('SPOTIFY TECHNOLOGY ORD')
+https://www.marketwatch.com/investing/stock/SPOT/company-profile?mod=mw_quote_tab
+getSector(): failed LU1778762911
+getIndustry(): failed LU1778762911
+UPDATE titles SET exchange='NYSE ',sectorYF='Communication Services',industryYF='Internet Content & Information' WHERE title='SPOTIFY TECHNOLOGY ORD'
+UPDATE titles SET sectorMW='void',industryMW='void' WHERE title='SPOTIFY TECHNOLOGY ORD'
+SELECT titleSQ FROM candidates WHERE isin='US7134481081'
+SELECT * FROM titles WHERE title='PEPSICO ORD'
+INSERT INTO titles(title) VALUES('PEPSICO ORD')
+https://www.marketwatch.com/investing/stock/PEP/company-profile?mod=mw_quote_tab
+getSector(): Consumer Goods
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Consumer Defensive',industryYF='Beverages—Non-Alcoholic' WHERE title='PEPSICO ORD'
+UPDATE titles SET sectorMW='Consumer Goods',industryMW='Non-Alcoholic Beverages/Drinks' WHERE title='PEPSICO ORD'
+SELECT titleSQ FROM candidates WHERE isin='CH0010675863'
+SELECT * FROM titles WHERE title='SWISSQUOTE N'
+INSERT INTO titles(title) VALUES('SWISSQUOTE N')
+https://www.marketwatch.com/investing/stock/SQN/company-profile?countrycode=CH&mod=mw_quote_tab
+getSector(): Financial Services
+UPDATE titles SET exchange='Swiss ',sectorYF='Financial Services',industryYF='Capital Markets' WHERE title='SWISSQUOTE N'
+UPDATE titles SET sectorMW='Financial Services',industryMW='Securities' WHERE title='SWISSQUOTE N'
+SELECT titleSQ FROM candidates WHERE isin='US2546871060'
+SELECT * FROM titles WHERE title='WALT DISNEY ORD'
+INSERT INTO titles(title) VALUES('WALT DISNEY ORD')
+https://www.marketwatch.com/investing/stock/DIS/company-profile?mod=mw_quote_tab
+getSector(): Media/Entertainment
+UPDATE titles SET exchange='NYSE ',sectorYF='Communication Services',industryYF='Entertainment' WHERE title='WALT DISNEY ORD'
+UPDATE titles SET sectorMW='Media/Entertainment',industryMW='Broadcasting' WHERE title='WALT DISNEY ORD'
+SELECT titleSQ FROM candidates WHERE isin='US8334451098'
+SELECT * FROM titles WHERE title='SNOWFLAKE CL A ORD'
+INSERT INTO titles(title) VALUES('SNOWFLAKE CL A ORD')
+https://www.marketwatch.com/investing/stock/SNOW/company-profile?mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='NYSE ',sectorYF='Technology',industryYF='Software—Application' WHERE title='SNOWFLAKE CL A ORD'
+UPDATE titles SET sectorMW='Technology',industryMW='Internet/Online' WHERE title='SNOWFLAKE CL A ORD'
+SELECT titleSQ FROM candidates WHERE isin='US5949181045'
+SELECT * FROM titles WHERE title='MICROSOFT ORD'
+INSERT INTO titles(title) VALUES('MICROSOFT ORD')
+https://www.marketwatch.com/investing/stock/MSFT/company-profile?mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Technology',industryYF='Software—Infrastructure' WHERE title='MICROSOFT ORD'
+UPDATE titles SET sectorMW='Technology',industryMW='Software' WHERE title='MICROSOFT ORD'
+SELECT titleSQ FROM candidates WHERE isin='CH0002088976'
+SELECT * FROM titles WHERE title='VALORA N'
+INSERT INTO titles(title) VALUES('VALORA N')
+https://www.marketwatch.com/investing/stock/VALN/company-profile?countrycode=CH&mod=mw_quote_tab
+getSector(): Retail/Wholesale
+UPDATE titles SET exchange='Swiss ',sectorYF='Consumer Cyclical',industryYF='Specialty Retail' WHERE title='VALORA N'
+UPDATE titles SET sectorMW='Retail/Wholesale',industryMW='Mixed Retailing' WHERE title='VALORA N'
+SELECT titleSQ FROM candidates WHERE isin='CH0114405324'
+SELECT * FROM titles WHERE title='GARMIN ORD'
+INSERT INTO titles(title) VALUES('GARMIN ORD')
+https://www.marketwatch.com/investing/stock/GRMN/company-profile?mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='NYSE ',sectorYF='Technology',industryYF='Scientific & Technical Instruments' WHERE title='GARMIN ORD'
+UPDATE titles SET sectorMW='Technology',industryMW='Networking' WHERE title='GARMIN ORD'
+SELECT titleSQ FROM candidates WHERE isin='DE0008430026'
+SELECT * FROM titles WHERE title='MUENCHENER RUECKVER N ORD'
+INSERT INTO titles(title) VALUES('MUENCHENER RUECKVER N ORD')
+https://www.marketwatch.com/investing/stock/MURGF/company-profile?mod=mw_quote_tab
+getSector(): Financial Services
+UPDATE titles SET exchange='XETRA ',sectorYF='Financial Services',industryYF='Insurance—Reinsurance' WHERE title='MUENCHENER RUECKVER N ORD'
+UPDATE titles SET sectorMW='Financial Services',industryMW='Reinsurance' WHERE title='MUENCHENER RUECKVER N ORD'
+SELECT titleSQ FROM candidates WHERE isin='PLOPTTC00011'
+SELECT * FROM titles WHERE title='CD PROJEKT ORD'
+INSERT INTO titles(title) VALUES('CD PROJEKT ORD')
+https://www.marketwatch.com/investing/stock/OTGLF/company-profile?mod=mw_quote_tab
+getSector(): Consumer Goods
+UPDATE titles SET exchange='Warsaw ',sectorYF='Communication Services',industryYF='Electronic Gaming & Multimedia' WHERE title='CD PROJEKT ORD'
+UPDATE titles SET sectorMW='Consumer Goods',industryMW='Toys & Games' WHERE title='CD PROJEKT ORD'
+SELECT titleSQ FROM candidates WHERE isin='CH0418792922'
+SELECT * FROM titles WHERE title='SIKA N'
+INSERT INTO titles(title) VALUES('SIKA N')
+https://www.marketwatch.com/investing/stock/SKFOF/company-profile?mod=mw_quote_tab
+getSector(): Real Estate/Construction
+UPDATE titles SET exchange='Swiss ',sectorYF='Basic Materials',industryYF='Specialty Chemicals' WHERE title='SIKA N'
+UPDATE titles SET sectorMW='Real Estate/Construction',industryMW='Building Materials/Products' WHERE title='SIKA N'
+SELECT titleSQ FROM candidates WHERE isin='US4781601046'
+SELECT * FROM titles WHERE title='JOHNSON   JOHNSON ORD'
+INSERT INTO titles(title) VALUES('JOHNSON   JOHNSON ORD')
+https://www.marketwatch.com/investing/stock/JNJ/company-profile?mod=mw_quote_tab
+getSector(): Health Care/Life Sciences
+UPDATE titles SET exchange='NYSE ',sectorYF='Healthcare',industryYF='Drug Manufacturers—General' WHERE title='JOHNSON   JOHNSON ORD'
+UPDATE titles SET sectorMW='Health Care/Life Sciences',industryMW='Pharmaceuticals' WHERE title='JOHNSON   JOHNSON ORD'
+SELECT titleSQ FROM candidates WHERE isin='US90138F1021'
+SELECT * FROM titles WHERE title='TWILIO CL A ORD'
+INSERT INTO titles(title) VALUES('TWILIO CL A ORD')
+https://www.marketwatch.com/investing/stock/TWLO/company-profile?mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='NYSE ',sectorYF='Communication Services',industryYF='Internet Content & Information' WHERE title='TWILIO CL A ORD'
+UPDATE titles SET sectorMW='Technology',industryMW='Software' WHERE title='TWILIO CL A ORD'
+SELECT titleSQ FROM candidates WHERE isin='US29786A1060'
+SELECT * FROM titles WHERE title='ETSY ORD'
+INSERT INTO titles(title) VALUES('ETSY ORD')
+https://www.marketwatch.com/investing/stock/ETSY/company-profile?mod=mw_quote_tab
+getSector(): Retail/Wholesale
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Consumer Cyclical',industryYF='Internet Retail' WHERE title='ETSY ORD'
+UPDATE titles SET sectorMW='Retail/Wholesale',industryMW='Mixed Retailing' WHERE title='ETSY ORD'
+SELECT titleSQ FROM candidates WHERE isin='CH0012549785'
+SELECT * FROM titles WHERE title='SONOVA N'
+INSERT INTO titles(title) VALUES('SONOVA N')
+https://www.marketwatch.com/investing/stock/SONVF/company-profile?mod=mw_quote_tab
+getSector(): Health Care/Life Sciences
+UPDATE titles SET exchange='Swiss ',sectorYF='Healthcare',industryYF='Medical Devices' WHERE title='SONOVA N'
+UPDATE titles SET sectorMW='Health Care/Life Sciences',industryMW='Medical Equipment/Supplies' WHERE title='SONOVA N'
+SELECT titleSQ FROM candidates WHERE isin='DE000A1EWWW0'
+SELECT * FROM titles WHERE title='ADIDAS N ORD'
+INSERT INTO titles(title) VALUES('ADIDAS N ORD')
+https://www.marketwatch.com/investing/stock/ADDDF/company-profile?mod=mw_quote_tab
+getSector(): Consumer Goods
+UPDATE titles SET exchange='XETRA ',sectorYF='Consumer Cyclical',industryYF='Footwear & Accessories' WHERE title='ADIDAS N ORD'
+UPDATE titles SET sectorMW='Consumer Goods',industryMW='Footwear' WHERE title='ADIDAS N ORD'
+SELECT titleSQ FROM candidates WHERE isin='US88579Y1010'
+SELECT * FROM titles WHERE title='3M ORD'
+INSERT INTO titles(title) VALUES('3M ORD')
+https://www.marketwatch.com/investing/stock/MMM/company-profile?mod=mw_quote_tab
+getSector(): Business/Consumer Services
+UPDATE titles SET exchange='NYSE ',sectorYF='Industrials',industryYF='Conglomerates' WHERE title='3M ORD'
+UPDATE titles SET sectorMW='Business/Consumer Services',industryMW='Diversified Holding Companies' WHERE title='3M ORD'
+SELECT titleSQ FROM candidates WHERE isin='CH0014852781'
+SELECT * FROM titles WHERE title='SWISS LIFE HOLDING AG N'
+INSERT INTO titles(title) VALUES('SWISS LIFE HOLDING AG N')
+https://www.marketwatch.com/investing/stock/SWSDF/company-profile?mod=mw_quote_tab
+getSector(): Financial Services
+UPDATE titles SET exchange='Swiss ',sectorYF='Financial Services',industryYF='Insurance—Diversified' WHERE title='SWISS LIFE HOLDING AG N'
+UPDATE titles SET sectorMW='Financial Services',industryMW='Life Insurance' WHERE title='SWISS LIFE HOLDING AG N'
+SELECT titleSQ FROM candidates WHERE isin='CH0010702154'
+SELECT * FROM titles WHERE title='KOMAX N'
+INSERT INTO titles(title) VALUES('KOMAX N')
+https://www.marketwatch.com/investing/stock/KOMN/company-profile?countrycode=CH&mod=mw_quote_tab
+getSector(): Industrial Goods
+UPDATE titles SET exchange='Swiss ',sectorYF='Industrials',industryYF='Specialty Industrial Machinery' WHERE title='KOMAX N'
+UPDATE titles SET sectorMW='Industrial Goods',industryMW='Precision Products' WHERE title='KOMAX N'
+SELECT titleSQ FROM candidates WHERE isin='IE00BZ12WP82'
+SELECT * FROM titles WHERE title='LINDE ORD'
+INSERT INTO titles(title) VALUES('LINDE ORD')
+https://www.marketwatch.com/investing/stock/LIN/company-profile?mod=mw_quote_tab
+getSector(): N/A
+UPDATE titles SET exchange='NYSE ',sectorYF='Basic Materials',industryYF='Specialty Chemicals' WHERE title='LINDE ORD'
+UPDATE titles SET sectorMW='N/A',industryMW='N/A' WHERE title='LINDE ORD'
+SELECT titleSQ FROM candidates WHERE isin='US0846707026'
+SELECT * FROM titles WHERE title='BERKSHIRE HATHAWAY CL B ORD'
+INSERT INTO titles(title) VALUES('BERKSHIRE HATHAWAY CL B ORD')
+https://www.marketwatch.com/investing/stock/BRK.B/company-profile?mod=mw_quote_tab
+getSector(): Business/Consumer Services
+UPDATE titles SET exchange='NYSE ',sectorYF='Financial Services',industryYF='Insurance—Diversified' WHERE title='BERKSHIRE HATHAWAY CL B ORD'
+UPDATE titles SET sectorMW='Business/Consumer Services',industryMW='Diversified Holding Companies' WHERE title='BERKSHIRE HATHAWAY CL B ORD'
+SELECT titleSQ FROM candidates WHERE isin='US0970231058'
+SELECT * FROM titles WHERE title='BOEING ORD'
+INSERT INTO titles(title) VALUES('BOEING ORD')
+https://www.marketwatch.com/investing/stock/BA/company-profile?mod=mw_quote_tab
+getSector(): Industrial Goods
+UPDATE titles SET exchange='NYSE ',sectorYF='Industrials',industryYF='Aerospace & Defense' WHERE title='BOEING ORD'
+UPDATE titles SET sectorMW='Industrial Goods',industryMW='Aerospace Products/Parts' WHERE title='BOEING ORD'
+SELECT titleSQ FROM candidates WHERE isin='US92826C8394'
+SELECT * FROM titles WHERE title='VISA CL A ORD'
+INSERT INTO titles(title) VALUES('VISA CL A ORD')
+https://www.marketwatch.com/investing/stock/V/company-profile?mod=mw_quote_tab
+getSector(): Financial Services
+UPDATE titles SET exchange='NYSE ',sectorYF='Financial Services',industryYF='Credit Services' WHERE title='VISA CL A ORD'
+UPDATE titles SET sectorMW='Financial Services',industryMW='Consumer Finance' WHERE title='VISA CL A ORD'
+SELECT titleSQ FROM candidates WHERE isin='US64110L1061'
+SELECT * FROM titles WHERE title='NETFLIX ORD'
+INSERT INTO titles(title) VALUES('NETFLIX ORD')
+https://www.marketwatch.com/investing/stock/NFLX/company-profile?mod=mw_quote_tab
+getSector(): Media/Entertainment
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Communication Services',industryYF='Entertainment' WHERE title='NETFLIX ORD'
+UPDATE titles SET sectorMW='Media/Entertainment',industryMW='Broadcasting' WHERE title='NETFLIX ORD'
+SELECT titleSQ FROM candidates WHERE isin='US83417M1045'
+SELECT * FROM titles WHERE title='SOLAREDGE TECHNOLOGIES ORD'
+INSERT INTO titles(title) VALUES('SOLAREDGE TECHNOLOGIES ORD')
+https://www.marketwatch.com/investing/stock/SEDG/company-profile?mod=mw_quote_tab
+getSector(): Industrial Goods
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Technology',industryYF='Solar' WHERE title='SOLAREDGE TECHNOLOGIES ORD'
+UPDATE titles SET sectorMW='Industrial Goods',industryMW='Industrial Electronics' WHERE title='SOLAREDGE TECHNOLOGIES ORD'
+SELECT titleSQ FROM candidates WHERE isin='US79466L3024'
+SELECT * FROM titles WHERE title='SALESFORCE.COM ORD'
+INSERT INTO titles(title) VALUES('SALESFORCE.COM ORD')
+https://www.marketwatch.com/investing/stock/CRM/company-profile?mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='NYSE ',sectorYF='Technology',industryYF='Software—Application' WHERE title='SALESFORCE.COM ORD'
+UPDATE titles SET sectorMW='Technology',industryMW='Software' WHERE title='SALESFORCE.COM ORD'
+SELECT titleSQ FROM candidates WHERE isin='CH0024638196'
+SELECT * FROM titles WHERE title='SCHINDLER PS'
+INSERT INTO titles(title) VALUES('SCHINDLER PS')
+https://www.marketwatch.com/investing/stock/SHLAF/company-profile?mod=mw_quote_tab
+getSector(): Industrial Goods
+UPDATE titles SET exchange='Swiss ',sectorYF='Industrials',industryYF='Specialty Industrial Machinery' WHERE title='SCHINDLER PS'
+UPDATE titles SET sectorMW='Industrial Goods',industryMW='Industrial Machinery' WHERE title='SCHINDLER PS'
+SELECT titleSQ FROM candidates WHERE isin='CH0012032048'
+SELECT * FROM titles WHERE title='ROCHE GS'
+INSERT INTO titles(title) VALUES('ROCHE GS')
+https://www.marketwatch.com/investing/stock/RHHVF/company-profile?mod=mw_quote_tab
+getSector(): Health Care/Life Sciences
+UPDATE titles SET exchange='Swiss ',sectorYF='Healthcare',industryYF='Drug Manufacturers—General' WHERE title='ROCHE GS'
+UPDATE titles SET sectorMW='Health Care/Life Sciences',industryMW='Pharmaceuticals' WHERE title='ROCHE GS'
+SELECT titleSQ FROM candidates WHERE isin='US81141R1005'
+SELECT * FROM titles WHERE title='SEA ADS REP CL A ORD'
+INSERT INTO titles(title) VALUES('SEA ADS REP CL A ORD')
+https://www.marketwatch.com/investing/stock/SE/company-profile?mod=mw_quote_tab
+getSector(): Consumer Goods
+UPDATE titles SET exchange='NYSE ',sectorYF='Communication Services',industryYF='Electronic Gaming & Multimedia' WHERE title='SEA ADS REP CL A ORD'
+UPDATE titles SET sectorMW='Consumer Goods',industryMW='Toys & Games' WHERE title='SEA ADS REP CL A ORD'
+SELECT titleSQ FROM candidates WHERE isin='NL0010273215'
+SELECT * FROM titles WHERE title='ASML HOLDING ORD'
+INSERT INTO titles(title) VALUES('ASML HOLDING ORD')
+https://www.marketwatch.com/investing/stock/ASMLF/company-profile?mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='Amsterdam ',sectorYF='Technology',industryYF='Semiconductor Equipment & Materials' WHERE title='ASML HOLDING ORD'
+UPDATE titles SET sectorMW='Technology',industryMW='Semiconductors' WHERE title='ASML HOLDING ORD'
+SELECT titleSQ FROM candidates WHERE isin='US0311621009'
+SELECT * FROM titles WHERE title='AMGEN ORD'
+INSERT INTO titles(title) VALUES('AMGEN ORD')
+https://www.marketwatch.com/investing/stock/AMGN/company-profile?mod=mw_quote_tab
+getSector(): Health Care/Life Sciences
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Healthcare',industryYF='Drug Manufacturers—General' WHERE title='AMGEN ORD'
+UPDATE titles SET sectorMW='Health Care/Life Sciences',industryMW='Biotechnology' WHERE title='AMGEN ORD'
+SELECT titleSQ FROM candidates WHERE isin='CH0013841017'
+SELECT * FROM titles WHERE title='LONZA N'
+INSERT INTO titles(title) VALUES('LONZA N')
+https://www.marketwatch.com/investing/stock/LZAGF/company-profile?mod=mw_quote_tab
+getSector(): Health Care/Life Sciences
+UPDATE titles SET exchange='Swiss ',sectorYF='Healthcare',industryYF='Diagnostics & Research' WHERE title='LONZA N'
+UPDATE titles SET sectorMW='Health Care/Life Sciences',industryMW='Biotechnology' WHERE title='LONZA N'
+SELECT titleSQ FROM candidates WHERE isin='US8486371045'
+SELECT * FROM titles WHERE title='SPLUNK ORD'
+INSERT INTO titles(title) VALUES('SPLUNK ORD')
+https://www.marketwatch.com/investing/stock/SPLK/company-profile?mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Technology',industryYF='Software—Infrastructure' WHERE title='SPLUNK ORD'
+UPDATE titles SET sectorMW='Technology',industryMW='Software' WHERE title='SPLUNK ORD'
+SELECT titleSQ FROM candidates WHERE isin='US31428X1063'
+SELECT * FROM titles WHERE title='FEDEX ORD'
+INSERT INTO titles(title) VALUES('FEDEX ORD')
+https://www.marketwatch.com/investing/stock/FDX/company-profile?mod=mw_quote_tab
+getSector(): Transportation/Logistics
+UPDATE titles SET exchange='NYSE ',sectorYF='Industrials',industryYF='Integrated Freight & Logistics' WHERE title='FEDEX ORD'
+UPDATE titles SET sectorMW='Transportation/Logistics',industryMW='Air Freight' WHERE title='FEDEX ORD'
+SELECT titleSQ FROM candidates WHERE isin='KYG875721634'
+SELECT * FROM titles WHERE title='TENCENT ORD'
+INSERT INTO titles(title) VALUES('TENCENT ORD')
+https://www.marketwatch.com/investing/stock/TCTZF/company-profile?mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='HKSE ',sectorYF='Communication Services',industryYF='Internet Content & Information' WHERE title='TENCENT ORD'
+UPDATE titles SET sectorMW='Technology',industryMW='Internet/Online' WHERE title='TENCENT ORD'
+SELECT titleSQ FROM candidates WHERE isin='US46120E6023'
+SELECT * FROM titles WHERE title='INTUITIVE SURGICAL ORD'
+INSERT INTO titles(title) VALUES('INTUITIVE SURGICAL ORD')
+https://www.marketwatch.com/investing/stock/ISRG/company-profile?mod=mw_quote_tab
+getSector(): Health Care/Life Sciences
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Healthcare',industryYF='Medical Instruments & Supplies' WHERE title='INTUITIVE SURGICAL ORD'
+UPDATE titles SET sectorMW='Health Care/Life Sciences',industryMW='Medical Equipment/Supplies' WHERE title='INTUITIVE SURGICAL ORD'
+SELECT titleSQ FROM candidates WHERE isin='CH0025536027'
+SELECT * FROM titles WHERE title='BURCKHARDT N'
+INSERT INTO titles(title) VALUES('BURCKHARDT N')
+https://www.marketwatch.com/investing/stock/BCHN/company-profile?countrycode=CH&mod=mw_quote_tab
+getSector(): Industrial Goods
+UPDATE titles SET exchange='Swiss ',sectorYF='Industrials',industryYF='Specialty Industrial Machinery' WHERE title='BURCKHARDT N'
+UPDATE titles SET sectorMW='Industrial Goods',industryMW='Industrial Machinery' WHERE title='BURCKHARDT N'
+SELECT titleSQ FROM candidates WHERE isin='CH0360826991'
+SELECT * FROM titles WHERE title='COMET N'
+INSERT INTO titles(title) VALUES('COMET N')
+https://www.marketwatch.com/investing/stock/COTN/company-profile?countrycode=CH&mod=mw_quote_tab
+getSector(): Industrial Goods
+UPDATE titles SET exchange='Swiss ',sectorYF='Technology',industryYF='Scientific & Technical Instruments' WHERE title='COMET N'
+UPDATE titles SET sectorMW='Industrial Goods',industryMW='Industrial Electronics' WHERE title='COMET N'
+SELECT titleSQ FROM candidates WHERE isin='US38141G1040'
+SELECT * FROM titles WHERE title='GOLDMAN SACHS GROUP ORD'
+INSERT INTO titles(title) VALUES('GOLDMAN SACHS GROUP ORD')
+https://www.marketwatch.com/investing/stock/GS/company-profile?mod=mw_quote_tab
+getSector(): Financial Services
+UPDATE titles SET exchange='NYSE ',sectorYF='Financial Services',industryYF='Capital Markets' WHERE title='GOLDMAN SACHS GROUP ORD'
+UPDATE titles SET sectorMW='Financial Services',industryMW='Securities' WHERE title='GOLDMAN SACHS GROUP ORD'
+SELECT titleSQ FROM candidates WHERE isin='CA82509L1076'
+SELECT * FROM titles WHERE title='SHOPIFY CL A SUB VTG ORD'
+INSERT INTO titles(title) VALUES('SHOPIFY CL A SUB VTG ORD')
+https://www.marketwatch.com/investing/stock/SHOP/company-profile?mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='NYSE ',sectorYF='Technology',industryYF='Software—Application' WHERE title='SHOPIFY CL A SUB VTG ORD'
+UPDATE titles SET sectorMW='Technology',industryMW='Software' WHERE title='SHOPIFY CL A SUB VTG ORD'
+SELECT titleSQ FROM candidates WHERE isin='CH0008742519'
+SELECT * FROM titles WHERE title='SWISSCOM N'
+INSERT INTO titles(title) VALUES('SWISSCOM N')
+https://www.marketwatch.com/investing/stock/SWZCF/company-profile?mod=mw_quote_tab
+getSector(): Telecommunication Services
+UPDATE titles SET exchange='Swiss ',sectorYF='Communication Services',industryYF='Telecom Services' WHERE title='SWISSCOM N'
+UPDATE titles SET sectorMW='Telecommunication Services',industryMW='Wireless Telecommunications Services' WHERE title='SWISSCOM N'
+SELECT titleSQ FROM candidates WHERE isin='CH0030170408'
+SELECT * FROM titles WHERE title='GEBERIT N'
+INSERT INTO titles(title) VALUES('GEBERIT N')
+https://www.marketwatch.com/investing/stock/GBERF/company-profile?mod=mw_quote_tab
+getSector(): Real Estate/Construction
+UPDATE titles SET exchange='Swiss ',sectorYF='Industrials',industryYF='Building Products & Equipment' WHERE title='GEBERIT N'
+UPDATE titles SET sectorMW='Real Estate/Construction',industryMW='Building Materials/Products' WHERE title='GEBERIT N'
+SELECT titleSQ FROM candidates WHERE isin='US75886F1075'
+SELECT * FROM titles WHERE title='REGENERON PHARMACEUTICALS ORD'
+INSERT INTO titles(title) VALUES('REGENERON PHARMACEUTICALS ORD')
+https://www.marketwatch.com/investing/stock/REGN/company-profile?mod=mw_quote_tab
+getSector(): Health Care/Life Sciences
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Healthcare',industryYF='Biotechnology' WHERE title='REGENERON PHARMACEUTICALS ORD'
+UPDATE titles SET sectorMW='Health Care/Life Sciences',industryMW='Biotechnology' WHERE title='REGENERON PHARMACEUTICALS ORD'
+SELECT titleSQ FROM candidates WHERE isin='US57636Q1040'
+SELECT * FROM titles WHERE title='MASTERCARD CL A ORD'
+INSERT INTO titles(title) VALUES('MASTERCARD CL A ORD')
+https://www.marketwatch.com/investing/stock/MA/company-profile?mod=mw_quote_tab
+getSector(): Financial Services
+UPDATE titles SET exchange='NYSE ',sectorYF='Financial Services',industryYF='Credit Services' WHERE title='MASTERCARD CL A ORD'
+UPDATE titles SET sectorMW='Financial Services',industryMW='Consumer Finance' WHERE title='MASTERCARD CL A ORD'
+SELECT titleSQ FROM candidates WHERE isin='CH0042615283'
+SELECT * FROM titles WHERE title='ZUR ROSE GROUP N'
+INSERT INTO titles(title) VALUES('ZUR ROSE GROUP N')
+https://www.marketwatch.com/investing/stock/ZRSEF/company-profile?mod=mw_quote_tab
+getSector(): Retail/Wholesale
+UPDATE titles SET exchange='Swiss ',sectorYF='Healthcare',industryYF='Pharmaceutical Retailers' WHERE title='ZUR ROSE GROUP N'
+UPDATE titles SET sectorMW='Retail/Wholesale',industryMW='Drug Retail' WHERE title='ZUR ROSE GROUP N'
+SELECT titleSQ FROM candidates WHERE isin='CH1101098163'
+SELECT * FROM titles WHERE title='BELIMO N'
+INSERT INTO titles(title) VALUES('BELIMO N')
+https://www.marketwatch.com/investing/stock/BEAN/company-profile?countrycode=CH&mod=mw_quote_tab
+getSector(): Industrial Goods
+UPDATE titles SET exchange='Swiss ',sectorYF='Industrials',industryYF='Building Products & Equipment' WHERE title='BELIMO N'
+UPDATE titles SET sectorMW='Industrial Goods',industryMW='Precision Products' WHERE title='BELIMO N'
+SELECT titleSQ FROM candidates WHERE isin='FR0000121014'
+SELECT * FROM titles WHERE title='LVMH ORD'
+INSERT INTO titles(title) VALUES('LVMH ORD')
+https://www.marketwatch.com/investing/stock/LVMHF/company-profile?mod=mw_quote_tab
+getSector(): Consumer Goods
+UPDATE titles SET exchange='Paris ',sectorYF='Consumer Cyclical',industryYF='Luxury Goods' WHERE title='LVMH ORD'
+UPDATE titles SET sectorMW='Consumer Goods',industryMW='Luxury Goods' WHERE title='LVMH ORD'
+SELECT titleSQ FROM candidates WHERE isin='CH0011795959'
+SELECT * FROM titles WHERE title='dormakaba N'
+INSERT INTO titles(title) VALUES('dormakaba N')
+https://www.marketwatch.com/investing/stock/DOKA/company-profile?countrycode=CH&mod=mw_quote_tab
+getSector(): Industrial Goods
+UPDATE titles SET exchange='Swiss ',sectorYF='Industrials',industryYF='Security & Protection Services' WHERE title='dormakaba N'
+UPDATE titles SET sectorMW='Industrial Goods',industryMW='Precision Products' WHERE title='dormakaba N'
+SELECT titleSQ FROM candidates WHERE isin='DK0060534915'
+SELECT * FROM titles WHERE title='NOVO NORDISK ORD'
+INSERT INTO titles(title) VALUES('NOVO NORDISK ORD')
+https://www.marketwatch.com/investing/stock/NONOF/company-profile?mod=mw_quote_tab
+getSector(): Health Care/Life Sciences
+UPDATE titles SET exchange='Copenhagen ',sectorYF='Healthcare',industryYF='Biotechnology' WHERE title='NOVO NORDISK ORD'
+UPDATE titles SET sectorMW='Health Care/Life Sciences',industryMW='Pharmaceuticals' WHERE title='NOVO NORDISK ORD'
+SELECT titleSQ FROM candidates WHERE isin='US87918A1051'
+SELECT * FROM titles WHERE title='TELADOC HEALTH ORD'
+INSERT INTO titles(title) VALUES('TELADOC HEALTH ORD')
+https://www.marketwatch.com/investing/stock/TDOC/company-profile?mod=mw_quote_tab
+getSector(): Health Care/Life Sciences
+UPDATE titles SET exchange='NYSE ',sectorYF='Healthcare',industryYF='Health Information Services' WHERE title='TELADOC HEALTH ORD'
+UPDATE titles SET sectorMW='Health Care/Life Sciences',industryMW='Healthcare Provision' WHERE title='TELADOC HEALTH ORD'
+SELECT titleSQ FROM candidates WHERE isin='CH0002432174'
+SELECT * FROM titles WHERE title='BUCHER N'
+INSERT INTO titles(title) VALUES('BUCHER N')
+https://www.marketwatch.com/investing/stock/BCHHF/company-profile?mod=mw_quote_tab
+getSector(): Industrial Goods
+UPDATE titles SET exchange='Swiss ',sectorYF='Industrials',industryYF='Specialty Industrial Machinery' WHERE title='BUCHER N'
+UPDATE titles SET sectorMW='Industrial Goods',industryMW='Mobile Machinery' WHERE title='BUCHER N'
+SELECT titleSQ FROM candidates WHERE isin='US81762P1021'
+SELECT * FROM titles WHERE title='SERVICENOW ORD'
+INSERT INTO titles(title) VALUES('SERVICENOW ORD')
+https://www.marketwatch.com/investing/stock/NOW/company-profile?mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='NYSE ',sectorYF='Technology',industryYF='Software—Application' WHERE title='SERVICENOW ORD'
+UPDATE titles SET sectorMW='Technology',industryMW='Software' WHERE title='SERVICENOW ORD'
+SELECT titleSQ FROM candidates WHERE isin='US00724F1012'
+SELECT * FROM titles WHERE title='ADOBE ORD'
+INSERT INTO titles(title) VALUES('ADOBE ORD')
+https://www.marketwatch.com/investing/stock/ADBE/company-profile?mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Technology',industryYF='Software—Infrastructure' WHERE title='ADOBE ORD'
+UPDATE titles SET sectorMW='Technology',industryMW='Software' WHERE title='ADOBE ORD'
+SELECT titleSQ FROM candidates WHERE isin='CH0012100191'
+SELECT * FROM titles WHERE title='TECAN GROUP AG N'
+INSERT INTO titles(title) VALUES('TECAN GROUP AG N')
+https://www.marketwatch.com/investing/stock/TCHBF/company-profile?mod=mw_quote_tab
+getSector(): Health Care/Life Sciences
+UPDATE titles SET exchange='Swiss ',sectorYF='Healthcare',industryYF='Medical Instruments & Supplies' WHERE title='TECAN GROUP AG N'
+UPDATE titles SET sectorMW='Health Care/Life Sciences',industryMW='Medical Equipment/Supplies' WHERE title='TECAN GROUP AG N'
+SELECT titleSQ FROM candidates WHERE isin='CH0012530207'
+SELECT * FROM titles WHERE title='BACHEM N'
+INSERT INTO titles(title) VALUES('BACHEM N')
+https://www.marketwatch.com/investing/stock/BANB/company-profile?countrycode=CH&mod=mw_quote_tab
+getSector(): Health Care/Life Sciences
+UPDATE titles SET exchange='Swiss ',sectorYF='Basic Materials',industryYF='Chemicals' WHERE title='BACHEM N'
+UPDATE titles SET sectorMW='Health Care/Life Sciences',industryMW='Pharmaceuticals' WHERE title='BACHEM N'
+SELECT titleSQ FROM candidates WHERE isin='CH0024608827'
+SELECT * FROM titles WHERE title='PARTNERS GROUP N'
+INSERT INTO titles(title) VALUES('PARTNERS GROUP N')
+https://www.marketwatch.com/investing/stock/PGPHF/company-profile?mod=mw_quote_tab
+getSector(): Financial Services
+UPDATE titles SET exchange='Swiss ',sectorYF='Financial Services',industryYF='Asset Management' WHERE title='PARTNERS GROUP N'
+UPDATE titles SET sectorMW='Financial Services',industryMW='Investment Advisors' WHERE title='PARTNERS GROUP N'
+SELECT titleSQ FROM candidates WHERE isin='CH0012280076'
+SELECT * FROM titles WHERE title='STRAUMANN N'
+INSERT INTO titles(title) VALUES('STRAUMANN N')
+https://www.marketwatch.com/investing/stock/SAUHF/company-profile?mod=mw_quote_tab
+getSector(): Health Care/Life Sciences
+UPDATE titles SET exchange='Swiss ',sectorYF='Healthcare',industryYF='Medical Instruments & Supplies' WHERE title='STRAUMANN N'
+UPDATE titles SET sectorMW='Health Care/Life Sciences',industryMW='Medical Equipment/Supplies' WHERE title='STRAUMANN N'
+SELECT titleSQ FROM candidates WHERE isin='CH0016440353'
+SELECT * FROM titles WHERE title='EMS-CHEMIE N'
+INSERT INTO titles(title) VALUES('EMS-CHEMIE N')
+https://www.marketwatch.com/investing/stock/EMSHF/company-profile?mod=mw_quote_tab
+getSector(): Basic Materials/Resources
+UPDATE titles SET exchange='Swiss ',sectorYF='Basic Materials',industryYF='Specialty Chemicals' WHERE title='EMS-CHEMIE N'
+UPDATE titles SET sectorMW='Basic Materials/Resources',industryMW='Chemicals' WHERE title='EMS-CHEMIE N'
+SELECT titleSQ FROM candidates WHERE isin='CH0014284498'
+SELECT * FROM titles WHERE title='SIEGFRIED N'
+INSERT INTO titles(title) VALUES('SIEGFRIED N')
+https://www.marketwatch.com/investing/stock/SFZN/company-profile?countrycode=CH&mod=mw_quote_tab
+getSector(): Health Care/Life Sciences
+UPDATE titles SET exchange='Swiss ',sectorYF='Healthcare',industryYF='Drug Manufacturers—Specialty & Generic' WHERE title='SIEGFRIED N'
+UPDATE titles SET sectorMW='Health Care/Life Sciences',industryMW='Pharmaceuticals' WHERE title='SIEGFRIED N'
+SELECT titleSQ FROM candidates WHERE isin='GB00BL9YR756'
+SELECT * FROM titles WHERE title='WISE CL A ORD'
+INSERT INTO titles(title) VALUES('WISE CL A ORD')
+https://www.marketwatch.com/investing/stock/WISE/company-profile?countrycode=UK&mod=mw_quote_tab
+getSector(): failed GB00BL9YR756
+getIndustry(): failed GB00BL9YR756
+UPDATE titles SET exchange='LSE ',sectorYF='Technology',industryYF='Software—Infrastructure' WHERE title='WISE CL A ORD'
+UPDATE titles SET sectorMW='void',industryMW='void' WHERE title='WISE CL A ORD'
+SELECT titleSQ FROM candidates WHERE isin='CH0012829898'
+SELECT * FROM titles WHERE title='EMMI N'
+INSERT INTO titles(title) VALUES('EMMI N')
+https://www.marketwatch.com/investing/stock/EMMN/company-profile?countrycode=CH&mod=mw_quote_tab
+getSector(): Consumer Goods
+UPDATE titles SET exchange='Swiss ',sectorYF='Consumer Defensive',industryYF='Packaged Foods' WHERE title='EMMI N'
+UPDATE titles SET sectorMW='Consumer Goods',industryMW='Food Products' WHERE title='EMMI N'
+SELECT titleSQ FROM candidates WHERE isin='CH0001752309'
+SELECT * FROM titles WHERE title='FISCHER N'
+INSERT INTO titles(title) VALUES('FISCHER N')
+getExchange(): failed to find exchange for CH0001752309
+getSectorYF: no profile found for: CH0001752309
+getSectorYF: failed to find profile: CH0001752309
+https://www.marketwatch.com/investing/stock/0QP4/company-profile?countrycode=UK&mod=mw_quote_tab
+getSector(): Real Estate/Construction
+UPDATE titles SET exchange='void',sectorYF='void',industryYF='void' WHERE title='FISCHER N'
+UPDATE titles SET sectorMW='Real Estate/Construction',industryMW='Building Materials/Products' WHERE title='FISCHER N'
+SELECT titleSQ FROM candidates WHERE isin='US7960508882'
+SELECT * FROM titles WHERE title='SAMSUNG ELECTRONICS REG S GDR'
+INSERT INTO titles(title) VALUES('SAMSUNG ELECTRONICS REG S GDR')
+https://www.marketwatch.com/investing/stock/SMSN/company-profile?countrycode=UK&mod=mw_quote_tab
+getSector(): Consumer Goods
+UPDATE titles SET exchange='IOB ',sectorYF='Technology',industryYF='Consumer Electronics' WHERE title='SAMSUNG ELECTRONICS REG S GDR'
+UPDATE titles SET sectorMW='Consumer Goods',industryMW='Audio/Video Equipment' WHERE title='SAMSUNG ELECTRONICS REG S GDR'
+SELECT titleSQ FROM candidates WHERE isin='US02079K1079'
+SELECT * FROM titles WHERE title='ALPHABET CL C ORD'
+INSERT INTO titles(title) VALUES('ALPHABET CL C ORD')
+https://www.marketwatch.com/investing/stock/GOOG/company-profile?mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Communication Services',industryYF='Internet Content & Information' WHERE title='ALPHABET CL C ORD'
+UPDATE titles SET sectorMW='Technology',industryMW='Internet/Online' WHERE title='ALPHABET CL C ORD'
+SELECT titleSQ FROM candidates WHERE isin='US0231351067'
+SELECT * FROM titles WHERE title='AMAZON COM ORD'
+INSERT INTO titles(title) VALUES('AMAZON COM ORD')
+https://www.marketwatch.com/investing/stock/AMZN/company-profile?mod=mw_quote_tab
+getSector(): Retail/Wholesale
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Consumer Cyclical',industryYF='Internet Retail' WHERE title='AMAZON COM ORD'
+UPDATE titles SET sectorMW='Retail/Wholesale',industryMW='Mixed Retailing' WHERE title='AMAZON COM ORD'
+SELECT titleSQ FROM candidates WHERE isin='CH0009002962'
+SELECT * FROM titles WHERE title='BARRY CALLEBAUT N'
+INSERT INTO titles(title) VALUES('BARRY CALLEBAUT N')
+https://www.marketwatch.com/investing/stock/BYCBF/company-profile?mod=mw_quote_tab
+getSector(): Consumer Goods
+UPDATE titles SET exchange='Swiss ',sectorYF='Consumer Defensive',industryYF='Confectioners' WHERE title='BARRY CALLEBAUT N'
+UPDATE titles SET sectorMW='Consumer Goods',industryMW='Food Products' WHERE title='BARRY CALLEBAUT N'
+SELECT titleSQ FROM candidates WHERE isin='CH0003541510'
+SELECT * FROM titles WHERE title='FORBO N'
+INSERT INTO titles(title) VALUES('FORBO N')
+https://www.marketwatch.com/investing/stock/FORN/company-profile?countrycode=CH&mod=mw_quote_tab
+getSector(): Real Estate/Construction
+UPDATE titles SET exchange='Swiss ',sectorYF='Industrials',industryYF='Building Products & Equipment' WHERE title='FORBO N'
+UPDATE titles SET sectorMW='Real Estate/Construction',industryMW='Building Materials/Products' WHERE title='FORBO N'
+SELECT titleSQ FROM candidates WHERE isin='DK0010272202'
+SELECT * FROM titles WHERE title='GENMAB ORD'
+INSERT INTO titles(title) VALUES('GENMAB ORD')
+https://www.marketwatch.com/investing/stock/GNMSF/company-profile?mod=mw_quote_tab
+getSector(): Health Care/Life Sciences
+UPDATE titles SET exchange='Copenhagen ',sectorYF='Healthcare',industryYF='Biotechnology' WHERE title='GENMAB ORD'
+UPDATE titles SET sectorMW='Health Care/Life Sciences',industryMW='Biotechnology' WHERE title='GENMAB ORD'
+SELECT titleSQ FROM candidates WHERE isin='US09857L1089'
+SELECT * FROM titles WHERE title='BOOKING HOLDINGS ORD'
+INSERT INTO titles(title) VALUES('BOOKING HOLDINGS ORD')
+https://www.marketwatch.com/investing/stock/BKNG/company-profile?mod=mw_quote_tab
+getSector(): Leisure/Arts/Hospitality
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Consumer Cyclical',industryYF='Travel Services' WHERE title='BOOKING HOLDINGS ORD'
+UPDATE titles SET sectorMW='Leisure/Arts/Hospitality',industryMW='Tourism' WHERE title='BOOKING HOLDINGS ORD'
+SELECT titleSQ FROM candidates WHERE isin='CH0002497458'
+SELECT * FROM titles WHERE title='SGS N'
+INSERT INTO titles(title) VALUES('SGS N')
+https://www.marketwatch.com/investing/stock/SGSOF/company-profile?mod=mw_quote_tab
+getSector(): Business/Consumer Services
+UPDATE titles SET exchange='Swiss ',sectorYF='Industrials',industryYF='Consulting Services' WHERE title='SGS N'
+UPDATE titles SET sectorMW='Business/Consumer Services',industryMW='Diversified Business Services' WHERE title='SGS N'
+SELECT titleSQ FROM candidates WHERE isin='CH0010645932'
+SELECT * FROM titles WHERE title='GIVAUDAN N'
+INSERT INTO titles(title) VALUES('GIVAUDAN N')
+https://www.marketwatch.com/investing/stock/GVDBF/company-profile?mod=mw_quote_tab
+getSector(): Basic Materials/Resources
+UPDATE titles SET exchange='Swiss ',sectorYF='Basic Materials',industryYF='Specialty Chemicals' WHERE title='GIVAUDAN N'
+UPDATE titles SET sectorMW='Basic Materials/Resources',industryMW='Chemicals' WHERE title='GIVAUDAN N'
+SELECT titleSQ FROM candidates WHERE isin='CH0010570767'
+SELECT * FROM titles WHERE title='LINDT PS'
+INSERT INTO titles(title) VALUES('LINDT PS')
+https://www.marketwatch.com/investing/stock/LDSVF/company-profile?mod=mw_quote_tab
+getSector(): Consumer Goods
+UPDATE titles SET exchange='Swiss ',sectorYF='Consumer Defensive',industryYF='Confectioners' WHERE title='LINDT PS'
+UPDATE titles SET sectorMW='Consumer Goods',industryMW='Food Products' WHERE title='LINDT PS'
+SELECT titleSQ FROM candidates WHERE isin='IT0003128367'
+SELECT * FROM titles WHERE title='ENEL ORD'
+INSERT INTO titles(title) VALUES('ENEL ORD')
+https://www.marketwatch.com/investing/stock/ESOCF/company-profile?mod=mw_quote_tab
+getSector(): failed IT0003128367
+getIndustry(): failed IT0003128367
+UPDATE titles SET exchange='Milan ',sectorYF='Utilities',industryYF='Utilities—Diversified' WHERE title='ENEL ORD'
+UPDATE titles SET sectorMW='void',industryMW='void' WHERE title='ENEL ORD'
+SELECT titleSQ FROM candidates WHERE isin='FR0000045072'
+SELECT * FROM titles WHERE title='CREDIT AGRICOLE ORD'
+INSERT INTO titles(title) VALUES('CREDIT AGRICOLE ORD')
+https://www.marketwatch.com/investing/stock/CRARF/company-profile?mod=mw_quote_tab
+getSector(): Financial Services
+UPDATE titles SET exchange='Paris ',sectorYF='Financial Services',industryYF='Banks—Regional' WHERE title='CREDIT AGRICOLE ORD'
+UPDATE titles SET sectorMW='Financial Services',industryMW='Banking' WHERE title='CREDIT AGRICOLE ORD'
+SELECT titleSQ FROM candidates WHERE isin='IT0003497168'
+SELECT * FROM titles WHERE title='TELECOM ITALIA ORD'
+INSERT INTO titles(title) VALUES('TELECOM ITALIA ORD')
+https://www.marketwatch.com/investing/stock/TIAOF/company-profile?mod=mw_quote_tab
+getSector(): Telecommunication Services
+UPDATE titles SET exchange='Milan ',sectorYF='Communication Services',industryYF='Telecom Services' WHERE title='TELECOM ITALIA ORD'
+UPDATE titles SET sectorMW='Telecommunication Services',industryMW='Wired Telecommunications Services' WHERE title='TELECOM ITALIA ORD'
+SELECT titleSQ FROM candidates WHERE isin='NL0015000IY2'
+SELECT * FROM titles WHERE title='UMG ORD'
+INSERT INTO titles(title) VALUES('UMG ORD')
+https://www.marketwatch.com/investing/stock/UMG/company-profile?countrycode=NL&mod=mw_quote_tab
+getSector(): failed NL0015000IY2
+getIndustry(): failed NL0015000IY2
+UPDATE titles SET exchange='Amsterdam ',sectorYF='Communication Services',industryYF='Entertainment' WHERE title='UMG ORD'
+UPDATE titles SET sectorMW='void',industryMW='void' WHERE title='UMG ORD'
+SELECT titleSQ FROM candidates WHERE isin='IT0003132476'
+SELECT * FROM titles WHERE title='ENI ORD'
+INSERT INTO titles(title) VALUES('ENI ORD')
+https://www.marketwatch.com/investing/stock/EIPAF/company-profile?mod=mw_quote_tab
+getSector(): Companies on the Energy Service
+UPDATE titles SET exchange='Milan ',sectorYF='Energy',industryYF='Oil & Gas Integrated' WHERE title='ENI ORD'
+UPDATE titles SET sectorMW='Companies on the Energy Service',industryMW='Major Oil & Gas' WHERE title='ENI ORD'
+SELECT titleSQ FROM candidates WHERE isin='DE000EVNK013'
+SELECT * FROM titles WHERE title='EVONIK INDUSTRIES ORD'
+INSERT INTO titles(title) VALUES('EVONIK INDUSTRIES ORD')
+https://www.marketwatch.com/investing/stock/EVKIF/company-profile?mod=mw_quote_tab
+getSector(): Basic Materials/Resources
+UPDATE titles SET exchange='XETRA ',sectorYF='Basic Materials',industryYF='Specialty Chemicals' WHERE title='EVONIK INDUSTRIES ORD'
+UPDATE titles SET sectorMW='Basic Materials/Resources',industryMW='Chemicals' WHERE title='EVONIK INDUSTRIES ORD'
+SELECT titleSQ FROM candidates WHERE isin='DE000A0Z2ZZ5'
+SELECT * FROM titles WHERE title='FREENET N ORD'
+INSERT INTO titles(title) VALUES('FREENET N ORD')
+https://www.marketwatch.com/investing/stock/FNTN/company-profile?countrycode=XE&mod=mw_quote_tab
+getSector(): Telecommunication Services
+UPDATE titles SET exchange='XETRA ',sectorYF='Communication Services',industryYF='Telecom Services' WHERE title='FREENET N ORD'
+UPDATE titles SET sectorMW='Telecommunication Services',industryMW='Wireless Telecommunications Services' WHERE title='FREENET N ORD'
+SELECT titleSQ FROM candidates WHERE isin='DE0008402215'
+SELECT * FROM titles WHERE title='HANNOVER RUECK ORD'
+INSERT INTO titles(title) VALUES('HANNOVER RUECK ORD')
+https://www.marketwatch.com/investing/stock/HNR1/company-profile?countrycode=XE&mod=mw_quote_tab
+getSector(): Financial Services
+UPDATE titles SET exchange='XETRA ',sectorYF='Financial Services',industryYF='Insurance—Reinsurance' WHERE title='HANNOVER RUECK ORD'
+UPDATE titles SET sectorMW='Financial Services',industryMW='Reinsurance' WHERE title='HANNOVER RUECK ORD'
+SELECT titleSQ FROM candidates WHERE isin='FR0000120404'
+SELECT * FROM titles WHERE title='ACCOR ORD'
+INSERT INTO titles(title) VALUES('ACCOR ORD')
+https://www.marketwatch.com/investing/stock/ACRFF/company-profile?mod=mw_quote_tab
+getSector(): Leisure/Arts/Hospitality
+UPDATE titles SET exchange='Paris ',sectorYF='Consumer Cyclical',industryYF='Lodging' WHERE title='ACCOR ORD'
+UPDATE titles SET sectorMW='Leisure/Arts/Hospitality',industryMW='Hotels' WHERE title='ACCOR ORD'
+SELECT titleSQ FROM candidates WHERE isin='NL0000303709'
+SELECT * FROM titles WHERE title='AEGON ORD'
+INSERT INTO titles(title) VALUES('AEGON ORD')
+https://www.marketwatch.com/investing/stock/AEGOF/company-profile?mod=mw_quote_tab
+getSector(): Financial Services
+UPDATE titles SET exchange='Amsterdam ',sectorYF='Financial Services',industryYF='Insurance—Diversified' WHERE title='AEGON ORD'
+UPDATE titles SET sectorMW='Financial Services',industryMW='Life Insurance' WHERE title='AEGON ORD'
+SELECT titleSQ FROM candidates WHERE isin='DE000A1PHFF7'
+SELECT * FROM titles WHERE title='HUGO BOSS N ORD'
+INSERT INTO titles(title) VALUES('HUGO BOSS N ORD')
+https://www.marketwatch.com/investing/stock/0Q8F/company-profile?countrycode=UK&mod=mw_quote_tab
+getSector(): Consumer Goods
+UPDATE titles SET exchange='XETRA ',sectorYF='Consumer Cyclical',industryYF='Apparel Manufacturing' WHERE title='HUGO BOSS N ORD'
+UPDATE titles SET sectorMW='Consumer Goods',industryMW='Clothing' WHERE title='HUGO BOSS N ORD'
+SELECT titleSQ FROM candidates WHERE isin='DE0006219934'
+SELECT * FROM titles WHERE title='JUNGHEINRICH PRF'
+INSERT INTO titles(title) VALUES('JUNGHEINRICH PRF')
+https://www.marketwatch.com/investing/stock/JUN3/company-profile?countrycode=XE&mod=mw_quote_tab
+getSector(): Industrial Goods
+UPDATE titles SET exchange='XETRA ',sectorYF='Industrials',industryYF='Specialty Industrial Machinery' WHERE title='JUNGHEINRICH PRF'
+UPDATE titles SET sectorMW='Industrial Goods',industryMW='Mobile Machinery' WHERE title='JUNGHEINRICH PRF'
+SELECT titleSQ FROM candidates WHERE isin='NL0011794037'
+SELECT * FROM titles WHERE title='AHOLD DEL ORD'
+INSERT INTO titles(title) VALUES('AHOLD DEL ORD')
+https://www.marketwatch.com/investing/stock/AHODF/company-profile?mod=mw_quote_tab
+getSector(): Retail/Wholesale
+UPDATE titles SET exchange='Amsterdam ',sectorYF='Consumer Defensive',industryYF='Grocery Stores' WHERE title='AHOLD DEL ORD'
+UPDATE titles SET sectorMW='Retail/Wholesale',industryMW='Food Retail' WHERE title='AHOLD DEL ORD'
+SELECT titleSQ FROM candidates WHERE isin='ES0173516115'
+SELECT * FROM titles WHERE title='REPSOL ORD'
+INSERT INTO titles(title) VALUES('REPSOL ORD')
+https://www.marketwatch.com/investing/stock/REPYF/company-profile?mod=mw_quote_tab
+getSector(): Companies on the Energy Service
+UPDATE titles SET exchange='MCE ',sectorYF='Energy',industryYF='Oil & Gas Integrated' WHERE title='REPSOL ORD'
+UPDATE titles SET sectorMW='Companies on the Energy Service',industryMW='Major Oil & Gas' WHERE title='REPSOL ORD'
+SELECT titleSQ FROM candidates WHERE isin='FR0000121972'
+SELECT * FROM titles WHERE title='SCHNEIDER ELECTRIC SE ORD'
+INSERT INTO titles(title) VALUES('SCHNEIDER ELECTRIC SE ORD')
+https://www.marketwatch.com/investing/stock/SBGSF/company-profile?mod=mw_quote_tab
+getSector(): Industrial Goods
+UPDATE titles SET exchange='Paris ',sectorYF='Industrials',industryYF='Specialty Industrial Machinery' WHERE title='SCHNEIDER ELECTRIC SE ORD'
+UPDATE titles SET sectorMW='Industrial Goods',industryMW='Industrial Electronics' WHERE title='SCHNEIDER ELECTRIC SE ORD'
+SELECT titleSQ FROM candidates WHERE isin='ES0178430E18'
+SELECT * FROM titles WHERE title='TELEFONICA ORD'
+INSERT INTO titles(title) VALUES('TELEFONICA ORD')
+https://www.marketwatch.com/investing/stock/TEFOF/company-profile?mod=mw_quote_tab
+getSector(): Telecommunication Services
+UPDATE titles SET exchange='MCE ',sectorYF='Communication Services',industryYF='Telecom Services' WHERE title='TELEFONICA ORD'
+UPDATE titles SET sectorMW='Telecommunication Services',industryMW='Wireless Telecommunications Services' WHERE title='TELEFONICA ORD'
+SELECT titleSQ FROM candidates WHERE isin='ES0144580Y14'
+SELECT * FROM titles WHERE title='IBERDROLA ORD'
+INSERT INTO titles(title) VALUES('IBERDROLA ORD')
+https://www.marketwatch.com/investing/stock/IBDSF/company-profile?mod=mw_quote_tab
+getSector(): Companies on the Energy Service
+UPDATE titles SET exchange='MCE ',sectorYF='Utilities',industryYF='Utilities—Diversified' WHERE title='IBERDROLA ORD'
+UPDATE titles SET sectorMW='Companies on the Energy Service',industryMW='Electric Utilities' WHERE title='IBERDROLA ORD'
+SELECT titleSQ FROM candidates WHERE isin='GB0005405286'
+SELECT * FROM titles WHERE title='HSBC HOLDINGS ORD'
+INSERT INTO titles(title) VALUES('HSBC HOLDINGS ORD')
+https://www.marketwatch.com/investing/stock/HSBA/company-profile?countrycode=UK&mod=mw_quote_tab
+getSector(): Financial Services
+UPDATE titles SET exchange='LSE ',sectorYF='Financial Services',industryYF='Banks—Diversified' WHERE title='HSBC HOLDINGS ORD'
+UPDATE titles SET sectorMW='Financial Services',industryMW='Major International Banks' WHERE title='HSBC HOLDINGS ORD'
+SELECT titleSQ FROM candidates WHERE isin='GB00B7T77214'
+SELECT * FROM titles WHERE title='NATWEST GROUP ORD'
+INSERT INTO titles(title) VALUES('NATWEST GROUP ORD')
+https://www.marketwatch.com/investing/stock/RBSPF/company-profile?mod=mw_quote_tab
+getSector(): Financial Services
+UPDATE titles SET exchange='LSE ',sectorYF='Financial Services',industryYF='Banks—Diversified' WHERE title='NATWEST GROUP ORD'
+UPDATE titles SET sectorMW='Financial Services',industryMW='Banking' WHERE title='NATWEST GROUP ORD'
+SELECT titleSQ FROM candidates WHERE isin='US1924461023'
+SELECT * FROM titles WHERE title='COGNIZANT TECHNOLOGY SOLUTN CL'
+INSERT INTO titles(title) VALUES('COGNIZANT TECHNOLOGY SOLUTN CL')
+https://www.marketwatch.com/investing/stock/CTSH/company-profile?mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Technology',industryYF='Information Technology Services' WHERE title='COGNIZANT TECHNOLOGY SOLUTN CL'
+UPDATE titles SET sectorMW='Technology',industryMW='Software' WHERE title='COGNIZANT TECHNOLOGY SOLUTN CL'
+SELECT titleSQ FROM candidates WHERE isin='US3453708600'
+SELECT * FROM titles WHERE title='FORD MOTOR ORD'
+INSERT INTO titles(title) VALUES('FORD MOTOR ORD')
+https://www.marketwatch.com/investing/stock/F/company-profile?mod=mw_quote_tab
+getSector(): Automotive
+UPDATE titles SET exchange='NYSE ',sectorYF='Consumer Cyclical',industryYF='Auto Manufacturers' WHERE title='FORD MOTOR ORD'
+UPDATE titles SET sectorMW='Automotive',industryMW='Automobiles' WHERE title='FORD MOTOR ORD'
+SELECT titleSQ FROM candidates WHERE isin='US02209S1033'
+SELECT * FROM titles WHERE title='ALTRIA GROUP ORD'
+INSERT INTO titles(title) VALUES('ALTRIA GROUP ORD')
+https://www.marketwatch.com/investing/stock/MO/company-profile?mod=mw_quote_tab
+getSector(): Consumer Goods
+UPDATE titles SET exchange='NYSE ',sectorYF='Consumer Defensive',industryYF='Tobacco' WHERE title='ALTRIA GROUP ORD'
+UPDATE titles SET sectorMW='Consumer Goods',industryMW='Tobacco' WHERE title='ALTRIA GROUP ORD'
+SELECT titleSQ FROM candidates WHERE isin='US00206R1023'
+SELECT * FROM titles WHERE title='AT T ORD'
+INSERT INTO titles(title) VALUES('AT T ORD')
+https://www.marketwatch.com/investing/stock/T/company-profile?mod=mw_quote_tab
+getSector(): Telecommunication Services
+UPDATE titles SET exchange='NYSE ',sectorYF='Communication Services',industryYF='Telecom Services' WHERE title='AT T ORD'
+UPDATE titles SET sectorMW='Telecommunication Services',industryMW='Wireless Telecommunications Services' WHERE title='AT T ORD'
+SELECT titleSQ FROM candidates WHERE isin='US40434L1052'
+SELECT * FROM titles WHERE title='HP ORD'
+INSERT INTO titles(title) VALUES('HP ORD')
+https://www.marketwatch.com/investing/stock/HPQ/company-profile?mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='NYSE ',sectorYF='Technology',industryYF='Computer Hardware' WHERE title='HP ORD'
+UPDATE titles SET sectorMW='Technology',industryMW='Computers/Consumer Electronics' WHERE title='HP ORD'
+SELECT titleSQ FROM candidates WHERE isin='US58933Y1055'
+SELECT * FROM titles WHERE title='MERCK   CO ORD'
+INSERT INTO titles(title) VALUES('MERCK   CO ORD')
+https://www.marketwatch.com/investing/stock/MRK/company-profile?mod=mw_quote_tab
+getSector(): Health Care/Life Sciences
+UPDATE titles SET exchange='NYSE ',sectorYF='Healthcare',industryYF='Drug Manufacturers—General' WHERE title='MERCK   CO ORD'
+UPDATE titles SET sectorMW='Health Care/Life Sciences',industryMW='Pharmaceuticals' WHERE title='MERCK   CO ORD'
+SELECT titleSQ FROM candidates WHERE isin='US09062X1037'
+SELECT * FROM titles WHERE title='BIOGEN ORD'
+INSERT INTO titles(title) VALUES('BIOGEN ORD')
+https://www.marketwatch.com/investing/stock/BIIB/company-profile?mod=mw_quote_tab
+getSector(): Health Care/Life Sciences
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Healthcare',industryYF='Drug Manufacturers—General' WHERE title='BIOGEN ORD'
+UPDATE titles SET sectorMW='Health Care/Life Sciences',industryMW='Biotechnology' WHERE title='BIOGEN ORD'
+SELECT titleSQ FROM candidates WHERE isin='US0268747849'
+SELECT * FROM titles WHERE title='AMERICAN INTERNATIONAL GROUP O'
+INSERT INTO titles(title) VALUES('AMERICAN INTERNATIONAL GROUP O')
+https://www.marketwatch.com/investing/stock/AIG/company-profile?mod=mw_quote_tab
+getSector(): Financial Services
+UPDATE titles SET exchange='NYSE ',sectorYF='Financial Services',industryYF='Insurance—Diversified' WHERE title='AMERICAN INTERNATIONAL GROUP O'
+UPDATE titles SET sectorMW='Financial Services',industryMW='Full-Line Insurance' WHERE title='AMERICAN INTERNATIONAL GROUP O'
+SELECT titleSQ FROM candidates WHERE isin='US1696561059'
+SELECT * FROM titles WHERE title='CHIPOTLE MEXICAN GRILL ORD'
+INSERT INTO titles(title) VALUES('CHIPOTLE MEXICAN GRILL ORD')
+https://www.marketwatch.com/investing/stock/CMG/company-profile?mod=mw_quote_tab
+getSector(): Leisure/Arts/Hospitality
+UPDATE titles SET exchange='NYSE ',sectorYF='Consumer Cyclical',industryYF='Restaurants' WHERE title='CHIPOTLE MEXICAN GRILL ORD'
+UPDATE titles SET sectorMW='Leisure/Arts/Hospitality',industryMW='Restaurants' WHERE title='CHIPOTLE MEXICAN GRILL ORD'
+SELECT titleSQ FROM candidates WHERE isin='US38268T1034'
+SELECT * FROM titles WHERE title='GOPRO CL A ORD'
+INSERT INTO titles(title) VALUES('GOPRO CL A ORD')
+https://www.marketwatch.com/investing/stock/GPRO/company-profile?mod=mw_quote_tab
+getSector(): Consumer Goods
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Technology',industryYF='Consumer Electronics' WHERE title='GOPRO CL A ORD'
+UPDATE titles SET sectorMW='Consumer Goods',industryMW='Leisure Goods' WHERE title='GOPRO CL A ORD'
+SELECT titleSQ FROM candidates WHERE isin='US9485961018'
+SELECT * FROM titles WHERE title='WEIBO ADR REP 1 CL A ORD'
+INSERT INTO titles(title) VALUES('WEIBO ADR REP 1 CL A ORD')
+https://www.marketwatch.com/investing/stock/WB/company-profile?mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Communication Services',industryYF='Internet Content & Information' WHERE title='WEIBO ADR REP 1 CL A ORD'
+UPDATE titles SET sectorMW='Technology',industryMW='Internet/Online' WHERE title='WEIBO ADR REP 1 CL A ORD'
+SELECT titleSQ FROM candidates WHERE isin='GB00B7KR2P84'
+SELECT * FROM titles WHERE title='EASYJET ORD'
+INSERT INTO titles(title) VALUES('EASYJET ORD')
+https://www.marketwatch.com/investing/stock/EZJ/company-profile?countrycode=UK&mod=mw_quote_tab
+getSector(): Transportation/Logistics
+UPDATE titles SET exchange='LSE ',sectorYF='Industrials',industryYF='Airlines' WHERE title='EASYJET ORD'
+UPDATE titles SET sectorMW='Transportation/Logistics',industryMW='Passenger Airlines' WHERE title='EASYJET ORD'
+SELECT titleSQ FROM candidates WHERE isin='US00971T1016'
+SELECT * FROM titles WHERE title='AKAMAI TECHNOLOGIES ORD'
+INSERT INTO titles(title) VALUES('AKAMAI TECHNOLOGIES ORD')
+https://www.marketwatch.com/investing/stock/AKAM/company-profile?mod=mw_quote_tab
+getSector(): Technology
+UPDATE titles SET exchange='NasdaqGS ',sectorYF='Technology',industryYF='Software—Infrastructure' WHERE title='AKAMAI TECHNOLOGIES ORD'
+UPDATE titles SET sectorMW='Technology',industryMW='Internet/Online' WHERE title='AKAMAI TECHNOLOGIES ORD'
+SELECT titleSQ FROM candidates WHERE isin='US0138721065'
+SELECT * FROM titles WHERE title='ALCOA ORD'
+INSERT INTO titles(title) VALUES('ALCOA ORD')
+https://www.marketwatch.com/investing/stock/AA/company-profile?mod=mw_quote_tab
+getSector(): Basic Materials/Resources
+UPDATE titles SET exchange='NYSE ',sectorYF='Basic Materials',industryYF='Aluminum' WHERE title='ALCOA ORD'
+UPDATE titles SET sectorMW='Basic Materials/Resources',industryMW='Aluminum' WHERE title='ALCOA ORD'
+SELECT titleSQ FROM candidates WHERE isin='US4370761029'
+SELECT * FROM titles WHERE title='HOME DEPOT ORD'
+INSERT INTO titles(title) VALUES('HOME DEPOT ORD')
+https://www.marketwatch.com/investing/stock/HD/company-profile?mod=mw_quote_tab
+getSector(): Retail/Wholesale
+UPDATE titles SET exchange='NYSE ',sectorYF='Consumer Cyclical',industryYF='Home Improvement Retail' WHERE title='HOME DEPOT ORD'
+UPDATE titles SET sectorMW='Retail/Wholesale',industryMW='Home Goods Retail' WHERE title='HOME DEPOT ORD'
+SELECT titleSQ FROM candidates WHERE isin='US20825C1045'
+SELECT * FROM titles WHERE title='CONOCOPHILLIPS ORD'
+INSERT INTO titles(title) VALUES('CONOCOPHILLIPS ORD')
+https://www.marketwatch.com/investing/stock/COP/company-profile?mod=mw_quote_tab
+getSector(): Companies on the Energy Service
+UPDATE titles SET exchange='NYSE ',sectorYF='Energy',industryYF='Oil & Gas E&P' WHERE title='CONOCOPHILLIPS ORD'
+UPDATE titles SET sectorMW='Companies on the Energy Service',industryMW='Major Oil & Gas' WHERE title='CONOCOPHILLIPS ORD'
+SELECT titleSQ FROM candidates WHERE isin='US5324571083'
+SELECT * FROM titles WHERE title='ELI LILLY ORD'
+INSERT INTO titles(title) VALUES('ELI LILLY ORD')
+https://www.marketwatch.com/investing/stock/LLY/company-profile?mod=mw_quote_tab
+getSector(): Health Care/Life Sciences
+UPDATE titles SET exchange='NYSE ',sectorYF='Healthcare',industryYF='Drug Manufacturers—General' WHERE title='ELI LILLY ORD'
+UPDATE titles SET sectorMW='Health Care/Life Sciences',industryMW='Pharmaceuticals' WHERE title='ELI LILLY ORD'
+SELECT titleSQ FROM candidates WHERE isin='US9884981013'
+SELECT * FROM titles WHERE title='YUM BRANDS ORD'
+INSERT INTO titles(title) VALUES('YUM BRANDS ORD')
+https://www.marketwatch.com/investing/stock/YUM/company-profile?mod=mw_quote_tab
+getSector(): Leisure/Arts/Hospitality
+UPDATE titles SET exchange='NYSE ',sectorYF='Consumer Cyclical',industryYF='Restaurants' WHERE title='YUM BRANDS ORD'
+UPDATE titles SET sectorMW='Leisure/Arts/Hospitality',industryMW='Restaurants' WHERE title='YUM BRANDS ORD'
+SELECT titleSQ FROM candidates WHERE isin='DE0007235301'
+SELECT * FROM titles WHERE title='SGL CARBON ORD'
+INSERT INTO titles(title) VALUES('SGL CARBON ORD')
+https://www.marketwatch.com/investing/stock/SGLFF/company-profile?mod=mw_quote_tab
+getSector(): Industrial Goods
+UPDATE titles SET exchange='XETRA ',sectorYF='Basic Materials',industryYF='Chemicals' WHERE title='SGL CARBON ORD'
+UPDATE titles SET sectorMW='Industrial Goods',industryMW='Industrial Electronics' WHERE title='SGL CARBON ORD'
+SELECT titleSQ FROM candidates WHERE isin='DK0010181759'
+SELECT * FROM titles WHERE title='CARLSBERG ORD'
+INSERT INTO titles(title) VALUES('CARLSBERG ORD')
+https://www.marketwatch.com/investing/stock/CARL.B/company-profile?countrycode=DK&mod=mw_quote_tab
+getSector(): Consumer Goods
+UPDATE titles SET exchange='Copenhagen ',sectorYF='Consumer Defensive',industryYF='Beverages—Brewers' WHERE title='CARLSBERG ORD'
+UPDATE titles SET sectorMW='Consumer Goods',industryMW='Alcoholic Beverages/Drinks' WHERE title='CARLSBERG ORD'
+SELECT titleSQ FROM candidates WHERE isin='FR0000127771'
+SELECT * FROM titles WHERE title='VIVENDI ORD'
+INSERT INTO titles(title) VALUES('VIVENDI ORD')
+https://www.marketwatch.com/investing/stock/VIV/company-profile?countrycode=FR&mod=mw_quote_tab
+getSector(): Media/Entertainment
+UPDATE titles SET exchange='Paris ',sectorYF='Communication Services',industryYF='Broadcasting' WHERE title='VIVENDI ORD'
+UPDATE titles SET sectorMW='Media/Entertainment',industryMW='Motion Picture/Sound Recording' WHERE title='VIVENDI ORD'
+all done, shutting down

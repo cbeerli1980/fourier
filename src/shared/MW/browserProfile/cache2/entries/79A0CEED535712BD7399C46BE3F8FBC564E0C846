@@ -1,0 +1,1254 @@
+/* eslint-disable */
+/**
+ * @author tlohner
+ */
+var random=Math.random();
+var LnkCH='http://www.swissquote.ch';
+var LnkCHpre='https://premium.swissquote.ch';
+//var LnkCHsav='https://piwtradegl.bank.swissquote.ch';
+var LnkCHsav='https://trade.swissquote.ch';
+var LnkCHsec='https://secure.swissquote.ch';
+//var LnkSK='/sq_mi/market/sk/figures.jsp?figure='; // dead link
+var LnkNEWS='/sqi_premium/market/news/NewsList.action?';
+//var LnkEW='/sq_mi/market/euwax/figures.jsp?figure='; // dead link
+//var LnkParsefq='/fcgi-bin/parsefquote?quote=';
+var LnkWinLos='/sq_mi/market/Listing.action?market=ch&list=';
+//var LnkStockf='/fcgi-bin/stockfquote?symbols=';
+//var LnkAfxParser='http://news.swissquote.ch/cgi-bin/SQ_afxparser/afxparser';
+var LnkPress='http://www.swissquote.ch/SQ_press/le_temps/';
+var LnkList='/sq_mi/market/Listing.action?l=CLANG2&';
+var LnkOverview='/web-market-quote/?l=CLANG2&';
+var LnkEurexOptions="/sqi_premium/market/derivatives/optionfuture/OptionFuture.action?type=option&market=eu&l=CLANG2&"; //still used ?
+var LnkEurexFutures="/sqi_premium/market/derivatives/optionfuture/OptionFuture.action?type=future&market=eu?l=CLANG2&"; //still used ?
+
+
+var LnkRq2LOV="/SQ_rquote2/listOfValues/";
+var LnkWarrantOn="/sqi_premium/market/derivatives/ew/WarrantOn.action?l=CLANG2&";
+var LnkDerivatives="/sqi_premium/market/derivatives";
+var LnkESpace="/espace/renderer/ComponentRenderer.action?displayDisclaimer=true&siteId=";
+var LnkETF="/espace/renderer/ComponentRenderer.action?displayDisclaimer=true&siteId=";
+
+var LnkOptFut="/sqi_premium/market/derivatives/optionfuture/OptionFuture.action?type=";
+var LnkEqui="/sqi_web_search/market/equity/";
+
+var LnkPersonalPagePub="https://account.swissquote.ch/myswissquote/login/iframe/pp?l=CLANG2&returnUrl=https%3A%2F%2Fpremium.swissquote.ch%2Furl%2Fpersonal_page%3Fl%3DCLANG2";
+var LnkPortfolioManagerPub="https://account.swissquote.ch/myswissquote/login/iframe/pf?l=CLANG2&returnUrl=https%3A%2F%2Fpremium.swissquote.ch%2Furl%2Fportfolio_manager%3Fl%3DCLANG2";
+var LnkPersonalPagePre="/sqi_runnerbook/views/Watchlist.action?rand="+ random;
+var LnkPortfolioManagerPre="/sqi_runnerbook/views/Portfolio.action?rand="+ random;
+
+var LnkOrderBookLive = "/website-help/tools/orderbook/order_book_CLANG1.html#2";
+var LnkRunnerbook = "/sq_mi/runnerbook/views/Home.action";
+var LnkRanking = '/sqi_premium/ranking/Search.action';
+
+var LnkInvestmentIdeas = '/sqw-static/investment-ideas/?l=CLANG1';
+var LnkThemesTrading = '/investment-themes-webapp/index.jsp';
+var LnkLiveAnalysis = '/url/live-analysis';
+
+var LnkIntradayLive = 'javascript:intraday_new()';
+var LnkAnalysisTool = 'javascript:historical_new()';
+
+//var LnkOpenCommunity = 'javascript:openCommunity()';
+var LnkOpenLiveAnalysis = 'javascript:openLiveAnalysis()';
+var LnkOpenInfoMobile = 'javascript:openMobileMarketing()';
+
+var LnkWarrantChooser = 'javascript:parent.launch_warrant(0)';
+var NewParams = {New:'new'};
+var LnkNewsAlert = '/sqi_premium/alert/news/List.action?lang=CLANG1';
+var LnkPriceAlert = '/sqi_premium/alert/price/WatchList.action?mode=coming_from_menu_tools&lang=CLANG1';
+var LnkInfoMobile = '/url/mobile-informations';
+
+var LnkEtfs = '/sqi_premium/etf/Home.action?l=CLANG2';
+var LnkSmiMovers = "/sq_mi/market/Movers.action?market=ch&list=smi";
+var LnkUSSNP = '/sqi_web_search/market/equity/future/FutureSearch.action?searchFilter.market=ud&searchFilter.usFutureUnderlying=ES&l=CLANG2';
+
+var LnkWorldOverview = '/sq-web-info/worldmap?l=CLANG1';
+var LnkWarrantsIntro = '/url/espaces_warrant';
+var LnkWarrantsSwOrverview = '/url/espaces_warrant_swiss';
+var LnkSwissDotsOverview = '/sq-web-info/home-dots?l=CLANG2';
+var LnkSwissDots = '/sq-web-info/home-dots?l=CLANG2';
+var LnkEquitySwDeriv = "/sqi_web_search/market/equity/swissderivatives/";
+var LnkWarrantGerman = '/url/espaces_warrant_german';
+var LnkWarrantsAfterHours = '/url/espaces_warrant_';
+
+var LnkOptionFutureIndex = '/sqi_premium/market/derivatives/optionfuture/Index.action?l=CLANG2';
+var LnkOptionFuturePresentation = '/website-static/opt_futures/opt_futures_presentation_CLANG1.html';
+var LnkOptionFutureOverview = '/sqi_premium/market/derivatives/optionfuture/Index.action?l=CLANG2';
+var LnkOptionFutureEurope = '/sq-web-info/home-eurex?l=CLANG2';
+var LnkOptionFutureUSA = '/website-static/opt_futures/opt_futures_usa_CLANG1.html';
+
+var fundTerms = '/sq-web-info/termsAuto/Funds?l=CLANG1&cookieName=SQ_terms&cookieValue=TC_Funds:I_AGREE&urlRedirect=';
+var LnkFunds = '/website-static/funds/';
+var LnkFundsEspace = '/espace/renderer/';
+var NewLnkFundsEspace = fundTerms + 'https://www.swissquote.ch/sq-espaces-cms/#fund/espace/31';
+var LnkFundsSearch = fundTerms + 'https://www.swissquote.ch/sqi_web_search/market/funds/SearchByTier.action?lang=CLANG1&I_AGREE';
+var LnkFundsTerms = fundTerms + 'https://www.swissquote.ch/sqi_web_search/market/equity/funds/FundSearch.action?lang=CLANG2&I_AGREE';
+
+var LnkETFOverview = '/url/espaces_etf';
+
+var LnkIndiceSw = "/sq_mi/market/Listing.action?market=chi&list=indices";
+var LnkIndiceOverview = '/sqi_premium/market/IndexOverview.action?range=day';
+var LnkIndiceSector = "/sq_mi/market/Listing.action?market=chi&list=sectors";
+
+var ForexMarketCurrencies = "/sqi_premium/market/currencies/";
+var LnkCommoditiesMarket = "/sq_mi/market/";
+var LnkCommoditiesDeriv = "/sqi_premium/market/derivatives/ch/MapSearch.action?search=underlying&market=co";
+var LnkOblIntro = "/sq-web-info/home-bonds?l=CLANG2";
+var LnkOblInterest = "/sqi_premium/market/bonds/RateCurve.action?&sort=type&asc=true&l=CLANG2";
+var LnkOblBridportNews = "/sqi_premium/market/BridportNews.action?l=CLANG2";
+
+// var LnkNewsOverview = "/sq-web-info/home-news?l=CLANG2";
+var LnkNewsOverview = "/web-news-section/"
+var LnkNewsSearch = "/sqi_web_search/market/equity/NewsSearch.action?form=&lang=CLANG2";
+var LnkNewsCompany = "/sqi_premium/market/news/NewsOnCompany.action";
+var LnkNewsNewsAlert = "/sqi_premium/alert/news/List.action?lang=CLANG1";
+var LnkNewsBulletin = "/sqi_premium/market/news/NewsHome.action?lang=CLANG2";
+var LnkNewsLetter = "/sqw-newsletter/index.jsp?onframe=true";
+
+// var LnkCommunity = "https://community.swissquote.ch/sqi_community/page/Home.action";
+
+var LnkElseHelp = "/website-help/main_CLANG1.html";
+var LnkElseOffice = "/website-help/offices/offices_CLANG1.html";
+var LnkElseGroup = "/website-group/group/";
+var LnkElseInvestor = "/website-group/investor/";
+var LnkElseGroupContact = "/website-group/contact/";
+var LnkElseGroupCorporate = "/website-group/corporate/";
+var LnkElseGroupPress = "/website-group/press/";
+var LnkElseGroupJob = "/website-group/job/";
+
+var LnkCrypto = "/web-market-quote/?market=cryp&l=CLANG2#cryp";
+
+function intraday_new(){
+    if(Modernizr.canvas){
+        var atoolsUrl = '/sqi_atools/AnalysisTools.action?frequence=live&type=4&indicators=&compare=&mode=intraday&detached=true';
+        var atoolWindow = window.open(atoolsUrl,'Analysis_Tools_2','width=1024,height=630,status=no,toolbar=no,menubar=no,scrollable=no,resizable=yes,scrollbars=no,directories=no');
+        atoolWindow.focus();
+    }else{
+        parent.launch_atools('','live');
+    }
+}
+
+function historical_new(){
+    if(Modernizr.canvas){
+        var atoolsUrl = '/sqi_atools/AnalysisTools.action?frequence=daily&type=1&period=year&mode=historical&detached=true';
+        var atoolWindow = window.open(atoolsUrl,'Analysis_Tools_2','width=1024,height=630,status=no,toolbar=no,menubar=no,scrollable=no,resizable=yes,scrollbars=no,directories=no');
+        atoolWindow.focus();
+    }else{
+        parent.launch_atools('');
+    }
+}
+
+//function openCommunity(){
+//  parent.location.replace(LnkCommunity)
+//}
+
+function openLiveAnalysis() {
+    parent.location.replace(LnkLiveAnalysis);
+}
+
+function openMobileMarketing() {
+    parent.location.replace(LnkInfoMobile)
+}
+
+function setNavigation(type){
+  tree = new NavNode();
+  if (type == "quote" || type == "warrants" || type == "funds" || type == "news" || type == "forex" || type == "bank") {
+    //tree.addChild("Personal Page", "javascript:parent.pp_login()");
+    tree.addChild("Personal Page", LnkPersonalPagePub,{Domaine:"public"});
+    tree.addChild("Personal Page", LnkPersonalPagePre ,{Domaine:"premium"});
+    tree.addChild("Portfolio Manager", LnkPortfolioManagerPub, {Domaine:"public"});
+    tree.addChild("Portfolio Manager", LnkPortfolioManagerPre, {Domaine:"premium"});
+    tree.addChild("Themes Trading", LnkThemesTrading);
+    var _finance = tree.addChild(["Finanz-Tools", "Financial Tools", "Outils financiers"]);
+    var _charts = _finance.addChild("Charts", "");
+    _charts.addChild("Intraday Live", LnkIntradayLive);
+    _charts.addChild(["Analysis Tool","Analysis Tool","Analysis Tool"], LnkAnalysisTool);
+//          var _live = _finance.addChild("Live Quotes", "",{Domaine:"premium"});
+//              _live.addChild("Orderbook Live", LnkOrderBookLive ,{Domaine:"premium"});
+//              _live.addChild("Runnerbook", LnkRunnerbook ,{Domaine:"premium"});
+//              _live.addChild("Runner Live", "javascript:parent.launch_runner(1)");
+    var _derTools = _finance.addChild(["Derivate", "Derivatives", "DÈrivÈs"], "");
+    _derTools.addChild("Warrant Chooser", LnkWarrantChooser);
+    var _derTools_ch = _derTools.addChild(["Schweizer", "Swiss", "Suisse"], "");
+    _derTools_ch.addChild("Derivative On", LnkDerivatives + "/ch/MapSearch.action?l=CLANG2");
+    _derTools_ch.addChild("Derivative Finder", LnkEqui + "swissderivatives/SwissDerivativeSearch.action");
+    var _derTools_de = _derTools.addChild(["Deutscher ", "German", "Allemand"],"",{Domaine:"premium"});
+    _derTools_de.addChild("Derivative on", LnkWarrantOn,{Domaine:"premium"});
+    _derTools_de.addChild("Derivative Search", LnkEqui + "euwax/EuwaxSearch.action",{Domaine:"premium"});
+    var _analyse = _finance.addChild(["Analyse", "Analyze", "Analyse"], "",{Domaine:"premium"});
+// SQI-832:     _analyse.addChild("Equity Analyzer", LnkCHsec + "/fcgi-bin/analyzer?LANGUAGE=CLANG0");
+    _analyse.addChild("Ranking", LnkRanking,{Domaine:"premium"});
+    var _alert = _finance.addChild(["Alert", "Alert", "Alerte"], "",{Domaine:"premium"});
+    _alert.addChild("News Alert", LnkNewsAlert,{Domaine:"premium"});
+    _alert.addChild("Price Alert", LnkPriceAlert,{Domaine:"premium"});
+    var _mobile = _finance.addChild("Mobile", "");
+    _mobile.addChild(["Mobile Informationsdienste","Mobile Information Services","Informations mobiles","Servizi d\"informazione a distanza"], LnkOpenInfoMobile);
+    _mobile.addChild("SMS", "javascript:parent.pp_sms()",{Domaine:"premium"});
+    //var _suisse = tree.addChild(["Schweiz", "Switzerland", "Suisse"], LnkParsefq + "116", {idPublic:"swx"});
+
+    var suisse_etfTerms = '/sq-web-info/termsAuto/Switzerland?l=CLANG1&cookieName=SQ_terms&cookieValue=TC_Funds:I_AGREE;path=/;&urlRedirect='
+
+    var _suisse = tree.addChild(["Schweiz", "Switzerland", "Suisse"], LnkOverview + "market=ch#ch", {idPublic:"swx"});
+    _suisse.addChild(["‹bersicht", "Overview", "AperÁu"], LnkOverview+ "market=ch#ch");
+    _suisse.addChild("Winners", LnkWinLos + "winners");
+    _suisse.addChild("Losers", LnkWinLos + "losers");
+    _suisse.addChild("Best Turnover", LnkList + "market=ch&list=best_turnover");
+    _suisse.addChild("Best Volume", LnkList + "market=ch&list=best_volume");
+    _suisse.addChild("Most Volatile", LnkList + "market=ch&list=best_high_low_spread");
+    _suisse.addChild("Biggest Trades", LnkList + "market=ch&list=biggest_trade",{Domaine:"premium"});
+    _suisse.addChild("Stop Trading", LnkList + "market=ch&list=stoptrading",{Domaine:"premium"});
+    _suisse.addChild("Off-Exchange", LnkList + "market=ch&list=off_exchange",{Domaine:"premium"});
+    _suisse.addChild("Sponsored Foreign Shares", LnkList + "market=ch&list=foreign");
+    _suisse.addChild(["Indizes", "Indices", "Indices"], LnkList + "market=chi&list=indices");
+    _suisse.addChild("ETFs", suisse_etfTerms + LnkEtfs + "&I_AGREE");
+    _suisse.addChild("SMI", LnkList + "market=ch&list=smi&sort=name&asc=true");
+    _suisse.addChild("SMI Movers", LnkSmiMovers);
+    _suisse.addChild("SMIM", LnkList + "market=ch&list=smim");
+    _suisse.addChild("SLI", LnkList + "market=ch&list=sli&sort=name&asc=true");
+    _suisse.addChild(["Bern", "Bern", "Berne"], LnkList + "market=ch&list=bern");
+
+    var _amerique_etfTerms = '/sq-web-info/termsAuto/USA?l=CLANG1&cookieName=SQ_terms&cookieValue=TC_Funds:I_AGREE,TC_Funds_Other:I_AGREE;path=/;&urlRedirect=';
+
+    var _amerique = tree.addChild(["Nordamerika", "North America", "AmÈrique du Nord"], "");
+    var _us = _amerique.addChild(["US Markt", "US Market", "MarchÈ US"], LnkOverview + "market=us#us");
+    _us.addChild(["‹bersicht", "Overview", "AperÁu"], LnkOverview + "market=us#us");
+    _us.addChild("Winners", LnkList + "market=us&list=winners");
+    _us.addChild("Losers", LnkList + "market=us&list=losers");
+    _us.addChild("Best Turnover", LnkList + "market=us&list=best_turnover");
+    _us.addChild("Best Volume", LnkList + "market=us&list=best_volume");
+    _us.addChild(["Indizes", "Indices", "Indices"], LnkList + "market=us&list=indices");
+    _us.addChild("ETFs", _amerique_etfTerms + LnkList + "market=us&list=etf");
+    _us.addChild("S&P 500 Futures", LnkUSSNP,{Domaine:"premium"});
+    _us.addChild("Dow Jones", LnkList + "market=us&list=dowjones");
+    _us.addChild("Nasdaq 100", LnkList + "market=us&list=nasdaq100");
+    var _cana = _amerique.addChild(["Kanadischer Markt", "Canadian Market", "MarchÈ Canadien"], LnkOverview + "market=ca#ca");
+    _cana.addChild(["‹bersicht", "Overview", "AperÁu"], LnkOverview + "market=ca#ca");
+    _cana.addChild("Winners", LnkList + "market=ca&list=winners");
+    _cana.addChild("Losers", LnkList + "market=ca&list=losers");
+    _cana.addChild("Best Turnover", LnkList + "market=ca&list=best_turnover");
+    _cana.addChild("Best Volume", LnkList + "market=ca&list=best_volume");
+    _cana.addChild("TSX 60", LnkList + "market=ca&list=tsx");
+
+    var _allemande_etfTerms = '/sq-web-info/termsAuto/Germany?l=CLANG1&cookieName=SQ_terms&cookieValue=TC_Funds_Other:I_AGREE;path=/;&urlRedirect=';
+
+    var _europe = tree.addChild(["Europa", "Europe", "Europe"], "");
+    var _allemand = _europe.addChild(["Deutscher Markt", "German Market", "MarchÈ Allemand"], LnkOverview + "market=de#de");
+    _allemand.addChild(["‹bersicht", "Overview", "AperÁu"], LnkOverview + "market=de#de");
+    _allemand.addChild("Winners", LnkList + "market=de&list=winners");
+    _allemand.addChild("Losers", LnkList + "market=de&list=losers");
+    _allemand.addChild("Best Turnover", LnkList + "market=de&list=best_turnover");
+    _allemand.addChild("Best Volume", LnkList + "market=de&list=best_volume");
+    _allemand.addChild("Indices", LnkList + "market=de&list=indices");
+    _allemand.addChild("ETFs", _allemande_etfTerms + LnkList + "market=ff&list=etf");
+    _allemand.addChild("DAX", LnkList + "market=de&list=dax");
+    //_allemand.addChild("US Stars", LnkList + "market=de&list=usstars",{Domaine:"premium"});
+    var _autriche = _europe.addChild(["÷sterreichischer Markt", "Austrian Market", "MarchÈ Autrichien"], LnkOverview + "market=at#at");
+    _autriche.addChild(["‹bersicht", "Overview", "AperÁu"], LnkOverview + "market=at#at");
+    _autriche.addChild("Winners", LnkList + "market=at&list=winners");
+    _autriche.addChild("Losers", LnkList + "market=at&list=losers");
+    _autriche.addChild("Best Turnover", LnkList + "market=at&list=best_turnover");
+    _autriche.addChild("Best Volume", LnkList + "market=at&list=best_volume");
+    _autriche.addChild("ATX", LnkList + "market=at&list=atx");
+
+    var _euronext_etfTerms = '/sq-web-info/termsAuto/Euronext?l=CLANG1&cookieName=SQ_terms&cookieValue=TC_Funds_Other:I_AGREE;path=/;&urlRedirect=';
+
+    var _euronext = _europe.addChild(["Euronext Markt", "Euronext Market", "MarchÈ Euronext"], LnkOverview + "market=fr#fr");
+    _euronext.addChild(["‹bersicht", "Overview", "AperÁu"], LnkOverview + "market=fr#fr");
+    _euronext.addChild("Winners", LnkList + "market=fr&list=winners");
+    _euronext.addChild("Losers", LnkList + "market=fr&list=losers");
+    _euronext.addChild("Best Turnover", LnkList + "market=fr&list=best_turnover");
+    _euronext.addChild("Best Volume", LnkList + "market=fr&list=best_volume");
+    _euronext.addChild("Indices", LnkList + "market=fr&list=indices",{Domaine:"premium"});
+    _euronext.addChild("ETFs", _euronext_etfTerms + LnkList + "market=fr&list=etf");
+    _euronext.addChild("CAC 40", LnkList + "market=fr&list=cac40");
+    _euronext.addChild("AEX 25", LnkList + "market=fr&list=aex25");
+    _euronext.addChild("BEL 20", LnkList + "market=fr&list=bel20");
+    var _italien = _europe.addChild(["Italienischer Markt", "Italian Market", "MarchÈ Italien"], LnkOverview + "market=it#it");
+    _italien.addChild(["‹bersicht", "Overview", "AperÁu"], LnkOverview + "market=it#it");
+    _italien.addChild("Winners", LnkList + "market=it&list=winners");
+    _italien.addChild("Losers", LnkList + "market=it&list=losers");
+    _italien.addChild("Best Turnover", LnkList + "market=it&list=best_turnover");
+    _italien.addChild("Best Volume", LnkList + "market=it&list=best_volume");
+    _italien.addChild("Indices", LnkList + "market=it&list=indices");
+    var _londre = _europe.addChild(["UK Markt", "UK Market", "MarchÈ UK"], LnkList + "market=gb&list=best_turnover");
+    _londre.addChild("Winners", LnkList + "market=gb&list=winners");
+    _londre.addChild("Losers", LnkList + "market=gb&list=losers");
+    _londre.addChild("Best Turnover", LnkList + "market=gb&list=best_turnover");
+    _londre.addChild("Best Volume", LnkList + "market=gb&list=best_volume");
+    var _scandi = _europe.addChild(["Skandinavischer Markt", "Scandinavian Market", "MarchÈ Scandinave"], LnkOverview + "market=sk#sk");
+    _scandi.addChild(["‹bersicht", "Overview", "AperÁu"], LnkOverview + "market=sk#sk");
+    _scandi.addChild("Winners", LnkList + "market=sk&list=winners");
+    _scandi.addChild("Losers", LnkList + "market=sk&list=losers");
+    _scandi.addChild("Best Turnover", LnkList + "market=sk&list=best_turnover");
+    _scandi.addChild("Best Volume", LnkList + "market=sk&list=best_volume");
+    _scandi.addChild("HEX 25", LnkList + "market=fi&list=hex");
+    _scandi.addChild("KFX", LnkList + "market=dk&list=kfx");
+    _scandi.addChild("OMX", LnkList + "market=se&list=omx");
+
+    //World market
+    if (SITE == "PUBLIC") {
+    }
+    else {
+      var _world = tree.addChild(["Welt", "World", "Monde"], LnkWorldOverview, {Domaine:"premium"});
+    }
+
+    var _derivative = tree.addChild(["Warrants & Derivate", "Warrants & Derivatives", "Warrants & DÈrivÈs"], LnkWarrantsIntro, {idPublic:"warrants"});
+    _derivative.addChild(["Start", "Intro", "Intro"], LnkWarrantsIntro);
+    var _der_ch = _derivative.addChild(["Schweizer Markt", "Swiss Market", "MarchÈ Suisse"], LnkWarrantsSwOrverview);
+    _der_ch.addChild(["‹bersicht", "Overview", "AperÁu"], LnkWarrantsSwOrverview);
+    var _der_ch_gamme = _der_ch.addChild(["Produktart", "Product types", "Type de produits"], LnkDerivatives + "/ch/Home.action?class1=1&l=CLANG2");
+    _der_ch_gamme.addChild(["Hebel", "Leverage", "Levier"], LnkDerivatives + "/ch/Home.action?class1=1&l=CLANG2");
+    _der_ch_gamme.addChild(["Partizipation", "Participation", "Participation"], LnkDerivatives + "/ch/Home.action?class1=2&l=CLANG2");
+    _der_ch_gamme.addChild(["Renditeoptimierung", "Yield - Enhancement", "Optimisation de la performance"], LnkDerivatives + "/ch/Home.action?class1=3&l=CLANG2");
+    _der_ch_gamme.addChild(["Kapitalschutz", "Capital Protected", "Protection du capital"], LnkDerivatives + "/ch/Home.action?class1=4&l=CLANG2");
+//                  _der_ch.addChild("Risk Overview", "/website-static/warrants/risk_overview/risk_overview_CLANG1.html");
+
+    var _der_dots = tree.addChild(["Swiss DOTS", "Swiss DOTS", "Swiss DOTS"], LnkSwissDots,{Bold:true});
+    _der_dots.addChild(["‹bersicht", "Overview", "AperÁu"], LnkSwissDotsOverview);
+    _der_dots.addChild(["Alle Produkte","All products","Tous les produits"], LnkEquitySwDeriv +"SwissDerivativeSearch.action?searchFilter.bean.exchangeId=672&asSearchEngine=true&searchFilter.bean.productClass=1&searchFilter.bean.underlyingIsin=&searchFilter.bean.trend=&sort=dividend,iedate&dir=asc&searchFilter.bean.withVolume=false&frame=false");
+
+    _der_dots.addChild(["Neuemissionen","New Issues","Nouvelles Èmissions"], LnkEquitySwDeriv +"SwissDerivativeSearch.action?searchFilter.bean.predefinedIssueDate=w0&searchFilter.bean.exchangeId=672&lang=CLANG2");
+    _der_dots.addChild("Goldman Sachs", LnkEquitySwDeriv +"SwissDerivativeSearch.action?searchFilter.bean.exchangeId=672&searchFilter.bean.issuerId=gs&asSearchEngine=true&searchFilter.bean.productClass=1&frame=false");
+    _der_dots.addChild("UBS", LnkEquitySwDeriv +"SwissDerivativeSearch.action?searchFilter.bean.exchangeId=672&searchFilter.bean.issuerId=ubs&asSearchEngine=true&searchFilter.bean.productClass=1&frame=false");
+    _der_dots.addChild("SociÈtÈ GÈnÈrale", LnkEquitySwDeriv +"SwissDerivativeSearch.action?searchFilter.bean.exchangeId=672&searchFilter.bean.issuerId=sog&asSearchEngine=true&searchFilter.bean.productClass=1&frame=false");
+    _der_dots.addChild("Vontobel", LnkEquitySwDeriv +"SwissDerivativeSearch.action?searchFilter.bean.exchangeId=672&searchFilter.bean.issuerId=vt&asSearchEngine=true&searchFilter.bean.productClass=1&frame=false");
+    _der_dots.addChild("BNP Paribas", LnkEquitySwDeriv +"SwissDerivativeSearch.action?searchFilter.bean.exchangeId=672&searchFilter.bean.issuerId=bnp&asSearchEngine=true&searchFilter.bean.productClass=1&frame=false");
+
+    var _der_de = _derivative.addChild(["Deutscher Markt", "German Market", "MarchÈ Allemand"], LnkWarrantGerman);
+
+    var _der_off = _derivative.addChild("After Hours Trading", "");
+    _der_off.addChild("Bank Vontobel", LnkWarrantsAfterHours + "vontobel");
+    _der_off.addChild("BNP Paribas", LnkWarrantsAfterHours + "bnp");
+    _der_off.addChild("Goldman Sachs", LnkWarrantsAfterHours + "goldmansachs");
+    _der_off.addChild("SociÈtÈ GÈnÈrale", LnkWarrantsAfterHours + "societegenerale");
+    _der_off.addChild("UBS", LnkWarrantsAfterHours + "ubs");
+
+    var _optfut = tree.addChild("Options & Futures", LnkOptionFutureIndex,{idPublic:"options"});
+    _optfut.addChild(["Pr‰sentation", "Presentation", "PrÈsentation"], LnkOptionFuturePresentation);
+    _optfut.addChild(["‹bersicht", "Overview", "AperÁu"], LnkOptionFutureOverview);
+    var _optfut_eur = _optfut.addChild(["Europa", "Europe", "Europe"], LnkOptionFutureEurope);
+    var _optfut_eur_option = _optfut_eur.addChild(["Optionen", "Options", "Options"], LnkEqui + "option/OptionSearch.action?searchFilter.market=eu&searchFilter.group=sw");
+    _optfut_eur_option.addChild(["Indizes", "Indices", "Indices"], LnkEqui + "option/OptionSearch.action?searchFilter.market=eu&searchFilter.group=id");
+    _optfut_eur_option.addChild(["Aktien / Schweiz", "Shares / Switzerland", "Action / Suisse"], LnkEqui + "option/OptionSearch.action?searchFilter.market=eu&searchFilter.group=sw");
+    _optfut_eur_option.addChild(["Aktien / Deutschland", "Shares / Germany", "Action / Allemagne"], LnkEqui + "option/OptionSearch.action?searchFilter.market=eu&searchFilter.group=de");
+    _optfut_eur_option.addChild(["Aktien / Euronext", "Shares / Euronext", "Action / Euronext"], LnkEqui + "option/OptionSearch.action?searchFilter.market=eu&searchFilter.group=fr");
+    _optfut_eur_option.addChild(["Aktien / Italien", "Shares / Italy", "Action / Italie"], LnkEqui + "option/OptionSearch.action?searchFilter.market=eu&searchFilter.group=it");
+    _optfut_eur_option.addChild(["Aktien / Skandinavien", "Shares / Scandinavia", "Action / Scandinavie"], LnkEqui + "option/OptionSearch.action?searchFilter.market=eu&searchFilter.group=sk");
+    _optfut_eur_option.addChild(["Aktien / ‹brige", "Shares / Others", "Action / Autres"], LnkEqui + "option/OptionSearch.action?searchFilter.market=eu&searchFilter.group=xx");
+    _optfut_eur_option.addChild(["Zinsderivate", "Interest Rate", "Produits de taux"], LnkEqui + "option/OptionSearch.action?searchFilter.market=eu&searchFilter.group=bd");
+    var _optfut_eur_futures = _optfut_eur.addChild("Futures",LnkEqui + "future/FutureSearch.action?searchFilter.market=eu&searchFilter.group=id");
+    _optfut_eur_futures.addChild(["Indizes", "Indices", "Indices"], LnkEqui + "future/FutureSearch.action?searchFilter.market=eu&searchFilter.group=id");
+    _optfut_eur_futures.addChild(["Aktien / Schweiz", "Shares / Switzerland", "Action / Suisse"], LnkEqui + "future/FutureSearch.action?searchFilter.market=eu&searchFilter.group=sw");
+    _optfut_eur_futures.addChild(["Aktien / Deutschland", "Shares / Germany", "Action / Allemagne"], LnkEqui + "future/FutureSearch.action?searchFilter.market=eu&searchFilter.group=de");
+    _optfut_eur_futures.addChild(["Aktien / Euronext", "Shares / Euronext", "Action / Euronext"], LnkEqui + "future/FutureSearch.action?searchFilter.market=eu&searchFilter.group=fr");
+    _optfut_eur_futures.addChild(["Aktien / Italien", "Shares / Italy", "Action / Italie"], LnkEqui + "future/FutureSearch.action?searchFilter.market=eu&searchFilter.group=it");
+    _optfut_eur_futures.addChild(["Aktien / Skandinavien", "Shares / Scandinavia", "Action / Scandinavie"], LnkEqui + "future/FutureSearch.action?searchFilter.market=eu&searchFilter.group=sk");
+    _optfut_eur_futures.addChild(["Aktien / ‹brige", "Shares / Others", "Action / Autres"], LnkEqui + "future/FutureSearch.action?searchFilter.market=eu&searchFilter.group=xx");
+    _optfut_eur_futures.addChild(["Zinsderivate", "Interest Rate", "Produits de taux"], LnkEqui + "future/FutureSearch.action?searchFilter.market=eu&searchFilter.group=bd");
+    var _optfut_usa = _optfut.addChild("USA", LnkOptionFutureUSA);
+    _optfut_usa.addChild(["Options", "Options", "Options"], LnkEqui + "option/OptionSearch.action?searchFilter.market=ud");
+    _optfut_usa.addChild(["Futures", "Futures", "Futures"], LnkEqui + "future/FutureSearch.action?searchFilter.market=ud");
+    _optfut_usa.addChild(["Optionen auf Futures", "Options on futures", "Options sur Futures","Opzioni sugli Futures"], LnkEqui + "option/OptionSearch.action?searchFilter.market=ud&searchFilter.group=of");
+
+    var LnkNewFunds = fundTerms + '/sq-espaces-cms/#fund/leaders';
+    var _fonds = tree.addChild(["Fonds", "Funds", "Fonds"], LnkNewFunds, {idPublic:"funds"});
+    
+    var etfTerms = '/sq-web-info/termsAuto/ETF?l=CLANG1&cookieName=SQ_terms_ETF&cookieValue=TC_Funds_Other:I_AGREE&urlRedirect=';
+    var etfLeaders = '/sq-espaces-cms/#etf/leaders';
+    var marketListingAction = '/sq_mi/market/Listing.action?l=CLANG1';
+    var _etf = tree.addChild("ETF / ETP", etfTerms + etfLeaders, {idPublic:"etf"});
+    _etf.addChild("ETF / ETP Leaders", etfTerms + etfLeaders);
+    _etf.addChild("ETF Finder", LnkEqui + "etfs/EtfSearch.action");
+    _etf.addChild("ETP Finder", etfTerms + marketListingAction + '&market=ch&list=etf.etp&I_AGREE');
+    _etf.addChild("SIX", etfTerms + marketListingAction + '&market=ch&list=etf&showCurrency=true&showUnderlying=true&showLink=true&I_AGREE');
+    _etf.addChild("US", etfTerms + marketListingAction + '&market=us&list=etf&I_AGREE');
+    _etf.addChild("Euronext", etfTerms + marketListingAction + '&market=fr&list=etf&I_AGREE');
+    _etf.addChild(["Deutschland","Germany","Allemagne"], etfTerms + marketListingAction + '&market=ff&list=etf&I_AGREE');
+
+    if (SITE == "PUBLIC") {
+      var _indice = tree.addChild(["Indizes", "Indices", "Indices"], LnkIndiceSw, {Domaine:"public"});
+    }
+    else {
+      var _indice = tree.addChild(["Indizes", "Indices", "Indices"], LnkIndiceOverview, {Domaine:"premium"});
+    }
+    _indice.addChild(["‹bersicht", "Overview", "AperÁu"], LnkIndiceOverview, {Domaine:"premium"});
+    _indice.addChild(["Schweiz", "Swiss", "Suisse"], LnkIndiceSw);
+    _indice.addChild(["Deutschland", "Germany", "Allemagne"], LnkList + "market=de&list=indices");
+    _indice.addChild(["Europa", "Europe", "Europe"], LnkList + "market=euro&list=europa.indexes&showMarket=t", {Domaine:"premium"});
+    _indice.addChild("US", LnkList + "market=us&list=indices");
+    var _sect = _indice.addChild(["Sektoren", "Sectors", "Secteurs"], "");
+    _sect.addChild("SIX", LnkIndiceSector);
+    var _const = _indice.addChild(["Bestandteile", "Components", "Constituants"], "");
+    _const.addChild("AEX 25", LnkList + "market=fr&list=aex25");
+    _const.addChild("BEL 20", LnkList + "market=fr&list=bel20");
+    _const.addChild("CAC 40", LnkList + "market=fr&list=cac40");
+    _const.addChild("DAX", LnkList + "market=de&list=dax");
+    _const.addChild("DJ Euro Stoxx 50", LnkList + "market=euro&list=sx5e");
+    _const.addChild("DJ Stoxx 50", LnkList + "market=euro&list=sx5p");
+    _const.addChild("Dow Jones", LnkList + "market=us&list=dowjones");
+    _const.addChild("HEX 25", LnkList + "market=fi&list=hex");
+    _const.addChild("KFX", LnkList + "market=dk&list=kfx");
+    _const.addChild("Nasdaq 100", LnkList + "market=us&list=nasdaq100");
+    _const.addChild("OMX", LnkList + "market=se&list=omx");
+    _const.addChild("SMI", LnkList + "market=ch&list=smi&sort=name&asc=true");
+    _const.addChild("SLI", LnkList + "market=ch&list=sli&sort=name&asc=true");
+    _const.addChild("TSX 60", LnkList + "market=ca&list=tsx");
+    var _ind_der = _indice.addChild("Derivatives", "");
+    _ind_der.addChild(["Warrants auf Indizes", "Warrants on Indices", "Warrants sur Indices"], LnkWarrantOn + "market=id", {Domaine:"premium"});
+    _ind_der.addChild(["Optionen auf Indizes", "Options on Indices", "Options sur Indices"], LnkEqui + "option/OptionSearch.action?searchFilter.market=eu&searchFilter.group=id");
+    _ind_der.addChild(["Futures auf Indizes", "Futures on Indices", "Futures sur Indices"], LnkEqui + "future/FutureSearch.action?searchFilter.market=eu&searchFilter.group=id");
+    _ind_der.addChild("S&P 500 Futures", LnkEqui + "future/FutureSearch.action?searchFilter.market=ud&searchFilter.underlying=USSPX0000007", {Domaine:"premium"});
+
+
+    var _forex = tree.addChild("Forex", ForexMarketCurrencies + "Convertor.action?l=CLANG2", {idPublic:"forex"});
+    /*  var _fx_book = _forex.addChild("FX Book", "/website-static/forex/main_forex_CLANG1.html");
+    _fx_book.addChild(["‹bersicht", "Overview", "AperÁu"], "/website-static/forex/main_forex_CLANG1.html");
+    //PUBLIC
+      _fx_book.addChild(["Registrierung", "Subscription", "Inscription"], "/mkt/open_account/bank_open_multi_CLANG1.html", {Domaine:"public"});
+    //PREMIUM
+      _fx_book.addChild(["Registrierung", "Subscription", "Inscription"], "https://trade.swissquote.ch/sqb_core/EforexCtrl?commandName=viewEforexMainPage", {Domaine:"premium"});
+    _fx_book.addChild(["Kosten und Konditionen", "Fees & Conditions", "Frais & Conditions"], "/website-services/information/information_fees_CLANG1.html");
+*/
+                _forex.addChild(['W‰hrungsrechner', 'Calculator', 'Convertisseur'], ForexMarketCurrencies + 'Convertor.action?l=CLANG2');
+                _forex.addChild('Interbank Rates', ForexMarketCurrencies + "UBSInterbankRates.action");
+                _forex.addChild('World Cross Rates', ForexMarketCurrencies + "WorldCrossRates.action", {Domaine:'premium'});
+                _forex.addChild('Euro Locking Rates', ForexMarketCurrencies + "EuroLockRates.action", {Domaine:'premium'});
+
+        var crypto = tree.addChild(['Crypto Assets', 'Crypto Assets', 'Crypto Assets'],  LnkCrypto);
+
+        var _commodities_etfTerms = '/sq-web-info/termsAuto/Funds?l=CLANG1&cookieName=SQ_terms&cookieValue=TC_Funds:I_AGREE;path=/;&urlRedirect='
+
+        var _commodities = tree.addChild('Commodities', _commodities_etfTerms + LnkWinLos + "etf.details.commodities");
+            _commodities.addChild('ETFs', _commodities_etfTerms + LnkWinLos + "etf.details.commodities");
+            _commodities.addChild(['Edelmetalle','Precious Metals','MÈtaux prÈcieux','Metalli preziosi'], LnkCommoditiesMarket +'Listing.action?market=co&list=precious');
+            _commodities.addChild('Gold Coins', LnkCommoditiesMarket + 'Listing.action?market=co&list=coins');
+            _commodities.addChild('Oil Brent Crude Future', LnkCommoditiesMarket + 'Detail.action?s=.OILBC,U', {Domaine:'premium'});
+            _commodities.addChild(['Derivate', 'Derivatives', 'DÈrivÈs'], LnkCommoditiesDeriv);
+
+        var _oblig_premium = tree.addChild(['Obligationen', 'Bonds', 'Obligations'], LnkOblIntro,{idPublic:'bonds'});
+            _oblig_premium.addChild('Intro', LnkOblIntro, {Domaine:'premium'});
+            _oblig_premium.addChild(['Zinssatz', 'Interest Rates', 'Taux d\'intÈrÍts'], LnkOblInterest, {Domaine:'premium'});
+            _oblig_premium.addChild(['Suche', 'Search', 'Recherche'], LnkEqui + "bonds/BondSearch.action", {Domaine:'premium'});
+
+        var _news = tree.addChild(['News Feed', 'News Feed','News Feed'], LnkNewsOverview, {idPublic:'news'});
+            //_news.addChild(['Suche','Search','Recherche'], LnkNewsSearch);
+            //_news.addChild(['News pro Firma', 'News by company', 'Nouvelles par compagnie'], LnkNewsCompany);
+            //_news.addChild(['Kalender', 'Agenda', 'EchÈancier'], LnkNEWS + "t1=t&c1=CALENDAR");
+            //var _news_ch = _news.addChild(['News Schweiz', 'Swiss News', 'Nouvelles suisse']);
+            //  _news_ch.addChild(['Finanzen', 'Finance', 'Finances'], LnkNEWS + "t1=r&c1=sw&t2=t&c2=FINANCE");
+            //  _news_ch.addChild(['M‰rkte', 'Markets', 'MarchÈs'], LnkNEWS + "t1=r&c1=sw&t2=t&c2=MARKET");
+            //  _news_ch.addChild(['Wirtschaft', 'Economic news', 'Economie'], LnkNEWS + "t1=r&c1=sw&t2=t&c2=ECONOMIC");
+            //  _news_ch.addChild(['Firmen', 'Company', 'SociÈtÈs'], LnkNEWS + "t1=r&c1=sw&t2=t&c2=COMPANY");
+            //  _news_ch.addChild(['Politik', 'Politics', 'Politique'], LnkNEWS + "t1=r&c1=sw&t2=t&c2=POLITICS");
+            //  _news_ch.addChild(['Management-Transaktionen', 'Management Transactions', 'Transactions du Management'], LnkNEWS + "t1=s&c1=STK&t2=s&c2=MGT");
+                //_news_ch.addChild(['Marktgespr‰ch', 'Market Rumors', 'Rumeurs de marchÈ'], LnkNEWS + "t2=t&c2=RUMOR", {Domaine:'premium'});
+        //      _news_ch.addChild(['Diverses', 'General', 'Divers'], LnkNEWS + "t1=r&c1=sw&t2=t&c2=GENERAL");
+        //  var _news_us = _news.addChild(['News US', 'US News', 'Nouvelles US']);
+        //      _news_us.addChild(['Finanzen', 'Finance', 'Finances'], LnkNEWS + "t1=r&c1=us&t2=t&c2=FINANCE");
+        //      _news_us.addChild(['M‰rkte', 'Markets', 'MarchÈs'], LnkNEWS + "t1=r&c1=us&t2=t&c2=MARKET");
+        //      _news_us.addChild(['Wirtschaft', 'Economic news', 'Economie'], LnkNEWS + "t1=r&c1=us&t2=t&c2=ECONOMIC");
+        //      _news_us.addChild(['Firmen', 'Company', 'SociÈtÈs'], LnkNEWS + "t1=r&c1=us&t2=t&c2=COMPANY");
+        //      _news_us.addChild(['Politik', 'Politics', 'Politique'], LnkNEWS + "t1=r&c1=us&t2=t&c2=POLITICS");
+        //      _news_us.addChild(['Diverses', 'General', 'Divers'], LnkNEWS + "t1=r&c1=us&t2=t&c2=GENERAL");
+        //  var _news_de = _news.addChild(['News Xetra', 'Xetra News', 'Nouvelles Xetra']);
+        //      _news_de.addChild(['Finanzen', 'Finance', 'Finances'], LnkNEWS + "t1=r&c1=ge&t2=t&c2=FINANCE");
+        //      _news_de.addChild(['M‰rkte', 'Markets', 'MarchÈs'], LnkNEWS + "t1=r&c1=ge&t2=t&c2=MARKET");
+        //      _news_de.addChild(['Wirtschaft', 'Economic news', 'Economie'], LnkNEWS + "t1=r&c1=ge&t2=t&c2=ECONOMIC");
+        //      _news_de.addChild(['Firmen', 'Company', 'SociÈtÈs'], LnkNEWS + "t1=r&c1=ge&t2=t&c2=COMPANY");
+        //      _news_de.addChild(['Politik', 'Politics', 'Politique'], LnkNEWS + "t1=r&c1=ge&t2=t&c2=POLITICS");
+        //      _news_de.addChild(['Diverses', 'General', 'Divers'], LnkNEWS + "t1=r&c1=ge&t2=t&c2=GENERAL");
+        //  var _news_fr = _news.addChild(['News Euronext', 'Euronext News', 'Nouvelles Euronext']);
+        //      _news_fr.addChild(['Finanzen', 'Finance', 'Finances'], LnkNEWS + "t1=r&c1=fr&t2=t&c2=FINANCE");
+        //      _news_fr.addChild(['M‰rkte', 'Markets', 'MarchÈs'], LnkNEWS + "t1=r&c1=fr&t2=t&c2=MARKET");
+        //      _news_fr.addChild(['Wirtschaft', 'Economic news', 'Economie'], LnkNEWS + "t1=r&c1=fr&t2=t&c2=ECONOMIC");
+        //      _news_fr.addChild(['Firmen', 'Company', 'SociÈtÈs'], LnkNEWS + "t1=r&c1=fr&t2=t&c2=COMPANY");
+        //      _news_fr.addChild(['Politik', 'Politics', 'Politique'], LnkNEWS + "t1=r&c1=fr&t2=t&c2=POLITICS");
+        //      _news_fr.addChild(['Diverses', 'General', 'Divers'], LnkNEWS + "t1=r&c1=fr&t2=t&c2=GENERAL");
+        //  var _news_others = _news.addChild(['News Weltweit', 'World News', 'Nouvelles globales']);
+        //      _news_others.addChild(['Finanzen', 'Finance', 'Finances'], LnkNEWS + "t1=r&c1=any&t2=t&c2=FINANCE");
+        //      _news_others.addChild(['M‰rkte', 'Markets', 'MarchÈs'], LnkNEWS + "t1=r&c1=any&t2=t&c2=MARKET");
+        //      _news_others.addChild(['Wirtschaft', 'Economic news', 'Economie'], LnkNEWS + "t1=r&c1=any&t2=t&c2=ECONOMIC");
+        //      _news_others.addChild(['Firmen', 'Company', 'SociÈtÈs'], LnkNEWS + "t1=r&c1=any&t2=t&c2=COMPANY");
+        //      _news_others.addChild(['Politik', 'Politics', 'Politique'], LnkNEWS + "t1=r&c1=any&t2=t&c2=POLITICS");
+        //      _news_others.addChild(['Diverses', 'General', 'Divers'], LnkNEWS + "t1=r&c1=any&t2=t&c2=GENERAL");
+        //  _news.addChild('News alert', LnkNewsNewsAlert, {Domaine:'premium'});
+        //  _news.addChild(['Morning News', 'Morning News', 'Morning News'], LnkNewsBulletin);
+        //  _news.addChild('Newsletter', LnkNewsLetter);
+//      tree.addChild('Community', LnkOpenCommunity);
+    }
+    else
+// SERVICES
+  if (type == "services" || type == "help" || type == "signup" || type == "contact" || type == "static") {
+
+// HELP
+    var _help = tree.addChild(["Hilfe", "Help", "Aides", "Ausili"], LnkElseHelp, {idPublic:"help"});
+    /*  _help.addChild(["‹bersicht", "Introduction", "Introduction", "Introduzione"], "/website-help/main_CLANG1.html");
+_help.addChild(["Kontof¸hrung / Anmeldungen", "Account Management / Subscriptions", "Gestion des comptes et Abonnements"], "/website-help/account/help_account_submgt_CLANG1.html");
+_help.addChild(["Kontof¸hrung und Formulare", "Account Management and Forms", "Gestion du compte et formulaires"], "/website-services/information/information_forms_CLANG1.html");
+_help.addChild(["Tools", "Tools", "Outils"], "/website-help/tools/main_CLANG1.html");
+_help.addChild("FAQ", "/website-help/faq/faq_CLANG1.html");
+_help.addChild(["Allgemeine Infos", "General information", "Infos gÈnÈrales"], "/website-help/general_info/help_general_info_CLANG1.html");
+_help.addChild(["Technische Voraussetzungen", "Technical recommendations", "Recommandations techniques"], "/website-help/tech_recommandation/help_tech_recommend_CLANG1.html");
+*/
+    var _contact = tree.addChild(["Kontakte", "Contacts", "Contacts"], "https://trade.swissquote.ch/sqb_retail/contact/HelpPublic.action?l=CLANG1",{idPublic:"contact"});
+    //var _contact = tree.addChild(["Kontakte", "Contacts", "Contacts"], "https://secure.swissquote.ch/cgi-bin/SQ_contact/contact.pl?language=CLANG1",{idPublic:"contact"});
+    var _offices = tree.addChild(["Unsere Standorte", "Our offices", "Nos bureaux"], LnkElseOffice,{idPublic:"contact"});
+  }
+  else
+// GROUP
+  if (type == "group") {
+    tree.addChild("Intro", "/website-group/main_CLANG1.html",{idPublic:"group"});
+    var _group = tree.addChild(["‹berblick", "The Group", "Le groupe"], LnkElseGroup + "intro_group_CLANG1.html");
+    _group.addChild(["Die Gruppe", "Presentation", "PrÈsentation"], LnkElseGroup + "intro_group_CLANG1.html");
+    _group.addChild(["Ziele & Strategie", "Goals/Strategy", "Buts & StratÈgie"], LnkElseGroup + "buts_CLANG1.html");
+    var _invest = tree.addChild(["Investoreninformation", "Investor Relations", "Information aux investisseurs"], LnkElseInvestor + "intro_investor_CLANG1.html");
+    _invest.addChild(["Pr‰sentationen", "Presentation", "PrÈsentation"], LnkElseInvestor + "intro_investor_CLANG1.html");
+    _invest.addChild(["Reporting", "Reporting", "Rapports"], LnkElseInvestor + "reporting_presentations_CLANG1.html");
+    _invest.addChild(["Generalversammlung", "AGM", "AssemblÈe GÈnÈrale"], LnkElseInvestor + "agm_CLANG1.html");
+    _invest.addChild(["Statuten/HR-Auszug", "Statutes", "Statuts / Extrait du R.C"], LnkElseInvestor + "statues_CLANG1.html");
+    _invest.addChild(["Agenda", "Agenda", "Agenda"], "/website-group/main_CLANG1.html");
+    _invest.addChild(["E-Mail-Service", "E-mail Service", "E-mail service"], LnkElseGroupContact +"contact_news_CLANG1.html");
+    var _corp = tree.addChild("Corporate Governance", LnkElseGroupCorporate + "intro_corporate_CLANG1.html");
+    _corp.addChild(["Pr‰sentation", "Introduction", "PrÈsentation"], LnkElseGroupCorporate + "intro_corporate_CLANG1.html");
+    _corp.addChild(["Konzernstruktur und Aktionariat", "Group Structure and Shareholders", "Structure du Groupe et Actionnariat"], LnkElseGroupCorporate + "structure_CLANG1.html");
+    _corp.addChild(["Kapitalstruktur", "Capital structure", "Structure du capital"], LnkElseGroupCorporate + "capital_CLANG1.html");
+    _corp.addChild(["Verwaltungsrat", "Board of Directors", "Conseil d\"Administration"], LnkElseGroupCorporate + "board_CLANG1.html");
+    _corp.addChild(["Gesch‰ftsleitung", "Executive Management", "Direction gÈnÈrale"], LnkElseGroupCorporate + "executive_CLANG1.html");
+    _corp.addChild(["Entsch¸ldigungen, Beteiligungen und Darlehen", "Compensation", "RÈmunÈrations, participations et prÍts"], LnkElseGroupCorporate + "remuneration_CLANG1.html");
+    _corp.addChild(["Mitwirkungsrechte der Aktion‰re", "Shareholders\"s participation", "Droits de participation des actionnaires"], LnkElseGroupCorporate + "sharholders_CLANG1.html");
+    _corp.addChild(["Kontrollwechsel und Abwehrmassnahmen", "Change of control and defence measures", "Prises de contrÙle et mesures de dÈfense"], LnkElseGroupCorporate + "change_CLANG1.html");
+    _corp.addChild(["Revisionsstelle", "Auditors", "Organe de rÈvision"], LnkElseGroupCorporate + "auditors_CLANG1.html");
+    _corp.addChild(["Informationspolitik", "Information Policy", "Politique d\"information"], LnkElseGroupCorporate + "policy_CLANG1.html");
+    var _info = tree.addChild(["Presseinformation", "Press Room", "Infos presse"], LnkElseGroupPress + "release_CLANG1.html");
+    _info.addChild(["Medieninformationen", "Media Info", "Informations aux mÈdias"], LnkElseGroupPress + "release_CLANG1.html");
+    _info.addChild(["Image Bank", "Gallery", "Banque d\"images"], LnkElseGroupPress + "gallery_CLANG1.html");
+    _info.addChild(["E-mail service", "E-mail service", "E-mail service"], LnkElseGroupContact + "contact_news_CLANG1.html");
+    var _jobs = tree.addChild("Jobs", LnkElseGroupJob + "job_CLANG1.html");
+    _jobs.addChild(["Intro", "Introduction", "Introduction"], LnkElseGroupJob + "job_CLANG1.html");
+    _jobs.addChild(["Offene Stellen (VD)", "Job offers (VD)", "Nos offres ‡ Gland"], LnkElseGroupJob + "job_offres_CLANG1.html");
+    _jobs.addChild(["Offene Stellen (ZH)", "Job offers (ZH)", "Nos offres ‡ Z¸rich"], LnkElseGroupJob + "job_offres_schw_CLANG1.html");
+  }
+  else
+// SAVING
+  if (type == "saving") {
+    var _savAccount = tree.addChild(["Mein Konto", "My Account", "Mon Compte", "Mio Conto"], LnkCHsav+"/sqb_saving/account/Account.action",{idPublic:"saving"});
+    _savAccount.addChild(["Konto ¸bersicht", "Account summary", "Compte aperÁu", "Panoramica del conto"], LnkCHsav+"/sqb_saving/account/Account.action");
+    _savAccount.addChild(["Konto Details", "Account detail", "Compte dÈtail", "Dettaglio del conto"], LnkCHsav+"/sqb_saving/account/Account.action?showPositions");
+    _savAccount.addChild(["Anlagen ¸bersicht", "Investment overview", "AperÁu des placements", "AperÁu des placement"], LnkCHsav+"/sqb_saving/account/Account.action?showOpenOrders");
+    _savAccount.addChild(["Modell-Verwaltung", "Model Management", "Gestion des modËles", "Gestion des modËles"], LnkCHsav+"/sqb_saving/savingmodel/SavingModel.action");
+//                  _savAccount.addChild(["F‰lligkeit Kalender", "Maturity calendar", "Calendrier des maturitÈs", "Calendario delle scadenze"], LnkCHsav+"/sqb_saving/maturitycalendar/MaturityCalendar.action");
+    _savAccount.addChild(["Transaktionen", "Transactions", "Transactions", "Transazioni"], LnkCHsav+"/sqb_saving/transactions/Transactions.action");
+    _savAccount.addChild(["Wechsel", "Change", "Change", "Cambio"], LnkCHsav+"/sqtr_exchange/change/change.do");
+    _savAccount.addChild(["Zahlungsverkehr", "Payment services", "Services de paiement", "Operazioni di pagamento"], LnkCHsav+"/sqb_retail/OpsFormSavingCtrl/?commandName=opsAccess");
+    _savAccount.addChild(["Cash facility", "Cash facility", "Cash facility", "Cash facility"], LnkCHsav+"/sqb_saving/account/CashFacility.action");
+    tree.addChild(["Mein Profil", "My Profile", "Mon Profil", "Mio Profilo"], LnkCHsav+"/sqb_client_relations2/ProfileCtrl?commandName=viewProfile");
+    //tree.addChild(["Lebensversicherung", "Life insurance", "Assurance Vie", "L\"assicurazione sulla vita"], LnkCHsav+"/sqb_saving/externalProducts/termlife/prod/TermLifeInsurance.action");
+    tree.addChild(["Benachrichtigungen", "Notifications", "Communications", "Comunicazione"], LnkCHsav+"/sqb_client_relations2/CommunicationSavingCtrl/?commandName=displayFirstPage");
+  } else if (type == "saving_portal"){
+    var _savAccount = tree.addChild(["Mein Konto", "My Account", "Mon Compte", "Mio Conto"], LnkCHsav+"/sqb_saving/account/Account.action",{idPublic:"saving"});
+    _savAccount.addChild(["Konto ¸bersicht", "Account summary", "Compte aperÁu", "Panoramica del conto"], LnkCHsav+"/sqb_saving/account/Account.action");
+    _savAccount.addChild(["Konto Details", "Account detail", "Compte dÈtail", "Dettaglio del conto"], LnkCHsav+"/sqb_saving/account/Account.action?showPositions");
+    _savAccount.addChild(["Anlagen ¸bersicht", "Investment overview", "AperÁu des placements", "AperÁu des placement"], LnkCHsav+"/sqb_saving/account/Account.action?showOpenOrders");
+    _savAccount.addChild(["Modell-Verwaltung", "Model Management", "Gestion des modËles", "Gestion des modËles"], LnkCHsav+"/sqb_saving/savingmodel/SavingModel.action");
+    _savAccount.addChild(["Transaktionen", "Transactions", "Transactions", "Transazioni"], LnkCHsav+"/sqb_saving/transactions/Transactions.action");
+    _savAccount.addChild(["Wechsel", "Change", "Change", "Cambio"], LnkCHsav+"/sqtr_exchange/change/change.do");
+    _savAccount.addChild(["Zahlungsverkehr", "Payment services", "Services de paiement", "Operazioni di pagamento"], LnkCHsav+"/sqb_retail/OpsFormSavingCtrl/?commandName=opsAccess");
+    _savAccount.addChild(["Cash facility", "Cash facility", "Cash facility", "Cash facility"], LnkCHsav+"/sqb_saving/account/CashFacility.action");
+  }
+// 3A
+  if (type == "3a") {
+    var _pension = tree.addChild(["Mein Konto", "My Account", "Mon Compte", "Mio Conto"], LnkCHsav+"/sqb_saving/3a/account/AccountDetail.action");
+    _pension.addChild(["Konto ‹bersicht", "Account summary", "Compte aperÁu", "Panoramica del conto"], LnkCHsav+"/sqb_saving/3a/account/AccountDetail.action");
+    _pension.addChild(["Transaktionen", "Transactions", "Transactions", "Transazioni"], LnkCHsav+"/sqb_core/Transactions.action");
+    _pension.addChild(["iDynamic Plus", "iDynamic Plus", "iDynamic Plus", "iDynamic Plus"], LnkCHsav+"/website-bank/saving/dynamo/dynamo_overview_CLANG1.html");
+    tree.addChild(["Benachrichtigungen", "Notifications", "Communications", "Comunicazione"], LnkCHsav+"/sqb_client_relations2/CommunicationCtrl?commandName=displayFirstPage");
+  } else if (type == "3a_portal"){
+    //Nothing !
+  }
+}
+           20220111210158-8l[   https://premium.swissquote.ch/website-navigation/navigation/menu/js/data/data_nav.js?r=1076   ˜∫  /* eslint-disable */
+/**
+ * @author tlohner
+ */
+var random=Math.random();
+var LnkCH='http://www.swissquote.ch';
+var LnkCHpre='https://premium.swissquote.ch';
+//var LnkCHsav='https://piwtradegl.bank.swissquote.ch';
+var LnkCHsav='https://trade.swissquote.ch';
+var LnkCHsec='https://secure.swissquote.ch';
+//var LnkSK='/sq_mi/market/sk/figures.jsp?figure='; // dead link
+var LnkNEWS='/sqi_premium/market/news/NewsList.action?';
+//var LnkEW='/sq_mi/market/euwax/figures.jsp?figure='; // dead link
+//var LnkParsefq='/fcgi-bin/parsefquote?quote=';
+var LnkWinLos='/sq_mi/market/Listing.action?market=ch&list=';
+//var LnkStockf='/fcgi-bin/stockfquote?symbols=';
+//var LnkAfxParser='http://news.swissquote.ch/cgi-bin/SQ_afxparser/afxparser';
+var LnkPress='http://www.swissquote.ch/SQ_press/le_temps/';
+var LnkList='/sq_mi/market/Listing.action?l=CLANG2&';
+var LnkOverview='/web-market-quote/?l=CLANG2&';
+var LnkEurexOptions="/sqi_premium/market/derivatives/optionfuture/OptionFuture.action?type=option&market=eu&l=CLANG2&"; //still used ?
+var LnkEurexFutures="/sqi_premium/market/derivatives/optionfuture/OptionFuture.action?type=future&market=eu?l=CLANG2&"; //still used ?
+
+
+var LnkRq2LOV="/SQ_rquote2/listOfValues/";
+var LnkWarrantOn="/sqi_premium/market/derivatives/ew/WarrantOn.action?l=CLANG2&";
+var LnkDerivatives="/sqi_premium/market/derivatives";
+var LnkESpace="/espace/renderer/ComponentRenderer.action?displayDisclaimer=true&siteId=";
+var LnkETF="/espace/renderer/ComponentRenderer.action?displayDisclaimer=true&siteId=";
+
+var LnkOptFut="/sqi_premium/market/derivatives/optionfuture/OptionFuture.action?type=";
+var LnkEqui="/sqi_web_search/market/equity/";
+
+var LnkPersonalPagePub="https://account.swissquote.ch/myswissquote/login/iframe/pp?l=CLANG2&returnUrl=https%3A%2F%2Fpremium.swissquote.ch%2Furl%2Fpersonal_page%3Fl%3DCLANG2";
+var LnkPortfolioManagerPub="https://account.swissquote.ch/myswissquote/login/iframe/pf?l=CLANG2&returnUrl=https%3A%2F%2Fpremium.swissquote.ch%2Furl%2Fportfolio_manager%3Fl%3DCLANG2";
+var LnkPersonalPagePre="/sqi_runnerbook/views/Watchlist.action?rand="+ random;
+var LnkPortfolioManagerPre="/sqi_runnerbook/views/Portfolio.action?rand="+ random;
+
+var LnkOrderBookLive = "/website-help/tools/orderbook/order_book_CLANG1.html#2";
+var LnkRunnerbook = "/sq_mi/runnerbook/views/Home.action";
+var LnkRanking = '/sqi_premium/ranking/Search.action';
+
+var LnkInvestmentIdeas = '/sqw-static/investment-ideas/?l=CLANG1';
+var LnkThemesTrading = '/investment-themes-webapp/index.jsp';
+var LnkLiveAnalysis = '/url/live-analysis';
+
+var LnkIntradayLive = 'javascript:intraday_new()';
+var LnkAnalysisTool = 'javascript:historical_new()';
+
+//var LnkOpenCommunity = 'javascript:openCommunity()';
+var LnkOpenLiveAnalysis = 'javascript:openLiveAnalysis()';
+var LnkOpenInfoMobile = 'javascript:openMobileMarketing()';
+
+var LnkWarrantChooser = 'javascript:parent.launch_warrant(0)';
+var NewParams = {New:'new'};
+var LnkNewsAlert = '/sqi_premium/alert/news/List.action?lang=CLANG1';
+var LnkPriceAlert = '/sqi_premium/alert/price/WatchList.action?mode=coming_from_menu_tools&lang=CLANG1';
+var LnkInfoMobile = '/url/mobile-informations';
+
+var LnkEtfs = '/sqi_premium/etf/Home.action?l=CLANG2';
+var LnkSmiMovers = "/sq_mi/market/Movers.action?market=ch&list=smi";
+var LnkUSSNP = '/sqi_web_search/market/equity/future/FutureSearch.action?searchFilter.market=ud&searchFilter.usFutureUnderlying=ES&l=CLANG2';
+
+var LnkWorldOverview = '/sq-web-info/worldmap?l=CLANG1';
+var LnkWarrantsIntro = '/url/espaces_warrant';
+var LnkWarrantsSwOrverview = '/url/espaces_warrant_swiss';
+var LnkSwissDotsOverview = '/sq-web-info/home-dots?l=CLANG2';
+var LnkSwissDots = '/sq-web-info/home-dots?l=CLANG2';
+var LnkEquitySwDeriv = "/sqi_web_search/market/equity/swissderivatives/";
+var LnkWarrantGerman = '/url/espaces_warrant_german';
+var LnkWarrantsAfterHours = '/url/espaces_warrant_';
+
+var LnkOptionFutureIndex = '/sqi_premium/market/derivatives/optionfuture/Index.action?l=CLANG2';
+var LnkOptionFuturePresentation = '/website-static/opt_futures/opt_futures_presentation_CLANG1.html';
+var LnkOptionFutureOverview = '/sqi_premium/market/derivatives/optionfuture/Index.action?l=CLANG2';
+var LnkOptionFutureEurope = '/sq-web-info/home-eurex?l=CLANG2';
+var LnkOptionFutureUSA = '/website-static/opt_futures/opt_futures_usa_CLANG1.html';
+
+var fundTerms = '/sq-web-info/termsAuto/Funds?l=CLANG1&cookieName=SQ_terms&cookieValue=TC_Funds:I_AGREE&urlRedirect=';
+var LnkFunds = '/website-static/funds/';
+var LnkFundsEspace = '/espace/renderer/';
+var NewLnkFundsEspace = fundTerms + 'https://www.swissquote.ch/sq-espaces-cms/#fund/espace/31';
+var LnkFundsSearch = fundTerms + 'https://www.swissquote.ch/sqi_web_search/market/funds/SearchByTier.action?lang=CLANG1&I_AGREE';
+var LnkFundsTerms = fundTerms + 'https://www.swissquote.ch/sqi_web_search/market/equity/funds/FundSearch.action?lang=CLANG2&I_AGREE';
+
+var LnkETFOverview = '/url/espaces_etf';
+
+var LnkIndiceSw = "/sq_mi/market/Listing.action?market=chi&list=indices";
+var LnkIndiceOverview = '/sqi_premium/market/IndexOverview.action?range=day';
+var LnkIndiceSector = "/sq_mi/market/Listing.action?market=chi&list=sectors";
+
+var ForexMarketCurrencies = "/sqi_premium/market/currencies/";
+var LnkCommoditiesMarket = "/sq_mi/market/";
+var LnkCommoditiesDeriv = "/sqi_premium/market/derivatives/ch/MapSearch.action?search=underlying&market=co";
+var LnkOblIntro = "/sq-web-info/home-bonds?l=CLANG2";
+var LnkOblInterest = "/sqi_premium/market/bonds/RateCurve.action?&sort=type&asc=true&l=CLANG2";
+var LnkOblBridportNews = "/sqi_premium/market/BridportNews.action?l=CLANG2";
+
+// var LnkNewsOverview = "/sq-web-info/home-news?l=CLANG2";
+var LnkNewsOverview = "/web-news-section/"
+var LnkNewsSearch = "/sqi_web_search/market/equity/NewsSearch.action?form=&lang=CLANG2";
+var LnkNewsCompany = "/sqi_premium/market/news/NewsOnCompany.action";
+var LnkNewsNewsAlert = "/sqi_premium/alert/news/List.action?lang=CLANG1";
+var LnkNewsBulletin = "/sqi_premium/market/news/NewsHome.action?lang=CLANG2";
+var LnkNewsLetter = "/sqw-newsletter/index.jsp?onframe=true";
+
+// var LnkCommunity = "https://community.swissquote.ch/sqi_community/page/Home.action";
+
+var LnkElseHelp = "/website-help/main_CLANG1.html";
+var LnkElseOffice = "/website-help/offices/offices_CLANG1.html";
+var LnkElseGroup = "/website-group/group/";
+var LnkElseInvestor = "/website-group/investor/";
+var LnkElseGroupContact = "/website-group/contact/";
+var LnkElseGroupCorporate = "/website-group/corporate/";
+var LnkElseGroupPress = "/website-group/press/";
+var LnkElseGroupJob = "/website-group/job/";
+
+var LnkCrypto = "/web-market-quote/?market=cryp&l=CLANG2#cryp";
+
+function intraday_new(){
+    if(Modernizr.canvas){
+        var atoolsUrl = '/sqi_atools/AnalysisTools.action?frequence=live&type=4&indicators=&compare=&mode=intraday&detached=true';
+        var atoolWindow = window.open(atoolsUrl,'Analysis_Tools_2','width=1024,height=630,status=no,toolbar=no,menubar=no,scrollable=no,resizable=yes,scrollbars=no,directories=no');
+        atoolWindow.focus();
+    }else{
+        parent.launch_atools('','live');
+    }
+}
+
+function historical_new(){
+    if(Modernizr.canvas){
+        var atoolsUrl = '/sqi_atools/AnalysisTools.action?frequence=daily&type=1&period=year&mode=historical&detached=true';
+        var atoolWindow = window.open(atoolsUrl,'Analysis_Tools_2','width=1024,height=630,status=no,toolbar=no,menubar=no,scrollable=no,resizable=yes,scrollbars=no,directories=no');
+        atoolWindow.focus();
+    }else{
+        parent.launch_atools('');
+    }
+}
+
+//function openCommunity(){
+//  parent.location.replace(LnkCommunity)
+//}
+
+function openLiveAnalysis() {
+    parent.location.replace(LnkLiveAnalysis);
+}
+
+function openMobileMarketing() {
+    parent.location.replace(LnkInfoMobile)
+}
+
+function setNavigation(type){
+  tree = new NavNode();
+  if (type == "quote" || type == "warrants" || type == "funds" || type == "news" || type == "forex" || type == "bank") {
+    //tree.addChild("Personal Page", "javascript:parent.pp_login()");
+    tree.addChild("Personal Page", LnkPersonalPagePub,{Domaine:"public"});
+    tree.addChild("Personal Page", LnkPersonalPagePre ,{Domaine:"premium"});
+    tree.addChild("Portfolio Manager", LnkPortfolioManagerPub, {Domaine:"public"});
+    tree.addChild("Portfolio Manager", LnkPortfolioManagerPre, {Domaine:"premium"});
+    tree.addChild("Themes Trading", LnkThemesTrading);
+    var _finance = tree.addChild(["Finanz-Tools", "Financial Tools", "Outils financiers"]);
+    var _charts = _finance.addChild("Charts", "");
+    _charts.addChild("Intraday Live", LnkIntradayLive);
+    _charts.addChild(["Analysis Tool","Analysis Tool","Analysis Tool"], LnkAnalysisTool);
+//          var _live = _finance.addChild("Live Quotes", "",{Domaine:"premium"});
+//              _live.addChild("Orderbook Live", LnkOrderBookLive ,{Domaine:"premium"});
+//              _live.addChild("Runnerbook", LnkRunnerbook ,{Domaine:"premium"});
+//              _live.addChild("Runner Live", "javascript:parent.launch_runner(1)");
+    var _derTools = _finance.addChild(["Derivate", "Derivatives", "D√©riv√©s"], "");
+    _derTools.addChild("Warrant Chooser", LnkWarrantChooser);
+    var _derTools_ch = _derTools.addChild(["Schweizer", "Swiss", "Suisse"], "");
+    _derTools_ch.addChild("Derivative On", LnkDerivatives + "/ch/MapSearch.action?l=CLANG2");
+    _derTools_ch.addChild("Derivative Finder", LnkEqui + "swissderivatives/SwissDerivativeSearch.action");
+    var _derTools_de = _derTools.addChild(["Deutscher ", "German", "Allemand"],"",{Domaine:"premium"});
+    _derTools_de.addChild("Derivative on", LnkWarrantOn,{Domaine:"premium"});
+    _derTools_de.addChild("Derivative Search", LnkEqui + "euwax/EuwaxSearch.action",{Domaine:"premium"});
+    var _analyse = _finance.addChild(["Analyse", "Analyze", "Analyse"], "",{Domaine:"premium"});
+// SQI-832:     _analyse.addChild("Equity Analyzer", LnkCHsec + "/fcgi-bin/analyzer?LANGUAGE=CLANG0");
+    _analyse.addChild("Ranking", LnkRanking,{Domaine:"premium"});
+    var _alert = _finance.addChild(["Alert", "Alert", "Alerte"], "",{Domaine:"premium"});
+    _alert.addChild("News Alert", LnkNewsAlert,{Domaine:"premium"});
+    _alert.addChild("Price Alert", LnkPriceAlert,{Domaine:"premium"});
+    var _mobile = _finance.addChild("Mobile", "");
+    _mobile.addChild(["Mobile Informationsdienste","Mobile Information Services","Informations mobiles","Servizi d\"informazione a distanza"], LnkOpenInfoMobile);
+    _mobile.addChild("SMS", "javascript:parent.pp_sms()",{Domaine:"premium"});
+    //var _suisse = tree.addChild(["Schweiz", "Switzerland", "Suisse"], LnkParsefq + "116", {idPublic:"swx"});
+
+    var suisse_etfTerms = '/sq-web-info/termsAuto/Switzerland?l=CLANG1&cookieName=SQ_terms&cookieValue=TC_Funds:I_AGREE;path=/;&urlRedirect='
+
+    var _suisse = tree.addChild(["Schweiz", "Switzerland", "Suisse"], LnkOverview + "market=ch#ch", {idPublic:"swx"});
+    _suisse.addChild(["√úbersicht", "Overview", "Aper√ßu"], LnkOverview+ "market=ch#ch");
+    _suisse.addChild("Winners", LnkWinLos + "winners");
+    _suisse.addChild("Losers", LnkWinLos + "losers");
+    _suisse.addChild("Best Turnover", LnkList + "market=ch&list=best_turnover");
+    _suisse.addChild("Best Volume", LnkList + "market=ch&list=best_volume");
+    _suisse.addChild("Most Volatile", LnkList + "market=ch&list=best_high_low_spread");
+    _suisse.addChild("Biggest Trades", LnkList + "market=ch&list=biggest_trade",{Domaine:"premium"});
+    _suisse.addChild("Stop Trading", LnkList + "market=ch&list=stoptrading",{Domaine:"premium"});
+    _suisse.addChild("Off-Exchange", LnkList + "market=ch&list=off_exchange",{Domaine:"premium"});
+    _suisse.addChild("Sponsored Foreign Shares", LnkList + "market=ch&list=foreign");
+    _suisse.addChild(["Indizes", "Indices", "Indices"], LnkList + "market=chi&list=indices");
+    _suisse.addChild("ETFs", suisse_etfTerms + LnkEtfs + "&I_AGREE");
+    _suisse.addChild("SMI", LnkList + "market=ch&list=smi&sort=name&asc=true");
+    _suisse.addChild("SMI Movers", LnkSmiMovers);
+    _suisse.addChild("SMIM", LnkList + "market=ch&list=smim");
+    _suisse.addChild("SLI", LnkList + "market=ch&list=sli&sort=name&asc=true");
+    _suisse.addChild(["Bern", "Bern", "Berne"], LnkList + "market=ch&list=bern");
+
+    var _amerique_etfTerms = '/sq-web-info/termsAuto/USA?l=CLANG1&cookieName=SQ_terms&cookieValue=TC_Funds:I_AGREE,TC_Funds_Other:I_AGREE;path=/;&urlRedirect=';
+
+    var _amerique = tree.addChild(["Nordamerika", "North America", "Am√©rique du Nord"], "");
+    var _us = _amerique.addChild(["US Markt", "US Market", "March√© US"], LnkOverview + "market=us#us");
+    _us.addChild(["√úbersicht", "Overview", "Aper√ßu"], LnkOverview + "market=us#us");
+    _us.addChild("Winners", LnkList + "market=us&list=winners");
+    _us.addChild("Losers", LnkList + "market=us&list=losers");
+    _us.addChild("Best Turnover", LnkList + "market=us&list=best_turnover");
+    _us.addChild("Best Volume", LnkList + "market=us&list=best_volume");
+    _us.addChild(["Indizes", "Indices", "Indices"], LnkList + "market=us&list=indices");
+    _us.addChild("ETFs", _amerique_etfTerms + LnkList + "market=us&list=etf");
+    _us.addChild("S&P 500 Futures", LnkUSSNP,{Domaine:"premium"});
+    _us.addChild("Dow Jones", LnkList + "market=us&list=dowjones");
+    _us.addChild("Nasdaq 100", LnkList + "market=us&list=nasdaq100");
+    var _cana = _amerique.addChild(["Kanadischer Markt", "Canadian Market", "March√© Canadien"], LnkOverview + "market=ca#ca");
+    _cana.addChild(["√úbersicht", "Overview", "Aper√ßu"], LnkOverview + "market=ca#ca");
+    _cana.addChild("Winners", LnkList + "market=ca&list=winners");
+    _cana.addChild("Losers", LnkList + "market=ca&list=losers");
+    _cana.addChild("Best Turnover", LnkList + "market=ca&list=best_turnover");
+    _cana.addChild("Best Volume", LnkList + "market=ca&list=best_volume");
+    _cana.addChild("TSX 60", LnkList + "market=ca&list=tsx");
+
+    var _allemande_etfTerms = '/sq-web-info/termsAuto/Germany?l=CLANG1&cookieName=SQ_terms&cookieValue=TC_Funds_Other:I_AGREE;path=/;&urlRedirect=';
+
+    var _europe = tree.addChild(["Europa", "Europe", "Europe"], "");
+    var _allemand = _europe.addChild(["Deutscher Markt", "German Market", "March√© Allemand"], LnkOverview + "market=de#de");
+    _allemand.addChild(["√úbersicht", "Overview", "Aper√ßu"], LnkOverview + "market=de#de");
+    _allemand.addChild("Winners", LnkList + "market=de&list=winners");
+    _allemand.addChild("Losers", LnkList + "market=de&list=losers");
+    _allemand.addChild("Best Turnover", LnkList + "market=de&list=best_turnover");
+    _allemand.addChild("Best Volume", LnkList + "market=de&list=best_volume");
+    _allemand.addChild("Indices", LnkList + "market=de&list=indices");
+    _allemand.addChild("ETFs", _allemande_etfTerms + LnkList + "market=ff&list=etf");
+    _allemand.addChild("DAX", LnkList + "market=de&list=dax");
+    //_allemand.addChild("US Stars", LnkList + "market=de&list=usstars",{Domaine:"premium"});
+    var _autriche = _europe.addChild(["√ñsterreichischer Markt", "Austrian Market", "March√© Autrichien"], LnkOverview + "market=at#at");
+    _autriche.addChild(["√úbersicht", "Overview", "Aper√ßu"], LnkOverview + "market=at#at");
+    _autriche.addChild("Winners", LnkList + "market=at&list=winners");
+    _autriche.addChild("Losers", LnkList + "market=at&list=losers");
+    _autriche.addChild("Best Turnover", LnkList + "market=at&list=best_turnover");
+    _autriche.addChild("Best Volume", LnkList + "market=at&list=best_volume");
+    _autriche.addChild("ATX", LnkList + "market=at&list=atx");
+
+    var _euronext_etfTerms = '/sq-web-info/termsAuto/Euronext?l=CLANG1&cookieName=SQ_terms&cookieValue=TC_Funds_Other:I_AGREE;path=/;&urlRedirect=';
+
+    var _euronext = _europe.addChild(["Euronext Markt", "Euronext Market", "March√© Euronext"], LnkOverview + "market=fr#fr");
+    _euronext.addChild(["√úbersicht", "Overview", "Aper√ßu"], LnkOverview + "market=fr#fr");
+    _euronext.addChild("Winners", LnkList + "market=fr&list=winners");
+    _euronext.addChild("Losers", LnkList + "market=fr&list=losers");
+    _euronext.addChild("Best Turnover", LnkList + "market=fr&list=best_turnover");
+    _euronext.addChild("Best Volume", LnkList + "market=fr&list=best_volume");
+    _euronext.addChild("Indices", LnkList + "market=fr&list=indices",{Domaine:"premium"});
+    _euronext.addChild("ETFs", _euronext_etfTerms + LnkList + "market=fr&list=etf");
+    _euronext.addChild("CAC 40", LnkList + "market=fr&list=cac40");
+    _euronext.addChild("AEX 25", LnkList + "market=fr&list=aex25");
+    _euronext.addChild("BEL 20", LnkList + "market=fr&list=bel20");
+    var _italien = _europe.addChild(["Italienischer Markt", "Italian Market", "March√© Italien"], LnkOverview + "market=it#it");
+    _italien.addChild(["√úbersicht", "Overview", "Aper√ßu"], LnkOverview + "market=it#it");
+    _italien.addChild("Winners", LnkList + "market=it&list=winners");
+    _italien.addChild("Losers", LnkList + "market=it&list=losers");
+    _italien.addChild("Best Turnover", LnkList + "market=it&list=best_turnover");
+    _italien.addChild("Best Volume", LnkList + "market=it&list=best_volume");
+    _italien.addChild("Indices", LnkList + "market=it&list=indices");
+    var _londre = _europe.addChild(["UK Markt", "UK Market", "March√© UK"], LnkList + "market=gb&list=best_turnover");
+    _londre.addChild("Winners", LnkList + "market=gb&list=winners");
+    _londre.addChild("Losers", LnkList + "market=gb&list=losers");
+    _londre.addChild("Best Turnover", LnkList + "market=gb&list=best_turnover");
+    _londre.addChild("Best Volume", LnkList + "market=gb&list=best_volume");
+    var _scandi = _europe.addChild(["Skandinavischer Markt", "Scandinavian Market", "March√© Scandinave"], LnkOverview + "market=sk#sk");
+    _scandi.addChild(["√úbersicht", "Overview", "Aper√ßu"], LnkOverview + "market=sk#sk");
+    _scandi.addChild("Winners", LnkList + "market=sk&list=winners");
+    _scandi.addChild("Losers", LnkList + "market=sk&list=losers");
+    _scandi.addChild("Best Turnover", LnkList + "market=sk&list=best_turnover");
+    _scandi.addChild("Best Volume", LnkList + "market=sk&list=best_volume");
+    _scandi.addChild("HEX 25", LnkList + "market=fi&list=hex");
+    _scandi.addChild("KFX", LnkList + "market=dk&list=kfx");
+    _scandi.addChild("OMX", LnkList + "market=se&list=omx");
+
+    //World market
+    if (SITE == "PUBLIC") {
+    }
+    else {
+      var _world = tree.addChild(["Welt", "World", "Monde"], LnkWorldOverview, {Domaine:"premium"});
+    }
+
+    var _derivative = tree.addChild(["Warrants & Derivate", "Warrants & Derivatives", "Warrants & D√©riv√©s"], LnkWarrantsIntro, {idPublic:"warrants"});
+    _derivative.addChild(["Start", "Intro", "Intro"], LnkWarrantsIntro);
+    var _der_ch = _derivative.addChild(["Schweizer Markt", "Swiss Market", "March√© Suisse"], LnkWarrantsSwOrverview);
+    _der_ch.addChild(["√úbersicht", "Overview", "Aper√ßu"], LnkWarrantsSwOrverview);
+    var _der_ch_gamme = _der_ch.addChild(["Produktart", "Product types", "Type de produits"], LnkDerivatives + "/ch/Home.action?class1=1&l=CLANG2");
+    _der_ch_gamme.addChild(["Hebel", "Leverage", "Levier"], LnkDerivatives + "/ch/Home.action?class1=1&l=CLANG2");
+    _der_ch_gamme.addChild(["Partizipation", "Participation", "Participation"], LnkDerivatives + "/ch/Home.action?class1=2&l=CLANG2");
+    _der_ch_gamme.addChild(["Renditeoptimierung", "Yield - Enhancement", "Optimisation de la performance"], LnkDerivatives + "/ch/Home.action?class1=3&l=CLANG2");
+    _der_ch_gamme.addChild(["Kapitalschutz", "Capital Protected", "Protection du capital"], LnkDerivatives + "/ch/Home.action?class1=4&l=CLANG2");
+//                  _der_ch.addChild("Risk Overview", "/website-static/warrants/risk_overview/risk_overview_CLANG1.html");
+
+    var _der_dots = tree.addChild(["Swiss DOTS", "Swiss DOTS", "Swiss DOTS"], LnkSwissDots,{Bold:true});
+    _der_dots.addChild(["√úbersicht", "Overview", "Aper√ßu"], LnkSwissDotsOverview);
+    _der_dots.addChild(["Alle Produkte","All products","Tous les produits"], LnkEquitySwDeriv +"SwissDerivativeSearch.action?searchFilter.bean.exchangeId=672&asSearchEngine=true&searchFilter.bean.productClass=1&searchFilter.bean.underlyingIsin=&searchFilter.bean.trend=&sort=dividend,iedate&dir=asc&searchFilter.bean.withVolume=false&frame=false");
+
+    _der_dots.addChild(["Neuemissionen","New Issues","Nouvelles √©missions"], LnkEquitySwDeriv +"SwissDerivativeSearch.action?searchFilter.bean.predefinedIssueDate=w0&searchFilter.bean.exchangeId=672&lang=CLANG2");
+    _der_dots.addChild("Goldman Sachs", LnkEquitySwDeriv +"SwissDerivativeSearch.action?searchFilter.bean.exchangeId=672&searchFilter.bean.issuerId=gs&asSearchEngine=true&searchFilter.bean.productClass=1&frame=false");
+    _der_dots.addChild("UBS", LnkEquitySwDeriv +"SwissDerivativeSearch.action?searchFilter.bean.exchangeId=672&searchFilter.bean.issuerId=ubs&asSearchEngine=true&searchFilter.bean.productClass=1&frame=false");
+    _der_dots.addChild("Soci√©t√© G√©n√©rale", LnkEquitySwDeriv +"SwissDerivativeSearch.action?searchFilter.bean.exchangeId=672&searchFilter.bean.issuerId=sog&asSearchEngine=true&searchFilter.bean.productClass=1&frame=false");
+    _der_dots.addChild("Vontobel", LnkEquitySwDeriv +"SwissDerivativeSearch.action?searchFilter.bean.exchangeId=672&searchFilter.bean.issuerId=vt&asSearchEngine=true&searchFilter.bean.productClass=1&frame=false");
+    _der_dots.addChild("BNP Paribas", LnkEquitySwDeriv +"SwissDerivativeSearch.action?searchFilter.bean.exchangeId=672&searchFilter.bean.issuerId=bnp&asSearchEngine=true&searchFilter.bean.productClass=1&frame=false");
+
+    var _der_de = _derivative.addChild(["Deutscher Markt", "German Market", "March√© Allemand"], LnkWarrantGerman);
+
+    var _der_off = _derivative.addChild("After Hours Trading", "");
+    _der_off.addChild("Bank Vontobel", LnkWarrantsAfterHours + "vontobel");
+    _der_off.addChild("BNP Paribas", LnkWarrantsAfterHours + "bnp");
+    _der_off.addChild("Goldman Sachs", LnkWarrantsAfterHours + "goldmansachs");
+    _der_off.addChild("Soci√©t√© G√©n√©rale", LnkWarrantsAfterHours + "societegenerale");
+    _der_off.addChild("UBS", LnkWarrantsAfterHours + "ubs");
+
+    var _optfut = tree.addChild("Options & Futures", LnkOptionFutureIndex,{idPublic:"options"});
+    _optfut.addChild(["Pr√§sentation", "Presentation", "Pr√©sentation"], LnkOptionFuturePresentation);
+    _optfut.addChild(["√úbersicht", "Overview", "Aper√ßu"], LnkOptionFutureOverview);
+    var _optfut_eur = _optfut.addChild(["Europa", "Europe", "Europe"], LnkOptionFutureEurope);
+    var _optfut_eur_option = _optfut_eur.addChild(["Optionen", "Options", "Options"], LnkEqui + "option/OptionSearch.action?searchFilter.market=eu&searchFilter.group=sw");
+    _optfut_eur_option.addChild(["Indizes", "Indices", "Indices"], LnkEqui + "option/OptionSearch.action?searchFilter.market=eu&searchFilter.group=id");
+    _optfut_eur_option.addChild(["Aktien / Schweiz", "Shares / Switzerland", "Action / Suisse"], LnkEqui + "option/OptionSearch.action?searchFilter.market=eu&searchFilter.group=sw");
+    _optfut_eur_option.addChild(["Aktien / Deutschland", "Shares / Germany", "Action / Allemagne"], LnkEqui + "option/OptionSearch.action?searchFilter.market=eu&searchFilter.group=de");
+    _optfut_eur_option.addChild(["Aktien / Euronext", "Shares / Euronext", "Action / Euronext"], LnkEqui + "option/OptionSearch.action?searchFilter.market=eu&searchFilter.group=fr");
+    _optfut_eur_option.addChild(["Aktien / Italien", "Shares / Italy", "Action / Italie"], LnkEqui + "option/OptionSearch.action?searchFilter.market=eu&searchFilter.group=it");
+    _optfut_eur_option.addChild(["Aktien / Skandinavien", "Shares / Scandinavia", "Action / Scandinavie"], LnkEqui + "option/OptionSearch.action?searchFilter.market=eu&searchFilter.group=sk");
+    _optfut_eur_option.addChild(["Aktien / √úbrige", "Shares / Others", "Action / Autres"], LnkEqui + "option/OptionSearch.action?searchFilter.market=eu&searchFilter.group=xx");
+    _optfut_eur_option.addChild(["Zinsderivate", "Interest Rate", "Produits de taux"], LnkEqui + "option/OptionSearch.action?searchFilter.market=eu&searchFilter.group=bd");
+    var _optfut_eur_futures = _optfut_eur.addChild("Futures",LnkEqui + "future/FutureSearch.action?searchFilter.market=eu&searchFilter.group=id");
+    _optfut_eur_futures.addChild(["Indizes", "Indices", "Indices"], LnkEqui + "future/FutureSearch.action?searchFilter.market=eu&searchFilter.group=id");
+    _optfut_eur_futures.addChild(["Aktien / Schweiz", "Shares / Switzerland", "Action / Suisse"], LnkEqui + "future/FutureSearch.action?searchFilter.market=eu&searchFilter.group=sw");
+    _optfut_eur_futures.addChild(["Aktien / Deutschland", "Shares / Germany", "Action / Allemagne"], LnkEqui + "future/FutureSearch.action?searchFilter.market=eu&searchFilter.group=de");
+    _optfut_eur_futures.addChild(["Aktien / Euronext", "Shares / Euronext", "Action / Euronext"], LnkEqui + "future/FutureSearch.action?searchFilter.market=eu&searchFilter.group=fr");
+    _optfut_eur_futures.addChild(["Aktien / Italien", "Shares / Italy", "Action / Italie"], LnkEqui + "future/FutureSearch.action?searchFilter.market=eu&searchFilter.group=it");
+    _optfut_eur_futures.addChild(["Aktien / Skandinavien", "Shares / Scandinavia", "Action / Scandinavie"], LnkEqui + "future/FutureSearch.action?searchFilter.market=eu&searchFilter.group=sk");
+    _optfut_eur_futures.addChild(["Aktien / √úbrige", "Shares / Others", "Action / Autres"], LnkEqui + "future/FutureSearch.action?searchFilter.market=eu&searchFilter.group=xx");
+    _optfut_eur_futures.addChild(["Zinsderivate", "Interest Rate", "Produits de taux"], LnkEqui + "future/FutureSearch.action?searchFilter.market=eu&searchFilter.group=bd");
+    var _optfut_usa = _optfut.addChild("USA", LnkOptionFutureUSA);
+    _optfut_usa.addChild(["Options", "Options", "Options"], LnkEqui + "option/OptionSearch.action?searchFilter.market=ud");
+    _optfut_usa.addChild(["Futures", "Futures", "Futures"], LnkEqui + "future/FutureSearch.action?searchFilter.market=ud");
+    _optfut_usa.addChild(["Optionen auf Futures", "Options on futures", "Options sur Futures","Opzioni sugli Futures"], LnkEqui + "option/OptionSearch.action?searchFilter.market=ud&searchFilter.group=of");
+
+    var LnkNewFunds = fundTerms + '/sq-espaces-cms/#fund/leaders';
+    var _fonds = tree.addChild(["Fonds", "Funds", "Fonds"], LnkNewFunds, {idPublic:"funds"});
+    
+    var etfTerms = '/sq-web-info/termsAuto/ETF?l=CLANG1&cookieName=SQ_terms_ETF&cookieValue=TC_Funds_Other:I_AGREE&urlRedirect=';
+    var etfLeaders = '/sq-espaces-cms/#etf/leaders';
+    var marketListingAction = '/sq_mi/market/Listing.action?l=CLANG1';
+    var _etf = tree.addChild("ETF / ETP", etfTerms + etfLeaders, {idPublic:"etf"});
+    _etf.addChild("ETF / ETP Leaders", etfTerms + etfLeaders);
+    _etf.addChild("ETF Finder", LnkEqui + "etfs/EtfSearch.action");
+    _etf.addChild("ETP Finder", etfTerms + marketListingAction + '&market=ch&list=etf.etp&I_AGREE');
+    _etf.addChild("SIX", etfTerms + marketListingAction + '&market=ch&list=etf&showCurrency=true&showUnderlying=true&showLink=true&I_AGREE');
+    _etf.addChild("US", etfTerms + marketListingAction + '&market=us&list=etf&I_AGREE');
+    _etf.addChild("Euronext", etfTerms + marketListingAction + '&market=fr&list=etf&I_AGREE');
+    _etf.addChild(["Deutschland","Germany","Allemagne"], etfTerms + marketListingAction + '&market=ff&list=etf&I_AGREE');
+
+    if (SITE == "PUBLIC") {
+      var _indice = tree.addChild(["Indizes", "Indices", "Indices"], LnkIndiceSw, {Domaine:"public"});
+    }
+    else {
+      var _indice = tree.addChild(["Indizes", "Indices", "Indices"], LnkIndiceOverview, {Domaine:"premium"});
+    }
+    _indice.addChild(["√úbersicht", "Overview", "Aper√ßu"], LnkIndiceOverview, {Domaine:"premium"});
+    _indice.addChild(["Schweiz", "Swiss", "Suisse"], LnkIndiceSw);
+    _indice.addChild(["Deutschland", "Germany", "Allemagne"], LnkList + "market=de&list=indices");
+    _indice.addChild(["Europa", "Europe", "Europe"], LnkList + "market=euro&list=europa.indexes&showMarket=t", {Domaine:"premium"});
+    _indice.addChild("US", LnkList + "market=us&list=indices");
+    var _sect = _indice.addChild(["Sektoren", "Sectors", "Secteurs"], "");
+    _sect.addChild("SIX", LnkIndiceSector);
+    var _const = _indice.addChild(["Bestandteile", "Components", "Constituants"], "");
+    _const.addChild("AEX 25", LnkList + "market=fr&list=aex25");
+    _const.addChild("BEL 20", LnkList + "market=fr&list=bel20");
+    _const.addChild("CAC 40", LnkList + "market=fr&list=cac40");
+    _const.addChild("DAX", LnkList + "market=de&list=dax");
+    _const.addChild("DJ Euro Stoxx 50", LnkList + "market=euro&list=sx5e");
+    _const.addChild("DJ Stoxx 50", LnkList + "market=euro&list=sx5p");
+    _const.addChild("Dow Jones", LnkList + "market=us&list=dowjones");
+    _const.addChild("HEX 25", LnkList + "market=fi&list=hex");
+    _const.addChild("KFX", LnkList + "market=dk&list=kfx");
+    _const.addChild("Nasdaq 100", LnkList + "market=us&list=nasdaq100");
+    _const.addChild("OMX", LnkList + "market=se&list=omx");
+    _const.addChild("SMI", LnkList + "market=ch&list=smi&sort=name&asc=true");
+    _const.addChild("SLI", LnkList + "market=ch&list=sli&sort=name&asc=true");
+    _const.addChild("TSX 60", LnkList + "market=ca&list=tsx");
+    var _ind_der = _indice.addChild("Derivatives", "");
+    _ind_der.addChild(["Warrants auf Indizes", "Warrants on Indices", "Warrants sur Indices"], LnkWarrantOn + "market=id", {Domaine:"premium"});
+    _ind_der.addChild(["Optionen auf Indizes", "Options on Indices", "Options sur Indices"], LnkEqui + "option/OptionSearch.action?searchFilter.market=eu&searchFilter.group=id");
+    _ind_der.addChild(["Futures auf Indizes", "Futures on Indices", "Futures sur Indices"], LnkEqui + "future/FutureSearch.action?searchFilter.market=eu&searchFilter.group=id");
+    _ind_der.addChild("S&P 500 Futures", LnkEqui + "future/FutureSearch.action?searchFilter.market=ud&searchFilter.underlying=USSPX0000007", {Domaine:"premium"});
+
+
+    var _forex = tree.addChild("Forex", ForexMarketCurrencies + "Convertor.action?l=CLANG2", {idPublic:"forex"});
+    /*  var _fx_book = _forex.addChild("FX Book", "/website-static/forex/main_forex_CLANG1.html");
+    _fx_book.addChild(["√úbersicht", "Overview", "Aper√ßu"], "/website-static/forex/main_forex_CLANG1.html");
+    //PUBLIC
+      _fx_book.addChild(["Registrierung", "Subscription", "Inscription"], "/mkt/open_account/bank_open_multi_CLANG1.html", {Domaine:"public"});
+    //PREMIUM
+      _fx_book.addChild(["Registrierung", "Subscription", "Inscription"], "https://trade.swissquote.ch/sqb_core/EforexCtrl?commandName=viewEforexMainPage", {Domaine:"premium"});
+    _fx_book.addChild(["Kosten und Konditionen", "Fees & Conditions", "Frais & Conditions"], "/website-services/information/information_fees_CLANG1.html");
+*/
+                _forex.addChild(['W√§hrungsrechner', 'Calculator', 'Convertisseur'], ForexMarketCurrencies + 'Convertor.action?l=CLANG2');
+                _forex.addChild('Interbank Rates', ForexMarketCurrencies + "UBSInterbankRates.action");
+                _forex.addChild('World Cross Rates', ForexMarketCurrencies + "WorldCrossRates.action", {Domaine:'premium'});
+                _forex.addChild('Euro Locking Rates', ForexMarketCurrencies + "EuroLockRates.action", {Domaine:'premium'});
+
+        var crypto = tree.addChild(['Crypto Assets', 'Crypto Assets', 'Crypto Assets'],  LnkCrypto);
+
+        var _commodities_etfTerms = '/sq-web-info/termsAuto/Funds?l=CLANG1&cookieName=SQ_terms&cookieValue=TC_Funds:I_AGREE;path=/;&urlRedirect='
+
+        var _commodities = tree.addChild('Commodities', _commodities_etfTerms + LnkWinLos + "etf.details.commodities");
+            _commodities.addChild('ETFs', _commodities_etfTerms + LnkWinLos + "etf.details.commodities");
+            _commodities.addChild(['Edelmetalle','Precious Metals','M√©taux pr√©cieux','Metalli preziosi'], LnkCommoditiesMarket +'Listing.action?market=co&list=precious');
+            _commodities.addChild('Gold Coins', LnkCommoditiesMarket + 'Listing.action?market=co&list=coins');
+            _commodities.addChild('Oil Brent Crude Future', LnkCommoditiesMarket + 'Detail.action?s=.OILBC,U', {Domaine:'premium'});
+            _commodities.addChild(['Derivate', 'Derivatives', 'D√©riv√©s'], LnkCommoditiesDeriv);
+
+        var _oblig_premium = tree.addChild(['Obligationen', 'Bonds', 'Obligations'], LnkOblIntro,{idPublic:'bonds'});
+            _oblig_premium.addChild('Intro', LnkOblIntro, {Domaine:'premium'});
+            _oblig_premium.addChild(['Zinssatz', 'Interest Rates', 'Taux d\'int√©r√™ts'], LnkOblInterest, {Domaine:'premium'});
+            _oblig_premium.addChild(['Suche', 'Search', 'Recherche'], LnkEqui + "bonds/BondSearch.action", {Domaine:'premium'});
+
+        var _news = tree.addChild(['News Feed', 'News Feed','News Feed'], LnkNewsOverview, {idPublic:'news'});
+            //_news.addChild(['Suche','Search','Recherche'], LnkNewsSearch);
+            //_news.addChild(['News pro Firma', 'News by company', 'Nouvelles par compagnie'], LnkNewsCompany);
+            //_news.addChild(['Kalender', 'Agenda', 'Ech√©ancier'], LnkNEWS + "t1=t&c1=CALENDAR");
+            //var _news_ch = _news.addChild(['News Schweiz', 'Swiss News', 'Nouvelles suisse']);
+            //  _news_ch.addChild(['Finanzen', 'Finance', 'Finances'], LnkNEWS + "t1=r&c1=sw&t2=t&c2=FINANCE");
+            //  _news_ch.addChild(['M√§rkte', 'Markets', 'March√©s'], LnkNEWS + "t1=r&c1=sw&t2=t&c2=MARKET");
+            //  _news_ch.addChild(['Wirtschaft', 'Economic news', 'Economie'], LnkNEWS + "t1=r&c1=sw&t2=t&c2=ECONOMIC");
+            //  _news_ch.addChild(['Firmen', 'Company', 'Soci√©t√©s'], LnkNEWS + "t1=r&c1=sw&t2=t&c2=COMPANY");
+            //  _news_ch.addChild(['Politik', 'Politics', 'Politique'], LnkNEWS + "t1=r&c1=sw&t2=t&c2=POLITICS");
+            //  _news_ch.addChild(['Management-Transaktionen', 'Management Transactions', 'Transactions du Management'], LnkNEWS + "t1=s&c1=STK&t2=s&c2=MGT");
+                //_news_ch.addChild(['Marktgespr√§ch', 'Market Rumors', 'Rumeurs de march√©'], LnkNEWS + "t2=t&c2=RUMOR", {Domaine:'premium'});
+        //      _news_ch.addChild(['Diverses', 'General', 'Divers'], LnkNEWS + "t1=r&c1=sw&t2=t&c2=GENERAL");
+        //  var _news_us = _news.addChild(['News US', 'US News', 'Nouvelles US']);
+        //      _news_us.addChild(['Finanzen', 'Finance', 'Finances'], LnkNEWS + "t1=r&c1=us&t2=t&c2=FINANCE");
+        //      _news_us.addChild(['M√§rkte', 'Markets', 'March√©s'], LnkNEWS + "t1=r&c1=us&t2=t&c2=MARKET");
+        //      _news_us.addChild(['Wirtschaft', 'Economic news', 'Economie'], LnkNEWS + "t1=r&c1=us&t2=t&c2=ECONOMIC");
+        //      _news_us.addChild(['Firmen', 'Company', 'Soci√©t√©s'], LnkNEWS + "t1=r&c1=us&t2=t&c2=COMPANY");
+        //      _news_us.addChild(['Politik', 'Politics', 'Politique'], LnkNEWS + "t1=r&c1=us&t2=t&c2=POLITICS");
+        //      _news_us.addChild(['Diverses', 'General', 'Divers'], LnkNEWS + "t1=r&c1=us&t2=t&c2=GENERAL");
+        //  var _news_de = _news.addChild(['News Xetra', 'Xetra News', 'Nouvelles Xetra']);
+        //      _news_de.addChild(['Finanzen', 'Finance', 'Finances'], LnkNEWS + "t1=r&c1=ge&t2=t&c2=FINANCE");
+        //      _news_de.addChild(['M√§rkte', 'Markets', 'March√©s'], LnkNEWS + "t1=r&c1=ge&t2=t&c2=MARKET");
+        //      _news_de.addChild(['Wirtschaft', 'Economic news', 'Economie'], LnkNEWS + "t1=r&c1=ge&t2=t&c2=ECONOMIC");
+        //      _news_de.addChild(['Firmen', 'Company', 'Soci√©t√©s'], LnkNEWS + "t1=r&c1=ge&t2=t&c2=COMPANY");
+        //      _news_de.addChild(['Politik', 'Politics', 'Politique'], LnkNEWS + "t1=r&c1=ge&t2=t&c2=POLITICS");
+        //      _news_de.addChild(['Diverses', 'General', 'Divers'], LnkNEWS + "t1=r&c1=ge&t2=t&c2=GENERAL");
+        //  var _news_fr = _news.addChild(['News Euronext', 'Euronext News', 'Nouvelles Euronext']);
+        //      _news_fr.addChild(['Finanzen', 'Finance', 'Finances'], LnkNEWS + "t1=r&c1=fr&t2=t&c2=FINANCE");
+        //      _news_fr.addChild(['M√§rkte', 'Markets', 'March√©s'], LnkNEWS + "t1=r&c1=fr&t2=t&c2=MARKET");
+        //      _news_fr.addChild(['Wirtschaft', 'Economic news', 'Economie'], LnkNEWS + "t1=r&c1=fr&t2=t&c2=ECONOMIC");
+        //      _news_fr.addChild(['Firmen', 'Company', 'Soci√©t√©s'], LnkNEWS + "t1=r&c1=fr&t2=t&c2=COMPANY");
+        //      _news_fr.addChild(['Politik', 'Politics', 'Politique'], LnkNEWS + "t1=r&c1=fr&t2=t&c2=POLITICS");
+        //      _news_fr.addChild(['Diverses', 'General', 'Divers'], LnkNEWS + "t1=r&c1=fr&t2=t&c2=GENERAL");
+        //  var _news_others = _news.addChild(['News Weltweit', 'World News', 'Nouvelles globales']);
+        //      _news_others.addChild(['Finanzen', 'Finance', 'Finances'], LnkNEWS + "t1=r&c1=any&t2=t&c2=FINANCE");
+        //      _news_others.addChild(['M√§rkte', 'Markets', 'March√©s'], LnkNEWS + "t1=r&c1=any&t2=t&c2=MARKET");
+        //      _news_others.addChild(['Wirtschaft', 'Economic news', 'Economie'], LnkNEWS + "t1=r&c1=any&t2=t&c2=ECONOMIC");
+        //      _news_others.addChild(['Firmen', 'Company', 'Soci√©t√©s'], LnkNEWS + "t1=r&c1=any&t2=t&c2=COMPANY");
+        //      _news_others.addChild(['Politik', 'Politics', 'Politique'], LnkNEWS + "t1=r&c1=any&t2=t&c2=POLITICS");
+        //      _news_others.addChild(['Diverses', 'General', 'Divers'], LnkNEWS + "t1=r&c1=any&t2=t&c2=GENERAL");
+        //  _news.addChild('News alert', LnkNewsNewsAlert, {Domaine:'premium'});
+        //  _news.addChild(['Morning News', 'Morning News', 'Morning News'], LnkNewsBulletin);
+        //  _news.addChild('Newsletter', LnkNewsLetter);
+//      tree.addChild('Community', LnkOpenCommunity);
+    }
+    else
+// SERVICES
+  if (type == "services" || type == "help" || type == "signup" || type == "contact" || type == "static") {
+
+// HELP
+    var _help = tree.addChild(["Hilfe", "Help", "Aides", "Ausili"], LnkElseHelp, {idPublic:"help"});
+    /*  _help.addChild(["√úbersicht", "Introduction", "Introduction", "Introduzione"], "/website-help/main_CLANG1.html");
+_help.addChild(["Kontof√ºhrung / Anmeldungen", "Account Management / Subscriptions", "Gestion des comptes et Abonnements"], "/website-help/account/help_account_submgt_CLANG1.html");
+_help.addChild(["Kontof√ºhrung und Formulare", "Account Management and Forms", "Gestion du compte et formulaires"], "/website-services/information/information_forms_CLANG1.html");
+_help.addChild(["Tools", "Tools", "Outils"], "/website-help/tools/main_CLANG1.html");
+_help.addChild("FAQ", "/website-help/faq/faq_CLANG1.html");
+_help.addChild(["Allgemeine Infos", "General information", "Infos g√©n√©rales"], "/website-help/general_info/help_general_info_CLANG1.html");
+_help.addChild(["Technische Voraussetzungen", "Technical recommendations", "Recommandations techniques"], "/website-help/tech_recommandation/help_tech_recommend_CLANG1.html");
+*/
+    var _contact = tree.addChild(["Kontakte", "Contacts", "Contacts"], "https://trade.swissquote.ch/sqb_retail/contact/HelpPublic.action?l=CLANG1",{idPublic:"contact"});
+    //var _contact = tree.addChild(["Kontakte", "Contacts", "Contacts"], "https://secure.swissquote.ch/cgi-bin/SQ_contact/contact.pl?language=CLANG1",{idPublic:"contact"});
+    var _offices = tree.addChild(["Unsere Standorte", "Our offices", "Nos bureaux"], LnkElseOffice,{idPublic:"contact"});
+  }
+  else
+// GROUP
+  if (type == "group") {
+    tree.addChild("Intro", "/website-group/main_CLANG1.html",{idPublic:"group"});
+    var _group = tree.addChild(["√úberblick", "The Group", "Le groupe"], LnkElseGroup + "intro_group_CLANG1.html");
+    _group.addChild(["Die Gruppe", "Presentation", "Pr√©sentation"], LnkElseGroup + "intro_group_CLANG1.html");
+    _group.addChild(["Ziele & Strategie", "Goals/Strategy", "Buts & Strat√©gie"], LnkElseGroup + "buts_CLANG1.html");
+    var _invest = tree.addChild(["Investoreninformation", "Investor Relations", "Information aux investisseurs"], LnkElseInvestor + "intro_investor_CLANG1.html");
+    _invest.addChild(["Pr√§sentationen", "Presentation", "Pr√©sentation"], LnkElseInvestor + "intro_investor_CLANG1.html");
+    _invest.addChild(["Reporting", "Reporting", "Rapports"], LnkElseInvestor + "reporting_presentations_CLANG1.html");
+    _invest.addChild(["Generalversammlung", "AGM", "Assembl√©e G√©n√©rale"], LnkElseInvestor + "agm_CLANG1.html");
+    _invest.addChild(["Statuten/HR-Auszug", "Statutes", "Statuts / Extrait du R.C"], LnkElseInvestor + "statues_CLANG1.html");
+    _invest.addChild(["Agenda", "Agenda", "Agenda"], "/website-group/main_CLANG1.html");
+    _invest.addChild(["E-Mail-Service", "E-mail Service", "E-mail service"], LnkElseGroupContact +"contact_news_CLANG1.html");
+    var _corp = tree.addChild("Corporate Governance", LnkElseGroupCorporate + "intro_corporate_CLANG1.html");
+    _corp.addChild(["Pr√§sentation", "Introduction", "Pr√©sentation"], LnkElseGroupCorporate + "intro_corporate_CLANG1.html");
+    _corp.addChild(["Konzernstruktur und Aktionariat", "Group Structure and Shareholders", "Structure du Groupe et Actionnariat"], LnkElseGroupCorporate + "structure_CLANG1.html");
+    _corp.addChild(["Kapitalstruktur", "Capital structure", "Structure du capital"], LnkElseGroupCorporate + "capital_CLANG1.html");
+    _corp.addChild(["Verwaltungsrat", "Board of Directors", "Conseil d\"Administration"], LnkElseGroupCorporate + "board_CLANG1.html");
+    _corp.addChild(["Gesch√§ftsleitung", "Executive Management", "Direction g√©n√©rale"], LnkElseGroupCorporate + "executive_CLANG1.html");
+    _corp.addChild(["Entsch√ºldigungen, Beteiligungen und Darlehen", "Compensation", "R√©mun√©rations, participations et pr√™ts"], LnkElseGroupCorporate + "remuneration_CLANG1.html");
+    _corp.addChild(["Mitwirkungsrechte der Aktion√§re", "Shareholders\"s participation", "Droits de participation des actionnaires"], LnkElseGroupCorporate + "sharholders_CLANG1.html");
+    _corp.addChild(["Kontrollwechsel und Abwehrmassnahmen", "Change of control and defence measures", "Prises de contr√¥le et mesures de d√©fense"], LnkElseGroupCorporate + "change_CLANG1.html");
+    _corp.addChild(["Revisionsstelle", "Auditors", "Organe de r√©vision"], LnkElseGroupCorporate + "auditors_CLANG1.html");
+    _corp.addChild(["Informationspolitik", "Information Policy", "Politique d\"information"], LnkElseGroupCorporate + "policy_CLANG1.html");
+    var _info = tree.addChild(["Presseinformation", "Press Room", "Infos presse"], LnkElseGroupPress + "release_CLANG1.html");
+    _info.addChild(["Medieninformationen", "Media Info", "Informations aux m√©dias"], LnkElseGroupPress + "release_CLANG1.html");
+    _info.addChild(["Image Bank", "Gallery", "Banque d\"images"], LnkElseGroupPress + "gallery_CLANG1.html");
+    _info.addChild(["E-mail service", "E-mail service", "E-mail service"], LnkElseGroupContact + "contact_news_CLANG1.html");
+    var _jobs = tree.addChild("Jobs", LnkElseGroupJob + "job_CLANG1.html");
+    _jobs.addChild(["Intro", "Introduction", "Introduction"], LnkElseGroupJob + "job_CLANG1.html");
+    _jobs.addChild(["Offene Stellen (VD)", "Job offers (VD)", "Nos offres √† Gland"], LnkElseGroupJob + "job_offres_CLANG1.html");
+    _jobs.addChild(["Offene Stellen (ZH)", "Job offers (ZH)", "Nos offres √† Z√ºrich"], LnkElseGroupJob + "job_offres_schw_CLANG1.html");
+  }
+  else
+// SAVING
+  if (type == "saving") {
+    var _savAccount = tree.addChild(["Mein Konto", "My Account", "Mon Compte", "Mio Conto"], LnkCHsav+"/sqb_saving/account/Account.action",{idPublic:"saving"});
+    _savAccount.addChild(["Konto √ºbersicht", "Account summary", "Compte aper√ßu", "Panoramica del conto"], LnkCHsav+"/sqb_saving/account/Account.action");
+    _savAccount.addChild(["Konto Details", "Account detail", "Compte d√©tail", "Dettaglio del conto"], LnkCHsav+"/sqb_saving/account/Account.action?showPositions");
+    _savAccount.addChild(["Anlagen √ºbersicht", "Investment overview", "Aper√ßu des placements", "Aper√ßu des placement"], LnkCHsav+"/sqb_saving/account/Account.action?showOpenOrders");
+    _savAccount.addChild(["Modell-Verwaltung", "Model Management", "Gestion des mod√®les", "Gestion des mod√®les"], LnkCHsav+"/sqb_saving/savingmodel/SavingModel.action");
+//                  _savAccount.addChild(["F√§lligkeit Kalender", "Maturity calendar", "Calendrier des maturit√©s", "Calendario delle scadenze"], LnkCHsav+"/sqb_saving/maturitycalendar/MaturityCalendar.action");
+    _savAccount.addChild(["Transaktionen", "Transactions", "Transactions", "Transazioni"], LnkCHsav+"/sqb_saving/transactions/Transactions.action");
+    _savAccount.addChild(["Wechsel", "Change", "Change", "Cambio"], LnkCHsav+"/sqtr_exchange/change/change.do");
+    _savAccount.addChild(["Zahlungsverkehr", "Payment services", "Services de paiement", "Operazioni di pagamento"], LnkCHsav+"/sqb_retail/OpsFormSavingCtrl/?commandName=opsAccess");
+    _savAccount.addChild(["Cash facility", "Cash facility", "Cash facility", "Cash facility"], LnkCHsav+"/sqb_saving/account/CashFacility.action");
+    tree.addChild(["Mein Profil", "My Profile", "Mon Profil", "Mio Profilo"], LnkCHsav+"/sqb_client_relations2/ProfileCtrl?commandName=viewProfile");
+    //tree.addChild(["Lebensversicherung", "Life insurance", "Assurance Vie", "L\"assicurazione sulla vita"], LnkCHsav+"/sqb_saving/externalProducts/termlife/prod/TermLifeInsurance.action");
+    tree.addChild(["Benachrichtigungen", "Notifications", "Communications", "Comunicazione"], LnkCHsav+"/sqb_client_relations2/CommunicationSavingCtrl/?commandName=displayFirstPage");
+  } else if (type == "saving_portal"){
+    var _savAccount = tree.addChild(["Mein Konto", "My Account", "Mon Compte", "Mio Conto"], LnkCHsav+"/sqb_saving/account/Account.action",{idPublic:"saving"});
+    _savAccount.addChild(["Konto √ºbersicht", "Account summary", "Compte aper√ßu", "Panoramica del conto"], LnkCHsav+"/sqb_saving/account/Account.action");
+    _savAccount.addChild(["Konto Details", "Account detail", "Compte d√©tail", "Dettaglio del conto"], LnkCHsav+"/sqb_saving/account/Account.action?showPositions");
+    _savAccount.addChild(["Anlagen √ºbersicht", "Investment overview", "Aper√ßu des placements", "Aper√ßu des placement"], LnkCHsav+"/sqb_saving/account/Account.action?showOpenOrders");
+    _savAccount.addChild(["Modell-Verwaltung", "Model Management", "Gestion des mod√®les", "Gestion des mod√®les"], LnkCHsav+"/sqb_saving/savingmodel/SavingModel.action");
+    _savAccount.addChild(["Transaktionen", "Transactions", "Transactions", "Transazioni"], LnkCHsav+"/sqb_saving/transactions/Transactions.action");
+    _savAccount.addChild(["Wechsel", "Change", "Change", "Cambio"], LnkCHsav+"/sqtr_exchange/change/change.do");
+    _savAccount.addChild(["Zahlungsverkehr", "Payment services", "Services de paiement", "Operazioni di pagamento"], LnkCHsav+"/sqb_retail/OpsFormSavingCtrl/?commandName=opsAccess");
+    _savAccount.addChild(["Cash facility", "Cash facility", "Cash facility", "Cash facility"], LnkCHsav+"/sqb_saving/account/CashFacility.action");
+  }
+// 3A
+  if (type == "3a") {
+    var _pension = tree.addChild(["Mein Konto", "My Account", "Mon Compte", "Mio Conto"], LnkCHsav+"/sqb_saving/3a/account/AccountDetail.action");
+    _pension.addChild(["Konto √úbersicht", "Account summary", "Compte aper√ßu", "Panoramica del conto"], LnkCHsav+"/sqb_saving/3a/account/AccountDetail.action");
+    _pension.addChild(["Transaktionen", "Transactions", "Transactions", "Transazioni"], LnkCHsav+"/sqb_core/Transactions.action");
+    _pension.addChild(["iDynamic Plus", "iDynamic Plus", "iDynamic Plus", "iDynamic Plus"], LnkCHsav+"/website-bank/saving/dynamo/dynamo_overview_CLANG1.html");
+    tree.addChild(["Benachrichtigungen", "Notifications", "Communications", "Comunicazione"], LnkCHsav+"/sqb_client_relations2/CommunicationCtrl?commandName=displayFirstPage");
+  } else if (type == "3a_portal"){
+    //Nothing !
+  }
+}
+”ò¿Ÿ           '∂Ä≈      random     EÍõ<      LnkCH      q¡/      http://www.swissquote.ch   jºÊ—      LnkCHpre    ·D      https://premium.swissquote.ch      ÏúO      LnkCHsav   å=§Ê      https://trade.swissquote.ch    }´Æw      LnkCHsec   ∏À‘      https://secure.swissquote.ch	   n…Ü      LnkNEWS
+    4 ˙Z)      /sqi_premium/market/news/NewsList.action?      Å@~	      LnkWinLos      j	Î,      /sq_mi/market/Listing.action?market=ch&list=   >ûù+      LnkPress   ÿ¢p+      http://www.swissquote.ch/SQ_press/le_temps/    –Sâ      LnkList    KÄï&      /sq_mi/market/Listing.action?l=CLANG2&     Üø5      LnkOverview    NjO      /web-market-quote/?l=CLANG2&   áüd◊      LnkEurexOptions    em5~`      /sqi_premium/market/derivatives/optionfuture/OptionFuture.action?type=option&market=eu&l=CLANG2&   NU`=      LnkEurexFutures    6V#À`      /sqi_premium/market/derivatives/optionfuture/OptionFuture.action?type=future&market=eu?l=CLANG2&   ≤H`ó	      LnkRq2LOV      íÍc      /SQ_rquote2/listOfValues/      f∂$      LnkWarrantOn   ⁄›E=      /sqi_premium/market/derivatives/ew/WarrantOn.action?l=CLANG2&      ı(?      LnkDerivatives     ”Øö      /sqi_premium/market/derivatives    €Üªé	      LnkESpace      ”éfH      /espace/renderer/ComponentRenderer.action?displayDisclaimer=true&siteId=   Û≠'      LnkETF      ª¢h…	      LnkOptFut!      ëõ¥ÔF      /sqi_premium/market/derivatives/optionfuture/OptionFuture.action?type="     /Y›:      LnkEqui#    K⁄r9      /sqi_web_search/market/equity/$     ¢<≥       LnkPersonalPagePub%     Ë´ƒËî      https://account.swissquote.ch/myswissquote/login/iframe/pp?l=CLANG2&returnUrl=https%3A%2F%2Fpremium.swissquote.ch%2Furl%2Fpersonal_page%3Fl%3DCLANG2&   >m{.      LnkPortfolioManagerPub'     líöÛò      https://account.swissquote.ch/myswissquote/login/iframe/pf?l=CLANG2&returnUrl=https%3A%2F%2Fpremium.swissquote.ch%2Furl%2Fportfolio_manager%3Fl%3DCLANG2(   fe      LnkPersonalPagePre)     ØÔÁ≥,      /sqi_runnerbook/views/Watchlist.action?rand=*   %Dâa      LnkPortfolioManagerPre+     R…;,      /sqi_runnerbook/views/Portfolio.action?rand=,   ÊÚ9õ      LnkOrderBookLive-   X€û76      /website-help/tools/orderbook/order_book_CLANG1.html#2.     `¸C      LnkRunnerbook/      [∞∂ #      /sq_mi/runnerbook/views/Home.action0    (“s
+      LnkRanking1     	ÄM"      /sqi_premium/ranking/Search.action2     i…¢¢      LnkInvestmentIdeas3     ´$îá&      /sqw-static/investment-ideas/?l=CLANG14     øÃF      LnkThemesTrading5   CÆA#      /investment-themes-webapp/index.jsp6    ˜÷É–      LnkLiveAnalysis7    ÷eU¬      /url/live-analysis8     j‚ç      LnkIntradayLive9    Ω~õ(      javascript:intraday_new():      8∞ﬂ      LnkAnalysisTool;    ™≈5      javascript:historical_new()<    ∫¡1      LnkOpenLiveAnalysis=    Êíno      javascript:openLiveAnalysis()>      O ÷      LnkOpenInfoMobile?      ∞µ∆D       javascript:openMobileMarketing()@   ≈ÿÇD      LnkWarrantChooserA      	Àçb#      javascript:parent.launch_warrant(0)B    B∂+ 	      NewParamsC      :2IÃ      NewD    4lã^      LnkNewsAlertE   Î2xâ/      /sqi_premium/alert/news/List.action?lang=CLANG1F    ‹ï:U      LnkPriceAlertG      ˛˝Q      /sqi_premium/alert/price/WatchList.action?mode=coming_from_menu_tools&lang=CLANG1H      +Ëâ      LnkInfoMobileI      ã5“x      /url/mobile-informationsJ   ˆÈ/      LnkEtfsK    ?Ó|%      /sqi_premium/etf/Home.action?l=CLANG2L      ≥á±      LnkSmiMoversM   ãÙÕ.      /sq_mi/market/Movers.action?market=ch&list=smiN     ªz…Î      LnkUSSNPO   &e9 {      /sqi_web_search/market/equity/future/FutureSearch.action?searchFilter.market=ud&searchFilter.usFutureUnderlying=ES&l=CLANG2P    <x¯      LnkWorldOverviewQ   —'      /sq-web-info/worldmap?l=CLANG1R     tÈ∆3      LnkWarrantsIntroS   ¨PIØ      /url/espaces_warrantT   %$      LnkWarrantsSwOrverviewU     >H∂      /url/espaces_warrant_swissV     ∂≥`è      LnkSwissDotsOverviewW   ^µ≠      /sq-web-info/home-dots?l=CLANG2X    ∑ó      LnkSwissDotsY   wBr·      LnkEquitySwDerivZ   *ã∞9/      /sqi_web_search/market/equity/swissderivatives/[    ≥hÙ∆      LnkWarrantGerman\   g[©Â      /url/espaces_warrant_german]    ,6      LnkWarrantsAfterHours^      ˙8æ      /url/espaces_warrant__      vı•      LnkOptionFutureIndex`    §]VB      /sqi_premium/market/derivatives/optionfuture/Index.action?l=CLANG2a     Ü_„À      LnkOptionFuturePresentationb    
+GüÄ@      /website-static/opt_futures/opt_futures_presentation_CLANG1.htmlc   ´Z"      LnkOptionFutureOverviewd     Â“ô      LnkOptionFutureEuropee      nÌ«       /sq-web-info/home-eurex?l=CLANG2f   k˛      LnkOptionFutureUSAg     >õüö7      /website-static/opt_futures/opt_futures_usa_CLANG1.htmlh    /hù	      fundTermsi      ∆ánc      /sq-web-info/termsAuto/Funds?l=CLANG1&cookieName=SQ_terms&cookieValue=TC_Funds:I_AGREE&urlRedirect=j    -ó{˘      LnkFundsk   l6¨∫      /website-static/funds/l     }ıò      LnkFundsEspacem     ®Ó      /espace/renderer/n      >ﬂt      NewLnkFundsEspaceo      ΩSΩŒ8      https://www.swissquote.ch/sq-espaces-cms/#fund/espace/31p   öjñ       LnkFundsSearchq     c d]      https://www.swissquote.ch/sqi_web_search/market/funds/SearchByTier.action?lang=CLANG1&I_AGREEr      eùó      LnkFundsTermss      •ÚKäb      https://www.swissquote.ch/sqi_web_search/market/equity/funds/FundSearch.action?lang=CLANG2&I_AGREEt     åya¥      LnkETFOverviewu     •¯ì⁄      /url/espaces_etfv   ı≤5H      LnkIndiceSww    3ìC4      /sq_mi/market/Listing.action?market=chi&list=indicesx   ìπ†ù      LnkIndiceOverviewy      ¸‘ø‡2      /sqi_premium/market/IndexOverview.action?range=dayz     òh8¯      LnkIndiceSector{    Tæö4      /sq_mi/market/Listing.action?market=chi&list=sectors|   ≤ƒ      ForexMarketCurrencies}      N∏Ëp      /sqi_premium/market/currencies/~    §QD      LnkCommoditiesMarket   ˝¶ˇ      /sq_mi/market/Ä     Ÿ
+˛x      LnkCommoditiesDerivÅ    û˚„ôO      /sqi_premium/market/derivatives/ch/MapSearch.action?search=underlying&market=coÇ    ∑πII      LnkOblIntroÉ    eê{       /sq-web-info/home-bonds?l=CLANG2Ñ   Ï/Î4      LnkOblInterestÖ     ëm≠nG      /sqi_premium/market/bonds/RateCurve.action?&sort=type&asc=true&l=CLANG2Ü    \ÖÄ◊      LnkOblBridportNewsá     Kó=0      /sqi_premium/market/BridportNews.action?l=CLANG2à   ∞fDö      LnkNewsOverviewâ    ßSê      /web-news-section/ä     ãŸ;&      LnkNewsSearchã       ÙßgA      /sqi_web_search/market/equity/NewsSearch.action?form=&lang=CLANG2å      å9à      LnkNewsCompanyç     Ü™¥ó-      /sqi_premium/market/news/NewsOnCompany.actioné      (;      LnkNewsNewsAlertè   e=~µ      LnkNewsBulletinê    
+á¬4      /sqi_premium/market/news/NewsHome.action?lang=CLANG2ë   Ìﬂ€x      LnkNewsLetterí      <F$ˇ&      /sqw-newsletter/index.jsp?onframe=trueì     Ë∆›˘      LnkElseHelpî    «+ﬂ2      /website-help/main_CLANG1.htmlï     ÏºIπ      LnkElseOfficeñ      SúU)      /website-help/offices/offices_CLANG1.htmló      ∑{∞      LnkElseGroupò   $¯öª      /website-group/group/ô      ƒ7&      LnkElseInvestorö    x2\      /website-group/investor/õ   õÑ\R      LnkElseGroupContactú    9ˆø      /website-group/contact/ù    |êﬂ      LnkElseGroupCorporateû      ˘pÈS      /website-group/corporate/ü      ;tµ      LnkElseGroupPress†      _+ä5      /website-group/press/°      6V—ﬂ      LnkElseGroupJob¢    Úß<      /website-group/job/£    g~ú“	      LnkCrypto§      ·{©,      /web-market-quote/?market=cryp&l=CLANG2#cryp•   “      intraday_new¶   è‹È(	      Modernizrß      V_      canvas®     ˆı¿	      atoolsUrl©      PÜ–}g      /sqi_atools/AnalysisTools.action?frequence=live&type=4&indicators=&compare=&mode=intraday&detached=true™    ‚Éu      atoolWindow´    ¯2áâ      window¨     óx5      open≠   ≠ñÇ      Analysis_Tools_2Æ   BÂ∑∞n      width=1024,height=630,status=no,toolbar=no,menubar=no,scrollable=no,resizable=yes,scrollbars=no,directories=noØ     KÃÌ      focus∞      ˛Ë˘2      parent±     u}       launch_atools≤      _¸⁄      live≥   bL€¯      historical_new¥     ìÊºa      /sqi_atools/AnalysisTools.action?frequence=daily&type=1&period=year&mode=historical&detached=trueµ      ≥;π      openLiveAnalysis∂   0+QA      location∑   ¯¶ã”      openMobileMarketing∏    ;pî≈      setNavigationπ      â më      tree∫   £§Q»      NavNodeª     =m´      quoteº      òÅ
+      warrantsΩ   ÛÃ>      fundsæ      Ô5Äå      newsø   Ωckl      forex¿      |éf      bank¡   Ç@à≈      addChild¬   Mst      Personal Page√      Ay7'      Domaineƒ    »MÃ–      premium≈    âg      Portfolio Manager∆      AV‹      Themes Trading«     ı`0      _finance»   RY#      Finanz-Tools…   „	TØ      Financial Tools     Ç6Åù      Outils financiersÀ      kAÏ      _chartsÃ    Ò1*      ChartsÕ     ≤q·à      Intraday LiveŒ      òÿ+√      Analysis Toolœ      âΩÏ:	      _derTools–      ¡<~<      Derivate—   Dq6P      Derivatives“    6^˝      DÈrivÈs”    d≤9      Warrant Chooser‘    Û‡ù      _derTools_ch’   ;Ü\ù	      Schweizer÷      '°	B      Swiss◊      9Â      Suisseÿ     ÿE⁄Ç      Derivative OnŸ      ?•Á{      /ch/MapSearch.action?l=CLANG2⁄      »¸aˆ      Derivative Finder€      Ç.‹ß-      swissderivatives/SwissDerivativeSearch.action‹      ‚öÃ      _derTools_de›   ·A
+      Deutscher ﬁ     A◊?≠      Germanﬂ     9ÊC¥      Allemand‡   ¥      Derivative on·      ‚ûh»      Derivative Search‚      ”ΩAÛ      euwax/EuwaxSearch.action„   äˆ-      _analyse‰   µ"™Œ      AnalyseÂ    ç±Ä      AnalyzeÊ      ¯      RankingÁ    €H€      _alertË     ∫…¥|      AlertÈ      Z∑—      AlerteÍ     L@5z
+      News AlertÎ     `ªìô      Price AlertÏ    âBf      _mobileÌ    ûoË?      MobileÓ     õÄf      Mobile InformationsdiensteÔ     +bG      Mobile Information Services    ÃÎúw      Informations mobilesÒ   4ùg!      Servizi d"informazione a distanzaÚ      à∏íò      SMSÛ    ’Ä[ÿ      javascript:parent.pp_sms()Ù     |¢∫v      suisse_etfTermsı    §Bà˘q      /sq-web-info/termsAuto/Switzerland?l=CLANG1&cookieName=SQ_terms&cookieValue=TC_Funds:I_AGREE;path=/;&urlRedirect=ˆ      ÈU.      _suisse˜    yíp      Schweiz¯    ÑùLŸ      Switzerland˘    :' Æ      market=ch#ch˙   ﬂ?l      idPublic˚   ä$|Ï      swx¸    Ô\ã/	      ‹bersicht˝      óÂsÀ      Overview˛   Êù⁄      AperÁuˇ     πËL˚      Winners    'ó◊N      winners   »òœS      Losers    Èt>o      losers    XÏÔ      Best Turnover     ;(Áä      market=ch&list=best_turnover  ÷¡Ù      Best Volume   <'Sı      market=ch&list=best_volume    ª“¿r      Most Volatile     p’Çñ#      market=ch&list=best_high_low_spread	   tö;·      Biggest Trades
+    E⁄*1      market=ch&list=biggest_trade  @Ω•      Stop Trading  *≈      market=ch&list=stoptrading    `≈ù      Off-Exchange  „#lŸ      market=ch&list=off_exchange   =…/K      Sponsored Foreign Shares  »:Ω      market=ch&list=foreign    ˇﬁ¢®      Indizes   •ö£ò      Indices   Yæx      market=chi&list=indices   CF“™      ETFs  –GÎ∞      &I_AGREE  ¬yΩ∆      SMI   yM/p%      market=ch&list=smi&sort=name&asc=true     “œå
+      SMI Movers    -t§±      SMIM  û–—      market=ch&list=smim   6ª«      SLI   ≠Ôe'%      market=ch&list=sli&sort=name&asc=true     ö5÷      Bern  áOŸW      Berne     ∑¥IË      market=ch&list=bern    
+∂Ú˝      _amerique_etfTerms!    ‚CirÄ      /sq-web-info/termsAuto/USA?l=CLANG1&cookieName=SQ_terms&cookieValue=TC_Funds:I_AGREE,TC_Funds_Other:I_AGREE;path=/;&urlRedirect="  M¬	      _amerique#     ≤[”*      Nordamerika$   YØ˘P      North America%     <i™¶      AmÈrique du Nord&  +:·5      _us'   ò¡ E      US Markt(  3·ÊX	      US Market)     {lS	      MarchÈ US*     »ê⁄N      market=us#us+  6Œf      market=us&list=winners,    8˝°9      market=us&list=losers-     JﬂΩ      market=us&list=best_turnover.  |˚≠      market=us&list=best_volume/    –v3      market=us&list=indices0    ƒ¨y_      market=us&list=etf1    - ü      S&P 500 Futures2   "€ñ	      Dow Jones3     èÓ⁄      market=us&list=dowjones4   oCeû
+      Nasdaq 1005    pﬁT      market=us&list=nasdaq1006  ì±N$      _cana7     ¢{%      Kanadischer Markt8     ¶∑¿¿      Canadian Market9   ¢Ò*ƒ      MarchÈ Canadien:   *Õî      market=ca#ca;  ª6%~      market=ca&list=winners<    –`0Ø      market=ca&list=losers=     ~jëæ      market=ca&list=best_turnover>  ≤       market=ca&list=best_volume?    (%Û∑      TSX 60@    bŸñK      market=ca&list=tsxA    Œ–      _allemande_etfTermsB   ˘U«s      /sq-web-info/termsAuto/Germany?l=CLANG1&cookieName=SQ_terms&cookieValue=TC_Funds_Other:I_AGREE;path=/;&urlRedirect=C   ˝*.      _europeD   ÏÑµ      EuropaE    #ß<      EuropeF    √_6G	      _allemandG     (Zà      Deutscher MarktH   [˛µÓ      German MarketI     ¶∫Ÿ©      MarchÈ AllemandJ   AÚ®      market=de#deK  bÌê¡      market=de&list=winnersL    4¥ƒ0      market=de&list=losersM     G≤ÅÈ      market=de&list=best_turnoverN  £é      market=de&list=best_volumeO    8∑≈      market=de&list=indicesP    8˜^æ      market=ff&list=etfQ    ˆáL      DAXR   rmé      market=de&list=daxS    åE'i	      _autricheT     ˚€Nü      ÷sterreichischer MarktU    ˜Nl      Austrian MarketV   ΩëZ®      MarchÈ AutrichienW     Ç¥)ø      market=at#atX  ﬁf‰É      market=at&list=winnersY    ÂøÉ      market=at&list=losersZ     ~.èÆ      market=at&list=best_turnover[  '”0      market=at&list=best_volume\    çÓçF      ATX]   ‡«(+      market=at&list=atx^    Z˜'f      _euronext_etfTerms_    â¶t      /sq-web-info/termsAuto/Euronext?l=CLANG1&cookieName=SQ_terms&cookieValue=TC_Funds_Other:I_AGREE;path=/;&urlRedirect=`  Ñ¥(§	      _euronexta     uP$™      Euronext Marktb    )îÓZ      Euronext Marketc   9Ñ[      MarchÈ Euronextd   ›Tv      market=fr#fre  <›      market=fr&list=winnersf    Çb≤s      market=fr&list=losersg     YΩ∂      market=fr&list=best_turnoverh  Rr^      market=fr&list=best_volumei    &ív      market=fr&list=indicesj    ˛ãîÍ      market=fr&list=etfk    dñ      CAC 40l    §I∑      market=fr&list=cac40m  ~…      AEX 25n    <µù‘      market=fr&list=aex25o  òé⁄      BEL 20p    ë§c÷      market=fr&list=bel20q  ,lQE      _italienr  =-ã8      Italienischer Markts   )\H
+      Italian Markett    
+≤      MarchÈ Italienu    aﬂ]Œ      market=it#itv  RaÌ      market=it&list=winnersw    à<∂      market=it&list=losersx     Ÿw•(      market=it&list=best_turnovery  D{	      market=it&list=best_volumez    ƒÍEá      market=it&list=indices{    z^U      _londre|   º      UK Markt}  û⁄≠œ	      UK Market~     €H(E	      MarchÈ UK     zÃı„      market=gb&list=best_turnoverÄ  E¿ú      market=gb&list=winnersÅ    Û#f      market=gb&list=losersÇ     z ©      market=gb&list=best_volumeÉ    ˚ø\m      _scandiÑ   ∏^      Skandinavischer MarktÖ     æœPÈ      Scandinavian MarketÜ   ïàœ      MarchÈ Scandinaveá     ÷Jhk      market=sk#skà  ƒ∞¢ò      market=sk&list=winnersâ    Ìu≠f      market=sk&list=losersä     ¥Ê¬      market=sk&list=best_turnoverã  .7      market=sk&list=best_volumeå    cÍ‘©      HEX 25ç    ëÎ°π      market=fi&list=hexé    ÒTyë      KFXè   é;÷!      market=dk&list=kfxê    =#Áx      OMXë   •ÔM…      market=se&list=omxí    |Ÿ4~      SITEì  ª‚¢      PUBLICî    ?LÜ      _worldï    »œ˝      Weltñ  €T^ó      Worldó     .”iâ      Mondeò     ò’¡6      _derivativeô   πäm      Warrants & Derivateö   ˛=o¨      Warrants & Derivativesõ    ´cà      Warrants & DÈrivÈsú    ö£))      Startù     ∞˘ëö      Introû     îv{      _der_chü   eÉœ      Schweizer Markt†   Ü∞7      Swiss Market°  Úˇ~      MarchÈ Suisse¢     Wøxx      _der_ch_gamme£     á´g/
+      Produktart§    f*≤      Product types•     åü¢      Type de produits¶  ˜_Ê!      /ch/Home.action?class1=1&l=CLANG2ß     ïÂjè      Hebel®     %y–Ü      Leverage©  ©kÇ      Levier™    +±Ë      Partizipation´     —íÛZ      Participation¨     ú‘¢⁄!      /ch/Home.action?class1=2&l=CLANG2≠     È'∫2      RenditeoptimierungÆ    a¡ı˘      Yield - EnhancementØ   Tîˆ      Optimisation de la performance∞    ?Ã@Õ!      /ch/Home.action?class1=3&l=CLANG2±     π/      Kapitalschutz≤     ı˙îp      Capital Protected≥     ¯~√ı      Protection du capital¥     ÏÂd\!      /ch/Home.action?class1=4&l=CLANG2µ     ‚àí’	      _der_dots∂     ?›'≤
+      Swiss DOTS∑    Áπ·Ù      Bold∏   PBö      Alle Produkteπ     ˚	#Ã      All products∫  £Añc      Tous les produitsª     πú˜®˘      SwissDerivativeSearch.action?searchFilter.bean.exchangeId=672&asSearchEngine=true&searchFilter.bean.productClass=1&searchFilter.bean.underlyingIsin=&searchFilter.bean.trend=&sort=dividend,iedate&dir=asc&searchFilter.bean.withVolume=false&frame=falseº     ˆwÉ      NeuemissionenΩ     äæ©≥
+      New Issuesæ    m≠5‡      Nouvelles Èmissionsø   Pw¸r      SwissDerivativeSearch.action?searchFilter.bean.predefinedIssueDate=w0&searchFilter.bean.exchangeId=672&lang=CLANG2¿    <£œw      Goldman Sachs¡     ø–íFú      SwissDerivativeSearch.action?searchFilter.bean.exchangeId=672&searchFilter.bean.issuerId=gs&asSearchEngine=true&searchFilter.bean.productClass=1&frame=false¬  iÁY      UBS√   P±rù      SwissDerivativeSearch.action?searchFilter.bean.exchangeId=672&searchFilter.bean.issuerId=ubs&asSearchEngine=true&searchFilter.bean.productClass=1&frame=falseƒ     !@˝ÿ      SociÈtÈ GÈnÈrale≈  ©6‚;ù      SwissDerivativeSearch.action?searchFilter.bean.exchangeId=672&searchFilter.bean.issuerId=sog&asSearchEngine=true&searchFilter.bean.productClass=1&frame=false∆     —¢Q'      Vontobel«  ”‹‰ú      SwissDerivativeSearch.action?searchFilter.bean.exchangeId=672&searchFilter.bean.issuerId=vt&asSearchEngine=true&searchFilter.bean.productClass=1&frame=false»  ÌŸÇ\      BNP Paribas…   pxù      SwissDerivativeSearch.action?searchFilter.bean.exchangeId=672&searchFilter.bean.issuerId=bnp&asSearchEngine=true&searchFilter.bean.productClass=1&frame=false      ˆ *Ã      _der_deÀ   dV¨ó      _der_offÃ  Lú      After Hours TradingÕ   î“∏ÿ      Bank VontobelŒ     ≥≠∏      vontobelœ  a‹).      bnp–   çß¯P      goldmansachs—  /æJ”      societegenerale“   ÅÌH      ubs”   Û¶GO      _optfut‘   ÅßÖÍ      Options & Futures’      :yã      options÷   àZñ      Pr‰sentation◊  ÆΩ7ˆ      Presentationÿ  nπcì      PrÈsentationŸ  ©S)˛      _optfut_eur⁄   _!Ì≠      _optfut_eur_option€    »]ùñ      Optionen‹  eé      Options›   ≈#qpG      option/OptionSearch.action?searchFilter.market=eu&searchFilter.group=swﬁ   xÅÁG      option/OptionSearch.action?searchFilter.market=eu&searchFilter.group=idﬂ   /“g      Aktien / Schweiz‡  ©…{f      Shares / Switzerland·  DC      Action / Suisse‚   7+Ì0      Aktien / Deutschland„  ‰7Äà      Shares / Germany‰  Âï&       Action / AllemagneÂ    dÆLÊG      option/OptionSearch.action?searchFilter.market=eu&searchFilter.group=deÊ   ‰ö&-      Aktien / EuronextÁ     Hñoà      Shares / EuronextË     Ï˝õ      Action / EuronextÈ     ≥ÚÛ}G      option/OptionSearch.action?searchFilter.market=eu&searchFilter.group=frÍ   a€º      Aktien / ItalienÎ  ^U+≈      Shares / ItalyÏ    €‹E∫      Action / ItalieÌ   ËÂo0G      option/OptionSearch.action?searchFilter.market=eu&searchFilter.group=itÓ   9¸~¡      Aktien / SkandinavienÔ     ˛∑”      Shares / Scandinavia  ‰·˘      Action / ScandinavieÒ  ©
+OÈG      option/OptionSearch.action?searchFilter.market=eu&searchFilter.group=skÚ   ˙ıyÙ      Aktien / ‹brigeÛ   Ç„ó,      Shares / OthersÙ   á=¡      Action / Autresı   Ûx5,G      option/OptionSearch.action?searchFilter.market=eu&searchFilter.group=xxˆ   ûˇ∆9      Zinsderivate˜  ﬂ?⁄       Interest Rate¯     K?S      Produits de taux˘  ^áf©G      option/OptionSearch.action?searchFilter.market=eu&searchFilter.group=bd˙   ]FíX      _optfut_eur_futures˚   Î˝Á=      Futures¸   ”qˇ+G      future/FutureSearch.action?searchFilter.market=eu&searchFilter.group=id˝   ÎP∂G      future/FutureSearch.action?searchFilter.market=eu&searchFilter.group=sw˛   ––gG      future/FutureSearch.action?searchFilter.market=eu&searchFilter.group=deˇ   ◊f1G      future/FutureSearch.action?searchFilter.market=eu&searchFilter.group=fr    cwG      future/FutureSearch.action?searchFilter.market=eu&searchFilter.group=it   N;bG      future/FutureSearch.action?searchFilter.market=eu&searchFilter.group=sk   œtﬂMG      future/FutureSearch.action?searchFilter.market=eu&searchFilter.group=xx   HÎºåG      future/FutureSearch.action?searchFilter.market=eu&searchFilter.group=bd   K˚˜∏      _optfut_usa   ªÇÿl      USA   4f≥1      option/OptionSearch.action?searchFilter.market=ud     îB%1      future/FutureSearch.action?searchFilter.market=ud     ‰”Ò      Optionen auf Futures	  )&ú      Options on futures
+    %i∞»      Options sur Futures   <Ô,      Opzioni sugli Futures     Í◊‰&G      option/OptionSearch.action?searchFilter.market=ud&searchFilter.group=of   Y4Åç      LnkNewFunds   ÿ«Ê      /sq-espaces-cms/#fund/leaders     2‹∆      _fonds    qjÌ      Fonds     ÙF`      Funds     µÇˇ”      etfTerms  ”Ïk      /sq-web-info/termsAuto/ETF?l=CLANG1&cookieName=SQ_terms_ETF&cookieValue=TC_Funds_Other:I_AGREE&urlRedirect=   yac¡
+      etfLeaders    •Ÿ_      /sq-espaces-cms/#etf/leaders  ﬁ·¯ˆ      marketListingAction   √Îú%      /sq_mi/market/Listing.action?l=CLANG1     ﬂNó      _etf  î^Õ°	      ETF / ETP     Ó˚Õi      etf   Ó†Æ      ETF / ETP Leaders     ˛u [
+      ETF Finder    [≠’Ã      etfs/EtfSearch.action     ‹aK
+      ETP Finder    'WC      &market=ch&list=etf.etp&I_AGREE    ¥î¯S      SIX!   „r∂ÒO      &market=ch&list=etf&showCurrency=true&showUnderlying=true&showLink=true&I_AGREE"   %Îß      &market=us&list=etf&I_AGREE#   b±ù÷      Euronext$  b˚      &market=fr&list=etf&I_AGREE%   ø(+¥      Deutschland&   Ï qÃ      Germany'   µ∂≠7	      Allemagne(     †sõ      &market=ff&list=etf&I_AGREE)   ∞n[1      _indice*   –¢@ô,      market=euro&list=europa.indexes&showMarket=t+  ∑˜‹í      _sect,     ÊAÄ      Sektoren-  <i¸n      Sectors.   ˙{5®      Secteurs/  ølºÄ      _const0    K≠7      Bestandteile1  Œ`¸7
+      Components2    ˝€      Constituants3  ¸”      DJ Euro Stoxx 504  Pcø°      market=euro&list=sx5e5     ZÓ˜      DJ Stoxx 506   ](]’      market=euro&list=sx5p7     œ      _ind_der8  ‡6#Â      Warrants auf Indizes9  *íû2      Warrants on Indices:   “∫(,      Warrants sur Indices;  l äœ	      market=id<     #äp›      Optionen auf Indizes=  %!≈V      Options on Indices>    £qÅL      Options sur Indices?   ©Õm˘      Futures auf Indizes@   ‹â¨•      Futures on IndicesA    ö0˝™      Futures sur IndicesB   ¨ŸYOV      future/FutureSearch.action?searchFilter.market=ud&searchFilter.underlying=USSPX0000007C    ^ÊSï      _forexD    E.é      ForexE     ˇe9}      Convertor.action?l=CLANG2F     2JW      W‰hrungsrechnerG   S≤Ê5
+      CalculatorH    Îª      ConvertisseurI     :¿~Ñ      Interbank RatesJ   \Û y      UBSInterbankRates.actionK  V)iE      World Cross RatesL     ¶”∂      WorldCrossRates.actionM    -H€8      Euro Locking RatesN    ∂+O      EuroLockRates.actionO  √3Oä      cryptoP    †¶˙      Crypto AssetsQ     QlR      _commodities_etfTermsR     „˛æok      /sq-web-info/termsAuto/Funds?l=CLANG1&cookieName=SQ_terms&cookieValue=TC_Funds:I_AGREE;path=/;&urlRedirect=S   ∂5[      _commoditiesT  ÿˆà      CommoditiesU   óèYÅ      etf.details.commoditiesV   Œ       EdelmetalleW   ∂Jc≤      Precious MetalsX    hK      MÈtaux prÈcieuxY   ú¡e      Metalli preziosiZ  pöÓ&      Listing.action?market=co&list=precious[    POïµ
+      Gold Coins\    â*z#      Listing.action?market=co&list=coins]   "®Ó3      Oil Brent Crude Future^    Y∆8      Detail.action?s=.OILBC,U_  ±¸8      _oblig_premium`    ›0ë      Obligationena  &1"      Bondsb     ÄÂ7ı      Obligationsc   N"åC      bondsd     =‘mÇ      Zinssatze  ∫ è3      Interest Ratesf    ´'n'      Taux d'intÈrÍtsg   Åã0      Sucheh     Di¥       Searchi    ÃZ≠ı	      Recherchej     ƒ$é      bonds/BondSearch.actionk   ≥©⁄∫      _newsl     ´ÔÀi	      News Feedm     ´øt      servicesn  ÓπØ3      helpo  I^·      signupp    âc∆      contactq   „LL˘      _helpr     ıgÈ      Hilfes     #Í&¨      Helpt  ;ÚGx      Aidesu     |˙µ™      Ausiliv    +Îf*      _contactw  ∂[¨1      Kontaktex  ∆ÿ˜Ç      Contactsy  üº…eI      https://trade.swissquote.ch/sqb_retail/contact/HelpPublic.action?l=CLANG1z     )^      _offices{  Ïï      Unsere Standorte|  H†m      Our offices}   róÄ“      Nos bureaux~   èâÔ      /website-group/main_CLANG1.html   £Øg      _groupÄ    0≠≈h	      ‹berblickÅ     íok@	      The GroupÇ     ™∂/\	      Le groupeÉ     HùìÚ      intro_group_CLANG1.htmlÑ   …Ó†
+      Die GruppeÖ    ]úót      Ziele & StrategieÜ     £Ù≈>      Goals/Strategyá    yëR•      Buts & StratÈgieà  ⁄ïƒ      buts_CLANG1.htmlâ  | ∞      _investä   Ωçé~      Investoreninformationã     ~©£à      Investor Relationså    Æp      Information aux investisseursç     ÖA‹J      intro_investor_CLANG1.htmlé    u≠Ÿ      Pr‰sentationenè    çü’	      Reportingê     ƒ~      Rapportsë  ˛~À#      reporting_presentations_CLANG1.htmlí   ÷€+ü      Generalversammlungì    »w˝–      AGMî   ≤®¿%      AssemblÈe GÈnÈraleï    Å∏≠<      agm_CLANG1.htmlñ   !òw      Statuten/HR-Auszugó    ≤ûDé      Statutesò  ∑(ØN      Statuts / Extrait du R.Cô  Ò1ú      statues_CLANG1.htmlö   ˚¿õ      Agendaõ    €˝⁄)      E-Mail-Serviceú    ÉÍo•      E-mail Serviceù    ~o•      E-mail serviceû    £…;∆      contact_news_CLANG1.htmlü  ÌÊm      _corp†     "»•      Corporate Governance°  )>       intro_corporate_CLANG1.html¢   S-Ÿ3      Introduction£  ≥˝}      Konzernstruktur und Aktionariat§   (Ω       Group Structure and Shareholders•  õ #      Structure du Groupe et Actionnariat¶   ”â      structure_CLANG1.htmlß     ìﬂ1      Kapitalstruktur®   ÷„~¬      Capital structure©     8›¯R      Structure du capital™  IqtΩ      capital_CLANG1.html´   }óŸè      Verwaltungsrat¨    èÇ      Board of Directors≠    ï>∑      Conseil d"AdministrationÆ  	˛¸d      board_CLANG1.htmlØ     O™v<      Gesch‰ftsleitung∞  „”≤œ      Executive Management±  K®u      Direction gÈnÈrale≤    ó√Y      executive_CLANG1.html≥     hªAQ,      Entsch¸ldigungen, Beteiligungen und Darlehen¥  ≠÷¥A      Compensationµ  Û∫íF&      RÈmunÈrations, participations et prÍts∂    ˇ¬Ü      remuneration_CLANG1.html∑  Tkô@      Mitwirkungsrechte der Aktion‰re∏   ëôØÀ      Shareholders"s participationπ  ¨œ∂L(      Droits de participation des actionnaires∫  ßQ@@      sharholders_CLANG1.htmlª   ∞6$      Kontrollwechsel und Abwehrmassnahmenº  ‰∏'&      Change of control and defence measuresΩ    –_µÌ(      Prises de contrÙle et mesures de dÈfenseæ  l∫=ÿ      change_CLANG1.htmlø    pÅDX      Revisionsstelle¿    fÊ      Auditors¡  ´pöï      Organe de rÈvision¬    â      auditors_CLANG1.html√  n{î      Informationspolitikƒ   Ö√1      Information Policy≈    åù“      Politique d"information∆   W–áv      policy_CLANG1.html«    ¢ö+      _info»     —ã¥      Presseinformation…     ¢—É˚
+      Press Room     G2§q      Infos presseÀ  zËŸâ      release_CLANG1.htmlÃ   ≥√≤      MedieninformationenÕ   |
+      Media InfoŒ    DÕÆ      Informations aux mÈdiasœ   õ?Ω”
+      Image Bank–    ‡»R      Gallery—   A      Banque d"images“   õ≠w      gallery_CLANG1.html”   è&˚ç      _jobs‘     éÌe>      Jobs’  {áû      job_CLANG1.html÷   È,*Á      Offene Stellen (VD)◊   XÉ?      Job offers (VD)ÿ   +§      Nos offres ‡ GlandŸ      My      job_offres_CLANG1.html⁄    d6√8      Offene Stellen (ZH)€   |#†∏      Job offers (ZH)‹   Ω	Y_      Nos offres ‡ Z¸rich›   kﬁd⁄      job_offres_schw_CLANG1.htmlﬁ   £Ú‚      savingﬂ    Î∑N@      _savAccount‡   c£tÜ
+      Mein Konto·    `≥1∂
+      My Account‚    X!∆
+      Mon Compte„    ¿æ[q	      Mio Conto‰     RâDÎ"      /sqb_saving/account/Account.actionÂ    r…Ú÷      Konto ¸bersichtÊ   —‚√j      Account summaryÁ   Óì      Compte aperÁuË     ¢Ú
+      Panoramica del contoÈ  ¢¿‡9      Konto DetailsÍ     A;Üÿ      Account detailÎ    2›e‹      Compte dÈtailÏ     ”J      Dettaglio del contoÌ   àNÃ0      /sqb_saving/account/Account.action?showPositionsÓ  û2=€      Anlagen ¸bersichtÔ     Wá!      Investment overview   Å‰ô      AperÁu des placementsÒ     √ ‘      AperÁu des placementÚ  )tç1      /sqb_saving/account/Account.action?showOpenOrdersÛ     tÑµQ      Modell-VerwaltungÙ     õmì      Model Managementı  üÊh      Gestion des modËlesˆ   èˇ‡*      /sqb_saving/savingmodel/SavingModel.action˜    Sq S      Transaktionen¯     EíçJ      Transactions˘  ‚Ïes      Transazioni˙   Teº
+,      /sqb_saving/transactions/Transactions.action˚  j5P…      Wechsel¸   +áÌ      Change˝    âÄ      Cambio˛    IG∫Í      /sqtr_exchange/change/change.doˇ   0Æä~      Zahlungsverkehr    V/á      Payment services  ÅxAW      Services de paiement  Ä∆]      Operazioni di pagamento   §˙Â4      /sqb_retail/OpsFormSavingCtrl/?commandName=opsAccess  
+€>¨      Cash facility     %§h'      /sqb_saving/account/CashFacility.action   ºÙÎ      Mein Profil   Hò
+      My Profile    Œx¬
+      Mon Profil	    <ˇˆ      Mio Profilo
+   àòW8:      /sqb_client_relations2/ProfileCtrl?commandName=viewProfile    Ó#©ò      Benachrichtigungen    ≈,∆Æ      Notifications     m„R¬      Communications    •$      Comunicazione     ôŒ5„L      /sqb_client_relations2/CommunicationSavingCtrl/?commandName=displayFirstPage  å<‹M      saving_portal     yÑ¸Ç      _pension  ©’ +      /sqb_saving/3a/account/AccountDetail.action   m…n      Konto ‹bersicht   “K¬      /sqb_core/Transactions.action     9ïˆ      iDynamic Plus     ë∆+o7      /website-bank/saving/dynamo/dynamo_overview_CLANG1.html   !À≤E      /sqb_client_relations2/CommunicationCtrl?commandName=displayFirstPage     ßI`	      3a_portal        ]                /   Ô%,â                                                                                                              ≥OåcZ   Z   Z   P    r  ]  &  H    j  å  @  	  Ñ  ó  8    ≥  ê|  0  R    t  _  (  J    é  ë     ∏  êB    Ü  °  :    µ  ê~  2  •  êT    ï  a  *  d  L    ì     "  ù  D    f  l  õ  n  £  <    ∑  êÄ  4  V    x  Ç  c  ,  N    p  [  $  F    h  ä  à  >    v  Y  ü  6  è  X  z  ô  .                ®  ™                ®  ™                                  >   =         æ  À   F Q ” S q `  k 6 C À î &  ˙ S Á   Ù  z C Ï  û   /  œ  ) ⁄ ‹  «    + ”  ˆ  ‘  q   µ â _ ò É " { ﬂ O  ü „  ^ Ÿ ¢ « v A 7 Ø¬0∞IÙ$KEÆ˙ö         √          √          √          √          √          √          √          √          √          √          √          √          √          ˙          √          √          √          √          √          √          ˙          ∑         ˙          ˙          ˙          √          √          √          √          √          √          ˙          √          √          √          ˙          √          √          √          ˙          ˙          ˙          ˙          ˙          ˙          ˙     	     C  (  á&’™ç!´!   p     p  ~                ∑        —   ≤   µ   ÿG   €o  ¡   ÷≤   	   ¡   ÷≤
+      ¡
+   ÷≤      ¡   ÷≤      ¡   ÷≤      ¡   ÷≤      ¡   ÷≤      ¡   ÷≤      ¡   ÷≤      ¡   ÷≤      ¡   ÷≤      ¡   ÷≤      ¡   ÷≤    !   ¡    ÷≤"   #   ¡"   ÷≤$   %   ¡$   ÷≤&   %   ¡&   ÷≤'   (   ¡'   ÷≤)   *   ¡)   ÷≤+   ,   ¡+   ÷≤-   .   ¡-   ÷≤/   0   µ   %¡/   ÷≤1   2   µ   %¡1   ÷≤3   4   ¡3   ÷≤5   6   ¡5   ÷≤7   8   ¡7   ÷≤9   :   ¡9   ÷≤;   <   ¡;   ÷≤=   >   ¡=   ÷≤?   @   ¡?   ÷≤A   B   ¡A   ÷≤C   D   ¡C   ÷≤E   F   ¡E   ÷≤G   H   ¡G   ÷≤I   7J   ¡I   ÷≤K   L   ¡K   ÷≤M   N   ¡M   ÷≤O   P   ¡O   ÷≤Q   R   ¡Q   ÷≤S   T   ¡S   ÷≤U   V   ¡U   ÷≤W   X   ¡W   ÷≤Y   Z   ¡Y   ÷≤[   \   ¡[   ÷≤]   ^   ¡]   ÷≤_   ^   ¡_   ÷≤`   a   ¡`   ÷≤b   c   ¡b   ÷≤d   e   ¡d   ÷≤f   g   ¡f   ÷≤h   i   ¡h   ÷≤j   g   ¡j   ÷≤k   l   ¡k   ÷≤m   n   ¡m   ÷≤o   p   ¡o   ÷≤q   r   ¡q   ÷≤s   t   ¡s   ÷≤u   µo   v   %¡u   ÷≤w   µo   x   %¡w   ÷≤y   µo   z   %¡y   ÷≤{   |   ¡{   ÷≤}   ~   ¡}   ÷≤   Ä   ¡   ÷≤Å   Ç   ¡Å   ÷≤É   Ñ   ¡É   ÷≤Ö   Ü   ¡Ö   ÷≤á   à   ¡á   ÷≤â   ä   ¡â   ÷≤ã   å   ¡ã   ÷≤ç   é   ¡ç   ÷≤è   ê   ¡è   ÷≤ë   í   ¡ë   ÷≤ì   î   ¡ì   ÷≤ï   L   ¡ï   ÷≤ñ   ó   ¡ñ   ÷≤ò   ô   ¡ò   ÷≤ö   õ   ¡ö   ÷≤ú   ù   ¡ú   ÷≤û   ü   ¡û   ÷≤†   °   ¡†   ÷≤¢   £   ¡¢   ÷≤§   •   ¡§   ÷≤¶   ß   ¡¶   ÷≤®   ©   ¡®   ÷≤™   ´   ¡™   ÷üE%`P,P9%
+`P;%`PK%`P;%`PK%`PK%`PK%`P;%`P;%`P;%`P;%`PK%`P;%`P;%`P;%`P;%`PK%`P;%`PK!%`P;%`P;%`Pë0%`Pë@&%`P;%`P;%`PK*%`P;%`P;%`PK.%`P;%`PK2%`P;%`PK5%`P;%`P;%`P;%`P;%`PK;%`P;%`P;%`PK?%`P;%`P;%`P;%`P;%`P;%`P;%`P;%`PKH%`P;%"`P;%`P;%`P;%`PKN%`P;%`P;%`P;%`Pë0%`Pë0%`Pë@U%`PKW%`P;%`P;%`PK[%`P;%`P;%`P;%`P;%`P;%`PKc%`P;%`P;%`P;%`P;%`P;%`PKl%`P;%`P;%`P;%`P;%`P;%`P;%`P;%`PKu%`PKÄ 7P   ƒ   ƒ   y                         µ   G   îJ   ë      ƒ   ÷µ   ÿG   €∑         o ƒ  ÷∑  ÿG   €s  ÷ì$   ë   µ	   ÿG
+   €      s ÷ë   ü0 `Pî0 `P: `Pö P8 `P+P>0 `Pñ PIP ¿   ¿   t                         µ   G   îJ   ë      ƒ   ÷µ   ÿG   €∑         o ƒ  ÷∑  ÿG   €s  ÷ì   ë   µ	   ÿG
+   €   s ÷ë   ü0 `Pî0 `P: `Pö P8 `P+P>0 `Pë PIP  H   H                             µ   G   ÿG   €µ   s ÷ü0 `Pñ P4P H   H                             µ   G   ÿG   €µ   s ÷ü0 `Pñ P4P I  I  8      =   C       B      ≤   µ   |⁄  }  ¡   ÷∂     ód   ë   ÷∂     óP   ë   ÷∂     ó<   ë
+   ÷∂     ó(   ë   ÷∂     ó   ë   ÷∂     ë   îù'  ë   µ   ÿG	   €
+   µ   6      9   s ÷µ   ÿG	   €
+   µ   6      9   s ÷µ   ÿG	   €   µ   6      9   s ÷µ   ÿG	   €   µ   6      9   s ÷µ   ÿG	   €   µ   s ÷µ   ÿG	   €c      d       d      d   o ƒ!  ÷∑!  ÿG	   €      o ƒ   ÷∑   ÿG	   €   µ   s ÷∑   ÿG	   €c       d        d       d   µ!   s ÷∑!  ÿG	   €c   "   d    #   d   $   d      o ƒ  ÷∑  ÿG	   €%   µ&   s ÷∑  ÿG	   €c   '   d    (   d   )   d      o ƒ'  ÷∑'  ÿG	   €*   µ+   ,   %s ÷∑'  ÿG	   €-   µ.   /   %s ÷∑  ÿG	   €c   0   d    1   d   2   d      63      9   o ƒ   ÷∑   ÿG	   €4   µ5   66      9   s ÷∑   ÿG	   €7   µ.   8   %69      9   s ÷∑!  ÿG	   €c   :   d    ;   d   :   d      6<      9   o ƒ5  ÷∑5  ÿG	   €=   µ>   6?      9   s ÷∑!  ÿG	   €c   @   d    @   d   A   d      6B      9   o ƒ  ÷∑  ÿG	   €C   µD   6E      9   s ÷∑  ÿG	   €F   µG   6H      9   s ÷∑!  ÿG	   €I      o ƒ  ÷∑  ÿG	   €c   J   d    K   d   L   d   M   d   µN   s ÷∑  ÿG	   €O   P   6Q      9   s ÷R   ƒ  ÷µ   ÿG	   €c   S   d    T   d   )   d   µU   V   %6W   X   9Y   o ƒ&  ÷∑&  ÿG	   €c   Z   d    [   d   \   d   µU   V   %s ÷∑&  ÿG	   €]   µ^   _   %s ÷∑&  ÿG	   €`   µ^   a   %s ÷∑&  ÿG	   €b   µc   d   %s ÷∑&  ÿG	   €e   µc   f   %s ÷∑&  ÿG	   €g   µc   h   %s ÷∑&  ÿG	   €i   µc   j   %6k      9   s ÷∑&  ÿG	   €l   µc   m   %6n      9   s ÷∑&  ÿG	   €o   µc   p   %6q      9   s ÷∑&  ÿG	   €r   µc   s   %s ÷∑&  ÿG	   €c   t   d    u   d   u   d   µc   v   %s ÷∑&  ÿG	   €w   ∑  µx   %y   %s ÷∑&  ÿG	   €z   µc   {   %s ÷∑&  ÿG	   €|   µ}   s ÷∑&  ÿG	   €~   µc      %s ÷∑&  ÿG	   €Ä   µc   Å   %s ÷∑&  ÿG	   €c   Ç   d    Ç   d   É   d   µc   Ñ   %s ÷Ö   ƒ"  ÷µ   ÿG	   €c   Ü   d    á   d   à   d      o ƒ/  ÷∑/  ÿG	   €c   â   d    ä   d   ã   d   µU   å   %o ƒ  ÷∑  ÿG	   €c   Z   d    [   d   \   d   µU   å   %s ÷∑  ÿG	   €]   µc   ç   %s ÷∑  ÿG	   €`   µc   é   %s ÷∑  ÿG	   €b   µc   è   %s ÷∑  ÿG	   €e   µc   ê   %s ÷∑  ÿG	   €c   t   d    u   d   u   d   µc   ë   %s ÷∑  ÿG	   €w   ∑"  µc   %í   %s ÷∑  ÿG	   €ì   µî   6ï      9   s ÷∑  ÿG	   €ñ   µc   ó   %s ÷∑  ÿG	   €ò   µc   ô   %s ÷∑/  ÿG	   €c   ö   d    õ   d   ú   d   µU   ù   %o ƒ
+  ÷∑
+  ÿG	   €c   Z   d    [   d   \   d   µU   ù   %s ÷∑
+  ÿG	   €]   µc   û   %s ÷∑
+  ÿG	   €`   µc   ü   %s ÷∑
+  ÿG	   €b   µc   †   %s ÷∑
+  ÿG	   €e   µc   °   %s ÷∑
+  ÿG	   €¢   µc   £   %s ÷§   ƒ;  ÷µ   ÿG	   €c   •   d    ¶   d   ¶   d      o ƒ  ÷∑  ÿG	   €c   ß   d    ®   d   ©   d   µU   ™   %o ƒ  ÷∑  ÿG	   €c   Z   d    [   d   \   d   µU   ™   %s ÷∑  ÿG	   €]   µc   ´   %s ÷∑  ÿG	   €`   µc   ¨   %s ÷∑  ÿG	   €b   µc   ≠   %s ÷∑  ÿG	   €e   µc   Æ   %s ÷∑  ÿG	   €u   µc   Ø   %s ÷∑  ÿG	   €w   ∑;  µc   %∞   %s ÷∑  ÿG	   €±   µc   ≤   %s ÷∑  ÿG	   €c   ≥   d    ¥   d   µ   d   µU   ∂   %o ƒ  ÷∑  ÿG	   €c   Z   d    [   d   \   d   µU   ∂   %s ÷∑  ÿG	   €]   µc   ∑   %s ÷∑  ÿG	   €`   µc   ∏   %s ÷∑  ÿG	   €b   µc   π   %s ÷∑  ÿG	   €e   µc   ∫   %s ÷∑  ÿG	   €ª   µc   º   %s ÷Ω   ƒ6  ÷∑  ÿG	   €c   æ   d    ø   d   ¿   d   µU   ¡   %o ƒ  ÷∑  ÿG	   €c   Z   d    [   d   \   d   µU   ¡   %s ÷∑  ÿG	   €]   µc   ¬   %s ÷∑  ÿG	   €`   µc   √   %s ÷∑  ÿG	   €b   µc   ƒ   %s ÷∑  ÿG	   €e   µc   ≈   %s ÷∑  ÿG	   €u   µc   ∆   %6«      9   s ÷∑  ÿG	   €w   ∑6  µc   %»   %s ÷∑  ÿG	   €…   µc       %s ÷∑  ÿG	   €À   µc   Ã   %s ÷∑  ÿG	   €Õ   µc   Œ   %s ÷∑  ÿG	   €c   œ   d    –   d   —   d   µU   “   %o ƒ(  ÷∑(  ÿG	   €c   Z   d    [   d   \   d   µU   “   %s ÷∑(  ÿG	   €]   µc   ”   %s ÷∑(  ÿG	   €`   µc   ‘   %s ÷∑(  ÿG	   €b   µc   ’   %s ÷∑(  ÿG	   €e   µc   ÷   %s ÷∑(  ÿG	   €u   µc   ◊   %s ÷∑  ÿG	   €c   ÿ   d    Ÿ   d   ⁄   d   µc   €   %o ƒ0  ÷∑0  ÿG	   €]   µc   ‹   %s ÷∑0  ÿG	   €`   µc   ›   %s ÷∑0  ÿG	   €b   µc   €   %s ÷∑0  ÿG	   €e   µc   ﬁ   %s ÷∑  ÿG	   €c   ﬂ   d    ‡   d   ·   d   µU   ‚   %o ƒ.  ÷∑.  ÿG	   €c   Z   d    [   d   \   d   µU   ‚   %s ÷∑.  ÿG	   €]   µc   „   %s ÷∑.  ÿG	   €`   µc   ‰   %s ÷∑.  ÿG	   €b   µc   Â   %s ÷∑.  ÿG	   €e   µc   Ê   %s ÷∑.  ÿG	   €Á   µc   Ë   %s ÷∑.  ÿG	   €È   µc   Í   %s ÷∑.  ÿG	   €Î   µc   Ï   %s ÷µÌ   Ó   î   ë˚  ìU   ë˚  µ   ÿG	   €c   Ô   d       d   Ò   d   µÚ   6Û      9   o ƒ  ÷ë  µ   ÿG	   €c   Ù   d    ı   d   ˆ   d   µ˜   6¯      9Y   o ƒ-  ÷∑-  ÿG	   €c   ˘   d    ˙   d   ˙   d   µ˜   s ÷∑-  ÿG	   €c   ˚   d    ¸   d   ˝   d   µ˛   o ƒ  ÷∑  ÿG	   €c   Z   d    [   d   \   d   µ˛   s ÷∑  ÿG	   €c   ˇ   d       d     d   µ+     %o ƒ8  ÷∑8  ÿG	   €c     d      d     d   µ+     %s ÷∑8  ÿG	   €c     d      d     d   µ+     %s ÷∑8  ÿG	   €c   	  d    
+  d     d   µ+     %s ÷∑8  ÿG	   €c     d      d     d   µ+     %s ÷µ   ÿG	   €c     d      d     d   µ  6  9  o ƒ*  ÷∑*  ÿG	   €c   Z   d    [   d   \   d   µ  s ÷∑*  ÿG	   €c     d      d     d   µ    %s ÷∑*  ÿG	   €c     d      d     d   µ    %s ÷∑*  ÿG	   €  µ     %s ÷∑*  ÿG	   €!  µ  "  %s ÷∑*  ÿG	   €#  µ  $  %s ÷∑*  ÿG	   €%  µ  &  %s ÷∑*  ÿG	   €'  µ  (  %s ÷∑-  ÿG	   €c   ß   d    ®   d   ©   d   µ)  o ƒ)  ÷∑-  ÿG	   €*     o ƒ  ÷∑  ÿG	   €+  µ,  -  %s ÷∑  ÿG	   €'  µ,  .  %s ÷∑  ÿG	   €  µ,  /  %s ÷∑  ÿG	   €#  µ,  0  %s ÷∑  ÿG	   €!  µ,  1  %s ÷µ   ÿG	   €2  µ3  64  5  9Y   o ƒ$  ÷∑$  ÿG	   €c   6  d    7  d   8  d   µ9  s ÷∑$  ÿG	   €c   Z   d    [   d   \   d   µ:  s ÷∑$  ÿG	   €c   •   d    ¶   d   ¶   d   µ;  o ƒ7  ÷∑7  ÿG	   €c   <  d    =  d   =  d   µ.   >  %o ƒ  ÷∑  ÿG	   €c   t   d    u   d   u   d   µ.   ?  %s ÷∑  ÿG	   €c   @  d    A  d   B  d   µ.   >  %s ÷∑  ÿG	   €c   C  d    D  d   E  d   µ.   F  %s ÷∑  ÿG	   €c   G  d    H  d   I  d   µ.   J  %s ÷∑  ÿG	   €c   K  d    L  d   M  d   µ.   N  %s ÷∑  ÿG	   €c   O  d    P  d   Q  d   µ.   R  %s ÷∑  ÿG	   €c   S  d    T  d   U  d   µ.   V  %s ÷∑  ÿG	   €c   W  d    X  d   Y  d   µ.   Z  %s ÷∑7  ÿG	   €[  µ.   \  %o ƒ  ÷∑  ÿG	   €c   t   d    u   d   u   d   µ.   \  %s ÷∑  ÿG	   €c   @  d    A  d   B  d   µ.   ]  %s ÷∑  ÿG	   €c   C  d    D  d   E  d   µ.   ^  %s ÷∑  ÿG	   €c   G  d    H  d   I  d   µ.   _  %s ÷∑  ÿG	   €c   K  d    L  d   M  d   µ.   `  %s ÷∑  ÿG	   €c   O  d    P  d   Q  d   µ.   a  %s ÷∑  ÿG	   €c   S  d    T  d   U  d   µ.   b  %s ÷∑  ÿG	   €c   W  d    X  d   Y  d   µ.   c  %s ÷∑$  ÿG	   €d  µe  o ƒ  ÷∑  ÿG	   €c   =  d    =  d   =  d   µ.   f  %s ÷∑  ÿG	   €c   [  d    [  d   [  d   µ.   g  %s ÷∑  ÿG	   €c   h  d    i  d   j  d   k  d   µ.   l  %s ÷µm  n  %ƒ  ÷µ   ÿG	   €c   o  d    p  d   o  d   ∑  6q     9Y   o ƒ  ÷r  ƒ  ÷s  ƒ  ÷t  ƒ%  ÷µ   ÿG	   €u  ∑  ∑  %6v  w  9Y   o ƒ3  ÷∑3  ÿG	   €x  ∑  ∑  %s ÷∑3  ÿG	   €y  µ.   z  %s ÷∑3  ÿG	   €{  ∑  ∑%  %|  %s ÷∑3  ÿG	   €}  ∑  ∑%  %~  %s ÷∑3  ÿG	   €  ∑  ∑%  %Ä  %s ÷∑3  ÿG	   €Å  ∑  ∑%  %Ç  %s ÷∑3  ÿG	   €c   É  d    Ñ  d   Ö  d   ∑  ∑%  %Ü  %s ÷µÌ   Ó   îZ   ë  µ   ÿG	   €c   t   d    u   d   u   d   µá  6à     9   o ƒ  ÷ìU   ë"  µ   ÿG	   €c   t   d    u   d   u   d   µâ  6ä     9   o ƒ  ÷ë)  ∑  ÿG	   €c   Z   d    [   d   \   d   µâ  6ã     9   s ÷∑  ÿG	   €c   S   d    (   d   )   d   µá  s ÷∑  ÿG	   €c   É  d    Ñ  d   Ö  d   µc   Ø   %s ÷∑  ÿG	   €c   •   d    ¶   d   ¶   d   µc   å  %6ç     9   s ÷∑  ÿG	   €  µc   ë   %s ÷∑  ÿG	   €c   é  d    è  d   ê  d      o ƒ#  ÷∑#  ÿG	   €}  µë  s ÷∑  ÿG	   €c   í  d    ì  d   î  d      o ƒ  ÷∑  ÿG	   €À   µc   Ã   %s ÷∑  ÿG	   €Õ   µc   Œ   %s ÷∑  ÿG	   €…   µc       %s ÷∑  ÿG	   €±   µc   ≤   %s ÷∑  ÿG	   €ï  µc   ñ  %s ÷∑  ÿG	   €ó  µc   ò  %s ÷∑  ÿG	   €ñ   µc   ó   %s ÷∑  ÿG	   €Á   µc   Ë   %s ÷∑  ÿG	   €È   µc   Í   %s ÷∑  ÿG	   €ò   µc   ô   %s ÷∑  ÿG	   €Î   µc   Ï   %s ÷∑  ÿG	   €z   µc   {   %s ÷∑  ÿG	   €Ä   µc   Å   %s ÷∑  ÿG	   €¢   µc   £   %s ÷∑  ÿG	   €#      o ƒ<  ÷∑<  ÿG	   €c   ô  d    ö  d   õ  d   µ5   ú  %6ù     9   s ÷∑<  ÿG	   €c   û  d    ü  d   †  d   µ.   ?  %s ÷∑<  ÿG	   €c   °  d    ¢  d   £  d   µ.   \  %s ÷∑<  ÿG	   €ì   µ.   §  %6•     9   s ÷µ   ÿG	   €¶  µß  ®  %6©     9Y   o ƒ  ÷∑  ÿG	   €c   ™  d    ´  d   ¨  d   µß  ®  %s ÷∑  ÿG	   €≠  µß  Æ  %s ÷∑  ÿG	   €Ø  µß  ∞  %6±     9   s ÷∑  ÿG	   €≤  µß  ≥  %6¥     9   s ÷µ   ÿG	   €c   µ  d    µ  d   µ  d   µ∂  o ƒ2  ÷∑  ƒ  ÷µ   ÿG	   €∏  ∑  µ^   %π  %o ƒ  ÷∑  ÿG	   €w   ∑  µ^   %π  %s ÷∑  ÿG	   €c   ∫  d    ª  d   º  d   Ω  d   µæ  ø  %s ÷∑  ÿG	   €¿  µæ  ¡  %s ÷∑  ÿG	   €¬  µæ  √  %6ƒ     9   s ÷∑  ÿG	   €c   "   d    #   d   $   d   µ≈  s ÷µ   ÿG	   €c   ∆  d    «  d   »  d   µ…  6   À  9Y   o ƒ,  ÷∑,  ÿG	   €˙   µ…  6Ã     9   s ÷∑,  ÿG	   €c   Õ  d    Œ  d   œ  d   µ–  6—     9   s ÷∑,  ÿG	   €c   “  d    ”  d   ‘  d   µ.   ’  %6÷     9   s ÷µ   ÿG	   €c   ◊  d    ◊  d   ◊  d   µÿ  6Ÿ     9Y   o ƒ	  ÷ìS  ë¸  ∂  ⁄  óP   ë˛  ÷∂  €  ó<   ë   ÷∂  ‹  ó(   ë  ÷∂  ›  ó   ë  ÷∂  ﬁ  ë  î˙   ë  µ   ÿG	   €c   ﬂ  d    ‡  d   ·  d   ‚  d   µ„  6‰  €  9Y   o ƒ  ÷µ   ÿG	   €c   Â  d    Ê  d   Ê  d   Á  6Ë  ›  9Y   o ƒ:  ÷µ   ÿG	   €c   È  d    Í  d   Î  d   µÏ  6Ì  ›  9Y   o ƒ  ÷ìˆ  ë  ∂  Ó  î¯  ë  µ   ÿG	   €˙   Ô  6  Ó  9Y   s ÷µ   ÿG	   €c   Ò  d    Ú  d   Û  d   µÙ  ı  %o ƒ  ÷∑  ÿG	   €c   ˆ  d    7  d   8  d   µÙ  ı  %s ÷∑  ÿG	   €c   ˜  d    ¯  d   ˘  d   µÙ  ˙  %s ÷µ   ÿG	   €c   ˚  d    ¸  d   ˝  d   µ˛  ˇ  %o ƒ+  ÷∑+  ÿG	   €c      d    7  d   8  d   µ˛  ˇ  %s ÷∑+  ÿG	   €c     d      d     d   µ˛    %s ÷∑+  ÿG	   €c     d      d     d   µ˛    %s ÷∑+  ÿG	   €c     d    	  d   
+  d   µ˛    %s ÷∑+  ÿG	   €c     d      d     d   Ô  s ÷∑+  ÿG	   €c     d      d     d   µ    %s ÷µ   ÿG	   €  µ    %o ƒ4  ÷∑4  ÿG	   €c   6  d      d   8  d   µ    %s ÷∑4  ÿG	   €c     d      d     d   µ    %s ÷∑4  ÿG	   €c     d      d     d   µ    %s ÷∑4  ÿG	   €c     d      d      d   µ  !  %s ÷∑4  ÿG	   €c   "  d    #  d   $  d   µ  %  %s ÷∑4  ÿG	   €c   &  d    '  d   (  d   µ  )  %s ÷∑4  ÿG	   €c   *  d    +  d   ,  d   µ  -  %s ÷∑4  ÿG	   €c   .  d    /  d   0  d   µ  1  %s ÷∑4  ÿG	   €c   2  d    3  d   4  d   µ  5  %s ÷∑4  ÿG	   €c   6  d    7  d   8  d   µ  9  %s ÷µ   ÿG	   €c   :  d    ;  d   <  d   µ=  >  %o ƒ9  ÷∑9  ÿG	   €c   ?  d    @  d   A  d   µ=  >  %s ÷∑9  ÿG	   €c   B  d    C  d   D  d   µ=  E  %s ÷∑9  ÿG	   €c     d      d     d   µ    %s ÷µ   ÿG	   €F  µG  H  %o ƒ  ÷∑  ÿG	   €c   ˙   d      d     d   µG  H  %s ÷∑  ÿG	   €c   I  d    J  d   K  d   µG  L  %s ÷∑  ÿG	   €c   M  d    N  d   O  d   µG  P  %s ÷ì  ë≥  ∂  Q  î2  ëµ  µ   ÿG	   €c   R  d    S  d   T  d   U  d   µV  W  %6X  Q  9Y   o ƒ1  ÷∑1  ÿG	   €c   Y  d    Z  d   [  d   \  d   µV  W  %s ÷∑1  ÿG	   €c   ]  d    ^  d   _  d   `  d   µV  a  %s ÷∑1  ÿG	   €c   b  d    c  d   d  d   e  d   µV  f  %s ÷∑1  ÿG	   €c   g  d    h  d   i  d   i  d   µV  j  %s ÷∑1  ÿG	   €c   k  d    l  d   l  d   m  d   µV  n  %s ÷∑1  ÿG	   €c   o  d    p  d   p  d   q  d   µV  r  %s ÷∑1  ÿG	   €c   s  d    t  d   u  d   v  d   µV  w  %s ÷∑1  ÿG	   €c   x  d    x  d   x  d   x  d   µV  y  %s ÷µ   ÿG	   €c   z  d    {  d   |  d   }  d   µV  ~  %s ÷µ   ÿG	   €c     d    Ä  d   Å  d   Ç  d   µV  É  %s ÷ì∞  ëÒ  ∂  Ñ  îù  ëÛ  µ   ÿG	   €c   R  d    S  d   T  d   U  d   µV  W  %6Ö  Q  9Y   o ƒ1  ÷∑1  ÿG	   €c   Y  d    Z  d   [  d   \  d   µV  W  %s ÷∑1  ÿG	   €c   ]  d    ^  d   _  d   `  d   µV  a  %s ÷∑1  ÿG	   €c   b  d    c  d   d  d   e  d   µV  f  %s ÷∑1  ÿG	   €c   g  d    h  d   i  d   i  d   µV  j  %s ÷∑1  ÿG	   €c   k  d    l  d   l  d   m  d   µV  n  %s ÷∑1  ÿG	   €c   o  d    p  d   p  d   q  d   µV  r  %s ÷∑1  ÿG	   €c   s  d    t  d   u  d   v  d   µV  w  %s ÷∑1  ÿG	   €c   x  d    x  d   x  d   x  d   µV  y  %s ÷ë#  ∂  Ü  îx  ë%  µ   ÿG	   €c   R  d    S  d   T  d   U  d   µV  á  %o ƒ  ÷∑  ÿG	   €c   à  d    Z  d   [  d   \  d   µV  á  %s ÷∑  ÿG	   €c   k  d    l  d   l  d   m  d   µV  â  %s ÷∑  ÿG	   €c   ä  d    ä  d   ä  d   ä  d   µV  ã  %s ÷µ   ÿG	   €c     d    Ä  d   Å  d   Ç  d   µV  å  %s ÷ì   ë@  ∂  ç  î   ëB  ü0 `P/P9 `P¸@ `Põ 3*ˇˇˇ“P4 `Põ 4*ˇˇˇ—P4 `Põ <*ˇˇˇ…P4 `Põ <*ˇˇˇ…P4 `Pñ P4 `Pë ***ˇˇˇ”P8 `Pï 	P8 `Pï P4 `Pê **/ˇˇˇ÷PD `Pê **/ˇˇˇ€P8 `Pï 
+P4 `Pê **	/ˇˇˇ‡P8 `Põ P4 `Põ P4 `Pê **
+î *ˇˇˇŒP8 `Pö 5*ˇˇˇÿP4 `P† Q*ˇˇˇºP4 `Pê **î *ˇˇˇ–PH `Pö )*ˇˇˇ‡P4 `Pê *	*	î *ˇˇˇ’P8 `Pö ,*ˇˇˇ€P4 `Pö .*ˇˇˇŸP4 `Pï 	P8 `Pê ***/ˇˇˇ§P4 `Pö 6*ˇˇˇ“PD$ `PJ& `Pë **ö **ˇˇˇ≤P8 `Pê **ï ˇˇˇ›P4 `Põ P4 `Põ P4 `Põ P4 `Põ P4 `Põ P4 `P† M*ˇˇˇªP4 `P† I*ˇˇˇøP4 `P† J*ˇˇˇæP4 `Põ P4 `Pê **ï ˇˇˇ‡P4 `P† P4 `Põ P4 `Pï P4 `Põ P4 `Põ P4 `Pê **ï ˇˇˇÊPD9 `PJ; `Pë **/ˇˇˇ÷P8 `Pê **ï ˇˇˇ›P8 `Pê **ï ˇˇˇ›P4 `Põ P4 `Põ P4 `Põ P4 `Põ P4 `Pê **ï ˇˇˇ‡P4 `P† P4 `Pö **ˇˇˇ⁄P4 `Põ P4 `Põ P4 `Pê **ï ˇˇˇŒP8 `Pê **ï ˇˇˇ›P4 `Põ P4 `Põ P4 `Põ P4 `Põ P4 `Põ PDO `PJQ `Pë *
+*
+/ˇˇˇ‚P8 `Pê **ï ˇˇˇ“P8 `Pê **ï ˇˇˇ›P4 `Põ 
+P4 `Põ 
+P4 `Põ 
+P4 `Põ 
+P4 `Põ 
+P4 `P† 
+P4 `Põ 
+PD\ `Pê **ï ˇˇˇ…P8 `Pê **ï ˇˇˇ›P4 `Põ 
+P4 `Põ 
+P4 `Põ 
+P4 `Põ 
+P4 `Põ 
+PDd `PJf `Pê **ï ˇˇˇ—P8 `Pê **ï ˇˇˇ›P4 `Põ 
+P4 `Põ 
+P4 `Põ 
+P4 `Põ 
+P4 `P† B*ˇˇˇ»P4 `P† 
+P4 `Põ 
+P4 `Põ 
+P4 `Põ 
+P4 `Pê **ï ˇˇˇÕP8 `Pê **ï ˇˇˇ›P4 `Põ 	P4 `Põ 	P4 `Põ 	P4 `Põ 	P4 `Põ 	P4 `Pê **ï ˇˇˇ›P8 `Põ P4 `Põ P4 `Põ P4 `Põ P4 `Pê **ï ˇˇˇ∆P8 `Pê **ï ˇˇˇ›P4 `Põ P4 `Põ P4 `Põ P4 `Põ P4 `Põ P4 `Põ P4 `Põ P400 `Pü000 `Pë **	î *ˇˇˇ»P=00 `Pë **î **ˇˇˇõP8 `Pê *	*	/ˇˇˇ‰P4 `Pê **/ˇˇˇ”P8 `Pê **/ˇˇˇ›P4 `Pê **ï ˇˇˇ◊P8 `Pê *	*ï ˇˇˇ·P4 `Pê **ï ˇˇˇ‘P4 `Pê **ï ˇˇˇ…P4 `Pê **ï ˇˇˇ–P400 `Pë **î &ˇˇˇΩP8 `Pê **/ˇˇˇ›P4 `Pê **ï ˇˇˇ◊P40 `Pê **ï ˇˇˇŸP4 `Põ 
+P4 `Põ 
+P4 `Põ 
+P4 `Põ 
+P4 `Põ 
+P40 `Pê **/ˇˇˇ“P80 `Pï P8 `Põ 	P4 `Põ 	P4 `Põ 	P4 `Põ 	P4 `Põ 	P40 `Põ 9*ˇˇˇÃP8 `Pê **/ˇˇˇ÷P4 `Pê **/ˇˇˇ›P4 `Pê *
+*
+/ˇˇˇ‚P8 `Pê **ï ˇˇˇﬂP8 `Pê **ï ˇˇˇ‡P4 `Pê **ï ˇˇˇ P4 `Pê **ï ˇˇˇ P4 `Pê **ï ˇˇˇÃP4 `Pê **ï ˇˇˇ–P4 `Pê **ï ˇˇˇ≈P4 `Pê **ï ˇˇˇ–P4 `Pê **ï ˇˇˇ’P4 `Põ P8 `Pê **ï ˇˇˇ‡P4 `Pê **ï ˇˇˇ P4 `Pê **ï ˇˇˇ P4 `Pê **ï ˇˇˇÃP4 `Pê **ï ˇˇˇ–P4 `Pê **ï ˇˇˇ≈P4 `Pê **ï ˇˇˇ–P4 `Pê **ï ˇˇˇ’P4 `Pï P8 `Pê **ï ˇˇˇ‡P4 `Pê **ï ˇˇˇ‡P4 `Pê ***ï ˇˇˇ≤P40 `Pê0 `Pë *	*	ì *ˇˇˇÃP80 `P: `P: `P: `Pü 3*ˇˇˇ“P8 `Pô P4 `Põ P4 `Pü P4 `Pü P4 `Pü P4 `Pü P4 `Pê **
+ô ˇˇˇﬁP40 `Pï0 `Pë **î *ˇˇˇ∆Pí000 `Pë **î  *ˇˇˇ¿P=0 `Pê **î *ˇˇˇæP4 `Pê **	/ˇˇˇ‚P4 `Pê **ï ˇˇˇ‹P4 `Pê *
+*
+ö F*ˇˇˇúP4 `Põ P4 `Pê **/ˇˇˇﬂP8 `Pï P4 `Pê **/ˇˇˇÿP8 `Põ P4 `Põ P4 `Põ P4 `Põ P4 `Põ P4 `Põ P4 `Põ P4 `Põ P4 `Põ P4 `Põ P4 `Põ P4 `Põ P4 `Põ P4 `Põ P4 `Pï P8 `Pê **ö 6*ˇˇˇëP4 `Pê **ï ˇˇˇ»P4 `Pê **ï ˇˇˇ…P4 `P† Ä  ä*ˇˇˇP400 `P° M*ˇˇˇ∏PHÄ  `Pê **ï ˇˇˇ’P4 `Põ P4 `P† X*ˇˇˇØP4 `P† W*ˇˇˇ∞P40 `Pë **/ˇˇˇ‘P80 $`P:0 `P° P8 `P† P4 `Pê ***ï ˇˇˇƒP4 `Põ P4 `P† d*ˇˇˇ©P4 `Pê **/ˇˇˇ€P40 `Pë **	î *ˇˇˇ¿P8 `Pö /*ˇˇˇ‡P4 `Pê **î &*ˇˇˇ≤P4 `Pê *	*
+ö 4*ˇˇˇØP40 `Pë **î  *ˇˇˇΩPí@Ä H `PË000 `Pë *	**	î *ˇˇˇ√PHÄ T `Pë **î Z*ˇˇˇÑP80 `Pë **î *ˇˇˇ¥Pí0000 `Pì0 `Põ :*ˇˇˇÀP4 `Pë **ï ˇˇˇ‹P8 `Pê **ï ˇˇˇÿP4 `Pê **ï ˇˇˇœP4 `Pë **ï ˇˇˇ«P8 `Pê **ï ˇˇˇ‘P4 `Pê **ï ˇˇˇ‹P4 `Pê **ï ˇˇˇŸP4 `Pê **ï ˇˇˇ‘P4 `Pê *
+*
+/ˇˇˇ‚P4 `Pê **ï ˇˇˇ“P4 `Pú P8 `Pê **ï ˇˇˇ÷P4 `Pê *#*$ï ˇˇˇØP4 `Pê **ï ˇˇˇŒP4 `Pê **ï ˇˇˇŒP4 `Pê **ï ˇˇˇ P4 `Pê *0*ï ˇˇˇ∂P4 `Pê *#*!ï ˇˇˇ≤P4 `Pê *(**ï ˇˇˇ§P4 `Pê **ï ˇˇˇ◊P4 `Pê **ï ˇˇˇ…P4 `Pë **ï ˇˇˇ”P8 `Pê **ï ˇˇˇ—P4 `Pê **ï ˇˇˇ›P4 `Pê **ï ˇˇˇ“P4 `Pú P8 `Pê *	*ï ˇˇˇ›P4 `Pê **ï ˇˇˇÃP4 `Pê **ï ˇˇˇÃP>000 `Pì0 `Pë ***ö =*ˇˇˇèP8 `Pê ***ï ˇˇˇøP4 `Pê ***ï ˇˇˇ¬P4 `Pê ***ï ˇˇˇ±P4 `Pê ***ï ˇˇˇ∂P40 `Pê ***ï ˇˇˇ≈P4 `Pê **
+*
+ï ˇˇˇ◊P4 `Pê ***ï ˇˇˇ∑P4 `Pê ***ï ˇˇˇ√P4 `Pë ***ï ˇˇˇÀP40 `Pë ***ï ˇˇˇΩP> `Pì0 `Pë ***ö =*ˇˇˇèP8 `Pê ***ï ˇˇˇøP4 `Pê ***ï ˇˇˇ¬P4 `Pê ***ï ˇˇˇ±P4 `Pê ***ï ˇˇˇ∂P4 `Pê ***ï ˇˇˇ≈P4 `Pê **
+*
+ï ˇˇˇ◊P4 `Pê ***ï ˇˇˇ∑P4 `Pê ***ï ˇˇˇ√P900 `Pì0 `Pë ***ï ˇˇˇÃP8 `Pê ***ï ˇˇˇøP4 `Pê ***ï ˇˇˇ≈P4 `Pê ***ï ˇˇˇ√P4 `Pë ***ï ˇˇˇΩP> `Pì000P  3ıÿ  `¶  ß  ©  ´  ¨  ≠  Æ  Ø  ∞  ±  q   ≤    `¶  ß  ¥  ´  ¨  ≠  Æ  Ø  ∞  ±  q     `∞  ∂  Z  6    `∞  ∂  Z  H    `π  ∫  ª  º  Ω  æ  ø  ¿  ¡  ¬  $     @b  √  (    @ƒ  ≈  &    @*    @∆  4  »  …     Ã  q   Õ  8  Œ  :  –  —  “  ”  @  ’  ÷  ◊  ÿ    Ÿ  ⁄  "  €  ›  ﬁ  ﬂ    @‡      @·  ‚    @‰  Â    @Ê  0    @Ë  È  	  @Í  D  
+  @Î  F    @Ì  Ó  Ô    Ò  >  Ú  Û    @ı  ˜  ¯    ˘    @˚  ˙  ¸  ˝  ˛  ˇ                	 
+   @    @    @      J      L         ! # $ % ' ( ) * + , - . / 0 1 N    @2 3 4 5 7 8 9 : ; < = > ? @ B D E G H I J K L M N O P Q R T U V W X Y Z [ \ ] _ a b c d e f g h i   @j k l m n o p r s t u v w x y z | } ~  Ä Å Ç Ñ Ö Ü á à â ä ã å ç é è ê ë í ì ï ñ ó P    @ô ö õ R    @ú ù ü † ° T  £ § • ¶ ß ® © ™ ´ ¨ ≠ Æ Ø ∞ ± ≤ ≥ ¥ ∂ X    @∑ V  ∏ π ∫ Y  ª º Ω æ ø ¿ ¡ ¬ √ ƒ ≈ ∆ « » … [  Ã Õ ]  Œ œ – — “ ‘ _    @’ ÷ ◊ ÿ a  c  d  € ‹ › ﬁ ﬂ ‡ · ‚ „ ‰ Â Ê Á Ë È Í Î Ï Ì Ó Ô  Ò Ú Û Ù ı ˆ ˜ ¯ ˘ ˚ ¸ ˝ ˛ ˇ       f     	 
+   h       @      @        ! 6 " # $ % & ' ( v    @x    @  @*   @, - . z  0 1 2 3 4 5 6 8 9 : ;   @< = > ? @ A B   @D |  E   @F G H I J K L    @M N !  @P £  R T U V W X Y ~  Z [ \ ] ^ "  @Ä  ` a b Ç  #  @c $  @d e f Ñ  %  @g h i j &  @l à  '  @m n o p ó  r s t u ì  (  @w x y )  @{ | } ï  *  @∫   ~ +  @Ä Å Ç ó  É Ñ Ö Ü á à ä ã å ô  ç é è ê ë í ì î ï ñ ó ò ô ö õ ú ù õ  û † ù  ° ¢ £ § • ¶ ß ® © ™ ´ ¨ ≠ Æ Ø ∞ ± ≤ ≥ ¥ µ ∂ ∑ ∏ π ∫ ª º Ω æ ø ¿ ¡ ¬ √ ƒ ≈ ∆ » …   ü  À Ã Õ Œ œ – — “ ‘ °  ’ ÷ ◊ ÿ Ÿ ⁄ € ‹ › ﬁ ‡ · ‚ „   ‰ ,  @Â Ê Á Ë È Í Î Ï Ì Ó Ô  Ò Ú Û Ù ı ˆ ˜ ¯ ˘ ˙ ˚ ¸ ˝ ˛ ˇ           	 
+       -  @             `  p  p  p  p  p   
+                  	  
+                                               !  "  #  $  %  &  '  (  )  *  +  ,  -  .  /  0  1  2  3  4  5  6  7  8  9  :  ;  <  =  >  ?  @  A  B  .  @D  E  F  G  H  I  J  K  L  M  N  O  P  Q  R  S  T  U  V  W  X  Y  Z  [  \  ]  ^  _  `  a  b  c  d  e  f  g  h  i  j  k  l  m  n  o  p  q  r  s  t  u  v  w  x  y  z  {  |  }  ~    Ä  Å  Ç  É  Ñ  Ö  Ü  á  à  â  ä  ã  å  ç  é  è  ê  ë  í  ì  î  ï  ñ  ó  ò  ô  ö  õ  ú  ù  û  ü  †  °  ¢  £  §  ˇXÑ±  ¨                     •      †        ≥      †        µ      †        ∑      †  #   é  ∏      †  ùH©¿      ˜∫      ˜∫                     æ  ˙  æ  x                ◊  y  ¿  y  Ç                ﬂ    ∆    ê                1  b    b  î                z  ˆ∫  d  ˆ∫  ò             5°›ñ@xπüm      a¯^Îa¯^ÎCÎ≥bis   á    O^partitionKey=%28https%2Cswissquote.ch%29,:https://premium.swissquote.ch/website-navigation/navigation/menu/js/data/data_nav.js?r=1076 necko:classified 1 strongly-framed 1 security-info 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 request-method GET response-head HTTP/1.1 200 OK
+Date: Mon, 31 Jan 2022 18:48:19 GMT
+Last-Modified: Fri, 05 Mar 2021 09:25:58 GMT
+ETag: "3a1cf-ba70-5bcc6abf41580"
+Accept-Ranges: bytes
+Content-Length: 47728
+Content-Type: application/javascript
+Strict-Transport-Security: max-age=300; includeSubDomains
+ original-response-headers Date: Mon, 31 Jan 2022 18:48:19 GMT
+Last-Modified: Fri, 05 Mar 2021 09:25:58 GMT
+ETag: "3a1cf-ba70-5bcc6abf41580"
+Accept-Ranges: bytes
+Content-Length: 47728
+Keep-Alive: timeout=5, max=99
+Connection: Keep-Alive
+Content-Type: application/javascript
+Strict-Transport-Security: max-age=300; includeSubDomains
+ ctid 2 uncompressed-len 0 net-response-time-onstart 56 net-response-time-onstop 84 alt-data 1;47728,javascript/moz-bytecode-20220111210158-8l alt-data-from-child 1  XË

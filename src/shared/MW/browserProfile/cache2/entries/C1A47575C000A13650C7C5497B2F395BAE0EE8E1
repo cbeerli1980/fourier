@@ -1,0 +1,225 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!--[if lt IE 7 ]> <html dir="ltr" class="ie6 lt-ie9 lt-ie8 lt-ie7 no-js ltr"> <![endif]-->
+<!--[if IE 7 ]> <html dir="ltr" class="ie7 lt-ie9 lt-ie8 no-js ltr"> <![endif]-->
+<!--[if IE 8 ]> <html dir="ltr" class="ie8 lt-ie9 no-js ltr"> <![endif]-->
+<!--[if IE 9 ]> <html dir="ltr" class="ie9 no-js ltr"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html dir="ltr" class="no-js"> <!--<![endif]-->
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>
+</title>
+<link href="/favicon.ico" rel="SHORTCUT ICON" />
+<!-- Bundle CSS : global -->
+<link rel="stylesheet" type="text/css" href="/sqw-navigation/sq-css-layout/css/reset.css" charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="/sqw-navigation/sq-css-layout/css/typo.css" charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="/sqw-navigation/sq-css-layout/css/forms.css" charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="/sqw-navigation/sq-css-layout/css/layout_common.css" charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="/sqw-navigation/sq-css-layout/css/layout_liquid.css" charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="/sqw-navigation/sqw-components/css/action.css" charset="utf-8"/>
+<!-- Bundle JS : global -->
+<script type="text/javascript" src="/sqw-navigation/sqw-components/js/modernizr/modernizr.js" charset="utf-8"></script>
+<script type="text/javascript" src="/sqw-navigation/webjars/jquery/1.12.4/jquery.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="/sqw-navigation/webjars/jquery-migrate/1.4.1/jquery-migrate.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="/sqw-navigation/webjars/stjs-client-runtime/stjs.js" charset="utf-8"></script>
+<script type="text/javascript" src="/sqw-navigation/sqw-components/js/top_nav.js" charset="utf-8"></script>
+<!--[if IE 6]>
+<link rel="stylesheet" href="/sqw-navigation/sq-css-layout/css/ie/ie6.css" type="text/css" />
+<script type="text/javascript" src="/sqw-navigation/sqw-components/js/jquery/jquery.pngFix.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+$(document).pngFix();
+});
+</script>
+<![endif]-->
+<!--[if IE 7]>
+<link rel="stylesheet" href="/sqw-navigation/sq-css-layout/css/ie/ie7.css" type="text/css" />
+<script type="text/javascript" src="/sqw-navigation/sqw-components/js/jquery/jquery.pngFix.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+$(document).pngFix();
+});
+</script>
+<![endif]-->
+<!--[if IE 8]>
+<link rel="stylesheet" href="/sqw-navigation/sq-css-layout/css/ie/ie8.css" type="text/css" />
+<![endif]-->
+<script>
+var sLang = "d";
+var longLang = "de";
+var webApp = "/sqw-navigation";
+</script>
+<!-- Bundle CSS : global -->
+<link rel="stylesheet" type="text/css" href="/sqw-navigation/sq-css-theme-static/css/navigation/skin.css" charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="/sqw-navigation/css/livechat.css" charset="utf-8"/>
+<script>
+/* Variable utilis&eacute; dans les JS*/
+var idPage = 'quote';
+var idSection = 'quote';
+</script>
+<script type="text/javascript">
+var jour = new Date();
+var expir = jour;
+expir.setYear(jour.getUTCFullYear() - 3);
+document.cookie = "swissquote_lang=d;path=/;expires=" + expir.toGMTString();
+expir.setYear(jour.getUTCFullYear() + 6);
+document.cookie = "swissquote_lang=d;path=/;domain=.swissquote.ch;expires=" + expir.toGMTString();
+</script>
+<!--[if lt IE 9]>
+<script src="/sqw-navigation/sqw-components/js/modernizr/html5shiv-printshiv.js"></script>
+<script src="/sqw-navigation/sqw-components/js/modernizr/respond.js"></script>
+<![endif]-->
+</head>
+<body class="navigation ">
+<div class="sfWrapper">
+<div id="headerContent">
+<div id="topBanner">
+<!-- Bundle CSS : global -->
+<link rel="stylesheet" type="text/css" href="/sqw-navigation/sq-css-theme-static/css/navigation/metanav.css" charset="utf-8"/>
+<div id="topBannerContainer"
+class="slim" role="banner">
+<div id="navigation">
+<a href="/" target="_top" class="sqLogo">
+<!--[if lt IE 9]>
+<img alt="Swissquote - The Swiss Leader in Online Banking" title="Home"
+src="/sqw-navigation/sq-css-theme-static/images/navigation/logo--swissquote.png">
+<![endif]-->
+<!--[if gte IE 9]>
+<img alt="Swissquote - The Swiss Leader in Online Banking" title="Home"
+src="/sqw-navigation/sq-css-theme-static/images/navigation/logo--swissquote.svg">
+<![endif]-->
+<!--[if !IE]><!-->
+<img alt="Swissquote - The Swiss Leader in Online Banking" title="Home"
+src="/sqw-navigation/sq-css-theme-static/images/navigation/logo--swissquote.svg">
+<!--<![endif]-->
+</a>
+<nav id="main-menu" role="navigation" class="">
+<div style="clear:both;"></div>
+</nav>
+<div class="btns">
+<div class="btnLiveChat">
+<a href="https://chatbot.swissquote.ch/de"
+target="popup"
+onclick="window.open('https://chatbot.swissquote.ch/de','popup','width=540,height=600,scrollbars=no,resizable=no,location=no,toolbar=no,menubar=no'); return false;">
+<input class="btn-liveChat__icon" type="image" src="images/btn_livechat.svg" />
+<span class="btn-liveChat__label">Chat</span>
+</a>
+</div>
+<div class="openAccount">
+<a href="/sqweb/bank_open_multi.jsp" target="_top"
+onclick="urchinTracker('/tmp/openaccount/multi/frame');">
+<span>Konto er√∂ffnen</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+document.body.className += " s-navSlim";
+if (!true) {
+document.body.className = document.body.className.replace(" s-navSlim", "");
+}
+window.squpPlatformFinishedLoading = window.metaNavPluginRun = false;
+window.squpPlatformLoaded = function () {
+window.metaNavPluginRun = true;
+require(
+["squp"],
+function (api) {
+var extensions = api.extensions();
+var contributorID = 'sqw-navigation/ext.metanav/configuration';
+define(contributorID, [], function () {
+return {
+brandingID: '',
+loggedLevelOne: false,
+loggedLevelTwo: false,
+language: {
+callback: false ? null : function (id, event) {
+event.preventDefault();
+//TODO remove it later when having the new methodology for changing language
+//chIndex and chLanguage is come from top_nav.js
+parent.mnuCur = parent.mnuCur == null ? 'quote' : parent.mnuCur;
+chIndex(id);
+},
+languages: [
+{id: 'en', text: 'English'},
+{id: 'fr', text: 'Fran√ßais'},
+{id: 'de', text: 'Deutsch'}
+],
+showFullText: false,
+show: true
+},
+isResponsive: false,
+// Only for URL parameters testing
+profile: {
+relativeLinks: false,
+hasActivatedPortal: false
+},
+notifications: false,
+logout: {
+url: false ? '#' : 'https://trade.swissquote.ch/logout_bank_e.html',
+callback: !false ? null : function () {
+window.document.cookie = "big8=; Path=/; Domain=.swissquote.ch; Expires=Thu, 01 Jan 1970 00:00:00 GMT;";
+window.document.cookie = "big5=; Path=/; Domain=.swissquote.ch; Expires=Thu, 01 Jan 1970 00:00:00 GMT;";
+window.top.location.replace("https://trade.swissquote.ch/logout_bank_e.html");
+return false;
+}
+}
+}
+});
+extensions.defineContributor("squp.ext.metanav.config", contributorID, "metanav-configuration");
+require(['platformPlugin!sq-meta-nav-plugin/define'], function () {
+})
+}
+);
+}
+if (window.squpPlatformFinishedLoading && !window.metaNavPluginRun) {
+window.squpPlatformLoaded();
+}
+window.metaNavUrl = "//www.swissquote.ch";
+</script>
+<script src="//www.swissquote.ch/sq-meta-nav-plugin/platform.js?"></script>
+</div>
+</div>
+<div id="bodyContent" class="innercontent">
+</div>
+<div class="sfPush"></div>
+</div>
+<div id="footerContent" class="sfFooter">
+</div>
+<script type="text/javascript">
+$(function() {
+var done = false, urchin = document.createElement('script');
+urchin.type = 'text/javascript';
+urchin.async = true;
+// Attach handlers for all browsers
+urchin.onload = urchin.onreadystatechange = function() {
+if ( !done && (!this.readyState || this.readyState === "loaded" || this.readyState === "complete") ) {
+done = true;
+try { urchinTracker(); } catch (err) {}
+urchin.onload = urchin.onreadystatechange = null;
+}
+};
+urchin.src = '/urchin.js';
+document.getElementsByTagName('body')[0].appendChild(urchin);
+})
+</script>
+</body>
+</html>
+jYêiR           a¯\CËaqa¯\   g    O^partitionKey=%28https%2Cswissquote.ch%29,:https://www.swissquote.ch/sqw-navigation/navigation.jsp?l=d strongly-framed 1 security-info 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 request-method GET response-head HTTP/1.1 200 OK
+Date: Mon, 31 Jan 2022 22:00:55 GMT
+Server: Resin/4.0.23
+Cache-Control: private
+Content-Language: en
+Content-Type: text/html; charset=UTF-8
+Strict-Transport-Security: max-age=300; includeSubDomains
+ original-response-headers Date: Mon, 31 Jan 2022 22:00:55 GMT
+Server: Resin/4.0.23
+Cache-Control: private
+Content-Language: en
+Content-Type: text/html; charset=UTF-8
+Set-Cookie: JSESSIONID=aaa7GPRdhOwQf5NZ7jY6x; path=/
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Strict-Transport-Security: max-age=300; includeSubDomains
+ ctid 1 uncompressed-len 0   V

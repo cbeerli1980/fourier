@@ -1,0 +1,1181 @@
+getDBconnection(): successful
+SELECT industryYF FROM titles WHERE industryYF!='NULL'
+SELECT industryMW FROM titles WHERE industryMW!='NULL'
+TRUNCATE TABLE classificationsYF
+TRUNCATE TABLE classificationsYF
+TRUNCATE TABLE classificationsMW
+TRUNCATE TABLE classificationsMW
+SELECT industryMW FROM titles WHERE industryMW='Precision Products'
+SELECT industryMW FROM titles WHERE industryMW='Food Products'
+SELECT industryMW FROM titles WHERE industryMW='General Mining'
+SELECT industryMW FROM titles WHERE industryMW='Major International Banks'
+SELECT industryMW FROM titles WHERE industryMW='Major International Banks'
+SELECT industryMW FROM titles WHERE industryMW='Investment Advisors'
+SELECT industryMW FROM titles WHERE industryMW='void'
+SELECT industryMW FROM titles WHERE industryMW='Banking'
+SELECT industryMW FROM titles WHERE industryMW='Major International Banks'
+SELECT industryMW FROM titles WHERE industryMW='Major International Banks'
+SELECT industryMW FROM titles WHERE industryMW='Food Retail'
+SELECT industryMW FROM titles WHERE industryMW='Passenger Airlines'
+SELECT industryMW FROM titles WHERE industryMW='Major Oil & Gas'
+SELECT industryMW FROM titles WHERE industryMW='Networking'
+SELECT industryMW FROM titles WHERE industryMW='Major International Banks'
+SELECT industryMW FROM titles WHERE industryMW='Major Oil & Gas'
+SELECT industryMW FROM titles WHERE industryMW='Banking'
+SELECT industryMW FROM titles WHERE industryMW='Major International Banks'
+SELECT industryMW FROM titles WHERE industryMW='Diversified Holding Companies'
+SELECT industryMW FROM titles WHERE industryMW='Major International Banks'
+SELECT industryMW FROM titles WHERE industryMW='Software'
+SELECT industryMW FROM titles WHERE industryMW='Food Products'
+SELECT industryMW FROM titles WHERE industryMW='Industrial Electronics'
+SELECT industryMW FROM titles WHERE industryMW='Banking'
+SELECT industryMW FROM titles WHERE industryMW='Industrial Electronics'
+SELECT industryMW FROM titles WHERE industryMW='Software'
+SELECT industryMW FROM titles WHERE industryMW='Semiconductors'
+SELECT industryMW FROM titles WHERE industryMW='Wireless Telecommunications Services'
+SELECT industryMW FROM titles WHERE industryMW='Multiutilities'
+SELECT industryMW FROM titles WHERE industryMW='Software'
+SELECT industryMW FROM titles WHERE industryMW='Software'
+SELECT industryMW FROM titles WHERE industryMW='void'
+SELECT industryMW FROM titles WHERE industryMW='Broadcasting'
+SELECT industryMW FROM titles WHERE industryMW='Wireless Telecommunications Services'
+SELECT industryMW FROM titles WHERE industryMW='Passenger Airlines'
+SELECT industryMW FROM titles WHERE industryMW='Renewable Energy Generation'
+SELECT industryMW FROM titles WHERE industryMW='Multiutilities'
+SELECT industryMW FROM titles WHERE industryMW='Securities'
+SELECT industryMW FROM titles WHERE industryMW='Major Oil & Gas'
+SELECT industryMW FROM titles WHERE industryMW='Semiconductors'
+SELECT industryMW FROM titles WHERE industryMW='Internet/Online'
+SELECT industryMW FROM titles WHERE industryMW='Automobiles'
+SELECT industryMW FROM titles WHERE industryMW='Motor Vehicle Parts'
+SELECT industryMW FROM titles WHERE industryMW='Full-Line Insurance'
+SELECT industryMW FROM titles WHERE industryMW='Precision Products'
+SELECT industryMW FROM titles WHERE industryMW='Pharmaceuticals'
+SELECT industryMW FROM titles WHERE industryMW='Alternative Fuels'
+SELECT industryMW FROM titles WHERE industryMW='Tourism'
+SELECT industryMW FROM titles WHERE industryMW='Gold'
+SELECT industryMW FROM titles WHERE industryMW='Semiconductors'
+SELECT industryMW FROM titles WHERE industryMW='Chemicals'
+SELECT industryMW FROM titles WHERE industryMW='Major International Banks'
+SELECT industryMW FROM titles WHERE industryMW='Food Retail'
+SELECT industryMW FROM titles WHERE industryMW='General Mining'
+SELECT industryMW FROM titles WHERE industryMW='void'
+SELECT industryMW FROM titles WHERE industryMW='Full-Line Insurance'
+SELECT industryMW FROM titles WHERE industryMW='Passenger Airlines'
+SELECT industryMW FROM titles WHERE industryMW='Securities'
+SELECT industryMW FROM titles WHERE industryMW='Renewable Energy Generation'
+SELECT industryMW FROM titles WHERE industryMW='Industrial Electronics'
+SELECT industryMW FROM titles WHERE industryMW='Precious Metals'
+SELECT industryMW FROM titles WHERE industryMW='void'
+SELECT industryMW FROM titles WHERE industryMW='Mixed Retailing'
+SELECT industryMW FROM titles WHERE industryMW='Iron/Steel'
+SELECT industryMW FROM titles WHERE industryMW='Automobiles'
+SELECT industryMW FROM titles WHERE industryMW='Consumer Services'
+SELECT industryMW FROM titles WHERE industryMW='General Mining'
+SELECT industryMW FROM titles WHERE industryMW='Passenger Airlines'
+SELECT industryMW FROM titles WHERE industryMW='Pharmaceuticals'
+SELECT industryMW FROM titles WHERE industryMW='Tourism'
+SELECT industryMW FROM titles WHERE industryMW='Automobiles'
+SELECT industryMW FROM titles WHERE industryMW='Medical Equipment/Supplies'
+SELECT industryMW FROM titles WHERE industryMW='Footwear'
+SELECT industryMW FROM titles WHERE industryMW='Clothing Retail'
+SELECT industryMW FROM titles WHERE industryMW='Multiutilities'
+SELECT industryMW FROM titles WHERE industryMW='Semiconductors'
+SELECT industryMW FROM titles WHERE industryMW='Containers/Packaging'
+SELECT industryMW FROM titles WHERE industryMW='Major International Banks'
+SELECT industryMW FROM titles WHERE industryMW='Automobiles'
+SELECT industryMW FROM titles WHERE industryMW='Air Freight'
+SELECT industryMW FROM titles WHERE industryMW='Mixed Retailing'
+SELECT industryMW FROM titles WHERE industryMW='Biotechnology'
+SELECT industryMW FROM titles WHERE industryMW='Automobiles'
+SELECT industryMW FROM titles WHERE industryMW='Major International Banks'
+SELECT industryMW FROM titles WHERE industryMW='Major Oil & Gas'
+SELECT industryMW FROM titles WHERE industryMW='Healthcare Provision'
+SELECT industryMW FROM titles WHERE industryMW='Building Materials/Products'
+SELECT industryMW FROM titles WHERE industryMW='Building Materials/Products'
+SELECT industryMW FROM titles WHERE industryMW='Investment Advisors'
+SELECT industryMW FROM titles WHERE industryMW='Tires'
+SELECT industryMW FROM titles WHERE industryMW='Emerging Technologies'
+SELECT industryMW FROM titles WHERE industryMW='Sports Goods'
+SELECT industryMW FROM titles WHERE industryMW='Emerging Technologies'
+SELECT industryMW FROM titles WHERE industryMW='Internet/Online'
+SELECT industryMW FROM titles WHERE industryMW='Employment/Training Services'
+SELECT industryMW FROM titles WHERE industryMW='General Mining'
+SELECT industryMW FROM titles WHERE industryMW='Automobiles'
+SELECT industryMW FROM titles WHERE industryMW='Automobiles'
+SELECT industryMW FROM titles WHERE industryMW='Industrial Electronics'
+SELECT industryMW FROM titles WHERE industryMW='Alcoholic Beverages/Drinks'
+SELECT industryMW FROM titles WHERE industryMW='Pharmaceuticals'
+SELECT industryMW FROM titles WHERE industryMW='Diversified Holding Companies'
+SELECT industryMW FROM titles WHERE industryMW='Real Estate Developers'
+SELECT industryMW FROM titles WHERE industryMW='Chemicals'
+SELECT industryMW FROM titles WHERE industryMW='Chemicals'
+SELECT industryMW FROM titles WHERE industryMW='Computers/Consumer Electronics'
+SELECT industryMW FROM titles WHERE industryMW='Semiconductors'
+SELECT industryMW FROM titles WHERE industryMW='Audio/Video Equipment'
+SELECT industryMW FROM titles WHERE industryMW='Major Oil & Gas'
+SELECT industryMW FROM titles WHERE industryMW='Healthcare Provision'
+SELECT industryMW FROM titles WHERE industryMW='Biotechnology'
+SELECT industryMW FROM titles WHERE industryMW='Chemicals'
+SELECT industryMW FROM titles WHERE industryMW='Biotechnology'
+SELECT industryMW FROM titles WHERE industryMW='Industrial Electronics'
+SELECT industryMW FROM titles WHERE industryMW='Industrial Electronics'
+SELECT industryMW FROM titles WHERE industryMW='Passenger Airlines'
+SELECT industryMW FROM titles WHERE industryMW='Food Products'
+SELECT industryMW FROM titles WHERE industryMW='Medical Equipment/Supplies'
+SELECT industryMW FROM titles WHERE industryMW='Railroads'
+SELECT industryMW FROM titles WHERE industryMW='Biotechnology'
+SELECT industryMW FROM titles WHERE industryMW='void'
+SELECT industryMW FROM titles WHERE industryMW='N/A'
+SELECT industryMW FROM titles WHERE industryMW='Specialty Retail'
+SELECT industryMW FROM titles WHERE industryMW='Food Products'
+SELECT industryMW FROM titles WHERE industryMW='Building Materials/Products'
+SELECT industryMW FROM titles WHERE industryMW='Automobiles'
+SELECT industryMW FROM titles WHERE industryMW='Non-Alcoholic Beverages/Drinks'
+SELECT industryMW FROM titles WHERE industryMW='Automobiles'
+SELECT industryMW FROM titles WHERE industryMW='Networking'
+SELECT industryMW FROM titles WHERE industryMW='Food Products'
+SELECT industryMW FROM titles WHERE industryMW='N/A'
+SELECT industryMW FROM titles WHERE industryMW='Biotechnology'
+SELECT industryMW FROM titles WHERE industryMW='Biotechnology'
+SELECT industryMW FROM titles WHERE industryMW='Semiconductors'
+SELECT industryMW FROM titles WHERE industryMW='Computer Services'
+SELECT industryMW FROM titles WHERE industryMW='Internet/Online'
+SELECT industryMW FROM titles WHERE industryMW='Passenger Airlines'
+SELECT industryMW FROM titles WHERE industryMW='Computers/Consumer Electronics'
+SELECT industryMW FROM titles WHERE industryMW='Pharmaceuticals'
+SELECT industryMW FROM titles WHERE industryMW='Toys & Games'
+SELECT industryMW FROM titles WHERE industryMW='Emerging Technologies'
+SELECT industryMW FROM titles WHERE industryMW='Investment Advisors'
+SELECT industryMW FROM titles WHERE industryMW='Construction'
+SELECT industryMW FROM titles WHERE industryMW='Toys & Games'
+SELECT industryMW FROM titles WHERE industryMW='N/A'
+SELECT industryMW FROM titles WHERE industryMW='Mixed Retailing'
+SELECT industryMW FROM titles WHERE industryMW='Luxury Goods'
+SELECT industryMW FROM titles WHERE industryMW='Precision Products'
+SELECT industryMW FROM titles WHERE industryMW='Investment Advisors'
+SELECT industryMW FROM titles WHERE industryMW='Nondurable Household Products'
+SELECT industryMW FROM titles WHERE industryMW='Reinsurance'
+SELECT industryMW FROM titles WHERE industryMW='Aerospace Products/Parts'
+SELECT industryMW FROM titles WHERE industryMW='Semiconductors'
+SELECT industryMW FROM titles WHERE industryMW='Mixed Retailing'
+SELECT industryMW FROM titles WHERE industryMW='Automobiles'
+SELECT industryMW FROM titles WHERE industryMW='Pharmaceuticals'
+SELECT industryMW FROM titles WHERE industryMW='Gold'
+SELECT industryMW FROM titles WHERE industryMW='Biotechnology'
+SELECT industryMW FROM titles WHERE industryMW='Drug Retail'
+SELECT industryMW FROM titles WHERE industryMW='Hotels'
+SELECT industryMW FROM titles WHERE industryMW='Semiconductors'
+SELECT industryMW FROM titles WHERE industryMW='Personal Care Products/Appliances'
+SELECT industryMW FROM titles WHERE industryMW='Major International Banks'
+SELECT industryMW FROM titles WHERE industryMW='Industrial Electronics'
+SELECT industryMW FROM titles WHERE industryMW='Chemicals'
+SELECT industryMW FROM titles WHERE industryMW='Banking'
+SELECT industryMW FROM titles WHERE industryMW='Advertising/Marketing/Public Relations'
+SELECT industryMW FROM titles WHERE industryMW='Software'
+SELECT industryMW FROM titles WHERE industryMW='Footwear'
+SELECT industryMW FROM titles WHERE industryMW='Software'
+SELECT industryMW FROM titles WHERE industryMW='Restaurants'
+SELECT industryMW FROM titles WHERE industryMW='Construction'
+SELECT industryMW FROM titles WHERE industryMW='Internet/Online'
+SELECT industryMW FROM titles WHERE industryMW='Footwear'
+SELECT industryMW FROM titles WHERE industryMW='Food Products'
+SELECT industryMW FROM titles WHERE industryMW='Mixed Retailing'
+SELECT industryMW FROM titles WHERE industryMW='Pharmaceuticals'
+SELECT industryMW FROM titles WHERE industryMW='Software'
+SELECT industryMW FROM titles WHERE industryMW='Computer Services'
+SELECT industryMW FROM titles WHERE industryMW='Building Materials/Products'
+SELECT industryMW FROM titles WHERE industryMW='Industrial Machinery'
+SELECT industryMW FROM titles WHERE industryMW='Internet/Online'
+SELECT industryMW FROM titles WHERE industryMW='Mobile Machinery'
+SELECT industryMW FROM titles WHERE industryMW='Diversified Holding Companies'
+SELECT industryMW FROM titles WHERE industryMW='Pharmaceuticals'
+SELECT industryMW FROM titles WHERE industryMW='Aerospace Products/Parts'
+SELECT industryMW FROM titles WHERE industryMW='void'
+SELECT industryMW FROM titles WHERE industryMW='Software'
+SELECT industryMW FROM titles WHERE industryMW='Full-Line Insurance'
+SELECT industryMW FROM titles WHERE industryMW='Industrial Machinery'
+SELECT industryMW FROM titles WHERE industryMW='Restaurants'
+SELECT industryMW FROM titles WHERE industryMW='Securities'
+SELECT industryMW FROM titles WHERE industryMW='Wireless Telecommunications Services'
+SELECT industryMW FROM titles WHERE industryMW='Full-Line Insurance'
+SELECT industryMW FROM titles WHERE industryMW='Industrial Electronics'
+SELECT industryMW FROM titles WHERE industryMW='Software'
+SELECT industryMW FROM titles WHERE industryMW='Jewelry & Watches'
+SELECT industryMW FROM titles WHERE industryMW='Industrial Products'
+SELECT industryMW FROM titles WHERE industryMW='Electric Utilities'
+SELECT industryMW FROM titles WHERE industryMW='Chemicals'
+SELECT industryMW FROM titles WHERE industryMW='Software'
+SELECT industryMW FROM titles WHERE industryMW='Emerging Technologies'
+SELECT industryMW FROM titles WHERE industryMW='void'
+SELECT industryMW FROM titles WHERE industryMW='Internet/Online'
+SELECT industryMW FROM titles WHERE industryMW='Semiconductors'
+SELECT industryMW FROM titles WHERE industryMW='Transportation Services'
+SELECT industryMW FROM titles WHERE industryMW='Computers/Consumer Electronics'
+SELECT industryMW FROM titles WHERE industryMW='Personal Care Products/Appliances'
+SELECT industryMW FROM titles WHERE industryMW='Semiconductors'
+SELECT industryMW FROM titles WHERE industryMW='void'
+SELECT industryMW FROM titles WHERE industryMW='Consumer Finance'
+SELECT industryMW FROM titles WHERE industryMW='Toys & Games'
+SELECT industryMW FROM titles WHERE industryMW='Consumer Finance'
+SELECT industryMW FROM titles WHERE industryMW='Full-Line Insurance'
+SELECT industryMW FROM titles WHERE industryMW='Major International Banks'
+SELECT industryMW FROM titles WHERE industryMW='Pharmaceuticals'
+SELECT industryMW FROM titles WHERE industryMW='void'
+SELECT industryMW FROM titles WHERE industryMW='Mixed Retailing'
+SELECT industryMW FROM titles WHERE industryMW='void'
+SELECT industryMW FROM titles WHERE industryMW='Industrial Electronics'
+SELECT industryMW FROM titles WHERE industryMW='Audio/Video Equipment'
+SELECT industryMW FROM titles WHERE industryMW='Industrial Machinery'
+SELECT industryMW FROM titles WHERE industryMW='Full-Line Insurance'
+SELECT industryMW FROM titles WHERE industryMW='Motor Vehicle Parts'
+SELECT industryMW FROM titles WHERE industryMW='Precision Products'
+SELECT industryMW FROM titles WHERE industryMW='void'
+SELECT industryMW FROM titles WHERE industryMW='Non-Alcoholic Beverages/Drinks'
+SELECT industryMW FROM titles WHERE industryMW='Securities'
+SELECT industryMW FROM titles WHERE industryMW='Broadcasting'
+SELECT industryMW FROM titles WHERE industryMW='Internet/Online'
+SELECT industryMW FROM titles WHERE industryMW='Software'
+SELECT industryMW FROM titles WHERE industryMW='Mixed Retailing'
+SELECT industryMW FROM titles WHERE industryMW='Networking'
+SELECT industryMW FROM titles WHERE industryMW='Reinsurance'
+SELECT industryMW FROM titles WHERE industryMW='Toys & Games'
+SELECT industryMW FROM titles WHERE industryMW='Building Materials/Products'
+SELECT industryMW FROM titles WHERE industryMW='Pharmaceuticals'
+SELECT industryMW FROM titles WHERE industryMW='Software'
+SELECT industryMW FROM titles WHERE industryMW='Mixed Retailing'
+SELECT industryMW FROM titles WHERE industryMW='Medical Equipment/Supplies'
+SELECT industryMW FROM titles WHERE industryMW='Footwear'
+SELECT industryMW FROM titles WHERE industryMW='Diversified Holding Companies'
+SELECT industryMW FROM titles WHERE industryMW='Life Insurance'
+SELECT industryMW FROM titles WHERE industryMW='Precision Products'
+SELECT industryMW FROM titles WHERE industryMW='N/A'
+SELECT industryMW FROM titles WHERE industryMW='Diversified Holding Companies'
+SELECT industryMW FROM titles WHERE industryMW='Aerospace Products/Parts'
+SELECT industryMW FROM titles WHERE industryMW='Consumer Finance'
+SELECT industryMW FROM titles WHERE industryMW='Broadcasting'
+SELECT industryMW FROM titles WHERE industryMW='Industrial Electronics'
+SELECT industryMW FROM titles WHERE industryMW='Software'
+SELECT industryMW FROM titles WHERE industryMW='Industrial Machinery'
+SELECT industryMW FROM titles WHERE industryMW='Pharmaceuticals'
+SELECT industryMW FROM titles WHERE industryMW='Toys & Games'
+SELECT industryMW FROM titles WHERE industryMW='Semiconductors'
+SELECT industryMW FROM titles WHERE industryMW='Biotechnology'
+SELECT industryMW FROM titles WHERE industryMW='Biotechnology'
+SELECT industryMW FROM titles WHERE industryMW='Software'
+SELECT industryMW FROM titles WHERE industryMW='Air Freight'
+SELECT industryMW FROM titles WHERE industryMW='Internet/Online'
+SELECT industryMW FROM titles WHERE industryMW='Medical Equipment/Supplies'
+SELECT industryMW FROM titles WHERE industryMW='Industrial Machinery'
+SELECT industryMW FROM titles WHERE industryMW='Industrial Electronics'
+SELECT industryMW FROM titles WHERE industryMW='Securities'
+SELECT industryMW FROM titles WHERE industryMW='Software'
+SELECT industryMW FROM titles WHERE industryMW='Wireless Telecommunications Services'
+SELECT industryMW FROM titles WHERE industryMW='Building Materials/Products'
+SELECT industryMW FROM titles WHERE industryMW='Biotechnology'
+SELECT industryMW FROM titles WHERE industryMW='Consumer Finance'
+SELECT industryMW FROM titles WHERE industryMW='Drug Retail'
+SELECT industryMW FROM titles WHERE industryMW='Precision Products'
+SELECT industryMW FROM titles WHERE industryMW='Luxury Goods'
+SELECT industryMW FROM titles WHERE industryMW='Precision Products'
+SELECT industryMW FROM titles WHERE industryMW='Pharmaceuticals'
+SELECT industryMW FROM titles WHERE industryMW='Healthcare Provision'
+SELECT industryMW FROM titles WHERE industryMW='Mobile Machinery'
+SELECT industryMW FROM titles WHERE industryMW='Software'
+SELECT industryMW FROM titles WHERE industryMW='Software'
+SELECT industryMW FROM titles WHERE industryMW='Medical Equipment/Supplies'
+SELECT industryMW FROM titles WHERE industryMW='Pharmaceuticals'
+SELECT industryMW FROM titles WHERE industryMW='Investment Advisors'
+SELECT industryMW FROM titles WHERE industryMW='Medical Equipment/Supplies'
+SELECT industryMW FROM titles WHERE industryMW='Chemicals'
+SELECT industryMW FROM titles WHERE industryMW='Pharmaceuticals'
+SELECT industryMW FROM titles WHERE industryMW='void'
+SELECT industryMW FROM titles WHERE industryMW='Food Products'
+SELECT industryMW FROM titles WHERE industryMW='Building Materials/Products'
+SELECT industryMW FROM titles WHERE industryMW='Audio/Video Equipment'
+SELECT industryMW FROM titles WHERE industryMW='Internet/Online'
+SELECT industryMW FROM titles WHERE industryMW='Mixed Retailing'
+SELECT industryMW FROM titles WHERE industryMW='Food Products'
+SELECT industryMW FROM titles WHERE industryMW='Building Materials/Products'
+SELECT industryMW FROM titles WHERE industryMW='Biotechnology'
+SELECT industryMW FROM titles WHERE industryMW='Tourism'
+SELECT industryMW FROM titles WHERE industryMW='Diversified Business Services'
+SELECT industryMW FROM titles WHERE industryMW='Chemicals'
+SELECT industryMW FROM titles WHERE industryMW='Food Products'
+SELECT industryMW FROM titles WHERE industryMW='void'
+SELECT industryMW FROM titles WHERE industryMW='Banking'
+SELECT industryMW FROM titles WHERE industryMW='Wired Telecommunications Services'
+SELECT industryMW FROM titles WHERE industryMW='void'
+SELECT industryMW FROM titles WHERE industryMW='Major Oil & Gas'
+SELECT industryMW FROM titles WHERE industryMW='Chemicals'
+SELECT industryMW FROM titles WHERE industryMW='Wireless Telecommunications Services'
+SELECT industryMW FROM titles WHERE industryMW='Reinsurance'
+SELECT industryMW FROM titles WHERE industryMW='Hotels'
+SELECT industryMW FROM titles WHERE industryMW='Life Insurance'
+SELECT industryMW FROM titles WHERE industryMW='Clothing'
+SELECT industryMW FROM titles WHERE industryMW='Mobile Machinery'
+SELECT industryMW FROM titles WHERE industryMW='Food Retail'
+SELECT industryMW FROM titles WHERE industryMW='Major Oil & Gas'
+SELECT industryMW FROM titles WHERE industryMW='Industrial Electronics'
+SELECT industryMW FROM titles WHERE industryMW='Wireless Telecommunications Services'
+SELECT industryMW FROM titles WHERE industryMW='Electric Utilities'
+SELECT industryMW FROM titles WHERE industryMW='Major International Banks'
+SELECT industryMW FROM titles WHERE industryMW='Banking'
+SELECT industryMW FROM titles WHERE industryMW='Software'
+SELECT industryMW FROM titles WHERE industryMW='Automobiles'
+SELECT industryMW FROM titles WHERE industryMW='Tobacco'
+SELECT industryMW FROM titles WHERE industryMW='Wireless Telecommunications Services'
+SELECT industryMW FROM titles WHERE industryMW='Computers/Consumer Electronics'
+SELECT industryMW FROM titles WHERE industryMW='Pharmaceuticals'
+SELECT industryMW FROM titles WHERE industryMW='Biotechnology'
+SELECT industryMW FROM titles WHERE industryMW='Full-Line Insurance'
+SELECT industryMW FROM titles WHERE industryMW='Restaurants'
+SELECT industryMW FROM titles WHERE industryMW='Leisure Goods'
+SELECT industryMW FROM titles WHERE industryMW='Internet/Online'
+SELECT industryMW FROM titles WHERE industryMW='Passenger Airlines'
+SELECT industryMW FROM titles WHERE industryMW='Internet/Online'
+SELECT industryMW FROM titles WHERE industryMW='Aluminum'
+SELECT industryMW FROM titles WHERE industryMW='Home Goods Retail'
+SELECT industryMW FROM titles WHERE industryMW='Major Oil & Gas'
+SELECT industryMW FROM titles WHERE industryMW='Pharmaceuticals'
+SELECT industryMW FROM titles WHERE industryMW='Restaurants'
+SELECT industryMW FROM titles WHERE industryMW='Industrial Electronics'
+SELECT industryMW FROM titles WHERE industryMW='Alcoholic Beverages/Drinks'
+SELECT industryMW FROM titles WHERE industryMW='Motion Picture/Sound Recording'
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Precision Products'
+INSERT INTO classificationsMW(sector,industry) VALUES('Industrial Goods','Precision Products')
+INSERT INTO classificationsMW(sector,industry) VALUES('Industrial Goods','Precision Products')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Food Products'
+INSERT INTO classificationsMW(sector,industry) VALUES('Consumer Goods','Food Products')
+INSERT INTO classificationsMW(sector,industry) VALUES('Consumer Goods','Food Products')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='General Mining'
+INSERT INTO classificationsMW(sector,industry) VALUES('Basic Materials/Resources','General Mining')
+INSERT INTO classificationsMW(sector,industry) VALUES('Basic Materials/Resources','General Mining')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Major International Banks'
+INSERT INTO classificationsMW(sector,industry) VALUES('Financial Services','Major International Banks')
+INSERT INTO classificationsMW(sector,industry) VALUES('Financial Services','Major International Banks')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Investment Advisors'
+INSERT INTO classificationsMW(sector,industry) VALUES('Financial Services','Investment Advisors')
+INSERT INTO classificationsMW(sector,industry) VALUES('Financial Services','Investment Advisors')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='void'
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Banking'
+INSERT INTO classificationsMW(sector,industry) VALUES('Financial Services','Banking')
+INSERT INTO classificationsMW(sector,industry) VALUES('Financial Services','Banking')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Food Retail'
+INSERT INTO classificationsMW(sector,industry) VALUES('Retail/Wholesale','Food Retail')
+INSERT INTO classificationsMW(sector,industry) VALUES('Retail/Wholesale','Food Retail')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Passenger Airlines'
+INSERT INTO classificationsMW(sector,industry) VALUES('Transportation/Logistics','Passenger Airlines')
+INSERT INTO classificationsMW(sector,industry) VALUES('Transportation/Logistics','Passenger Airlines')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Major Oil & Gas'
+INSERT INTO classificationsMW(sector,industry) VALUES('Companies on the Energy Service','Major Oil & Gas')
+INSERT INTO classificationsMW(sector,industry) VALUES('Companies on the Energy Service','Major Oil & Gas')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Networking'
+INSERT INTO classificationsMW(sector,industry) VALUES('Technology','Networking')
+INSERT INTO classificationsMW(sector,industry) VALUES('Technology','Networking')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Diversified Holding Companies'
+INSERT INTO classificationsMW(sector,industry) VALUES('Business/Consumer Services','Diversified Holding Companies')
+INSERT INTO classificationsMW(sector,industry) VALUES('Business/Consumer Services','Diversified Holding Companies')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Software'
+INSERT INTO classificationsMW(sector,industry) VALUES('Technology','Software')
+INSERT INTO classificationsMW(sector,industry) VALUES('Technology','Software')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Industrial Electronics'
+INSERT INTO classificationsMW(sector,industry) VALUES('Industrial Goods','Industrial Electronics')
+INSERT INTO classificationsMW(sector,industry) VALUES('Industrial Goods','Industrial Electronics')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Semiconductors'
+INSERT INTO classificationsMW(sector,industry) VALUES('Technology','Semiconductors')
+INSERT INTO classificationsMW(sector,industry) VALUES('Technology','Semiconductors')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Wireless Telecommunications Services'
+INSERT INTO classificationsMW(sector,industry) VALUES('Telecommunication Services','Wireless Telecommunications Services')
+INSERT INTO classificationsMW(sector,industry) VALUES('Telecommunication Services','Wireless Telecommunications Services')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Multiutilities'
+INSERT INTO classificationsMW(sector,industry) VALUES('Companies on the Energy Service','Multiutilities')
+INSERT INTO classificationsMW(sector,industry) VALUES('Companies on the Energy Service','Multiutilities')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Broadcasting'
+INSERT INTO classificationsMW(sector,industry) VALUES('Media/Entertainment','Broadcasting')
+INSERT INTO classificationsMW(sector,industry) VALUES('Media/Entertainment','Broadcasting')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Renewable Energy Generation'
+INSERT INTO classificationsMW(sector,industry) VALUES('Companies on the Energy Service','Renewable Energy Generation')
+INSERT INTO classificationsMW(sector,industry) VALUES('Companies on the Energy Service','Renewable Energy Generation')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Securities'
+INSERT INTO classificationsMW(sector,industry) VALUES('Financial Services','Securities')
+INSERT INTO classificationsMW(sector,industry) VALUES('Financial Services','Securities')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Internet/Online'
+INSERT INTO classificationsMW(sector,industry) VALUES('Technology','Internet/Online')
+INSERT INTO classificationsMW(sector,industry) VALUES('Technology','Internet/Online')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Automobiles'
+INSERT INTO classificationsMW(sector,industry) VALUES('Automotive','Automobiles')
+INSERT INTO classificationsMW(sector,industry) VALUES('Automotive','Automobiles')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Motor Vehicle Parts'
+INSERT INTO classificationsMW(sector,industry) VALUES('Automotive','Motor Vehicle Parts')
+INSERT INTO classificationsMW(sector,industry) VALUES('Automotive','Motor Vehicle Parts')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Full-Line Insurance'
+INSERT INTO classificationsMW(sector,industry) VALUES('Financial Services','Full-Line Insurance')
+INSERT INTO classificationsMW(sector,industry) VALUES('Financial Services','Full-Line Insurance')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Pharmaceuticals'
+INSERT INTO classificationsMW(sector,industry) VALUES('Health Care/Life Sciences','Pharmaceuticals')
+INSERT INTO classificationsMW(sector,industry) VALUES('Health Care/Life Sciences','Pharmaceuticals')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Alternative Fuels'
+INSERT INTO classificationsMW(sector,industry) VALUES('Companies on the Energy Service','Alternative Fuels')
+INSERT INTO classificationsMW(sector,industry) VALUES('Companies on the Energy Service','Alternative Fuels')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Tourism'
+INSERT INTO classificationsMW(sector,industry) VALUES('Leisure/Arts/Hospitality','Tourism')
+INSERT INTO classificationsMW(sector,industry) VALUES('Leisure/Arts/Hospitality','Tourism')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Gold'
+INSERT INTO classificationsMW(sector,industry) VALUES('Basic Materials/Resources','Gold')
+INSERT INTO classificationsMW(sector,industry) VALUES('Basic Materials/Resources','Gold')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Chemicals'
+INSERT INTO classificationsMW(sector,industry) VALUES('Basic Materials/Resources','Chemicals')
+INSERT INTO classificationsMW(sector,industry) VALUES('Basic Materials/Resources','Chemicals')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Precious Metals'
+INSERT INTO classificationsMW(sector,industry) VALUES('Basic Materials/Resources','Precious Metals')
+INSERT INTO classificationsMW(sector,industry) VALUES('Basic Materials/Resources','Precious Metals')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Mixed Retailing'
+INSERT INTO classificationsMW(sector,industry) VALUES('Retail/Wholesale','Mixed Retailing')
+INSERT INTO classificationsMW(sector,industry) VALUES('Retail/Wholesale','Mixed Retailing')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Iron/Steel'
+INSERT INTO classificationsMW(sector,industry) VALUES('Basic Materials/Resources','Iron/Steel')
+INSERT INTO classificationsMW(sector,industry) VALUES('Basic Materials/Resources','Iron/Steel')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Consumer Services'
+INSERT INTO classificationsMW(sector,industry) VALUES('Business/Consumer Services','Consumer Services')
+INSERT INTO classificationsMW(sector,industry) VALUES('Business/Consumer Services','Consumer Services')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Medical Equipment/Supplies'
+INSERT INTO classificationsMW(sector,industry) VALUES('Health Care/Life Sciences','Medical Equipment/Supplies')
+INSERT INTO classificationsMW(sector,industry) VALUES('Health Care/Life Sciences','Medical Equipment/Supplies')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Footwear'
+INSERT INTO classificationsMW(sector,industry) VALUES('Consumer Goods','Footwear')
+INSERT INTO classificationsMW(sector,industry) VALUES('Consumer Goods','Footwear')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Clothing Retail'
+INSERT INTO classificationsMW(sector,industry) VALUES('Retail/Wholesale','Clothing Retail')
+INSERT INTO classificationsMW(sector,industry) VALUES('Retail/Wholesale','Clothing Retail')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Containers/Packaging'
+INSERT INTO classificationsMW(sector,industry) VALUES('Industrial Goods','Containers/Packaging')
+INSERT INTO classificationsMW(sector,industry) VALUES('Industrial Goods','Containers/Packaging')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Air Freight'
+INSERT INTO classificationsMW(sector,industry) VALUES('Transportation/Logistics','Air Freight')
+INSERT INTO classificationsMW(sector,industry) VALUES('Transportation/Logistics','Air Freight')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Biotechnology'
+INSERT INTO classificationsMW(sector,industry) VALUES('Health Care/Life Sciences','Biotechnology')
+INSERT INTO classificationsMW(sector,industry) VALUES('Health Care/Life Sciences','Biotechnology')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Healthcare Provision'
+INSERT INTO classificationsMW(sector,industry) VALUES('Health Care/Life Sciences','Healthcare Provision')
+INSERT INTO classificationsMW(sector,industry) VALUES('Health Care/Life Sciences','Healthcare Provision')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Building Materials/Products'
+INSERT INTO classificationsMW(sector,industry) VALUES('Real Estate/Construction','Building Materials/Products')
+INSERT INTO classificationsMW(sector,industry) VALUES('Real Estate/Construction','Building Materials/Products')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Tires'
+INSERT INTO classificationsMW(sector,industry) VALUES('Automotive','Tires')
+INSERT INTO classificationsMW(sector,industry) VALUES('Automotive','Tires')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Emerging Technologies'
+INSERT INTO classificationsMW(sector,industry) VALUES('Technology','Emerging Technologies')
+INSERT INTO classificationsMW(sector,industry) VALUES('Technology','Emerging Technologies')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Sports Goods'
+INSERT INTO classificationsMW(sector,industry) VALUES('Consumer Goods','Sports Goods')
+INSERT INTO classificationsMW(sector,industry) VALUES('Consumer Goods','Sports Goods')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Employment/Training Services'
+INSERT INTO classificationsMW(sector,industry) VALUES('Business/Consumer Services','Employment/Training Services')
+INSERT INTO classificationsMW(sector,industry) VALUES('Business/Consumer Services','Employment/Training Services')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Alcoholic Beverages/Drinks'
+INSERT INTO classificationsMW(sector,industry) VALUES('Consumer Goods','Alcoholic Beverages/Drinks')
+INSERT INTO classificationsMW(sector,industry) VALUES('Consumer Goods','Alcoholic Beverages/Drinks')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Real Estate Developers'
+INSERT INTO classificationsMW(sector,industry) VALUES('Real Estate/Construction','Real Estate Developers')
+INSERT INTO classificationsMW(sector,industry) VALUES('Real Estate/Construction','Real Estate Developers')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Computers/Consumer Electronics'
+INSERT INTO classificationsMW(sector,industry) VALUES('Technology','Computers/Consumer Electronics')
+INSERT INTO classificationsMW(sector,industry) VALUES('Technology','Computers/Consumer Electronics')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Audio/Video Equipment'
+INSERT INTO classificationsMW(sector,industry) VALUES('Consumer Goods','Audio/Video Equipment')
+INSERT INTO classificationsMW(sector,industry) VALUES('Consumer Goods','Audio/Video Equipment')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Railroads'
+INSERT INTO classificationsMW(sector,industry) VALUES('Transportation/Logistics','Railroads')
+INSERT INTO classificationsMW(sector,industry) VALUES('Transportation/Logistics','Railroads')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='N/A'
+INSERT INTO classificationsMW(sector,industry) VALUES('N/A','N/A')
+INSERT INTO classificationsMW(sector,industry) VALUES('N/A','N/A')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Specialty Retail'
+INSERT INTO classificationsMW(sector,industry) VALUES('Retail/Wholesale','Specialty Retail')
+INSERT INTO classificationsMW(sector,industry) VALUES('Retail/Wholesale','Specialty Retail')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Non-Alcoholic Beverages/Drinks'
+INSERT INTO classificationsMW(sector,industry) VALUES('Consumer Goods','Non-Alcoholic Beverages/Drinks')
+INSERT INTO classificationsMW(sector,industry) VALUES('Consumer Goods','Non-Alcoholic Beverages/Drinks')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Computer Services'
+INSERT INTO classificationsMW(sector,industry) VALUES('Business/Consumer Services','Computer Services')
+INSERT INTO classificationsMW(sector,industry) VALUES('Business/Consumer Services','Computer Services')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Toys & Games'
+INSERT INTO classificationsMW(sector,industry) VALUES('Consumer Goods','Toys & Games')
+INSERT INTO classificationsMW(sector,industry) VALUES('Consumer Goods','Toys & Games')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Construction'
+INSERT INTO classificationsMW(sector,industry) VALUES('Real Estate/Construction','Construction')
+INSERT INTO classificationsMW(sector,industry) VALUES('Real Estate/Construction','Construction')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Luxury Goods'
+INSERT INTO classificationsMW(sector,industry) VALUES('Consumer Goods','Luxury Goods')
+INSERT INTO classificationsMW(sector,industry) VALUES('Consumer Goods','Luxury Goods')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Nondurable Household Products'
+INSERT INTO classificationsMW(sector,industry) VALUES('Consumer Goods','Nondurable Household Products')
+INSERT INTO classificationsMW(sector,industry) VALUES('Consumer Goods','Nondurable Household Products')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Reinsurance'
+INSERT INTO classificationsMW(sector,industry) VALUES('Financial Services','Reinsurance')
+INSERT INTO classificationsMW(sector,industry) VALUES('Financial Services','Reinsurance')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Aerospace Products/Parts'
+INSERT INTO classificationsMW(sector,industry) VALUES('Industrial Goods','Aerospace Products/Parts')
+INSERT INTO classificationsMW(sector,industry) VALUES('Industrial Goods','Aerospace Products/Parts')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Drug Retail'
+INSERT INTO classificationsMW(sector,industry) VALUES('Retail/Wholesale','Drug Retail')
+INSERT INTO classificationsMW(sector,industry) VALUES('Retail/Wholesale','Drug Retail')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Hotels'
+INSERT INTO classificationsMW(sector,industry) VALUES('Leisure/Arts/Hospitality','Hotels')
+INSERT INTO classificationsMW(sector,industry) VALUES('Leisure/Arts/Hospitality','Hotels')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Personal Care Products/Appliances'
+INSERT INTO classificationsMW(sector,industry) VALUES('Consumer Goods','Personal Care Products/Appliances')
+INSERT INTO classificationsMW(sector,industry) VALUES('Consumer Goods','Personal Care Products/Appliances')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Advertising/Marketing/Public Relations'
+INSERT INTO classificationsMW(sector,industry) VALUES('Business/Consumer Services','Advertising/Marketing/Public Relations')
+INSERT INTO classificationsMW(sector,industry) VALUES('Business/Consumer Services','Advertising/Marketing/Public Relations')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Restaurants'
+INSERT INTO classificationsMW(sector,industry) VALUES('Leisure/Arts/Hospitality','Restaurants')
+INSERT INTO classificationsMW(sector,industry) VALUES('Leisure/Arts/Hospitality','Restaurants')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Industrial Machinery'
+INSERT INTO classificationsMW(sector,industry) VALUES('Industrial Goods','Industrial Machinery')
+INSERT INTO classificationsMW(sector,industry) VALUES('Industrial Goods','Industrial Machinery')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Mobile Machinery'
+INSERT INTO classificationsMW(sector,industry) VALUES('Industrial Goods','Mobile Machinery')
+INSERT INTO classificationsMW(sector,industry) VALUES('Industrial Goods','Mobile Machinery')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Jewelry & Watches'
+INSERT INTO classificationsMW(sector,industry) VALUES('Consumer Goods','Jewelry & Watches')
+INSERT INTO classificationsMW(sector,industry) VALUES('Consumer Goods','Jewelry & Watches')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Industrial Products'
+INSERT INTO classificationsMW(sector,industry) VALUES('Industrial Goods','Industrial Products')
+INSERT INTO classificationsMW(sector,industry) VALUES('Industrial Goods','Industrial Products')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Electric Utilities'
+INSERT INTO classificationsMW(sector,industry) VALUES('Companies on the Energy Service','Electric Utilities')
+INSERT INTO classificationsMW(sector,industry) VALUES('Companies on the Energy Service','Electric Utilities')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Transportation Services'
+INSERT INTO classificationsMW(sector,industry) VALUES('Transportation/Logistics','Transportation Services')
+INSERT INTO classificationsMW(sector,industry) VALUES('Transportation/Logistics','Transportation Services')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Consumer Finance'
+INSERT INTO classificationsMW(sector,industry) VALUES('Financial Services','Consumer Finance')
+INSERT INTO classificationsMW(sector,industry) VALUES('Financial Services','Consumer Finance')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Life Insurance'
+INSERT INTO classificationsMW(sector,industry) VALUES('Financial Services','Life Insurance')
+INSERT INTO classificationsMW(sector,industry) VALUES('Financial Services','Life Insurance')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Diversified Business Services'
+INSERT INTO classificationsMW(sector,industry) VALUES('Business/Consumer Services','Diversified Business Services')
+INSERT INTO classificationsMW(sector,industry) VALUES('Business/Consumer Services','Diversified Business Services')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Wired Telecommunications Services'
+INSERT INTO classificationsMW(sector,industry) VALUES('Telecommunication Services','Wired Telecommunications Services')
+INSERT INTO classificationsMW(sector,industry) VALUES('Telecommunication Services','Wired Telecommunications Services')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Clothing'
+INSERT INTO classificationsMW(sector,industry) VALUES('Consumer Goods','Clothing')
+INSERT INTO classificationsMW(sector,industry) VALUES('Consumer Goods','Clothing')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Tobacco'
+INSERT INTO classificationsMW(sector,industry) VALUES('Consumer Goods','Tobacco')
+INSERT INTO classificationsMW(sector,industry) VALUES('Consumer Goods','Tobacco')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Leisure Goods'
+INSERT INTO classificationsMW(sector,industry) VALUES('Consumer Goods','Leisure Goods')
+INSERT INTO classificationsMW(sector,industry) VALUES('Consumer Goods','Leisure Goods')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Aluminum'
+INSERT INTO classificationsMW(sector,industry) VALUES('Basic Materials/Resources','Aluminum')
+INSERT INTO classificationsMW(sector,industry) VALUES('Basic Materials/Resources','Aluminum')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Home Goods Retail'
+INSERT INTO classificationsMW(sector,industry) VALUES('Retail/Wholesale','Home Goods Retail')
+INSERT INTO classificationsMW(sector,industry) VALUES('Retail/Wholesale','Home Goods Retail')
+SELECT sectorMW,industryMW FROM titles WHERE industryMW='Motion Picture/Sound Recording'
+INSERT INTO classificationsMW(sector,industry) VALUES('Media/Entertainment','Motion Picture/Sound Recording')
+INSERT INTO classificationsMW(sector,industry) VALUES('Media/Entertainment','Motion Picture/Sound Recording')
+SELECT industryYF FROM titles WHERE industryYF='Semiconductor Equipment & Materials'
+SELECT industryYF FROM titles WHERE industryYF='Packaged Foods'
+SELECT industryYF FROM titles WHERE industryYF='Other Industrial Metals & Mining'
+SELECT industryYF FROM titles WHERE industryYF='Banks—Diversified'
+SELECT industryYF FROM titles WHERE industryYF='Banks—Regional'
+SELECT industryYF FROM titles WHERE industryYF='Asset Management'
+SELECT industryYF FROM titles WHERE industryYF='Internet Retail'
+SELECT industryYF FROM titles WHERE industryYF='Banks—Regional'
+SELECT industryYF FROM titles WHERE industryYF='Banks—Diversified'
+SELECT industryYF FROM titles WHERE industryYF='Banks—Regional'
+SELECT industryYF FROM titles WHERE industryYF='Specialty Retail'
+SELECT industryYF FROM titles WHERE industryYF='Airlines'
+SELECT industryYF FROM titles WHERE industryYF='Oil & Gas Integrated'
+SELECT industryYF FROM titles WHERE industryYF='Communication Equipment'
+SELECT industryYF FROM titles WHERE industryYF='Banks—Diversified'
+SELECT industryYF FROM titles WHERE industryYF='Oil & Gas Integrated'
+SELECT industryYF FROM titles WHERE industryYF='Banks—Diversified'
+SELECT industryYF FROM titles WHERE industryYF='Banks—Diversified'
+SELECT industryYF FROM titles WHERE industryYF='Metal Fabrication'
+SELECT industryYF FROM titles WHERE industryYF='Banks—Diversified'
+SELECT industryYF FROM titles WHERE industryYF='Internet Content & Information'
+SELECT industryYF FROM titles WHERE industryYF='Beverages—Non-Alcoholic'
+SELECT industryYF FROM titles WHERE industryYF='Specialty Industrial Machinery'
+SELECT industryYF FROM titles WHERE industryYF='Banks—Regional'
+SELECT industryYF FROM titles WHERE industryYF='Electrical Equipment & Parts'
+SELECT industryYF FROM titles WHERE industryYF='Entertainment'
+SELECT industryYF FROM titles WHERE industryYF='Semiconductors'
+SELECT industryYF FROM titles WHERE industryYF='Telecom Services'
+SELECT industryYF FROM titles WHERE industryYF='Utilities—Diversified'
+SELECT industryYF FROM titles WHERE industryYF='Software—Infrastructure'
+SELECT industryYF FROM titles WHERE industryYF='Software—Application'
+SELECT industryYF FROM titles WHERE industryYF='Consumer Electronics'
+SELECT industryYF FROM titles WHERE industryYF='Broadcasting'
+SELECT industryYF FROM titles WHERE industryYF='Telecom Services'
+SELECT industryYF FROM titles WHERE industryYF='Aerospace & Defense'
+SELECT industryYF FROM titles WHERE industryYF='Utilities—Renewable'
+SELECT industryYF FROM titles WHERE industryYF='Utilities—Diversified'
+SELECT industryYF FROM titles WHERE industryYF='Software—Infrastructure'
+SELECT industryYF FROM titles WHERE industryYF='Oil & Gas Integrated'
+SELECT industryYF FROM titles WHERE industryYF='Semiconductors'
+SELECT industryYF FROM titles WHERE industryYF='Internet Content & Information'
+SELECT industryYF FROM titles WHERE industryYF='Auto Manufacturers'
+SELECT industryYF FROM titles WHERE industryYF='Auto Parts'
+SELECT industryYF FROM titles WHERE industryYF='Insurance—Diversified'
+SELECT industryYF FROM titles WHERE industryYF='Electrical Equipment & Parts'
+SELECT industryYF FROM titles WHERE industryYF='Biotechnology'
+SELECT industryYF FROM titles WHERE industryYF='Electrical Equipment & Parts'
+SELECT industryYF FROM titles WHERE industryYF='Travel Services'
+SELECT industryYF FROM titles WHERE industryYF='Gold'
+SELECT industryYF FROM titles WHERE industryYF='Semiconductor Equipment & Materials'
+SELECT industryYF FROM titles WHERE industryYF='Specialty Chemicals'
+SELECT industryYF FROM titles WHERE industryYF='Banks—Regional'
+SELECT industryYF FROM titles WHERE industryYF='Grocery Stores'
+SELECT industryYF FROM titles WHERE industryYF='Other Industrial Metals & Mining'
+SELECT industryYF FROM titles WHERE industryYF='Internet Retail'
+SELECT industryYF FROM titles WHERE industryYF='Insurance—Diversified'
+SELECT industryYF FROM titles WHERE industryYF='Airlines'
+SELECT industryYF FROM titles WHERE industryYF='Software—Application'
+SELECT industryYF FROM titles WHERE industryYF='Specialty Industrial Machinery'
+SELECT industryYF FROM titles WHERE industryYF='Utilities—Independent Power Producers'
+SELECT industryYF FROM titles WHERE industryYF='Silver'
+SELECT industryYF FROM titles WHERE industryYF='Software—Application'
+SELECT industryYF FROM titles WHERE industryYF='Internet Retail'
+SELECT industryYF FROM titles WHERE industryYF='Steel'
+SELECT industryYF FROM titles WHERE industryYF='Auto Manufacturers'
+SELECT industryYF FROM titles WHERE industryYF='Education & Training Services'
+SELECT industryYF FROM titles WHERE industryYF='Other Industrial Metals & Mining'
+SELECT industryYF FROM titles WHERE industryYF='Airlines'
+SELECT industryYF FROM titles WHERE industryYF='Drug Manufacturers—General'
+SELECT industryYF FROM titles WHERE industryYF='Travel Services'
+SELECT industryYF FROM titles WHERE industryYF='Auto Manufacturers'
+SELECT industryYF FROM titles WHERE industryYF='Diagnostics & Research'
+SELECT industryYF FROM titles WHERE industryYF='Apparel Retail'
+SELECT industryYF FROM titles WHERE industryYF='Apparel Retail'
+SELECT industryYF FROM titles WHERE industryYF='Utilities—Diversified'
+SELECT industryYF FROM titles WHERE industryYF='Semiconductors'
+SELECT industryYF FROM titles WHERE industryYF='Packaging & Containers'
+SELECT industryYF FROM titles WHERE industryYF='Banks—Diversified'
+SELECT industryYF FROM titles WHERE industryYF='Auto Manufacturers'
+SELECT industryYF FROM titles WHERE industryYF='Integrated Freight & Logistics'
+SELECT industryYF FROM titles WHERE industryYF='Specialty Retail'
+SELECT industryYF FROM titles WHERE industryYF='Biotechnology'
+SELECT industryYF FROM titles WHERE industryYF='Auto Manufacturers'
+SELECT industryYF FROM titles WHERE industryYF='Banks—Regional'
+SELECT industryYF FROM titles WHERE industryYF='Oil & Gas Integrated'
+SELECT industryYF FROM titles WHERE industryYF='Medical Care Facilities'
+SELECT industryYF FROM titles WHERE industryYF='Building Materials'
+SELECT industryYF FROM titles WHERE industryYF='Building Materials'
+SELECT industryYF FROM titles WHERE industryYF='Asset Management'
+SELECT industryYF FROM titles WHERE industryYF='Auto Parts'
+SELECT industryYF FROM titles WHERE industryYF='Software—Application'
+SELECT industryYF FROM titles WHERE industryYF='Leisure'
+SELECT industryYF FROM titles WHERE industryYF='Software—Application'
+SELECT industryYF FROM titles WHERE industryYF='Software—Infrastructure'
+SELECT industryYF FROM titles WHERE industryYF='Staffing & Employment Services'
+SELECT industryYF FROM titles WHERE industryYF='Other Industrial Metals & Mining'
+SELECT industryYF FROM titles WHERE industryYF='Auto Manufacturers'
+SELECT industryYF FROM titles WHERE industryYF='Auto Manufacturers'
+SELECT industryYF FROM titles WHERE industryYF='Solar'
+SELECT industryYF FROM titles WHERE industryYF='Beverages—Brewers'
+SELECT industryYF FROM titles WHERE industryYF='Drug Manufacturers—General'
+SELECT industryYF FROM titles WHERE industryYF='Specialty Industrial Machinery'
+SELECT industryYF FROM titles WHERE industryYF='Real Estate Services'
+SELECT industryYF FROM titles WHERE industryYF='Chemicals'
+SELECT industryYF FROM titles WHERE industryYF='Specialty Chemicals'
+SELECT industryYF FROM titles WHERE industryYF='Computer Hardware'
+SELECT industryYF FROM titles WHERE industryYF='Semiconductors'
+SELECT industryYF FROM titles WHERE industryYF='Consumer Electronics'
+SELECT industryYF FROM titles WHERE industryYF='Oil & Gas Integrated'
+SELECT industryYF FROM titles WHERE industryYF='Medical Care Facilities'
+SELECT industryYF FROM titles WHERE industryYF='Biotechnology'
+SELECT industryYF FROM titles WHERE industryYF='Specialty Chemicals'
+SELECT industryYF FROM titles WHERE industryYF='Biotechnology'
+SELECT industryYF FROM titles WHERE industryYF='Electrical Equipment & Parts'
+SELECT industryYF FROM titles WHERE industryYF='Solar'
+SELECT industryYF FROM titles WHERE industryYF='Airlines'
+SELECT industryYF FROM titles WHERE industryYF='Household & Personal Products'
+SELECT industryYF FROM titles WHERE industryYF='Diagnostics & Research'
+SELECT industryYF FROM titles WHERE industryYF='Railroads'
+SELECT industryYF FROM titles WHERE industryYF='Drug Manufacturers—General'
+SELECT industryYF FROM titles WHERE industryYF='Medical Instruments & Supplies'
+SELECT industryYF FROM titles WHERE industryYF='Biotechnology'
+SELECT industryYF FROM titles WHERE industryYF='Specialty Retail'
+SELECT industryYF FROM titles WHERE industryYF='Packaged Foods'
+SELECT industryYF FROM titles WHERE industryYF='Building Materials'
+SELECT industryYF FROM titles WHERE industryYF='Auto Manufacturers'
+SELECT industryYF FROM titles WHERE industryYF='Beverages—Non-Alcoholic'
+SELECT industryYF FROM titles WHERE industryYF='Auto Manufacturers'
+SELECT industryYF FROM titles WHERE industryYF='Communication Equipment'
+SELECT industryYF FROM titles WHERE industryYF='Packaged Foods'
+SELECT industryYF FROM titles WHERE industryYF='Auto Manufacturers'
+SELECT industryYF FROM titles WHERE industryYF='Biotechnology'
+SELECT industryYF FROM titles WHERE industryYF='Biotechnology'
+SELECT industryYF FROM titles WHERE industryYF='Semiconductors'
+SELECT industryYF FROM titles WHERE industryYF='Information Technology Services'
+SELECT industryYF FROM titles WHERE industryYF='Internet Content & Information'
+SELECT industryYF FROM titles WHERE industryYF='Airlines'
+SELECT industryYF FROM titles WHERE industryYF='Consumer Electronics'
+SELECT industryYF FROM titles WHERE industryYF='Drug Manufacturers—General'
+SELECT industryYF FROM titles WHERE industryYF='Electronic Gaming & Multimedia'
+SELECT industryYF FROM titles WHERE industryYF='Internet Retail'
+SELECT industryYF FROM titles WHERE industryYF='Financial Conglomerates'
+SELECT industryYF FROM titles WHERE industryYF='Engineering & Construction'
+SELECT industryYF FROM titles WHERE industryYF='Electronic Gaming & Multimedia'
+SELECT industryYF FROM titles WHERE industryYF='Restaurants'
+SELECT industryYF FROM titles WHERE industryYF='Internet Retail'
+SELECT industryYF FROM titles WHERE industryYF='Luxury Goods'
+SELECT industryYF FROM titles WHERE industryYF='Scientific & Technical Instruments'
+SELECT industryYF FROM titles WHERE industryYF='Asset Management'
+SELECT industryYF FROM titles WHERE industryYF='Household & Personal Products'
+SELECT industryYF FROM titles WHERE industryYF='Insurance—Reinsurance'
+SELECT industryYF FROM titles WHERE industryYF='Aerospace & Defense'
+SELECT industryYF FROM titles WHERE industryYF='Communication Equipment'
+SELECT industryYF FROM titles WHERE industryYF='Internet Retail'
+SELECT industryYF FROM titles WHERE industryYF='Auto Manufacturers'
+SELECT industryYF FROM titles WHERE industryYF='Drug Manufacturers—General'
+SELECT industryYF FROM titles WHERE industryYF='Gold'
+SELECT industryYF FROM titles WHERE industryYF='Drug Manufacturers—General'
+SELECT industryYF FROM titles WHERE industryYF='Medical Distribution'
+SELECT industryYF FROM titles WHERE industryYF='Internet Content & Information'
+SELECT industryYF FROM titles WHERE industryYF='Semiconductors'
+SELECT industryYF FROM titles WHERE industryYF='Household & Personal Products'
+SELECT industryYF FROM titles WHERE industryYF='Banks—Diversified'
+SELECT industryYF FROM titles WHERE industryYF='Solar'
+SELECT industryYF FROM titles WHERE industryYF='Specialty Chemicals'
+SELECT industryYF FROM titles WHERE industryYF='Banks—Regional'
+SELECT industryYF FROM titles WHERE industryYF='Consulting Services'
+SELECT industryYF FROM titles WHERE industryYF='Health Information Services'
+SELECT industryYF FROM titles WHERE industryYF='Footwear & Accessories'
+SELECT industryYF FROM titles WHERE industryYF='Software—Infrastructure'
+SELECT industryYF FROM titles WHERE industryYF='Internet Retail'
+SELECT industryYF FROM titles WHERE industryYF='Engineering & Construction'
+SELECT industryYF FROM titles WHERE industryYF='Internet Content & Information'
+SELECT industryYF FROM titles WHERE industryYF='Footwear & Accessories'
+SELECT industryYF FROM titles WHERE industryYF='Packaged Foods'
+SELECT industryYF FROM titles WHERE industryYF='Internet Retail'
+SELECT industryYF FROM titles WHERE industryYF='Drug Manufacturers—Specialty & Generic'
+SELECT industryYF FROM titles WHERE industryYF='Software—Application'
+SELECT industryYF FROM titles WHERE industryYF='Information Technology Services'
+SELECT industryYF FROM titles WHERE industryYF='Building Products & Equipment'
+SELECT industryYF FROM titles WHERE industryYF='Specialty Industrial Machinery'
+SELECT industryYF FROM titles WHERE industryYF='Internet Content & Information'
+SELECT industryYF FROM titles WHERE industryYF='Farm & Heavy Construction Machinery'
+SELECT industryYF FROM titles WHERE industryYF='Specialty Industrial Machinery'
+SELECT industryYF FROM titles WHERE industryYF='Biotechnology'
+SELECT industryYF FROM titles WHERE industryYF='Aerospace & Defense'
+SELECT industryYF FROM titles WHERE industryYF='Auto Manufacturers'
+SELECT industryYF FROM titles WHERE industryYF='Software—Application'
+SELECT industryYF FROM titles WHERE industryYF='Insurance—Diversified'
+SELECT industryYF FROM titles WHERE industryYF='Specialty Industrial Machinery'
+SELECT industryYF FROM titles WHERE industryYF='Restaurants'
+SELECT industryYF FROM titles WHERE industryYF='Financial Data & Stock Exchanges'
+SELECT industryYF FROM titles WHERE industryYF='Telecom Services'
+SELECT industryYF FROM titles WHERE industryYF='Insurance—Diversified'
+SELECT industryYF FROM titles WHERE industryYF='Electrical Equipment & Parts'
+SELECT industryYF FROM titles WHERE industryYF='Software—Application'
+SELECT industryYF FROM titles WHERE industryYF='Luxury Goods'
+SELECT industryYF FROM titles WHERE industryYF='Tools & Accessories'
+SELECT industryYF FROM titles WHERE industryYF='Utilities—Renewable'
+SELECT industryYF FROM titles WHERE industryYF='Chemicals'
+SELECT industryYF FROM titles WHERE industryYF='Software—Application'
+SELECT industryYF FROM titles WHERE industryYF='Internet Content & Information'
+SELECT industryYF FROM titles WHERE industryYF='void'
+SELECT industryYF FROM titles WHERE industryYF='Internet Content & Information'
+SELECT industryYF FROM titles WHERE industryYF='Semiconductors'
+SELECT industryYF FROM titles WHERE industryYF='Airports & Air Services'
+SELECT industryYF FROM titles WHERE industryYF='Software—Infrastructure'
+SELECT industryYF FROM titles WHERE industryYF='Household & Personal Products'
+SELECT industryYF FROM titles WHERE industryYF='Semiconductors'
+SELECT industryYF FROM titles WHERE industryYF='Auto Manufacturers'
+SELECT industryYF FROM titles WHERE industryYF='Credit Services'
+SELECT industryYF FROM titles WHERE industryYF='Electronic Gaming & Multimedia'
+SELECT industryYF FROM titles WHERE industryYF='Credit Services'
+SELECT industryYF FROM titles WHERE industryYF='Insurance—Diversified'
+SELECT industryYF FROM titles WHERE industryYF='Banks—Diversified'
+SELECT industryYF FROM titles WHERE industryYF='Drug Manufacturers—Specialty & Generic'
+SELECT industryYF FROM titles WHERE industryYF='Software—Application'
+SELECT industryYF FROM titles WHERE industryYF='Discount Stores'
+SELECT industryYF FROM titles WHERE industryYF='Pharmaceutical Retailers'
+SELECT industryYF FROM titles WHERE industryYF='Specialty Industrial Machinery'
+SELECT industryYF FROM titles WHERE industryYF='Entertainment'
+SELECT industryYF FROM titles WHERE industryYF='Specialty Industrial Machinery'
+SELECT industryYF FROM titles WHERE industryYF='Insurance—Diversified'
+SELECT industryYF FROM titles WHERE industryYF='Auto Parts'
+SELECT industryYF FROM titles WHERE industryYF='Scientific & Technical Instruments'
+SELECT industryYF FROM titles WHERE industryYF='Internet Content & Information'
+SELECT industryYF FROM titles WHERE industryYF='Beverages—Non-Alcoholic'
+SELECT industryYF FROM titles WHERE industryYF='Capital Markets'
+SELECT industryYF FROM titles WHERE industryYF='Entertainment'
+SELECT industryYF FROM titles WHERE industryYF='Software—Application'
+SELECT industryYF FROM titles WHERE industryYF='Software—Infrastructure'
+SELECT industryYF FROM titles WHERE industryYF='Specialty Retail'
+SELECT industryYF FROM titles WHERE industryYF='Scientific & Technical Instruments'
+SELECT industryYF FROM titles WHERE industryYF='Insurance—Reinsurance'
+SELECT industryYF FROM titles WHERE industryYF='Electronic Gaming & Multimedia'
+SELECT industryYF FROM titles WHERE industryYF='Specialty Chemicals'
+SELECT industryYF FROM titles WHERE industryYF='Drug Manufacturers—General'
+SELECT industryYF FROM titles WHERE industryYF='Internet Content & Information'
+SELECT industryYF FROM titles WHERE industryYF='Internet Retail'
+SELECT industryYF FROM titles WHERE industryYF='Medical Devices'
+SELECT industryYF FROM titles WHERE industryYF='Footwear & Accessories'
+SELECT industryYF FROM titles WHERE industryYF='Specialty Industrial Machinery'
+SELECT industryYF FROM titles WHERE industryYF='Insurance—Diversified'
+SELECT industryYF FROM titles WHERE industryYF='Specialty Industrial Machinery'
+SELECT industryYF FROM titles WHERE industryYF='Specialty Chemicals'
+SELECT industryYF FROM titles WHERE industryYF='Insurance—Diversified'
+SELECT industryYF FROM titles WHERE industryYF='Aerospace & Defense'
+SELECT industryYF FROM titles WHERE industryYF='Credit Services'
+SELECT industryYF FROM titles WHERE industryYF='Entertainment'
+SELECT industryYF FROM titles WHERE industryYF='Solar'
+SELECT industryYF FROM titles WHERE industryYF='Software—Application'
+SELECT industryYF FROM titles WHERE industryYF='Specialty Industrial Machinery'
+SELECT industryYF FROM titles WHERE industryYF='Drug Manufacturers—General'
+SELECT industryYF FROM titles WHERE industryYF='Electronic Gaming & Multimedia'
+SELECT industryYF FROM titles WHERE industryYF='Semiconductor Equipment & Materials'
+SELECT industryYF FROM titles WHERE industryYF='Drug Manufacturers—General'
+SELECT industryYF FROM titles WHERE industryYF='Diagnostics & Research'
+SELECT industryYF FROM titles WHERE industryYF='Software—Infrastructure'
+SELECT industryYF FROM titles WHERE industryYF='Integrated Freight & Logistics'
+SELECT industryYF FROM titles WHERE industryYF='Internet Content & Information'
+SELECT industryYF FROM titles WHERE industryYF='Medical Instruments & Supplies'
+SELECT industryYF FROM titles WHERE industryYF='Specialty Industrial Machinery'
+SELECT industryYF FROM titles WHERE industryYF='Scientific & Technical Instruments'
+SELECT industryYF FROM titles WHERE industryYF='Capital Markets'
+SELECT industryYF FROM titles WHERE industryYF='Software—Application'
+SELECT industryYF FROM titles WHERE industryYF='Telecom Services'
+SELECT industryYF FROM titles WHERE industryYF='Building Products & Equipment'
+SELECT industryYF FROM titles WHERE industryYF='Biotechnology'
+SELECT industryYF FROM titles WHERE industryYF='Credit Services'
+SELECT industryYF FROM titles WHERE industryYF='Pharmaceutical Retailers'
+SELECT industryYF FROM titles WHERE industryYF='Building Products & Equipment'
+SELECT industryYF FROM titles WHERE industryYF='Luxury Goods'
+SELECT industryYF FROM titles WHERE industryYF='Security & Protection Services'
+SELECT industryYF FROM titles WHERE industryYF='Biotechnology'
+SELECT industryYF FROM titles WHERE industryYF='Health Information Services'
+SELECT industryYF FROM titles WHERE industryYF='Specialty Industrial Machinery'
+SELECT industryYF FROM titles WHERE industryYF='Software—Application'
+SELECT industryYF FROM titles WHERE industryYF='Software—Infrastructure'
+SELECT industryYF FROM titles WHERE industryYF='Medical Instruments & Supplies'
+SELECT industryYF FROM titles WHERE industryYF='Chemicals'
+SELECT industryYF FROM titles WHERE industryYF='Asset Management'
+SELECT industryYF FROM titles WHERE industryYF='Medical Instruments & Supplies'
+SELECT industryYF FROM titles WHERE industryYF='Specialty Chemicals'
+SELECT industryYF FROM titles WHERE industryYF='Drug Manufacturers—Specialty & Generic'
+SELECT industryYF FROM titles WHERE industryYF='Software—Infrastructure'
+SELECT industryYF FROM titles WHERE industryYF='Packaged Foods'
+SELECT industryYF FROM titles WHERE industryYF='void'
+SELECT industryYF FROM titles WHERE industryYF='void'
+SELECT industryYF FROM titles WHERE industryYF='Internet Content & Information'
+SELECT industryYF FROM titles WHERE industryYF='Internet Retail'
+SELECT industryYF FROM titles WHERE industryYF='Confectioners'
+SELECT industryYF FROM titles WHERE industryYF='Building Products & Equipment'
+SELECT industryYF FROM titles WHERE industryYF='Biotechnology'
+SELECT industryYF FROM titles WHERE industryYF='Travel Services'
+SELECT industryYF FROM titles WHERE industryYF='Consulting Services'
+SELECT industryYF FROM titles WHERE industryYF='Specialty Chemicals'
+SELECT industryYF FROM titles WHERE industryYF='Confectioners'
+SELECT industryYF FROM titles WHERE industryYF='Utilities—Diversified'
+SELECT industryYF FROM titles WHERE industryYF='Banks—Regional'
+SELECT industryYF FROM titles WHERE industryYF='Telecom Services'
+SELECT industryYF FROM titles WHERE industryYF='void'
+SELECT industryYF FROM titles WHERE industryYF='Oil & Gas Integrated'
+SELECT industryYF FROM titles WHERE industryYF='Specialty Chemicals'
+SELECT industryYF FROM titles WHERE industryYF='Telecom Services'
+SELECT industryYF FROM titles WHERE industryYF='Insurance—Reinsurance'
+SELECT industryYF FROM titles WHERE industryYF='Lodging'
+SELECT industryYF FROM titles WHERE industryYF='Insurance—Diversified'
+SELECT industryYF FROM titles WHERE industryYF='Apparel Manufacturing'
+SELECT industryYF FROM titles WHERE industryYF='Specialty Industrial Machinery'
+SELECT industryYF FROM titles WHERE industryYF='Grocery Stores'
+SELECT industryYF FROM titles WHERE industryYF='Oil & Gas Integrated'
+SELECT industryYF FROM titles WHERE industryYF='Specialty Industrial Machinery'
+SELECT industryYF FROM titles WHERE industryYF='Telecom Services'
+SELECT industryYF FROM titles WHERE industryYF='Utilities—Diversified'
+SELECT industryYF FROM titles WHERE industryYF='Banks—Diversified'
+SELECT industryYF FROM titles WHERE industryYF='Banks—Diversified'
+SELECT industryYF FROM titles WHERE industryYF='Information Technology Services'
+SELECT industryYF FROM titles WHERE industryYF='Auto Manufacturers'
+SELECT industryYF FROM titles WHERE industryYF='Tobacco'
+SELECT industryYF FROM titles WHERE industryYF='Telecom Services'
+SELECT industryYF FROM titles WHERE industryYF='Computer Hardware'
+SELECT industryYF FROM titles WHERE industryYF='Drug Manufacturers—General'
+SELECT industryYF FROM titles WHERE industryYF='Drug Manufacturers—General'
+SELECT industryYF FROM titles WHERE industryYF='Insurance—Diversified'
+SELECT industryYF FROM titles WHERE industryYF='Restaurants'
+SELECT industryYF FROM titles WHERE industryYF='Consumer Electronics'
+SELECT industryYF FROM titles WHERE industryYF='Internet Content & Information'
+SELECT industryYF FROM titles WHERE industryYF='Airlines'
+SELECT industryYF FROM titles WHERE industryYF='Software—Infrastructure'
+SELECT industryYF FROM titles WHERE industryYF='Aluminum'
+SELECT industryYF FROM titles WHERE industryYF='Home Improvement Retail'
+SELECT industryYF FROM titles WHERE industryYF='Oil & Gas E&P'
+SELECT industryYF FROM titles WHERE industryYF='Drug Manufacturers—General'
+SELECT industryYF FROM titles WHERE industryYF='Restaurants'
+SELECT industryYF FROM titles WHERE industryYF='Chemicals'
+SELECT industryYF FROM titles WHERE industryYF='Beverages—Brewers'
+SELECT industryYF FROM titles WHERE industryYF='Broadcasting'
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Semiconductor Equipment & Materials'
+INSERT INTO classificationsYF(sector,industry) VALUES('Technology','Semiconductor Equipment & Materials')
+INSERT INTO classificationsYF(sector,industry) VALUES('Technology','Semiconductor Equipment & Materials')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Packaged Foods'
+INSERT INTO classificationsYF(sector,industry) VALUES('Consumer Defensive','Packaged Foods')
+INSERT INTO classificationsYF(sector,industry) VALUES('Consumer Defensive','Packaged Foods')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Other Industrial Metals & Mining'
+INSERT INTO classificationsYF(sector,industry) VALUES('Basic Materials','Other Industrial Metals & Mining')
+INSERT INTO classificationsYF(sector,industry) VALUES('Basic Materials','Other Industrial Metals & Mining')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Banks—Diversified'
+INSERT INTO classificationsYF(sector,industry) VALUES('Financial Services','Banks—Diversified')
+INSERT INTO classificationsYF(sector,industry) VALUES('Financial Services','Banks—Diversified')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Banks—Regional'
+INSERT INTO classificationsYF(sector,industry) VALUES('Financial Services','Banks—Regional')
+INSERT INTO classificationsYF(sector,industry) VALUES('Financial Services','Banks—Regional')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Asset Management'
+INSERT INTO classificationsYF(sector,industry) VALUES('Financial Services','Asset Management')
+INSERT INTO classificationsYF(sector,industry) VALUES('Financial Services','Asset Management')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Internet Retail'
+INSERT INTO classificationsYF(sector,industry) VALUES('Consumer Cyclical','Internet Retail')
+INSERT INTO classificationsYF(sector,industry) VALUES('Consumer Cyclical','Internet Retail')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Specialty Retail'
+INSERT INTO classificationsYF(sector,industry) VALUES('Consumer Cyclical','Specialty Retail')
+INSERT INTO classificationsYF(sector,industry) VALUES('Consumer Cyclical','Specialty Retail')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Airlines'
+INSERT INTO classificationsYF(sector,industry) VALUES('Industrials','Airlines')
+INSERT INTO classificationsYF(sector,industry) VALUES('Industrials','Airlines')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Oil & Gas Integrated'
+INSERT INTO classificationsYF(sector,industry) VALUES('Energy','Oil & Gas Integrated')
+INSERT INTO classificationsYF(sector,industry) VALUES('Energy','Oil & Gas Integrated')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Communication Equipment'
+INSERT INTO classificationsYF(sector,industry) VALUES('Technology','Communication Equipment')
+INSERT INTO classificationsYF(sector,industry) VALUES('Technology','Communication Equipment')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Metal Fabrication'
+INSERT INTO classificationsYF(sector,industry) VALUES('Industrials','Metal Fabrication')
+INSERT INTO classificationsYF(sector,industry) VALUES('Industrials','Metal Fabrication')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Internet Content & Information'
+INSERT INTO classificationsYF(sector,industry) VALUES('Communication Services','Internet Content & Information')
+INSERT INTO classificationsYF(sector,industry) VALUES('Communication Services','Internet Content & Information')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Beverages—Non-Alcoholic'
+INSERT INTO classificationsYF(sector,industry) VALUES('Consumer Defensive','Beverages—Non-Alcoholic')
+INSERT INTO classificationsYF(sector,industry) VALUES('Consumer Defensive','Beverages—Non-Alcoholic')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Specialty Industrial Machinery'
+INSERT INTO classificationsYF(sector,industry) VALUES('Industrials','Specialty Industrial Machinery')
+INSERT INTO classificationsYF(sector,industry) VALUES('Industrials','Specialty Industrial Machinery')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Electrical Equipment & Parts'
+INSERT INTO classificationsYF(sector,industry) VALUES('Industrials','Electrical Equipment & Parts')
+INSERT INTO classificationsYF(sector,industry) VALUES('Industrials','Electrical Equipment & Parts')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Entertainment'
+INSERT INTO classificationsYF(sector,industry) VALUES('Communication Services','Entertainment')
+INSERT INTO classificationsYF(sector,industry) VALUES('Communication Services','Entertainment')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Semiconductors'
+INSERT INTO classificationsYF(sector,industry) VALUES('Technology','Semiconductors')
+INSERT INTO classificationsYF(sector,industry) VALUES('Technology','Semiconductors')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Telecom Services'
+INSERT INTO classificationsYF(sector,industry) VALUES('Communication Services','Telecom Services')
+INSERT INTO classificationsYF(sector,industry) VALUES('Communication Services','Telecom Services')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Utilities—Diversified'
+INSERT INTO classificationsYF(sector,industry) VALUES('Utilities','Utilities—Diversified')
+INSERT INTO classificationsYF(sector,industry) VALUES('Utilities','Utilities—Diversified')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Software—Infrastructure'
+INSERT INTO classificationsYF(sector,industry) VALUES('Technology','Software—Infrastructure')
+INSERT INTO classificationsYF(sector,industry) VALUES('Technology','Software—Infrastructure')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Software—Application'
+INSERT INTO classificationsYF(sector,industry) VALUES('Technology','Software—Application')
+INSERT INTO classificationsYF(sector,industry) VALUES('Technology','Software—Application')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Consumer Electronics'
+INSERT INTO classificationsYF(sector,industry) VALUES('Technology','Consumer Electronics')
+INSERT INTO classificationsYF(sector,industry) VALUES('Technology','Consumer Electronics')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Broadcasting'
+INSERT INTO classificationsYF(sector,industry) VALUES('Communication Services','Broadcasting')
+INSERT INTO classificationsYF(sector,industry) VALUES('Communication Services','Broadcasting')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Aerospace & Defense'
+INSERT INTO classificationsYF(sector,industry) VALUES('Industrials','Aerospace & Defense')
+INSERT INTO classificationsYF(sector,industry) VALUES('Industrials','Aerospace & Defense')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Utilities—Renewable'
+INSERT INTO classificationsYF(sector,industry) VALUES('Utilities','Utilities—Renewable')
+INSERT INTO classificationsYF(sector,industry) VALUES('Utilities','Utilities—Renewable')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Auto Manufacturers'
+INSERT INTO classificationsYF(sector,industry) VALUES('Consumer Cyclical','Auto Manufacturers')
+INSERT INTO classificationsYF(sector,industry) VALUES('Consumer Cyclical','Auto Manufacturers')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Auto Parts'
+INSERT INTO classificationsYF(sector,industry) VALUES('Consumer Cyclical','Auto Parts')
+INSERT INTO classificationsYF(sector,industry) VALUES('Consumer Cyclical','Auto Parts')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Insurance—Diversified'
+INSERT INTO classificationsYF(sector,industry) VALUES('Financial Services','Insurance—Diversified')
+INSERT INTO classificationsYF(sector,industry) VALUES('Financial Services','Insurance—Diversified')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Biotechnology'
+INSERT INTO classificationsYF(sector,industry) VALUES('Healthcare','Biotechnology')
+INSERT INTO classificationsYF(sector,industry) VALUES('Healthcare','Biotechnology')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Travel Services'
+INSERT INTO classificationsYF(sector,industry) VALUES('Consumer Cyclical','Travel Services')
+INSERT INTO classificationsYF(sector,industry) VALUES('Consumer Cyclical','Travel Services')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Gold'
+INSERT INTO classificationsYF(sector,industry) VALUES('Basic Materials','Gold')
+INSERT INTO classificationsYF(sector,industry) VALUES('Basic Materials','Gold')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Specialty Chemicals'
+INSERT INTO classificationsYF(sector,industry) VALUES('Basic Materials','Specialty Chemicals')
+INSERT INTO classificationsYF(sector,industry) VALUES('Basic Materials','Specialty Chemicals')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Grocery Stores'
+INSERT INTO classificationsYF(sector,industry) VALUES('Consumer Defensive','Grocery Stores')
+INSERT INTO classificationsYF(sector,industry) VALUES('Consumer Defensive','Grocery Stores')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Utilities—Independent Power Producers'
+INSERT INTO classificationsYF(sector,industry) VALUES('Utilities','Utilities—Independent Power Producers')
+INSERT INTO classificationsYF(sector,industry) VALUES('Utilities','Utilities—Independent Power Producers')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Silver'
+INSERT INTO classificationsYF(sector,industry) VALUES('Basic Materials','Silver')
+INSERT INTO classificationsYF(sector,industry) VALUES('Basic Materials','Silver')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Steel'
+INSERT INTO classificationsYF(sector,industry) VALUES('Basic Materials','Steel')
+INSERT INTO classificationsYF(sector,industry) VALUES('Basic Materials','Steel')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Education & Training Services'
+INSERT INTO classificationsYF(sector,industry) VALUES('Consumer Defensive','Education & Training Services')
+INSERT INTO classificationsYF(sector,industry) VALUES('Consumer Defensive','Education & Training Services')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Drug Manufacturers—General'
+INSERT INTO classificationsYF(sector,industry) VALUES('Healthcare','Drug Manufacturers—General')
+INSERT INTO classificationsYF(sector,industry) VALUES('Healthcare','Drug Manufacturers—General')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Diagnostics & Research'
+INSERT INTO classificationsYF(sector,industry) VALUES('Healthcare','Diagnostics & Research')
+INSERT INTO classificationsYF(sector,industry) VALUES('Healthcare','Diagnostics & Research')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Apparel Retail'
+INSERT INTO classificationsYF(sector,industry) VALUES('Consumer Cyclical','Apparel Retail')
+INSERT INTO classificationsYF(sector,industry) VALUES('Consumer Cyclical','Apparel Retail')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Packaging & Containers'
+INSERT INTO classificationsYF(sector,industry) VALUES('Consumer Cyclical','Packaging & Containers')
+INSERT INTO classificationsYF(sector,industry) VALUES('Consumer Cyclical','Packaging & Containers')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Integrated Freight & Logistics'
+INSERT INTO classificationsYF(sector,industry) VALUES('Industrials','Integrated Freight & Logistics')
+INSERT INTO classificationsYF(sector,industry) VALUES('Industrials','Integrated Freight & Logistics')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Medical Care Facilities'
+INSERT INTO classificationsYF(sector,industry) VALUES('Healthcare','Medical Care Facilities')
+INSERT INTO classificationsYF(sector,industry) VALUES('Healthcare','Medical Care Facilities')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Building Materials'
+INSERT INTO classificationsYF(sector,industry) VALUES('Basic Materials','Building Materials')
+INSERT INTO classificationsYF(sector,industry) VALUES('Basic Materials','Building Materials')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Leisure'
+INSERT INTO classificationsYF(sector,industry) VALUES('Consumer Cyclical','Leisure')
+INSERT INTO classificationsYF(sector,industry) VALUES('Consumer Cyclical','Leisure')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Staffing & Employment Services'
+INSERT INTO classificationsYF(sector,industry) VALUES('Industrials','Staffing & Employment Services')
+INSERT INTO classificationsYF(sector,industry) VALUES('Industrials','Staffing & Employment Services')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Solar'
+INSERT INTO classificationsYF(sector,industry) VALUES('Technology','Solar')
+INSERT INTO classificationsYF(sector,industry) VALUES('Technology','Solar')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Beverages—Brewers'
+INSERT INTO classificationsYF(sector,industry) VALUES('Consumer Defensive','Beverages—Brewers')
+INSERT INTO classificationsYF(sector,industry) VALUES('Consumer Defensive','Beverages—Brewers')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Real Estate Services'
+INSERT INTO classificationsYF(sector,industry) VALUES('Real Estate','Real Estate Services')
+INSERT INTO classificationsYF(sector,industry) VALUES('Real Estate','Real Estate Services')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Chemicals'
+INSERT INTO classificationsYF(sector,industry) VALUES('Basic Materials','Chemicals')
+INSERT INTO classificationsYF(sector,industry) VALUES('Basic Materials','Chemicals')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Computer Hardware'
+INSERT INTO classificationsYF(sector,industry) VALUES('Technology','Computer Hardware')
+INSERT INTO classificationsYF(sector,industry) VALUES('Technology','Computer Hardware')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Household & Personal Products'
+INSERT INTO classificationsYF(sector,industry) VALUES('Consumer Defensive','Household & Personal Products')
+INSERT INTO classificationsYF(sector,industry) VALUES('Consumer Defensive','Household & Personal Products')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Railroads'
+INSERT INTO classificationsYF(sector,industry) VALUES('Industrials','Railroads')
+INSERT INTO classificationsYF(sector,industry) VALUES('Industrials','Railroads')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Medical Instruments & Supplies'
+INSERT INTO classificationsYF(sector,industry) VALUES('Healthcare','Medical Instruments & Supplies')
+INSERT INTO classificationsYF(sector,industry) VALUES('Healthcare','Medical Instruments & Supplies')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Information Technology Services'
+INSERT INTO classificationsYF(sector,industry) VALUES('Technology','Information Technology Services')
+INSERT INTO classificationsYF(sector,industry) VALUES('Technology','Information Technology Services')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Electronic Gaming & Multimedia'
+INSERT INTO classificationsYF(sector,industry) VALUES('Communication Services','Electronic Gaming & Multimedia')
+INSERT INTO classificationsYF(sector,industry) VALUES('Communication Services','Electronic Gaming & Multimedia')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Financial Conglomerates'
+INSERT INTO classificationsYF(sector,industry) VALUES('Financial Services','Financial Conglomerates')
+INSERT INTO classificationsYF(sector,industry) VALUES('Financial Services','Financial Conglomerates')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Engineering & Construction'
+INSERT INTO classificationsYF(sector,industry) VALUES('Industrials','Engineering & Construction')
+INSERT INTO classificationsYF(sector,industry) VALUES('Industrials','Engineering & Construction')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Restaurants'
+INSERT INTO classificationsYF(sector,industry) VALUES('Consumer Cyclical','Restaurants')
+INSERT INTO classificationsYF(sector,industry) VALUES('Consumer Cyclical','Restaurants')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Luxury Goods'
+INSERT INTO classificationsYF(sector,industry) VALUES('Consumer Cyclical','Luxury Goods')
+INSERT INTO classificationsYF(sector,industry) VALUES('Consumer Cyclical','Luxury Goods')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Scientific & Technical Instruments'
+INSERT INTO classificationsYF(sector,industry) VALUES('Technology','Scientific & Technical Instruments')
+INSERT INTO classificationsYF(sector,industry) VALUES('Technology','Scientific & Technical Instruments')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Insurance—Reinsurance'
+INSERT INTO classificationsYF(sector,industry) VALUES('Financial Services','Insurance—Reinsurance')
+INSERT INTO classificationsYF(sector,industry) VALUES('Financial Services','Insurance—Reinsurance')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Medical Distribution'
+INSERT INTO classificationsYF(sector,industry) VALUES('Healthcare','Medical Distribution')
+INSERT INTO classificationsYF(sector,industry) VALUES('Healthcare','Medical Distribution')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Consulting Services'
+INSERT INTO classificationsYF(sector,industry) VALUES('Industrials','Consulting Services')
+INSERT INTO classificationsYF(sector,industry) VALUES('Industrials','Consulting Services')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Health Information Services'
+INSERT INTO classificationsYF(sector,industry) VALUES('Healthcare','Health Information Services')
+INSERT INTO classificationsYF(sector,industry) VALUES('Healthcare','Health Information Services')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Footwear & Accessories'
+INSERT INTO classificationsYF(sector,industry) VALUES('Consumer Cyclical','Footwear & Accessories')
+INSERT INTO classificationsYF(sector,industry) VALUES('Consumer Cyclical','Footwear & Accessories')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Drug Manufacturers—Specialty & Generic'
+INSERT INTO classificationsYF(sector,industry) VALUES('Healthcare','Drug Manufacturers—Specialty & Generic')
+INSERT INTO classificationsYF(sector,industry) VALUES('Healthcare','Drug Manufacturers—Specialty & Generic')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Building Products & Equipment'
+INSERT INTO classificationsYF(sector,industry) VALUES('Industrials','Building Products & Equipment')
+INSERT INTO classificationsYF(sector,industry) VALUES('Industrials','Building Products & Equipment')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Farm & Heavy Construction Machinery'
+INSERT INTO classificationsYF(sector,industry) VALUES('Industrials','Farm & Heavy Construction Machinery')
+INSERT INTO classificationsYF(sector,industry) VALUES('Industrials','Farm & Heavy Construction Machinery')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Financial Data & Stock Exchanges'
+INSERT INTO classificationsYF(sector,industry) VALUES('Financial Services','Financial Data & Stock Exchanges')
+INSERT INTO classificationsYF(sector,industry) VALUES('Financial Services','Financial Data & Stock Exchanges')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Tools & Accessories'
+INSERT INTO classificationsYF(sector,industry) VALUES('Industrials','Tools & Accessories')
+INSERT INTO classificationsYF(sector,industry) VALUES('Industrials','Tools & Accessories')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='void'
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Airports & Air Services'
+INSERT INTO classificationsYF(sector,industry) VALUES('Industrials','Airports & Air Services')
+INSERT INTO classificationsYF(sector,industry) VALUES('Industrials','Airports & Air Services')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Credit Services'
+INSERT INTO classificationsYF(sector,industry) VALUES('Financial Services','Credit Services')
+INSERT INTO classificationsYF(sector,industry) VALUES('Financial Services','Credit Services')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Discount Stores'
+INSERT INTO classificationsYF(sector,industry) VALUES('Consumer Defensive','Discount Stores')
+INSERT INTO classificationsYF(sector,industry) VALUES('Consumer Defensive','Discount Stores')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Pharmaceutical Retailers'
+INSERT INTO classificationsYF(sector,industry) VALUES('Healthcare','Pharmaceutical Retailers')
+INSERT INTO classificationsYF(sector,industry) VALUES('Healthcare','Pharmaceutical Retailers')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Capital Markets'
+INSERT INTO classificationsYF(sector,industry) VALUES('Financial Services','Capital Markets')
+INSERT INTO classificationsYF(sector,industry) VALUES('Financial Services','Capital Markets')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Medical Devices'
+INSERT INTO classificationsYF(sector,industry) VALUES('Healthcare','Medical Devices')
+INSERT INTO classificationsYF(sector,industry) VALUES('Healthcare','Medical Devices')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Security & Protection Services'
+INSERT INTO classificationsYF(sector,industry) VALUES('Industrials','Security & Protection Services')
+INSERT INTO classificationsYF(sector,industry) VALUES('Industrials','Security & Protection Services')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Confectioners'
+INSERT INTO classificationsYF(sector,industry) VALUES('Consumer Defensive','Confectioners')
+INSERT INTO classificationsYF(sector,industry) VALUES('Consumer Defensive','Confectioners')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Lodging'
+INSERT INTO classificationsYF(sector,industry) VALUES('Consumer Cyclical','Lodging')
+INSERT INTO classificationsYF(sector,industry) VALUES('Consumer Cyclical','Lodging')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Apparel Manufacturing'
+INSERT INTO classificationsYF(sector,industry) VALUES('Consumer Cyclical','Apparel Manufacturing')
+INSERT INTO classificationsYF(sector,industry) VALUES('Consumer Cyclical','Apparel Manufacturing')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Tobacco'
+INSERT INTO classificationsYF(sector,industry) VALUES('Consumer Defensive','Tobacco')
+INSERT INTO classificationsYF(sector,industry) VALUES('Consumer Defensive','Tobacco')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Aluminum'
+INSERT INTO classificationsYF(sector,industry) VALUES('Basic Materials','Aluminum')
+INSERT INTO classificationsYF(sector,industry) VALUES('Basic Materials','Aluminum')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Home Improvement Retail'
+INSERT INTO classificationsYF(sector,industry) VALUES('Consumer Cyclical','Home Improvement Retail')
+INSERT INTO classificationsYF(sector,industry) VALUES('Consumer Cyclical','Home Improvement Retail')
+SELECT sectorYF,industryYF FROM titles WHERE industryYF='Oil & Gas E&P'
+INSERT INTO classificationsYF(sector,industry) VALUES('Energy','Oil & Gas E&P')
+INSERT INTO classificationsYF(sector,industry) VALUES('Energy','Oil & Gas E&P')

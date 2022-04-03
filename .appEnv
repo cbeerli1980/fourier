@@ -1,0 +1,157 @@
+export HOME=/home/thething
+export PROJECT_HOME=$HOME/project
+export PROJECT_SCRIPTS=$PROJECT_HOME/scripts
+export PROJECT_CLASS=$PROJECT_HOME/class
+export PROJECT_SOURCE=$PROJECT_HOME/source
+export PROJECT_SHARED=$PROJECT_SOURCE/shared
+export PROJECT_LOGS=$PROJECT_HOME/logs
+export PROJECT_DB=$PROJECT_SHARED/DB
+export PROJECT_SQ=$PROJECT_SHARED/SQ
+export PROJECT_YF=$PROJECT_SHARED/YF
+export PROJECT_MW=$PROJECT_SHARED/MW
+
+export ilreeb='192.168.0.213'
+export thething='192.168.0.129'
+
+export sleepTimeAll=1000
+export sleepTimeSD=2000
+export sleepTimeYF=2000
+export sleepTimeSQ=1000
+export sleepTimeMW=1000
+
+#SQ
+export usernameSQ="cbee8095"
+export passwordSQ="CityBer1in"
+export urlBaseSQ="https://www.swissquote.ch"
+
+#YF
+export urlBaseYF="https://finance.yahoo.com"
+export urlLoginYF="https://login.yahoo.com/manage_account?.lang=en-US"
+export usernameYF="cbeerli1980"
+export passwordYF="SMFlist1!"
+
+#DB
+export urlBaseDB="jdbc:mysql://localhost:3306"
+export nameDB="symbols"
+export usernameDB="thething"
+export passwordDB="CityC0penh@gen"
+
+#EURONEXT
+export urlBaseEN="https://live.euronext.com"
+export urlTitleEN="https://live.euronext.com/en/product/equities/ISIN-xpar/"
+
+#MW
+export urlBaseMW="https://www.marketwatch.com"
+
+export columnSector="sector"
+export columnSectorYF="sectorYF"
+export columnSectorMW="sectorMW"
+export columnSectorND="sectorND"
+
+export columnSymbol="symbol"
+export columnSymbolSD="symbolSD"
+export columnSymbolSQ="symbolSQ"
+export columnSymbolYF="symbolYF"
+export columnSymbolMW="symbolMW"
+
+export columnTitle="title"
+export columnTitleSQ="titleSQ"
+export columnTitleYF="titleYF"
+export columnTitleSD="titleSD"
+export columnTitleMW="titleMW"
+
+export columnIndustry="industry"
+export columnIndustryYF="industryYF"
+export columnIndustryMW="industryMW"
+
+export columnId="id"
+export columnIsin="isin"
+export columnExchange="exchange"
+export columnType="type"
+
+export tableSymbolsSQ="symbolsSQ"
+export tableSymbolsYF="symbolsYF"
+export tableSymbolsMW="symbolsMW"
+export tableCommodities="commodities"
+export tableCurrencies="currencies"
+export tableIndices="indices"
+export tableStocks="stocks"
+export tableCandidatesOutliers="candidatesoutliers"
+export tableTitles="titles"
+export tableCurrentAssets="currentAssets"
+export tableCandidates="candidates"
+export tableAllTitles="allTitles"
+
+export tableClassificationsYF="classificationsYF"
+export tableClassificationsMW="classificationsMW"
+
+export listCommodities="Sugar Future,Heating Oil Future,Palladium,FGBL ,FVS ,Cotton Future,SILVER FUTURE,GOLD FUTURE,NIKKEI,TECDAX,Cocoa Future,CAC 40,Gold 1oz,Platinum,Bund Future,Soybean Future,Wheat Soft,Natural Gas,Coffee,Silver,Sugar Future,Copper Future,Corn Future,OIL BRENT,WTI LIGHT,Brent Crude,WTI Light Sweet"
+export listCurrencies="SGD_,GBP_,CHF_,EUR_,USD_,TRY_,AUD_,FX-Fixing,per 1 USD,per 1 EUR"
+export listIndices="FTSE MIB,IBEX 35,NASDAQ 100,FTSE 100,SMI® PR,PERFORMANCE INDEX,AEX-INDEX,VIX ,ICE ,S&P 500,DOW JONES,NASDAQ COMPOSITE,RUSSELL,EURO STOXX,STOXX Europe"
+export listBasket="Basket"
+
+export BROWSER_PROFILE_PATH_MW="$PROJECT_HOME/source/shared/MW/browserProfileMW"
+
+export CURRENT_ASSETS_TABLE_PROPERTIES="(id INT AUTO_INCREMENT PRIMARY KEY,title VARCHAR(255),symbolSQ VARCHAR(255),created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP) ENGINE=INNODB"
+
+export CLASSPATH=".:./"
+export CLASSPATH="$CLASSPATH:$PROJECT_HOME/*:$PROJECT_HOME/lib/*:$PROJECT_HOME/shared:$PROJECT_HOME/class"
+
+alias H="history"
+alias la='ls -ahltr'
+
+alias createClassifications="$PROJECT_SCRIPTS/run.bash createClassifications"
+alias createPortfolioBySectorYF="$PROJECT_SCRIPTS/run.bash createPortfolioBySectorYF"
+alias parseSD="$PROJECT_SCRIPTS/run.bash parseSD"
+alias createCurrentAssetsYF="$PROJECT_SCRIPTS/run.bash createCurrentAssetsYF"
+alias insertTitleToDBsymbolsTables="$PROJECT_SCRIPTS/run.bash insertTitleToDBsymbolsTables"
+alias createAllTitlesPortfolioYF="$PROJECT_SCRIPTS/run.bash createAllTitlesPortfolioYF"
+alias getStockSymbols="$PROJECT_SCRIPTS/run.bash getStockSymbols"
+alias getStockDetails="$PROJECT_SCRIPTS/run.bash getStockDetails"
+alias fetchQuotesYF="$PROJECT_SCRIPTS/run.bash fetchQuotesYF"
+alias scrapKS="$PROJECT_SCRIPTS/run.bash scrapKS"
+
+alias mysqluser="sudo mysql --password=CityC0penh@gen --user=thething symbols"
+alias mysqlroot='sudo mysql -u root -p'
+alias startmysql='sudo systemctl start mysqld'
+alias stopmysql='sudo systemctl stop mysqld'
+alias syncDB='$PROJECT_SCRIPTS/manage/syncDB.bash'
+
+alias cdproject='cd $HOME_PROJECT'
+alias cdscripts='cd $PROJECT_SCRIPTS'
+alias cdsource='cd $PROJECT_SOURCE'
+alias cdshared='cd $PROJECT_SHARED'
+alias cdlogs='cd $PROJECT_LOGS'
+alias cddb='cd $PROJECT_DB'
+alias cdsq='cd $PROJECT_SQ'
+alias cdmw='cd $PROJECT_MW'
+alias cdyf='cd $PROJECT_YF'
+
+#java
+alias javacc='javac -d /home/thething/project/class'
+
+#vi
+alias vi='vim'
+alias viSQ='vi $PROJECT_SQ/SQ.java'
+alias viYF='vi $PROJECT_YF/YF.java'
+alias viMW='vi $PROJECT_MW/MW.java'
+alias viDB='vi $PROJECT_DB/DB.java'
+alias viEnvironment='vi $PROJECT_SHARED/Environment.java'
+alias viSession='vi $PROJECT_SHARED/Session.java'
+alias viAppEnv='vi $PROJECT_HOME/.appEnv'
+alias viBashrc='vi $HOME/.bashrc'
+
+#ssh
+alias sshthething='ssh $thething'
+alias sshilreeb='ssh $ilreeb'
+
+#manage
+alias pushClass='$PROJECT_SCRIPTS/manage/pushClass.bash'
+alias pushEnvironment='$PROJECT_SCRIPTS/manage/pushEnvironment.bash'
+alias pushScripts='$PROJECT_SCRIPTS/manage/pushScripts.bash'
+alias pushSource='$PROJECT_SCRIPTS/manage/pushSource.bash'
+alias pushAll='$PROJECT_SCRIPTS/manage/pushAll.bash'
+alias tailLog='$PROJECT_SCRIPTS/manage/tailLog.bash'
+alias killall="$PROJECT_SCRIPTS/manage/killall.bash"
+alias sourceBashrc='. $HOME/.bashrc'
+alias sudorun='sudo su - run'

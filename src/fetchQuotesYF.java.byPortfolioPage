@@ -1,0 +1,97 @@
+import org.openqa.selenium.WebDriver;
+import java.util.*;
+import java.sql.*;
+import java.sql.Connection;
+
+import shared.Session;
+import shared.YF.YFlogin;
+import shared.YF.YF;
+import shared.YF.quotes;
+import shared.DB.DB;
+import shared.DB.select;
+import shared.Environment;
+
+public class fetchQuotesYF
+{
+  public static String headlessMode;
+
+  public static void main(String[] args) throws Exception
+  {
+    if(args[0].length() > 0){headlessMode = args[0];}
+
+    int sleepTimeYF = Environment.getSleepTimeYF();
+    int sleepTime = Environment.getSleepTime();
+    String stocksTable = Environment.getStocksTable();
+    String sectorColumn = Environment.getSectorColumn();
+    String sectorColumnYF = Environment.getSectorColumnYF();
+    String isinColumn = Environment.getIsinColumn();
+    String classificationsTableYF = Environment.getClassificationsTableYF();
+    String titlesTable = Environment.getTitlesTable();
+    String symbolColumn = Environment.getSymbolColumn();
+    String titleColumn = Environment.getTitleColumn();
+    String usernameYF = Environment.getUsernameYF();
+    String passwordYF = Environment.getPasswordYF();
+
+    String baseUrlYF = Environment.getBaseUrlYF();
+
+    String urlDB = Environment.getUrlDB();
+    String nameDB = Environment.getNameDB();
+    String usernameDB = Environment.getUsernameDB();
+    String passwordDB = Environment.getPasswordDB();
+
+//    WebDriver driver = Session.setUp(headlessMode);
+    WebDriver driver = Session.setUpProfile("yf",headlessMode);
+
+    Session.getBaseURL(baseUrlYF);
+    YFlogin.doLogin(usernameYF,passwordYF,driver);
+    Session.timeout(sleepTimeYF);
+    baseUrlYF = baseUrlYF+"/portfolios";
+
+    Connection db = DB.getConnection(urlDB,nameDB,usernameDB,passwordDB);
+
+    ResultSet sectorsResultSet = select.c1.get(db,sectorColumn,classificationsTableYF);
+    ArrayList<String> sectors = new ArrayList<String>();
+
+    while(sectorsResultSet.next())
+    {
+      String sector = sectorsResultSet.getString(sectorColumn);
+      if(!sectors.contains(sector))
+      {
+        sectors.add(sector);
+      }
+    }
+
+    int i=0;
+    for(String sector : sectors)
+    {
+      System.out.println("sector: "+sector);
+      if(i>0)
+      {
+        Session.openTab(driver);
+        Session.switchToTabByNumber(i,driver);
+        Session.getBaseURL(baseUrlYF);
+      }
+
+      if(i==0)
+      {
+        YF.goToMyPortfolio(driver);
+      }
+      YF.goToPortfolio(sector,driver);
+      Session.timeout(sleepTimeYF);
+      i++;
+    }
+
+    Session.timeout(30000);
+
+    for(String sector : sectors)
+    {
+      int tabNumber = Session.getTabNumberByName(sector,driver);
+      Session.switchToTabByNumber(tabNumber,driver);
+      for(String price : quotes.price(driver))
+      {
+	System.out.println(price);
+      }
+    }
+    Session.tearDownOnSuccess(driver);
+  }
+}

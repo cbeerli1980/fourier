@@ -1,0 +1,951 @@
+/*******************
+ * Redux Header
+ *******************/
+
+@font-face {
+    font-family: 'OpenSans';
+    src: url('https://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFVZ0bf8pkAg.woff2') format('woff2');
+}
+
+.redux-font {
+    font-family: 'OpenSans';
+    letter-spacing: 0px;
+    font-size: 13px;
+}
+
+.redux-header {
+    display: flex;
+    height: 61px;
+    z-index: 99; /* Above page but below dialogs (e.g. Set Rules) */
+    border-bottom: 1px solid rgb(224, 224, 224);
+    background-color: #fff;
+}
+
+.redux-left-column-fix {
+    top: 60px;
+}
+
+.redux-logo-container {
+    display: flex;
+    padding: 0px 12px 3px 17px;
+    line-height: 58px;
+}
+
+.redux-logo-link {
+    position: relative;
+    z-index: 2;
+}
+
+.redux-logo-link > img {
+    max-height: 60px;
+}
+
+.redux-program-selector {
+    font-family: "Open Sans", sans-serif;
+    position: relative;
+    display: flex;
+    padding-right: 12px;
+    z-index: 3;
+    border-right: 1px solid rgb(224, 224, 224);
+}
+#programSelector {
+    height: 100%;
+    vertical-align: middle;
+    align-items: center;
+    flex-direction: row;
+    display: flex;
+}
+#programSelectorMenu {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.redux-program-name {
+    font-family: "Open Sans", sans-serif;
+    color: #3e3e3e;
+    font-weight: bold;
+    letter-spacing: 1.1px;
+    margin: 0 4px;
+}
+.redux-program-selector-arrow-down {
+    display: inline-block;
+    height: 6.15px;
+    width: 15px;
+}
+.redux-dashboard-link {
+    margin-right: auto;
+    font-size: 11px;
+    color: rgb(34, 33, 33);
+    margin-top: 17px;
+    padding: 0px 20px;
+    text-decoration: none;
+}
+.redux-dashboard-link:hover {
+    color: rgb(34, 33, 33);
+}
+.redux-dashboard-link > img {
+    margin: 0px 3px 3px 0px;
+}
+.redux-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.redux-submenu {
+    position: absolute;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.11) 0px 3px 4px 0px;
+    min-width: 250px;
+    max-width: 300px;
+    text-align: left;
+    z-index: 99;
+    top: 60px;
+    max-height: 300px;
+}
+
+.redux-submenu-scroller {
+    max-height: 300px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.redux-submenu-notifications {
+    right: 0px;
+    width: 360px;
+}
+
+.redux-submenu-item {
+    display: block;
+    line-height: 18px;
+    padding: 10px;
+    color: #3e3e3e;
+    min-height: 24px;
+}
+.redux-submenu-item:hover {
+    color: #3e3e3e;
+    background-color: #e5f4fa;
+    cursor: pointer;
+}
+
+.redux-submenu-item-icon {
+    float: left;
+}
+
+.redux-submenu-item-text {
+    margin-left: 30px;
+    letter-spacing: 1.1px;
+    font-size: 13px;
+    position: relative;
+}
+
+.redux-submenu-item-expected {
+    margin-left: 30px;
+    letter-spacing: 1px;
+    font-size: 10px;
+}
+
+.redux-submenu-item-arrow-right {
+    transform: translateY(-50%) rotate(-90deg);
+    width: 15px;
+    position: absolute;
+    top: 50%;
+    right: 5px;
+}
+
+.redux-submenu-item-pending {
+    color: #888888;
+}
+.redux-submenu-item-pending:hover {
+    color: #888888;
+    cursor: default;
+}
+
+.redux-subsubmenu {
+    position: absolute;
+    top: 0px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.11) 0px 3px 4px 0px;
+    min-width: 250px;
+    max-width: 300px;
+    text-align: left;
+    z-index: 100;
+}
+
+.redux-nav-container {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    height: 60px;
+    line-height: 60px;
+}
+
+.redux-nav-link {
+    display: inline-block;
+    height: 60px;
+    color: #bdbdbc;
+    padding: 0px 20px;
+}
+.redux-nav-link:hover,
+.redux-menu-active .redux-nav-link,
+.redux-menu-open .redux-nav-link {
+    color: #3e3e3e;
+    box-shadow: rgb(139, 166, 22) 0px -3px 0px inset;
+}
+
+.redux-tools-container {
+    /* Using absolute positioning instead of float:right to fix IE issue */
+    right: 0px;
+    z-index: 2;
+    line-height: 60px;
+    display: flex;
+}
+
+.redux-tool-link {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    padding: 0px 18px;
+    border-left: 1px solid rgb(224, 224, 224);
+}
+.redux-tool-link:hover {
+    background-color: rgb(229, 244, 250);
+}
+
+#studyToolsLink {
+    margin-right: 15px;
+}
+#studyToolsLink > span {
+    color: rgb(114, 114, 114);
+    font-size: 11px;
+}
+#studyToolsLink > img {
+    background-color: rgb(0, 93, 232);
+    padding: 5px 7px;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+#studyToolsMenuContainer {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+#studyToolsMenu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 90%;
+    height: 450px;
+    background-color: rgb(36, 15, 110);
+    padding: 35px 25px;
+}
+#studyToolsMenuCancel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 1px solid white;
+    border-radius: 50%;
+    width: 16px;
+    padding: 10px;
+    margin: 15px 60px 0px 0px;
+    cursor: pointer;
+}
+#studyToolsMenuColumns {
+    height: 100%;
+}
+.redux-studytools-column {
+    display: inline-block;
+    border-right: 1px solid rgba(255, 255, 255, 0.35);
+    margin-left: 20px;
+    padding-right: 20px;
+    vertical-align: top;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.redux-studytools-column:last-child {
+    border-right: none;
+}
+.redux-studytools-column-header {
+    font-weight: bold;
+    font-size: 18px;
+    color: rgb(249, 249, 249);
+}
+.redux-studytools-column-underline {
+    background-color: rgb(230, 40, 153);
+    width: 22px;
+    height: 2px;
+}
+.redux-studytools-column-subheader-text {
+    font-weight: bold;
+    padding-left: 20px;
+}
+.redux-studytools-column-subheader-arrow {
+    position: absolute;
+    transform: rotate(90deg);
+    width: 15px;
+    top: 45%;
+    left: 0px;
+}
+.redux-studytools-column-items {
+    position: relative;
+}
+.redux-studytools-column-item {
+    position: relative;
+    display: block;
+    font-size: 14px;
+    padding: 14px 0px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+.redux-studytools-column-item:hover {
+    color: white;
+}
+.redux-studytools-column-item-text {
+    padding-right: 5px;
+}
+.redux-studytools-column-item-expected {
+    font-size: 11px;
+    line-height: 11px;
+    opacity: 0.6;
+}
+.redux-studytools-column-item-arrow {
+    position: absolute;
+    transform: rotate(-90deg);
+    width: 15px;
+    opacity: 0.5;
+    top: 45%;
+    right: -5px;
+}
+
+.redux-notifications-badge {
+    position: absolute;
+    border-radius: 30px;
+    background-color: #e55302;
+    width: 14px;
+    height: 14px;
+    line-height: 13px;
+    text-align: center;
+    color: white;
+    padding: 2px;
+    top: 11px;
+    right: 11px;
+    font-size: 10px;
+}
+
+.redux-notifications-header {
+    line-height: 13px;
+    padding: 13px 18px;
+    background-color: rgb(247, 247, 247);
+}
+
+.redux-notifications-header-title {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.redux-notifications-header-dismiss {
+    font-size: 11px;
+    float: right;
+    color: rgb(62, 62, 62);
+    text-decoration: none;
+}
+
+.redux-notifications-section-header {
+    font-size: 11px;
+    line-height: 11px;
+    background-color: rgb(229, 244, 250);
+    padding: 6px 18px;
+}
+
+.redux-notification {
+    border-bottom: solid 1px rgb(249, 249, 249);
+}
+.redux-notification:last-child {
+    border-bottom: none;
+}
+
+.redux-notification-unread {
+    padding-right: 30px;
+}
+
+.redux-notification-text {
+    font-size: 13px;
+    color: rgb(34, 33, 33);
+    line-height: 18px;
+    font-weight: bold;
+    position: relative;
+}
+
+.redux-notification-date {
+    font-size: 11px;
+    color: rgb(114, 114, 114);
+    line-height: 26px;
+}
+
+.redux-notification-dismiss {
+    position: absolute;
+    top: 30%;
+    right: -20px;
+    color: rgb(180, 180, 180);
+    border: none;
+    background: none;
+}
+.redux-notification-dismiss:hover {
+    color: rgb(0, 93, 232);
+}
+
+.redux-notifications-footer {
+    font-size: 11px;
+    line-height: 11px;
+    text-align: center;
+    padding: 13px 18px;
+    background-color: rgb(247, 247, 247);
+}
+
+.redux-notifications-footer-link {
+    color: rgb(62, 62, 62);
+    text-decoration: none;
+}
+
+.redux-account-name {
+    color: rgb(189,189,188);
+    padding: 0 10px;
+    letter-spacing: 1.1px;
+    font-size: 13px;
+}
+
+/*******************
+ * Redux Right Nav
+ *******************/
+
+.redux-rightnav-container {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    width: 100%;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.redux-rightnav {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    width: 275px;
+    background-color: white;
+}
+
+.redux-rightnav-header {
+    border-bottom: 1px solid rgb(224, 224, 224);
+    padding: 20px;
+}
+
+.redux-rightnav-header-arrow {
+    transform: rotate(90deg);
+    height: 8px;
+}
+
+.redux-rightnav-header-text {
+    display: inline-block;
+    color: rgb(34, 33, 33);
+    font-weight: bold;
+}
+
+.redux-rightnav-body {
+    position: absolute;
+    top: 65px;
+    bottom: 0px;
+    overflow-y: auto;
+    width: 100%;
+}
+
+.redux-rightnav-menu {
+    display: block;
+    color: rgb(34, 33, 33);
+    font-weight: bold;
+    border-bottom: 1px solid rgb(224, 224, 224);
+    padding: 20px;
+}
+.redux-rightnav-menu:hover {
+    color: rgb(34, 33, 33);
+}
+
+.redux-rightnav-icon-container {
+    float: left;
+    width: 26px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.redux-rightnav-menu-text {
+    margin-left: 30px;
+}
+
+.redux-rightnav-badge {
+    display: inline-block;
+    position: relative;
+    top: 0px;
+    right: 0px;
+    margin-left: 5px;
+}
+
+/*******************
+ * Redux Footer
+ *******************/
+.redux-footer {
+    background-color: rgb(34, 33, 33);
+    color: white;
+    font-size: 12px;
+    line-height: inherit;
+}
+.redux-footer > div {
+    flex-wrap: nowrap;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    align-content: flex-start;
+    align-items: flex-start;
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    text-align: center;
+    padding: 15px 30px;
+    display: flex;
+    flex-direction: row;
+}
+
+.redux-footer-links {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+}
+
+.redux-footer-links li {
+  display: inline-table;
+}
+
+.redux-footer-links a {
+    color: white;
+}
+
+/*****************************
+ * Other consequential updates
+ *****************************/
+
+/* Needed to make Set Rules icon clickable on QBank home page */
+#submit_question_search {
+    width: 50%;
+}
+
+/* To better blend the redux header with underlying content */
+.redux-navbreak {
+    min-height: 9px;
+    height: auto;
+    padding: 12px 25px 0px 26px;
+}
+.redux-navbreak-height {
+    height: 45px;
+}
+
+/*******************
+ * Small Screen
+ *******************/
+@media (max-width: 768px) {
+    .redux-header {
+        border-bottom: 0px;
+        height: 57px;
+    }
+    .redux-responsive-medium {
+        display: none;
+    }
+    .redux-responsive-large {
+        display: none;
+    }
+    .redux-left-column-fix {
+        top: 120px;
+    }
+    .redux-nav-container {
+        position: absolute;
+        top: 56px;
+        height: auto;
+        border-bottom: 1px solid rgb(224, 224, 224);
+        left: 0px;
+    }
+    .redux-nav-container .redux-menu {
+        width: 100%;
+        display: flex;
+        height: auto;
+    }
+    .redux-nav-link {
+        font-size: 11px;
+        height: auto;
+        width: 100%;
+        padding: 15px 0!important;
+        line-height: 14px;
+    }
+    .redux-leftnav-tools-container {
+        display: none;
+    }
+    .redux-tools-container {
+        margin-right: 10px;
+        margin-top: 8px;
+    }
+    .redux-tools-container .redux-menu {
+        height: 37px;
+        width: 40px;
+        margin-left: 3px;
+    }
+    .redux-tool-link {
+        display: flex;
+        border: 1px solid rgb(180, 180, 180);
+        border-radius: 50%;
+        padding: 0 10px;
+    }
+    .redux-tool-icon {
+        padding: 0px;
+        margin-top: 7px;
+        height: 25px;
+    }
+    .redux-notifications-badge {
+        top: 0px;
+        right: -2px;
+    }
+    .redux-nav-container > .redux-menu > .redux-submenu {
+        top: 44px;
+    }
+    .redux-program-selector > .redux-submenu {
+        left: 0px;
+    }
+    .redux-footer {
+        display: none;
+    }
+    .redux-navbreak {
+        margin-top: 44px;
+        padding: 12px 21px 0 21px;
+    }
+    .redux-logo-container {
+        padding: 0px 15px 0px 15px;
+        line-height: 53px;
+        height: 55px;
+    }
+    .redux-program-selector-arrow-down {
+        width: 10px;
+    }
+    .layout-left-column .left-column  {
+        margin-top: -12px;
+        bottom: 12px;
+    }
+    .layout-left-column .left-column .column-header {
+        padding-top: 12px;
+    }
+    .left-column-bg {
+        padding-top: 12px;
+        margin-top: -20px;
+    }
+    .shell-content {
+        padding-bottom: 32px;
+    }
+}
+
+/*******************
+ * Medium Screen
+ *******************/
+@media (min-width: 768px) and (max-width: 1280px) {
+    .redux-responsive-small {
+        display: none;
+    }
+    .redux-responsive-large {
+        display: none;
+    }
+    .redux-header {
+        height: 61px;
+        position: fixed;
+    }
+    .redux-logo-container {
+        height: auto;
+        line-height: 58px;
+        padding: 0px 16px 4px 17px;
+        border-bottom: 1px solid rgb(224, 224, 224);
+    }
+    .redux-program-selector {
+        display: none;
+    }
+    .redux-leftnav-tools-container {
+        flex-direction: column;
+        display: flex;
+        margin-top: auto;
+        padding: 5px 0px;
+    }
+    .redux-lefnav-menu-text {
+        font-size: 11px;
+        color: #bdbdbc;
+        overflow: hidden;
+        left: 0px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .redux-leftnav-tools-item {
+        position: relative;
+        padding: 11px 0;
+        cursor: pointer;
+    }
+    .redux-tool-link {
+        display: inline-block;
+        width: 38px;
+        height: 38px;
+        padding: 0px;
+        border: 1px solid rgb(180, 180, 180);
+        border-radius: 50%;
+    }
+    .redux-tool-icon {
+        padding: 0px;
+        margin-top: 7px;
+        height: 25px;
+    }
+    .redux-notifications-badge {
+        top: 0px;
+        right: -2px;
+    }
+    .redux-nav-container {
+        width: 60px!important;
+        flex-direction: column;
+        border-width: 0px 1px 0px 0px;
+        position: fixed;
+        top: 61px;
+        left: 0px;
+        bottom: 0px;
+        height: auto;
+        display: flex;
+        z-index: 10;
+        flex: 0 0 auto;
+        border-style: solid;
+        border-color: rgb(224, 224, 224);
+        background: white;
+        padding-top: 10px;
+        line-height: 14px;
+    }
+    .redux-nav-container .redux-menu {
+        flex-direction: column;
+        display: flex;
+        min-height: 66px;
+    }
+    .redux-nav-container .redux-menu-open .redux-nav-link {
+        border-bottom: none;
+        box-shadow: rgb(139, 166, 22) 0px 0px 0px inset;
+    }
+    .redux-nav-link {
+        height: auto;
+        width: auto;
+        padding: 15px 5px;
+        font-size: 11px;
+        line-height: 15px;
+    }
+    .redux-nav-container .redux-menu-active .redux-nav-link,
+    .redux-nav-link:hover {
+        border-bottom: none;
+        box-shadow: rgb(139, 166, 22) -2px 0px 0px inset;
+    }
+    .redux-nav-link img {
+        display: block;
+        margin: 0px auto 5px;
+        height: 16px;
+        opacity: 0.5;
+    }
+    .redux-menu:hover .redux-nav-link img,
+    .redux-menu-active .redux-nav-link img {
+        opacity: 1;
+    }
+    .redux-submenu {
+        max-height: 300px;
+        top: 0px;
+    }
+    .redux-navbreak {
+        margin-left: 57px;
+        margin-top: 0px;
+        padding: 12px 25px 0px 26px;
+    }
+    .shell-content {
+        margin-left: 57px;
+        padding-bottom: 32px;
+    }
+    .container {
+        width: auto;
+    }
+    .redux-footer {
+        display: none;
+    }
+    .layout-left-column .left-column  {
+        margin-top: -37px;
+    }
+    .layout-left-column .left-column .column-header {
+        padding-top: 12px;
+    }
+    .left-column-bg {
+        top: 0px;
+        width: 375px;
+    }
+    .redux-tools-container {
+        margin-right: 0px;
+        margin-top: 0px;
+    }
+}
+
+/*******************
+ * Large Screen
+ *******************/
+@media (min-width: 1280px) {
+    .redux-responsive-small {
+        display: none;
+    }
+    .redux-responsive-medium {
+        display: none;
+    }
+    .redux-program-selector {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .redux-program-selector > .redux-submenu {
+        left: 0px;
+    }
+    .redux-header {
+        position: relative;
+        height: 60px;
+    }
+    .redux-menu {
+        z-index: 100;
+    }
+    .redux-nav-container {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        width: auto!important;
+        top: 0px;
+        margin-right: auto;
+        text-align: center;
+        height: 60px;
+        line-height: 60px;
+        border-right: 0px;
+        padding-top: 0px;
+    }
+    .redux-nav-container .redux-menu {
+        display: inline-block;
+        min-height: auto;
+    }
+    .redux-nav-link {
+        display: inline-block;
+        height: 60px;
+        width: auto;
+        color: #bdbdbc;
+        padding: 0px 20px;
+        font-size: 13px;
+        line-height: inherit;
+    }
+    .redux-nav-link img {
+        display: none;
+    }
+    .redux-nav-link:hover,
+    .redux-nav-container .redux-menu-active .redux-nav-link,
+    .redux-nav-container .redux-menu-open .redux-nav-link {
+        color: #3e3e3e;
+        box-shadow: rgb(139, 166, 22) 0px -3px 0px inset;
+        border-right: none;
+    }
+    .redux-leftnav-tools-container {
+        display: none;
+    }
+    .redux-navbreak {
+        padding-left: 26px;
+        margin-left: 0px;
+    }
+    .shell-content {
+        margin-left: initial;
+    }
+    .redux-menu.redux-responsive-large {
+        display: inline-block;
+        border-left: 1px solid rgb(224, 224, 224);
+    }
+    .redux-tool-link {
+        position: relative;
+        display: inline-block;
+        height: 100%;
+        width: auto;
+        border: none;
+        border-radius: 0px;
+        padding: 0 18px;
+    }
+    .redux-tool-link:hover {
+        background-color: rgb(229, 244, 250);
+    }
+
+    .redux-submenu {
+        position: absolute;
+        background-color: white;
+        box-shadow: rgba(0, 0, 0, 0.11) 0px 3px 4px 0px;
+        min-width: 250px;
+        max-width: 300px;
+        text-align: left;
+        z-index: 99;
+        top: 60px;
+        bottom: auto!important;
+    }
+    .redux-logo-container {
+        border-bottom: none;
+    }
+    .redux-notifications-badge {
+        top: 11px;
+        right: 11px;
+    }
+    .redux-tool-icon {
+        padding: 0px;
+        margin-top: 0px;
+        height: auto;
+    }
+    .container {
+        width: 1093px;
+    }
+}
+ùA	8
+      a¯Pÿa¯PŸCËY¶b›◊   ~    O^partitionKey=%28https%2Ckaplanlearn.com%29,:https://static.kaplanlearn.com/redux2/theme.css?7634ea65a4e6d9041cfd3f7de18e334a necko:classified 1 strongly-framed 1 security-info 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 request-method GET response-head HTTP/2 200 OK
+date: Mon, 31 Jan 2022 21:12:56 GMT
+content-type: text/css
+content-length: 18755
+server: nginx/1.20.1
+last-modified: Fri, 21 Jan 2022 19:19:11 GMT
+etag: "61eb072f-4943"
+server-timing: dtSInfo;desc="1"
+expires: Wed, 02 Mar 2022 21:12:56 GMT
+pragma: public
+cache-control: max-age=2592000, public
+access-control-allow-origin: https://www.kaplanlearn.com
+x-content-type-options: nosniff
+x-xss-protection: 1; mode=block
+strict-transport-security: max-age=31536000; includeSubDomains
+origin-trial: AmkYMELmgqzEWRoyrnr3FoIgXSo3a4f49i86Hvt2nu7NeBswSTnt+IjvuEJ1PQDHbmXfVhp6vdAwGsioLKZhRQwAAAB3eyJvcmlnaW4iOiJodHRwczovL2thcGxhbmxlYXJuLmNvbTo0NDMiLCJmZWF0dXJlIjoiQWxsb3dTeW5jWEhSSW5QYWdlRGlzbWlzc2FsIiwiZXhwaXJ5IjoxNjAzODA4NTgwLCJpc1N1YmRvbWFpbiI6dHJ1ZX0=
+accept-ranges: bytes
+X-Firefox-Spdy: h2
+ original-response-headers date: Mon, 31 Jan 2022 21:12:56 GMT
+content-type: text/css
+content-length: 18755
+server: nginx/1.20.1
+last-modified: Fri, 21 Jan 2022 19:19:11 GMT
+etag: "61eb072f-4943"
+server-timing: dtSInfo;desc="1"
+set-cookie: dtCookie=v_4_srv_14_sn_VL93KK30FQKD1PPGND1JBH8A14HTIVOH_perc_100000_ol_0_mul_1_app-3A9ddfe48b467e700c_1_app-3Ad31ecafdb0206104_0; Path=/; Domain=.kaplan.com; secure
+expires: Wed, 02 Mar 2022 21:12:56 GMT
+cache-control: max-age=2592000
+pragma: public
+cache-control: public
+access-control-allow-origin: https://www.kaplanlearn.com
+x-content-type-options: nosniff
+x-xss-protection: 1; mode=block
+strict-transport-security: max-age=31536000; includeSubDomains
+origin-trial: AmkYMELmgqzEWRoyrnr3FoIgXSo3a4f49i86Hvt2nu7NeBswSTnt+IjvuEJ1PQDHbmXfVhp6vdAwGsioLKZhRQwAAAB3eyJvcmlnaW4iOiJodHRwczovL2thcGxhbmxlYXJuLmNvbTo0NDMiLCJmZWF0dXJlIjoiQWxsb3dTeW5jWEhSSW5QYWdlRGlzbWlzc2FsIiwiZXhwaXJ5IjoxNjAzODA4NTgwLCJpc1N1YmRvbWFpbiI6dHJ1ZX0=
+accept-ranges: bytes
+X-Firefox-Spdy: h2
+ ctid 5 uncompressed-len 0 net-response-time-onstart 636 net-response-time-onstop 636   IC

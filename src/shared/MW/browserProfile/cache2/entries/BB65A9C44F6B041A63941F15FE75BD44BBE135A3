@@ -1,0 +1,1444 @@
+/**
+ * @author tlohner
+ */
+
+/*** partie commune ***/
+var workFrame = "sqmain";
+var START_SEQUENCE = 124;
+var sequence_Id = START_SEQUENCE;
+var langueOrder = {
+  f: 2,
+  d: 0,
+  e: 1,
+  i: 3
+};
+
+var defaultOpened = [];
+var tree = new NavNode();
+
+var gifPath = "/website-navigation/sq-css-static-navigation/images/";
+var siteStatePremium = "PREMIUM";
+var siteStatePublic = "PUBLIC";
+var siteStateBoth = "both";
+
+function NavNode(libelle, url, params) {
+  this._id = sequence_Id++;
+
+  if (typeof libelle == "object") {
+    this._libelle = libelle;
+  } else {
+    this._libelle = [libelle, libelle, libelle];
+  }
+  this._url = url;
+
+  this._domaine = siteStateBoth;
+  this._idPublic = null;
+  this._className = "";
+  this._shortLibelle = "";
+  this._defaultOpen = false;
+  this._open = 0;
+  this._bold = false;
+
+  if (params) {
+    this._domaine =
+      params.Domaine == undefined ? siteStateBoth : params.Domaine;
+    this._idPublic = params.idPublic ? params.idPublic : null;
+    this._className = params.className == "undefined" ? "" : params.className;
+    this._shortLibelle =
+      params.shortLibelle && shortLibelle != "empty" ? shortLibelle : "";
+    this._defaultOpen =
+      params.defaultOpen == "undefined" ? false : params.defaultOpen;
+    this._open = params.defaultOpen == true ? 1 : 0;
+    this._bold = params.Bold == true ? true : false;
+    this._new = params.New == undefined ? "" : params.New;
+  }
+  this._row_id = "";
+  this._childs = [];
+  this._nbChilds = 0;
+  this._id_worked = [];
+  this._anchor = null;
+
+  this.addChild = _addChild;
+  this.printAllChilds = _printAllChilds;
+  this.printChilds = _printChilds;
+  this.findNode = _findNode;
+  this.getIdWorkedOpen = _getIdWorkedOpen;
+  this.getIdWorkedClose = _getIdWorkedClose;
+  this.show = _show;
+  this.hide = _hide;
+  this.animation = _animation;
+  this.open = _open;
+  this.openAll = _openAll;
+  this.setAllOpen = _setAllOpen;
+  this.close = _close;
+  this.closeAll = _closeAll;
+  this.setAllClose = _setAllClose;
+  this.startPrint = _startPrint;
+  this.goToUrl = _goToUrl;
+  this.getParent = _getParent;
+  this.checkParentOpened = _checkParentOpened;
+  this.openNewNav = _openNewNav;
+  this.getNodeByPublicId = _getNodeByPublicId;
+  this.openByPublicID = _openByPublicID;
+  this.mouseOver = _mouseOver;
+  this.mouseOut = _mouseOut;
+  this.endTabSelect = _endTabSelect;
+  this.endTabUnselect = _endTabUnselect;
+  return this;
+}
+
+/*** Partie sp√Ø¬ø¬Ωcifique leftnav ***/
+
+function _addChild(libelle, url, params) {
+  this._childs[this._nbChilds] = new NavNode(libelle, url, params);
+  this._nbChilds++;
+  return this._childs[this._nbChilds - 1];
+}
+
+function _printAllChilds() {
+  var table = document.getElementById("tablenav");
+  this.printChilds(table, 0, 0, true);
+}
+
+function _printChilds(cont, niv, parent) {
+  for (var i = 0; i < this._nbChilds; i++) {
+    //if((SITE==siteStatePublic && this._childs[i]._public == true) || SITE==siteStatePremium){
+    if (
+      (SITE == siteStatePublic &&
+        (this._childs[i]._domaine == siteStatePublic.toLowerCase() ||
+          this._childs[i]._domaine == siteStateBoth)) ||
+      (SITE == siteStatePremium &&
+        (this._childs[i]._domaine == siteStatePremium.toLowerCase() ||
+          this._childs[i]._domaine == siteStateBoth))
+    ) {
+      var id = this._childs[i]._id;
+      var row = document.createElement("div");
+
+      row.id = "row_" + id + "_" + parent;
+      this._childs[i]._row_id = row.id;
+
+      if (this._childs[i]._nbChilds > 0) {
+        var _anchor = document.createElement("a");
+        _anchor.name = "anchor_" + this._childs[i]._row_id;
+        cont.appendChild(_anchor);
+      }
+
+      cont.appendChild(row);
+
+      var hr = document.createElement("hr");
+      hr.className = "navigation_tab_separator_" + niv + " ";
+      cont.appendChild(hr);
+
+      addClass(row, "nav_niv" + niv);
+
+      if (this._childs[i]._nbChilds > 0) {
+        addClass(row, "parent");
+        if (niv != 0) {
+          var arrow = document.createElement("span");
+          addClass(arrow, "droparrow");
+          row.appendChild(arrow);
+        }
+      } else if (niv != 0) {
+        addClass(row, "child");
+        row.onclick = function() {
+          tree.goToUrl(this.id.split("_")[1]);
+          tree.endTabSelect(this);
+        };
+      } else if (niv == 0) {
+        row.onclick = function() {
+          tree.goToUrl(this.id.split("_")[1]);
+        };
+      }
+      row.onmouseover = function() {
+        tree.mouseOver(this);
+      };
+      row.onmouseout = function() {
+        tree.mouseOut(this);
+      };
+
+      if (!lang1) lang1 = "d";
+      var nbLang = langueOrder[lang1];
+      if (this._childs[i]._libelle[nbLang] == undefined && lang1 == "i") {
+        nbLang = langueOrder.f;
+      }
+
+      appendTextNode(row, this._childs[i]._libelle[nbLang], niv);
+      var img = document.createElement("img");
+      img.src = "";
+      if (this._childs[i]._new == "market") {
+        row.appendChild(document.createTextNode(" "));
+        img.src = gifPath + "new_market.gif";
+        row.appendChild(img);
+      }
+      if (this._childs[i]._new == "new") {
+        row.appendChild(document.createTextNode(" "));
+        img.src = gifPath + "new.gif";
+        row.appendChild(img);
+      }
+      if (this._childs[i]._new == "beta") {
+        img.src = gifPath + "beta.gif";
+        row.appendChild(img);
+      }
+
+      this._childs[i].printChilds(cont, niv + 1, id);
+    }
+  }
+}
+
+function _mouseOver(ob) {
+  addClass(ob, "is-hovered");
+}
+
+function _mouseOut(ob) {
+  removeClass(ob, "is-hovered");
+}
+
+function _endTabSelect(ob) {
+  var old = document.getElementsByClassName("is-last-selected");
+  if (old.length > 0) {
+    tree.endTabUnselect(old[0]);
+  }
+  addClass(ob, "is-last-selected");
+}
+
+function _endTabUnselect(ob) {
+  removeClass(ob, "is-last-selected");
+}
+
+function _findNode(id) {
+  for (var i = 0; i < this._nbChilds; i++) {
+    if (this._childs[i]._id == id) {
+      return this._childs[i];
+    } else {
+      if (this._childs[i]._nbChilds > 0) {
+        var ret = this._childs[i].findNode(id);
+        if (ret) {
+          return ret;
+        }
+      }
+    }
+  }
+  return false;
+}
+
+function _getIdWorkedOpen() {
+  for (var i = 0; i < this._nbChilds; i++) {
+    //if((SITE==siteStatePublic && this._childs[i]._public == true) || SITE==siteStatePremium){
+    if (
+      (SITE == siteStatePublic &&
+        (this._childs[i]._domaine == siteStatePublic.toLowerCase() ||
+          this._childs[i]._domaine == siteStateBoth)) ||
+      (SITE == siteStatePremium &&
+        (this._childs[i]._domaine == siteStatePremium.toLowerCase() ||
+          this._childs[i]._domaine == siteStateBoth))
+    ) {
+      tree._id_worked.push(this._childs[i]._row_id);
+      //alert(this._childs[i]._libelle[2]+'  :  '+this._childs[i]._open);
+      if (this._childs[i]._nbChilds > 0 && this._childs[i]._open == 1) {
+        this._childs[i].getIdWorkedOpen();
+      }
+    }
+  }
+}
+
+function _getIdWorkedClose() {
+  for (var i = 0; i < this._nbChilds; i++) {
+    //if((SITE==siteStatePublic && this._childs[i]._public == true) || SITE==siteStatePremium){
+    if (
+      (SITE == siteStatePublic &&
+        (this._childs[i]._domaine == siteStatePublic.toLowerCase() ||
+          this._childs[i]._domaine == siteStateBoth)) ||
+      (SITE == siteStatePremium &&
+        (this._childs[i]._domaine == siteStatePremium.toLowerCase() ||
+          this._childs[i]._domaine == siteStateBoth))
+    ) {
+      tree._id_worked.push(this._childs[i]._row_id);
+      if (this._childs[i]._nbChilds > 0 && this._childs[i]._open == 1) {
+        this._childs[i].getIdWorkedClose();
+      }
+    }
+  }
+}
+
+function _show() {
+  var div = document.getElementById(tree._id_worked[0]);
+  if (!div) {
+    if (tree._id_worked.length == 0) {
+      clearInterval(tree._animationTimer);
+    }
+    return false;
+  }
+  removeClass(div, "is-hidden");
+  addClass(div, "is-shown");
+  removeClass(div.nextSibling, "is-hidden");
+  addClass(div.nextSibling, "is-shown");
+  tree._id_worked.shift();
+  if (tree._id_worked.length == 0) {
+    clearInterval(tree._animationTimer);
+  }
+}
+
+function _hide() {
+  var div = document.getElementById(
+    tree._id_worked[tree._id_worked.length - 1]
+  );
+  if (!div) {
+    if (tree._id_worked.length == 0) {
+      clearInterval(tree._animationTimer);
+    }
+    return false;
+  }
+  removeClass(div, "is-shown");
+  addClass(div, "is-hidden");
+  removeClass(div.nextSibling, "is-shown");
+  addClass(div.nextSibling, "is-hidden");
+  tree._id_worked.pop();
+  if (tree._id_worked.length == 0) {
+    clearInterval(tree._animationTimer);
+  }
+}
+
+function _animation(fn) {
+  tree._animationTimer = setInterval(fn, 1);
+}
+
+function _open(id, gotourl) {
+  clearInterval(tree._animationTimer);
+  if (gotourl == true) {
+    tree.goToUrl(id);
+  }
+
+  var node = this.findNode(id);
+
+  tree._anchor = "anchor_" + node._row_id;
+
+  var div = document.getElementById(node._row_id);
+  var after = 0;
+
+  node._open = 1;
+  tree.checkParentOpened(id);
+
+  node.getIdWorkedOpen();
+
+  if (tree._id_worked.length > 0) {
+    addClass(div, "is-selected");
+
+    tree.animation(function() {
+      tree.show();
+    });
+
+    div.onclick = function() {
+      tree.close(id);
+    };
+  }
+}
+
+function _openAll() {
+  this.setAllOpen();
+  var divs = document.getElementsByTagName("div");
+  for (var i = 0; i < divs.length; i++) {
+    if (hasClass(divs[i], "nav_niv0")) {
+      addClass(divs[i], "is-selected");
+    } else {
+      removeClass(divs[i], "is-hidden");
+      addClass(divs[i], "is-shown");
+      removeClass(divs[i].nextSibling, "is-hidden");
+      addClass(divs[i].nextSibling, "is-shown");
+    }
+  }
+}
+
+function _setAllOpen() {
+  for (var i = 0; i < this._nbChilds; i++) {
+    //if((SITE==siteStatePublic && this._childs[i]._public == true) || SITE==siteStatePremium){
+    if (
+      (SITE == siteStatePublic &&
+        (this._childs[i]._domaine == siteStatePublic.toLowerCase() ||
+          this._childs[i]._domaine == siteStateBoth)) ||
+      (SITE == siteStatePremium &&
+        (this._childs[i]._domaine == siteStatePremium.toLowerCase() ||
+          this._childs[i]._domaine == siteStateBoth))
+    ) {
+      if (this._childs[i]._nbChilds > 0) {
+        this._childs[i]._open = 1;
+        var div = document.getElementById(this._childs[i]._row_id);
+        div.onclick = (function(child) {
+          return function() {
+            tree.close(child._id);
+          };
+        })(this._childs[i]);
+        this._childs[i].setAllOpen();
+      }
+    }
+  }
+}
+
+function _close(id) {
+  clearInterval(tree._animationTimer);
+  var node = this.findNode(id);
+  var div = document.getElementById(node._row_id);
+  div.onclick = null;
+
+  node._open = 0;
+
+  node.getIdWorkedClose();
+
+  if (tree._id_worked.length > 0) {
+    removeClass(div, "is-selected");
+
+    tree.animation(function() {
+      tree.hide();
+    });
+
+    div.onclick = function() {
+      tree.open(id, true);
+    };
+  }
+}
+
+function _closeAll() {
+  defaultOpened = [];
+  this.setAllClose();
+  var divs = document
+    .getElementById("nav_container")
+    .getElementsByTagName("table")[0]
+    .getElementsByTagName("div");
+  for (var i = 0; i < divs.length; i++) {
+    if (hasClass(divs[i], "nav_niv0")) {
+      removeClass(divs[i], "is-selected");
+    } else if (!hasClass(divs[i], "outercontainer")) {
+      removeClass(divs[i], "is-shown");
+      addClass(divs[i], "is-hidden");
+      removeClass(divs[i].nextSibling, "is-shown");
+      addClass(divs[i].nextSibling, "is-hidden");
+    }
+  }
+}
+
+function _setAllClose() {
+  for (var i = 0; i < this._nbChilds; i++) {
+    //if((SITE==siteStatePublic && this._childs[i]._public == true) || SITE==siteStatePremium){
+    if (
+      (SITE == siteStatePublic &&
+        (this._childs[i]._domaine == siteStatePublic.toLowerCase() ||
+          this._childs[i]._domaine == siteStateBoth)) ||
+      (SITE == siteStatePremium &&
+        (this._childs[i]._domaine == siteStatePremium.toLowerCase() ||
+          this._childs[i]._domaine == siteStateBoth))
+    ) {
+      if (this._childs[i]._nbChilds > 0) {
+        if (this._childs[i]._defaultOpen) {
+          this._childs[i]._open = 1;
+          if (!tree.getParent(this._id)) {
+            defaultOpened.push(this._childs[i]._id);
+          }
+        } else {
+          this._childs[i]._open = 0;
+          var div = document.getElementById(this._childs[i]._row_id);
+          div.onclick = (function(child) {
+            return function() {
+              tree.open(child._id, true);
+            };
+          })(this._childs[i]);
+        }
+        this._childs[i].setAllClose();
+      }
+    }
+  }
+}
+
+function defaultOpener() {
+  if (defaultOpened.length > 0) {
+    for (var i = 0; i < defaultOpened.length; i++) {
+      tree.open(defaultOpened[i], false);
+    }
+  }
+}
+
+function _startPrint() {
+  var table = document.getElementById("tablenav");
+  if (table) {
+    removeAllChilds(table);
+  } else {
+    var tb = document.createElement("table");
+    var tbody = document.createElement("tbody");
+    tb.appendChild(tbody);
+    var row = tbody.insertRow(-1);
+    var cell = row.insertCell(-1);
+    cell.id = "tablenav";
+    cell.className = "navigation";
+
+    document.getElementById("nav_container").appendChild(tb);
+
+    var _a = document.createElement("a");
+    var _p = document.createElement("p");
+    _a.className = "terms";
+    _p.className = "terms";
+
+    if (lang1 == "f") {
+      var linkText = document.createTextNode(
+        "Informations juridiques importantes"
+      );
+      var advertisingMaterialText = document.createTextNode(
+        "Le contenu de ce site web constitue de la publicit\u00E9 et n'a \u00E9t\u00E9 ni soumise \u00E0 ni autoris\u00E9e par une autorit\u00E9 de surveillance."
+      );
+    }
+    if (lang1 == "d") {
+      var linkText = document.createTextNode("Wichtiger rechtlicher Hinweis");
+      var advertisingMaterialText = document.createTextNode(
+        "Der Inhalt dieser Website stellt Werbematerial dar und wurde keiner Aufsichtsbeh\u00F6rde gemeldet oder \u00FCbermittelt."
+      );
+    }
+    if (lang1 == "e") {
+      var linkText = document.createTextNode("Important legal information");
+      var advertisingMaterialText = document.createTextNode(
+        "The content of this website represents advertising material and has not been submitted to nor approved by any supervisory authority."
+      );
+    }
+    if (lang1 == "i") {
+      var linkText = document.createTextNode("Termini e condizioni");
+      var advertisingMaterialText = document.createTextNode(
+        "Questo sito web contiene materiale pubblicitario e non \u00E8 stato sottoposto ad n\u00E9 \u00E8 stato approvato da alcuna autorit\u00E0 di vigilanza."
+      );
+    }
+    _a.href =
+      "/website-static/terms_conditions/terms_conditions_" + lang1 + ".html";
+    _a.target = "sqmain";
+
+    _a.appendChild(linkText);
+    document.getElementById("nav_container").appendChild(_a);
+
+    _p.appendChild(advertisingMaterialText);
+    document.getElementById("nav_container").appendChild(_p);
+  }
+  this.printAllChilds();
+}
+
+function _goToUrl(id) {
+  var node = this.findNode(id);
+  if (!node._url) {
+    return;
+  }
+  if (/javascript:/.test(node._url)) {
+    var _tmp = node._url.split(/:/);
+    eval(_tmp[1]);
+  } else {
+    var url = node._url;
+    if (node._libelle[3] == undefined && lang1 == "i") {
+      var _lang1 = "f";
+      var _lang2 = "fr";
+      var _lang0 = "2";
+    } else {
+      var _lang1 = lang1;
+      var _lang2 = lang2;
+      var _lang0 = lang0;
+    }
+
+    url = url.replace(/CLANG2/g, _lang2);
+    url = url.replace(/CLANG1/g, _lang1);
+    url = url.replace(/CLANG0/g, _lang0);
+
+    top.frames["sqmain"].location = url;
+  }
+}
+
+function _getParent(id) {
+  for (var i = 0; i < this._nbChilds; i++) {
+    if (this._childs[i]._id == id) {
+      return this;
+    } else {
+      if (this._childs[i]._nbChilds > 0) {
+        var ret = this._childs[i].getParent(id);
+        if (ret) {
+          return ret;
+        }
+      }
+    }
+  }
+  return false;
+}
+
+function _checkParentOpened(id) {
+  var node = tree.getParent(id);
+  if (node) {
+    node._open = 1;
+    if (tree.getParent(node._id)) {
+      tree.checkParentOpened(node._id);
+    }
+  }
+}
+
+function _openNewNav(type, idPublic, gotourl, openFolder) {
+  if (openFolder != false) {
+    openFolder = true;
+  }
+  if (top.mnuCur != type) {
+    top.mnuCur = type;
+    setNavigation(top.mnuCur);
+    tree.startPrint();
+    tree.closeAll();
+  } else {
+    tree.closeAll();
+  }
+  tree.openByPublicID(idPublic, gotourl, openFolder);
+  defaultOpener();
+  document
+    .getElementById("nav_container")
+    .appendChild(document.getElementById("Footerswitch"));
+}
+
+function _getNodeByPublicId(idPublic) {
+  for (var i = 0; i < this._nbChilds; i++) {
+    if (this._childs[i]._idPublic == idPublic) {
+      return this._childs[i];
+    } else {
+      if (this._childs[i]._nbChilds > 0) {
+        var ret = this._childs[i].getNodeByPublicId(idPublic);
+        if (ret) {
+          return ret;
+        }
+      }
+    }
+  }
+  return false;
+}
+
+function _openByPublicID(idPublic, gotourl, openFolder) {
+  var node = this.getNodeByPublicId(idPublic);
+  if (node) {
+    if (openFolder) {
+      this.open(node._id, gotourl);
+    } else {
+      if (gotourl == true) {
+        tree.goToUrl(node._id);
+      }
+    }
+  }
+}
+
+function appendTextNode(element, text, level) {
+  element.appendChild(document.createTextNode(text));
+}
+
+function removeAllChilds(el) {
+  while (el.hasChildNodes()) {
+    el.removeChild(el.firstChild);
+  }
+}
+
+function addClass(object, name) {
+  if (typeof object != "undefined" && object != null) {
+    object.className += name + " ";
+  }
+}
+
+function removeClass(object, name) {
+  /* Explanation of the REGEX below
+   (\s|^) is matching whitespaces or the beginning of the line
+
+   name is the literal text for the classname to match
+
+   g is an argument for repeating until done
+   */
+  var re = new RegExp("(\\s|^)" + name, "g");
+  //Then replace the classname using the regex matching every instance of the classname
+  if (
+    typeof object != "undefined" &&
+    object != null &&
+    typeof object.className != "undefined"
+  ) {
+    object.className = object.className.replace(re, "");
+  }
+}
+
+function hasClass(object, name) {
+  return object.className.indexOf(name) != -1;
+}
+           20220111210158-8l]   https://premium.swissquote.ch/website-navigation/navigation/menu/js/engine/left_nav.js?r=1076   G  /**
+ * @author tlohner
+ */
+
+/*** partie commune ***/
+var workFrame = "sqmain";
+var START_SEQUENCE = 124;
+var sequence_Id = START_SEQUENCE;
+var langueOrder = {
+  f: 2,
+  d: 0,
+  e: 1,
+  i: 3
+};
+
+var defaultOpened = [];
+var tree = new NavNode();
+
+var gifPath = "/website-navigation/sq-css-static-navigation/images/";
+var siteStatePremium = "PREMIUM";
+var siteStatePublic = "PUBLIC";
+var siteStateBoth = "both";
+
+function NavNode(libelle, url, params) {
+  this._id = sequence_Id++;
+
+  if (typeof libelle == "object") {
+    this._libelle = libelle;
+  } else {
+    this._libelle = [libelle, libelle, libelle];
+  }
+  this._url = url;
+
+  this._domaine = siteStateBoth;
+  this._idPublic = null;
+  this._className = "";
+  this._shortLibelle = "";
+  this._defaultOpen = false;
+  this._open = 0;
+  this._bold = false;
+
+  if (params) {
+    this._domaine =
+      params.Domaine == undefined ? siteStateBoth : params.Domaine;
+    this._idPublic = params.idPublic ? params.idPublic : null;
+    this._className = params.className == "undefined" ? "" : params.className;
+    this._shortLibelle =
+      params.shortLibelle && shortLibelle != "empty" ? shortLibelle : "";
+    this._defaultOpen =
+      params.defaultOpen == "undefined" ? false : params.defaultOpen;
+    this._open = params.defaultOpen == true ? 1 : 0;
+    this._bold = params.Bold == true ? true : false;
+    this._new = params.New == undefined ? "" : params.New;
+  }
+  this._row_id = "";
+  this._childs = [];
+  this._nbChilds = 0;
+  this._id_worked = [];
+  this._anchor = null;
+
+  this.addChild = _addChild;
+  this.printAllChilds = _printAllChilds;
+  this.printChilds = _printChilds;
+  this.findNode = _findNode;
+  this.getIdWorkedOpen = _getIdWorkedOpen;
+  this.getIdWorkedClose = _getIdWorkedClose;
+  this.show = _show;
+  this.hide = _hide;
+  this.animation = _animation;
+  this.open = _open;
+  this.openAll = _openAll;
+  this.setAllOpen = _setAllOpen;
+  this.close = _close;
+  this.closeAll = _closeAll;
+  this.setAllClose = _setAllClose;
+  this.startPrint = _startPrint;
+  this.goToUrl = _goToUrl;
+  this.getParent = _getParent;
+  this.checkParentOpened = _checkParentOpened;
+  this.openNewNav = _openNewNav;
+  this.getNodeByPublicId = _getNodeByPublicId;
+  this.openByPublicID = _openByPublicID;
+  this.mouseOver = _mouseOver;
+  this.mouseOut = _mouseOut;
+  this.endTabSelect = _endTabSelect;
+  this.endTabUnselect = _endTabUnselect;
+  return this;
+}
+
+/*** Partie sp√É¬Ø√Ç¬ø√Ç¬Ωcifique leftnav ***/
+
+function _addChild(libelle, url, params) {
+  this._childs[this._nbChilds] = new NavNode(libelle, url, params);
+  this._nbChilds++;
+  return this._childs[this._nbChilds - 1];
+}
+
+function _printAllChilds() {
+  var table = document.getElementById("tablenav");
+  this.printChilds(table, 0, 0, true);
+}
+
+function _printChilds(cont, niv, parent) {
+  for (var i = 0; i < this._nbChilds; i++) {
+    //if((SITE==siteStatePublic && this._childs[i]._public == true) || SITE==siteStatePremium){
+    if (
+      (SITE == siteStatePublic &&
+        (this._childs[i]._domaine == siteStatePublic.toLowerCase() ||
+          this._childs[i]._domaine == siteStateBoth)) ||
+      (SITE == siteStatePremium &&
+        (this._childs[i]._domaine == siteStatePremium.toLowerCase() ||
+          this._childs[i]._domaine == siteStateBoth))
+    ) {
+      var id = this._childs[i]._id;
+      var row = document.createElement("div");
+
+      row.id = "row_" + id + "_" + parent;
+      this._childs[i]._row_id = row.id;
+
+      if (this._childs[i]._nbChilds > 0) {
+        var _anchor = document.createElement("a");
+        _anchor.name = "anchor_" + this._childs[i]._row_id;
+        cont.appendChild(_anchor);
+      }
+
+      cont.appendChild(row);
+
+      var hr = document.createElement("hr");
+      hr.className = "navigation_tab_separator_" + niv + " ";
+      cont.appendChild(hr);
+
+      addClass(row, "nav_niv" + niv);
+
+      if (this._childs[i]._nbChilds > 0) {
+        addClass(row, "parent");
+        if (niv != 0) {
+          var arrow = document.createElement("span");
+          addClass(arrow, "droparrow");
+          row.appendChild(arrow);
+        }
+      } else if (niv != 0) {
+        addClass(row, "child");
+        row.onclick = function() {
+          tree.goToUrl(this.id.split("_")[1]);
+          tree.endTabSelect(this);
+        };
+      } else if (niv == 0) {
+        row.onclick = function() {
+          tree.goToUrl(this.id.split("_")[1]);
+        };
+      }
+      row.onmouseover = function() {
+        tree.mouseOver(this);
+      };
+      row.onmouseout = function() {
+        tree.mouseOut(this);
+      };
+
+      if (!lang1) lang1 = "d";
+      var nbLang = langueOrder[lang1];
+      if (this._childs[i]._libelle[nbLang] == undefined && lang1 == "i") {
+        nbLang = langueOrder.f;
+      }
+
+      appendTextNode(row, this._childs[i]._libelle[nbLang], niv);
+      var img = document.createElement("img");
+      img.src = "";
+      if (this._childs[i]._new == "market") {
+        row.appendChild(document.createTextNode(" "));
+        img.src = gifPath + "new_market.gif";
+        row.appendChild(img);
+      }
+      if (this._childs[i]._new == "new") {
+        row.appendChild(document.createTextNode(" "));
+        img.src = gifPath + "new.gif";
+        row.appendChild(img);
+      }
+      if (this._childs[i]._new == "beta") {
+        img.src = gifPath + "beta.gif";
+        row.appendChild(img);
+      }
+
+      this._childs[i].printChilds(cont, niv + 1, id);
+    }
+  }
+}
+
+function _mouseOver(ob) {
+  addClass(ob, "is-hovered");
+}
+
+function _mouseOut(ob) {
+  removeClass(ob, "is-hovered");
+}
+
+function _endTabSelect(ob) {
+  var old = document.getElementsByClassName("is-last-selected");
+  if (old.length > 0) {
+    tree.endTabUnselect(old[0]);
+  }
+  addClass(ob, "is-last-selected");
+}
+
+function _endTabUnselect(ob) {
+  removeClass(ob, "is-last-selected");
+}
+
+function _findNode(id) {
+  for (var i = 0; i < this._nbChilds; i++) {
+    if (this._childs[i]._id == id) {
+      return this._childs[i];
+    } else {
+      if (this._childs[i]._nbChilds > 0) {
+        var ret = this._childs[i].findNode(id);
+        if (ret) {
+          return ret;
+        }
+      }
+    }
+  }
+  return false;
+}
+
+function _getIdWorkedOpen() {
+  for (var i = 0; i < this._nbChilds; i++) {
+    //if((SITE==siteStatePublic && this._childs[i]._public == true) || SITE==siteStatePremium){
+    if (
+      (SITE == siteStatePublic &&
+        (this._childs[i]._domaine == siteStatePublic.toLowerCase() ||
+          this._childs[i]._domaine == siteStateBoth)) ||
+      (SITE == siteStatePremium &&
+        (this._childs[i]._domaine == siteStatePremium.toLowerCase() ||
+          this._childs[i]._domaine == siteStateBoth))
+    ) {
+      tree._id_worked.push(this._childs[i]._row_id);
+      //alert(this._childs[i]._libelle[2]+'  :  '+this._childs[i]._open);
+      if (this._childs[i]._nbChilds > 0 && this._childs[i]._open == 1) {
+        this._childs[i].getIdWorkedOpen();
+      }
+    }
+  }
+}
+
+function _getIdWorkedClose() {
+  for (var i = 0; i < this._nbChilds; i++) {
+    //if((SITE==siteStatePublic && this._childs[i]._public == true) || SITE==siteStatePremium){
+    if (
+      (SITE == siteStatePublic &&
+        (this._childs[i]._domaine == siteStatePublic.toLowerCase() ||
+          this._childs[i]._domaine == siteStateBoth)) ||
+      (SITE == siteStatePremium &&
+        (this._childs[i]._domaine == siteStatePremium.toLowerCase() ||
+          this._childs[i]._domaine == siteStateBoth))
+    ) {
+      tree._id_worked.push(this._childs[i]._row_id);
+      if (this._childs[i]._nbChilds > 0 && this._childs[i]._open == 1) {
+        this._childs[i].getIdWorkedClose();
+      }
+    }
+  }
+}
+
+function _show() {
+  var div = document.getElementById(tree._id_worked[0]);
+  if (!div) {
+    if (tree._id_worked.length == 0) {
+      clearInterval(tree._animationTimer);
+    }
+    return false;
+  }
+  removeClass(div, "is-hidden");
+  addClass(div, "is-shown");
+  removeClass(div.nextSibling, "is-hidden");
+  addClass(div.nextSibling, "is-shown");
+  tree._id_worked.shift();
+  if (tree._id_worked.length == 0) {
+    clearInterval(tree._animationTimer);
+  }
+}
+
+function _hide() {
+  var div = document.getElementById(
+    tree._id_worked[tree._id_worked.length - 1]
+  );
+  if (!div) {
+    if (tree._id_worked.length == 0) {
+      clearInterval(tree._animationTimer);
+    }
+    return false;
+  }
+  removeClass(div, "is-shown");
+  addClass(div, "is-hidden");
+  removeClass(div.nextSibling, "is-shown");
+  addClass(div.nextSibling, "is-hidden");
+  tree._id_worked.pop();
+  if (tree._id_worked.length == 0) {
+    clearInterval(tree._animationTimer);
+  }
+}
+
+function _animation(fn) {
+  tree._animationTimer = setInterval(fn, 1);
+}
+
+function _open(id, gotourl) {
+  clearInterval(tree._animationTimer);
+  if (gotourl == true) {
+    tree.goToUrl(id);
+  }
+
+  var node = this.findNode(id);
+
+  tree._anchor = "anchor_" + node._row_id;
+
+  var div = document.getElementById(node._row_id);
+  var after = 0;
+
+  node._open = 1;
+  tree.checkParentOpened(id);
+
+  node.getIdWorkedOpen();
+
+  if (tree._id_worked.length > 0) {
+    addClass(div, "is-selected");
+
+    tree.animation(function() {
+      tree.show();
+    });
+
+    div.onclick = function() {
+      tree.close(id);
+    };
+  }
+}
+
+function _openAll() {
+  this.setAllOpen();
+  var divs = document.getElementsByTagName("div");
+  for (var i = 0; i < divs.length; i++) {
+    if (hasClass(divs[i], "nav_niv0")) {
+      addClass(divs[i], "is-selected");
+    } else {
+      removeClass(divs[i], "is-hidden");
+      addClass(divs[i], "is-shown");
+      removeClass(divs[i].nextSibling, "is-hidden");
+      addClass(divs[i].nextSibling, "is-shown");
+    }
+  }
+}
+
+function _setAllOpen() {
+  for (var i = 0; i < this._nbChilds; i++) {
+    //if((SITE==siteStatePublic && this._childs[i]._public == true) || SITE==siteStatePremium){
+    if (
+      (SITE == siteStatePublic &&
+        (this._childs[i]._domaine == siteStatePublic.toLowerCase() ||
+          this._childs[i]._domaine == siteStateBoth)) ||
+      (SITE == siteStatePremium &&
+        (this._childs[i]._domaine == siteStatePremium.toLowerCase() ||
+          this._childs[i]._domaine == siteStateBoth))
+    ) {
+      if (this._childs[i]._nbChilds > 0) {
+        this._childs[i]._open = 1;
+        var div = document.getElementById(this._childs[i]._row_id);
+        div.onclick = (function(child) {
+          return function() {
+            tree.close(child._id);
+          };
+        })(this._childs[i]);
+        this._childs[i].setAllOpen();
+      }
+    }
+  }
+}
+
+function _close(id) {
+  clearInterval(tree._animationTimer);
+  var node = this.findNode(id);
+  var div = document.getElementById(node._row_id);
+  div.onclick = null;
+
+  node._open = 0;
+
+  node.getIdWorkedClose();
+
+  if (tree._id_worked.length > 0) {
+    removeClass(div, "is-selected");
+
+    tree.animation(function() {
+      tree.hide();
+    });
+
+    div.onclick = function() {
+      tree.open(id, true);
+    };
+  }
+}
+
+function _closeAll() {
+  defaultOpened = [];
+  this.setAllClose();
+  var divs = document
+    .getElementById("nav_container")
+    .getElementsByTagName("table")[0]
+    .getElementsByTagName("div");
+  for (var i = 0; i < divs.length; i++) {
+    if (hasClass(divs[i], "nav_niv0")) {
+      removeClass(divs[i], "is-selected");
+    } else if (!hasClass(divs[i], "outercontainer")) {
+      removeClass(divs[i], "is-shown");
+      addClass(divs[i], "is-hidden");
+      removeClass(divs[i].nextSibling, "is-shown");
+      addClass(divs[i].nextSibling, "is-hidden");
+    }
+  }
+}
+
+function _setAllClose() {
+  for (var i = 0; i < this._nbChilds; i++) {
+    //if((SITE==siteStatePublic && this._childs[i]._public == true) || SITE==siteStatePremium){
+    if (
+      (SITE == siteStatePublic &&
+        (this._childs[i]._domaine == siteStatePublic.toLowerCase() ||
+          this._childs[i]._domaine == siteStateBoth)) ||
+      (SITE == siteStatePremium &&
+        (this._childs[i]._domaine == siteStatePremium.toLowerCase() ||
+          this._childs[i]._domaine == siteStateBoth))
+    ) {
+      if (this._childs[i]._nbChilds > 0) {
+        if (this._childs[i]._defaultOpen) {
+          this._childs[i]._open = 1;
+          if (!tree.getParent(this._id)) {
+            defaultOpened.push(this._childs[i]._id);
+          }
+        } else {
+          this._childs[i]._open = 0;
+          var div = document.getElementById(this._childs[i]._row_id);
+          div.onclick = (function(child) {
+            return function() {
+              tree.open(child._id, true);
+            };
+          })(this._childs[i]);
+        }
+        this._childs[i].setAllClose();
+      }
+    }
+  }
+}
+
+function defaultOpener() {
+  if (defaultOpened.length > 0) {
+    for (var i = 0; i < defaultOpened.length; i++) {
+      tree.open(defaultOpened[i], false);
+    }
+  }
+}
+
+function _startPrint() {
+  var table = document.getElementById("tablenav");
+  if (table) {
+    removeAllChilds(table);
+  } else {
+    var tb = document.createElement("table");
+    var tbody = document.createElement("tbody");
+    tb.appendChild(tbody);
+    var row = tbody.insertRow(-1);
+    var cell = row.insertCell(-1);
+    cell.id = "tablenav";
+    cell.className = "navigation";
+
+    document.getElementById("nav_container").appendChild(tb);
+
+    var _a = document.createElement("a");
+    var _p = document.createElement("p");
+    _a.className = "terms";
+    _p.className = "terms";
+
+    if (lang1 == "f") {
+      var linkText = document.createTextNode(
+        "Informations juridiques importantes"
+      );
+      var advertisingMaterialText = document.createTextNode(
+        "Le contenu de ce site web constitue de la publicit\u00E9 et n'a \u00E9t\u00E9 ni soumise \u00E0 ni autoris\u00E9e par une autorit\u00E9 de surveillance."
+      );
+    }
+    if (lang1 == "d") {
+      var linkText = document.createTextNode("Wichtiger rechtlicher Hinweis");
+      var advertisingMaterialText = document.createTextNode(
+        "Der Inhalt dieser Website stellt Werbematerial dar und wurde keiner Aufsichtsbeh\u00F6rde gemeldet oder \u00FCbermittelt."
+      );
+    }
+    if (lang1 == "e") {
+      var linkText = document.createTextNode("Important legal information");
+      var advertisingMaterialText = document.createTextNode(
+        "The content of this website represents advertising material and has not been submitted to nor approved by any supervisory authority."
+      );
+    }
+    if (lang1 == "i") {
+      var linkText = document.createTextNode("Termini e condizioni");
+      var advertisingMaterialText = document.createTextNode(
+        "Questo sito web contiene materiale pubblicitario e non \u00E8 stato sottoposto ad n\u00E9 \u00E8 stato approvato da alcuna autorit\u00E0 di vigilanza."
+      );
+    }
+    _a.href =
+      "/website-static/terms_conditions/terms_conditions_" + lang1 + ".html";
+    _a.target = "sqmain";
+
+    _a.appendChild(linkText);
+    document.getElementById("nav_container").appendChild(_a);
+
+    _p.appendChild(advertisingMaterialText);
+    document.getElementById("nav_container").appendChild(_p);
+  }
+  this.printAllChilds();
+}
+
+function _goToUrl(id) {
+  var node = this.findNode(id);
+  if (!node._url) {
+    return;
+  }
+  if (/javascript:/.test(node._url)) {
+    var _tmp = node._url.split(/:/);
+    eval(_tmp[1]);
+  } else {
+    var url = node._url;
+    if (node._libelle[3] == undefined && lang1 == "i") {
+      var _lang1 = "f";
+      var _lang2 = "fr";
+      var _lang0 = "2";
+    } else {
+      var _lang1 = lang1;
+      var _lang2 = lang2;
+      var _lang0 = lang0;
+    }
+
+    url = url.replace(/CLANG2/g, _lang2);
+    url = url.replace(/CLANG1/g, _lang1);
+    url = url.replace(/CLANG0/g, _lang0);
+
+    top.frames["sqmain"].location = url;
+  }
+}
+
+function _getParent(id) {
+  for (var i = 0; i < this._nbChilds; i++) {
+    if (this._childs[i]._id == id) {
+      return this;
+    } else {
+      if (this._childs[i]._nbChilds > 0) {
+        var ret = this._childs[i].getParent(id);
+        if (ret) {
+          return ret;
+        }
+      }
+    }
+  }
+  return false;
+}
+
+function _checkParentOpened(id) {
+  var node = tree.getParent(id);
+  if (node) {
+    node._open = 1;
+    if (tree.getParent(node._id)) {
+      tree.checkParentOpened(node._id);
+    }
+  }
+}
+
+function _openNewNav(type, idPublic, gotourl, openFolder) {
+  if (openFolder != false) {
+    openFolder = true;
+  }
+  if (top.mnuCur != type) {
+    top.mnuCur = type;
+    setNavigation(top.mnuCur);
+    tree.startPrint();
+    tree.closeAll();
+  } else {
+    tree.closeAll();
+  }
+  tree.openByPublicID(idPublic, gotourl, openFolder);
+  defaultOpener();
+  document
+    .getElementById("nav_container")
+    .appendChild(document.getElementById("Footerswitch"));
+}
+
+function _getNodeByPublicId(idPublic) {
+  for (var i = 0; i < this._nbChilds; i++) {
+    if (this._childs[i]._idPublic == idPublic) {
+      return this._childs[i];
+    } else {
+      if (this._childs[i]._nbChilds > 0) {
+        var ret = this._childs[i].getNodeByPublicId(idPublic);
+        if (ret) {
+          return ret;
+        }
+      }
+    }
+  }
+  return false;
+}
+
+function _openByPublicID(idPublic, gotourl, openFolder) {
+  var node = this.getNodeByPublicId(idPublic);
+  if (node) {
+    if (openFolder) {
+      this.open(node._id, gotourl);
+    } else {
+      if (gotourl == true) {
+        tree.goToUrl(node._id);
+      }
+    }
+  }
+}
+
+function appendTextNode(element, text, level) {
+  element.appendChild(document.createTextNode(text));
+}
+
+function removeAllChilds(el) {
+  while (el.hasChildNodes()) {
+    el.removeChild(el.firstChild);
+  }
+}
+
+function addClass(object, name) {
+  if (typeof object != "undefined" && object != null) {
+    object.className += name + " ";
+  }
+}
+
+function removeClass(object, name) {
+  /* Explanation of the REGEX below
+   (\s|^) is matching whitespaces or the beginning of the line
+
+   name is the literal text for the classname to match
+
+   g is an argument for repeating until done
+   */
+  var re = new RegExp("(\\s|^)" + name, "g");
+  //Then replace the classname using the regex matching every instance of the classname
+  if (
+    typeof object != "undefined" &&
+    object != null &&
+    typeof object.className != "undefined"
+  ) {
+    object.className = object.className.replace(re, "");
+  }
+}
+
+function hasClass(object, name) {
+  return object.className.indexOf(name) != -1;
+}
+”ò¿Ÿ—   —       X"F	      workFrame      ?0E      sqmain     0B4      START_SEQUENCE     éÔÈ™      sequence_Id    
+Pe˚      langueOrder    ñÒE      defaultOpened      â më      tree   £§Q»      NavNode    ‚· Â      gifPath	    ¶l4      /website-navigation/sq-css-static-navigation/images/
+   ”[›       siteStatePremium   ™À“      PREMIUM    '7˚¨      siteStatePublic    ª‚¢      PUBLIC     ì˜ÛÂ      siteStateBoth      më      both   °b£      libelle    ÀÀ&<      params     .¸%∞      _id    pÈAï      _libelle   Œòè      _url   xOÁÇ      _domaine   ô±åE	      _idPublic      Á§}
+      _className     ˙ªù      _shortLibelle      Ïn<0      _defaultOpen   Ã˙ŸË      _open      È∏‡ü      _bold      Ay7'      Domaine    ﬂ?l      idPublic   6CY>	      className      È˙ﬂ      shortLibelle    ∏™˝      empty!      °úJ'      defaultOpen"    Áπ·Ù      Bold#   %BÜ«      _new$   :2IÃ      New%    i|ÿ≈      _row_id&    „c      _childs'    ‡¿«x	      _nbChilds(       ©Ãp
+      _id_worked)     «Gõè      _anchor*    Ç@à≈      addChild+   ?8o	      _addChild,      πÅm¿      printAllChilds-     ‹JY      _printAllChilds.    néÖî      printChilds/    5O≥      _printChilds0   ≤‘LÚ      findNode1   }≈‹	      _findNode2      «πÆ1      getIdWorkedOpen3     L      _getIdWorkedOpen4   !&ü„      getIdWorkedClose5   r‘˜—      _getIdWorkedClose6      HáíK      show7   &‡Âﬂ      _show8      üvÙ}      hide9   à4£      _hide:      kÔÂ^	      animation;      ò¿ á
+      _animation<     óx5      open=   ÆC`A      openAll>    ü{›3      _openAll?   ·ß°@
+      setAllOpen@     úgÊÅ      _setAllOpenA    ∑aó      _closeB      Ñ∏      closeAllC   {ß“Z	      _closeAllD      8™«8      setAllCloseE     s¨§      _setAllCloseF   ∫ïv
+      startPrintG     +Ñî“      _startPrintH    †‹“Ñ      goToUrlI    hë0      _goToUrlJ   ®7Ùi	      getParentK      /˜”
+      _getParentL     µ€tı      checkParentOpenedM      jDœ
+      _checkParentOpenedN     õF⁄≈
+      openNewNavO     Cÿ:      _openNewNavP    kÆér      getNodeByPublicIdQ      |zHà      _getNodeByPublicIdR     `Y%      openByPublicIDS     {âh      _openByPublicIDT    £†˚è	      mouseOverU      Ár…
+      _mouseOverV     ˛FÉ      mouseOutW   :∆„	      _mouseOutX      üö}a      endTabSelectY   ^[Cé      _endTabSelectZ      πw“      endTabUnselect[     qüÓi      _endTabUnselect\    ∂dî      table]      ∏OÄ      document^   t«£      getElementById_     !Bjs      tablenav`   …·¥≥      conta   ¢2ò      nivb    ˛Ë˘2      parentc     |Ÿ4~      SITEd   RâDo      toLowerCasee    Ï%N¬      rowf    DC      createElementg      ú≥ÊŸ      divh    œ3°‰      row_i   ®…ë      anchor_j    ≠$~      appendChildk    +'´W      navigation_tab_separator_l      Bå|      addClassm   Ã;‡”      nav_nivn    !H	ß      arrowo      ±4PB      spanp   r\{¨	      droparrowq      Qj^      childr      EﬁS      onclicks    âﬂŒ      onmouseovert    <"w
+      onmouseoutu     BZ«y      lang1v      ]Zx¶      nbLangw     ØÌ‡Û      appendTextNodex     e ú      imgy    ú∑»õ      srcz    x°	˙      market{     6!ÜÃ      createTextNode|     o›˙à      new_market.gif}     jˆü3      new.gif~    K©õ      beta   ¡UÎ“      beta.gifÄ   ®Bå
+      is-hoveredÅ     ˆ+      removeClassÇ    fndd      oldÉ    ˇÂ¿      getElementsByClassNameÑ     Ëc      is-last-selectedÖ   t¥NŒ      retÜ    Ñu2      pushá   bPk      clearIntervalà      v∏Û5      _animationTimerâ    ö&ô	      is-hiddenä      j‚¸      is-shownã   Ñ'n      nextSiblingå    Ç=äO      shiftç      ¶i4      popé    Ïà       setIntervalè    ì8Ùã      gotourlê    &`°›      nodeë   ç≥T      afterí      ≠õã5      is-selectedì    ®jöj      divsî   XFZ      getElementsByTagNameï   7ÑÉz      hasClassñ   ⁄En9      nav_niv0ó   éÉƒm      nav_containerò      ÀWg      outercontainerô     ––t      defaultOpenerö      #	¡      removeAllChildsõ    ßèâv      tbodyú      t≤ •	      insertRowù      súÔa      cellû   ",º
+      insertCellü     th
+      navigation†     •      terms°      Ì8dà      linkText¢   Œ¢ZÖ#      Informations juridiques importantes£    –x3      advertisingMaterialText§    iC∏ãz      Le contenu de ce site web constitue de la publicitÈ et n'a ÈtÈ ni soumise ‡ ni autorisÈe par une autoritÈ de surveillance.•     ®ﬂ“{      Wichtiger rechtlicher Hinweis¶      GÜo      Der Inhalt dieser Website stellt Werbematerial dar und wurde keiner Aufsichtsbehˆrde gemeldet oder ¸bermittelt.ß    ¬b\      Important legal information®    ÂœÑ      The content of this website represents advertising material and has not been submitted to nor approved by any supervisory authority.©   zÁl      Termini e condizioni™   Îº·XÇ      Questo sito web contiene materiale pubblicitario e non Ë stato sottoposto ad nÈ Ë stato approvato da alcuna autorit‡ di vigilanza.´     ª©`X      href¨   Xë2      /website-static/terms_conditions/terms_conditions_≠     BÜ'Ü      .htmlÆ      Ã¯<Ù      javascript:Ø    ú€¥      _tmp∞   €ç|º      _lang1±     ∞ ÷·      _lang2≤     "E      _lang0≥     â‡è€      lang2¥      ˚”˛      lang0µ      Z˛í      CLANG2∂     °«Ù      CLANG1∑     ËãèV      CLANG0∏     $√Á      topπ    oT*      frames∫     0+QA      locationª   Ã”˚C
+      openFolderº     å¯¡'      mnuCurΩ     ;pî≈      setNavigationæ      úÕ<„      Footerswitchø   à3¿µ      text¿   Ï“a[      level¡      àç¶      hasChildNodes¬      ˘˙K      removeChild√    ~Xﬂ∫
+      firstChildƒ     Ë©a√      (\s|^)≈     ⁄Eú¡      indexOf∆    õ- ï      _printChilds/row.onclick«   æÕ®‚      _printChilds/row.onmouseover»   À«∆‰      _printChilds/row.onmouseout…    D`¡g      _open/<     º†ÕI      _open/div.onclickÀ      dEr      _setAllOpen/div.onclick<Ã   5Ä˙¡      _setAllOpen/div.onclickÕ    {ïTÉ      _close/<Œ   Ïƒ≈      _close/div.onclickœ     Hw.Ç      _setAllClose/div.onclick<–      ≠µû¶      _setAllClose/div.onclick     .   5  .   .             Ô%,â                                                                                                                                                                             	                  
+                                                                                                                                                                                                                                                                                                                                                                                                                   !                  "                 #                  $                  %                  &                  '                  (                  )                  *                  +                  ,                  -      ≥Oåc+   +   +   ;  –  Pï  –3  –U  –@  –+  –M  –w  –  PY  –  PÅ  –l  –5  –W  –-  –O  –  PG  –  P>  –7  –   P/  –  –  PI  –  PA  –
+  Pö  –9  –[  –C  –1  –E  –  –S  –K  –ô  –Q  –  P              ÿ    l                 ÿ    l                 \  l      	         `  a  b  i  ç e  )  [ n  v  x  l                 l                 l                 l                 l                                            Ç                            ç i  Ö  l                 i  l                 i  l                 g                g               ◊             ç`è  ê  g  ë  l                                                 ì  i  l                 i  g  l                q  P                            ç`ê  g  l                                                 ì  i  l                 i  g  l                q  P                              i  
+   
+           \  K õ  e  ù    Ÿ °  £  l   	             ç`ê  PØ  Pÿ `∞  P±  P≤  P  `l  `            ç i  Ö  l               ç ê               æ    è  ª                i  Ö  l                 è  ª  ê  l                n   ø  ¿               ï              ¸  $              ¸  $  Œ              ¸  $  Ø¬0∞Æ      :      µ     ∂     ∑     IÙ$KEÆ˙ö   4      f      Ä¯ˇd       Ä¯ˇe      Ä¯ˇi      Ä¯ˇá&’™ç!´!.       ´                         —!   ≤"   #   ¡"   ÷≤$   |¡$   ÷≤%   µ$   ¡%   ÷≤&   7'   ¡&   ÷≤(   c    ¡(   ÷≤)   µ*   |⁄  }  ¡)   ÷≤+   ,   ¡+   ÷≤-   .   ¡-   ÷≤/   0   ¡/   ÷≤1   2   ¡1   ÷üE%`P;%`P8%`P;%`PK%`P;%`Pì@%`P;%`P;%`P;%`PKÄ êP    ‰  ‰  ö               {       ’ƒ   ÷∑   ≤   µ   .ÿ'‹€¡   ÷I   ÷∂     î   ë	   ∑   ∂  I   ÷ì1   ë
+   ∑   c   ∂  d    ∂  d   ∂  d   I   ÷ë   ∑   ∂ I   ÷∑   µ   I   ÷∑   I   ÷∑   	   I
+   ÷∑   	   I   ÷∑   I   ÷∑   I   ÷∑   I   ÷∂ î‡  ë   ∑   ∂ G   µ   î   ë   µ   ì   ë   ∂ G   ë   I   ÷∑   ∂ G   î   ë   ∂ G   ì   ë    ë    I   ÷∑   ∂ G      î   ë$   	   ì   ë$   ∂ G   ë%   I
+   ÷∑   ∂ G   ñ   ë(   ÷µ      ë*   î   ë+   µ   ì   ë,   	   ë,   I   ÷∑   ∂ G      î   ë0   ì   ë0   ∂ G   ë1   I   ÷∑   ∂ G   î   ë5   ì   ë5   ë5   I   ÷∑   ∂ G   î   ë9   ì   ë9   ë9   I   ÷∑   ∂ G   µ   î   ë>   	   ì   ë>   ∂ G   ë?   I   ÷ë@   ∑   	   I   ÷∑   c    I   ÷∑   I   ÷∑   c    I   ÷∑   I   ÷∑   µ   I   ÷∑   µ    I!   ÷∑   µ"   I#   ÷∑   µ$   I%   ÷∑   µ&   I'   ÷∑   µ(   I)   ÷∑   µ*   I+   ÷∑   µ,   I-   ÷∑   µ.   I/   ÷∑   µ   I0   ÷∑   µ1   I2   ÷∑   µ3   I4   ÷∑   µ5   I6   ÷∑   µ7   I8   ÷∑   µ9   I:   ÷∑   µ;   I<   ÷∑   µ=   I>   ÷∑   µ?   I@   ÷∑   µA   IB   ÷∑   µC   ID   ÷∑   µE   IF   ÷∑   µG   IH   ÷∑   µI   IJ   ÷∑   µK   IL   ÷∑   µM   IN   ÷∑   µO   IP   ÷∑   úü6 `P†@ `Pî0 `Pó00 `P)(	(	ì@ `PM
+ `P? `P; `P? `P? `P; `P; `PK `P= `P4∫0 `P¥0 `Pæ0 `P4Ã0 `P4∂0 `PØ0 `PØ0 `P√@ `P? `P? `P; `P? `PK% `P? `P? `P? `P? `P? `P? `P? `P? `P? `P? `P? `P? `P? `P? `P? `P? `P? `P? `P? `P? `P? `P? `P? `P? `P? `P? `P4Q  ò   ò   ]         	              ’ƒ   ÷∑   G   ∑   G   µ   |∂  ∂ ∂ ⁄  } K÷∑   ÿG   .ÿ›'I   ÷÷∑   G   ∑   G   &Húü6 `P• P5 `Pñ0 `Pï0Q   l   l   6                        ’ƒ  ÷µ   ÿG   €   o ƒ   ÷∑  ÿG   €∑   s ÷ü6 `Pë 	P8 `Pí P4P l  \  ≠     	          ∑      ’ƒ  ÷ƒ   ÷í    ∑   ∑  G   îá  ë   µ   µ   ñR   ë   ÷∑  G   ∑   HG   µ   ÿG   €o  ó$   ë   ÷∑  G   ∑   HG   µ   ë   óh   ë   ÷µ   µ   ñR   ë   ÷∑  G   ∑   HG   µ   ÿG   €o  ó$   ë!   ÷∑  G   ∑   HG   µ   ë&   îó  ë'   ∑  G   ∑   HG	   ƒ  ÷µ
+   ÿG   €   o ƒ  ÷∑     ∑  %   %∂ %I   ÷∑  G   ∑   H∑  G   I   ÷∑  G   ∑   HG   îX   ë:   µ
+   ÿG   €   o ƒ  ÷∑     ∑  G   ∑   HG   %I   ÷∂  ÿG   €∑  s ÷ëD   ∂  ÿG   €∑  s ÷µ
+   ÿG   €   o ƒ  ÷∑     ∂ %   %I   ÷∂  ÿG   €∑  s ÷µ    ∑     ∂ %s ÷∑  G   ∑   HG   îu   ëV   µ    ∑     s ÷∂ îI   ëZ   µ
+   ÿG   €   o ƒ  ÷µ    ∑     s ÷∑  ÿG   €∑  s ÷ëa   ìc   ëa   ∂ î1   ëc   µ    ∑     s ÷∑  h   I    ÷ì(   ëf   ∂ î   ëh   ∑  h!   I    ÷ëi   ∑  h"   I#   ÷∑  h$   I%   ÷µ&   ï   ëm   ≤&   '   ¡&   ÷ëo   µ(   µ&   Hƒ  ÷∑  G   ∑   HG)   ∑  Hµ*   ñ   ëy   ÷µ&   +   ë{   î   ë|   µ(   G,   ƒ  ÷ë~   µ-    ∑  ∑  G   ∑   HG)   ∑  H∂ s ÷µ
+   ÿG   €.   o ƒ  ÷∑  /   I0   ÷∑  G   ∑   HG1   2   îU   ëç   ∑  ÿG   €µ
+   ÿG3   €   o s ÷∑  µ4   5   %I0   ÷∑  ÿG   €∑  s ÷ëó   ∑  G   ∑   HG1   6   îU   ëú   ∑  ÿG   €µ
+   ÿG3   €   o s ÷∑  µ4   7   %I0   ÷∑  ÿG   €∑  s ÷ë¶   ∑  G   ∑   HG1   8   î2   ë´   ∑  µ4   9   %I0   ÷∑  ÿG   €∑  s ÷ë∞   ∑  G   ∑   HÿG:   €∂  ∂ %∑  s ÷ëµ   ∑   .ÿ'ƒ   ÷÷ìj˙ˇˇë∑   ü6  `P&fPò@0 `Pñ0ü 5P?©0ñ0ü 6P?®00 `Pò0 `Pë 	PH `Pû0 `Pù@ 
+`Pü0 `Pë 	P8 `P£0 `P.PI `P.PD `Pë 	P8 `Pô0 `P.PD `Pì PD 
+`Pü0 `P/P4 `P? `Pë 	P8 
+`P/P4 
+`P/Pì@& `P? `P/P4 `Pô@, `P? `Pî@1 `PO4 `PO8 
+`P/`Pï0 `Pê0 
+`P√0 `Pî@> `P• P4 `Pë 	P8 `P? 
+`P£0 `Pú P#ˇˇˇÎP4 `Pï0 `P/PIF 
+`P£0 `Pú P#ˇˇˇÎP4 `Pï0 `P/PIK 
+`P£0 `Pï0 `P/PIP `P° PI &`Pó@SP l            õ  Ñ   Ñ   E                
+        ’ƒ   ÷µ   ÿG   €∑   G   ÿG   €   o Hs ÷µ   ÿG   €∑   s ÷ü6 
+`P° P%ˇˇˇP4 
+`Pê P4 P  h   h   1                        ’ƒ   ÷µ   ÿG   €∑   G   ÿG   €   o Hs ÷ü6 
+`P° P%ˇˇˇP4 P   L   L                           ’ƒ   ÷µ   ÿG   €∑   s ÷ü6 `Pê P4 P   L   L                           ’ƒ   ÷µ   ÿG   €∑   s ÷ü6 `Pê P4 P   @   @                            µ    ∂     s ÷ü0 `P.P4P  @   @                            µ    ∂     s ÷ü0 `P.P4P  §   §   \                        µ   ÿG   €   o ƒ   ÷∑   G   î    ë   µ   ÿG   €∑   Hs ÷ë
+   µ    ∂     s ÷ü0 `Pë 	P8 `Pï0 `Pí PI `P.P4P    @   @                            µ    ∂     s ÷ü0 `P.P4P  P  @  ’                      ’ƒ  ÷ƒ   ÷í    ∑   ∑  G   î≠   ë   ∑  G   ∑   HG   ∂  î   ë   ∑  G   ∑   Húì\   ë
+   ∑  G   ∑   HG   î=   ë   ∑  G   ∑   HÿG   €∂  o ƒ  ÷∑  î   ë   ∑  úë   ∑   .ÿ'ƒ   ÷÷ìDˇˇˇë   úü6  `P&fPò0 `P°0 `PNK0 
+`Pü0 `Pò P8 `P> 
+`PDF &`Pó@ `P1Q P            ¡   $    •               >       ’ƒ  ÷ƒ   ÷í    ∑   ∑  G   î  ë   µ   µ   ñR   ë   ÷∑  G   ∑   HG   µ   ÿG   €o  ó$   ë   ÷∑  G   ∑   HG   µ   ë   óh   ë   ÷µ   µ   ñR   ë   ÷∑  G   ∑   HG   µ   ÿG   €o  ó$   ë!   ÷∑  G   ∑   HG   µ   ë&   îè   ë'   µ	   G
+   ÿG   €∑  G   ∑   HG   s ÷∑  G   ∑   HG   ñ    ë3   ÷∑  G   ∑   HG   ë7   î#   ë8   ∑  G   ∑   HÿG   €s  ÷ë<   ∑   .ÿ'ƒ   ÷÷ìr˛ˇˇë>   ü6  `P&fPò@0 `Pñ0ü 5P?©0ñ0ü 6P?®00 `P§ PD 
+`Pƒ0 `Pï PI &`Pó@P  $            ì  $    •               >       ’ƒ  ÷ƒ   ÷í    ∑   ∑  G   î  ë   µ   µ   ñR   ë   ÷∑  G   ∑   HG   µ   ÿG   €o  ó$   ë   ÷∑  G   ∑   HG   µ   ë   óh   ë   ÷µ   µ   ñR   ë   ÷∑  G   ∑   HG   µ   ÿG   €o  ó$   ë!   ÷∑  G   ∑   HG   µ   ë&   îè   ë'   µ	   G
+   ÿG   €∑  G   ∑   HG   s ÷∑  G   ∑   HG   ñ    ë3   ÷∑  G   ∑   HG   ë7   î#   ë8   ∑  G   ∑   HÿG   €s  ÷ë<   ∑   .ÿ'ƒ   ÷÷ìr˛ˇˇë>   ü6  `P&fPò@0 `Pñ0ü 5P?©0ñ0ü 6P?®00 `P§ P4 
+`Pƒ0 `Pï PI &`Pó@P   $            ì  ê  ê  	                '        µ   ÿG   €µ   G   Ho ƒ   ÷∑   ï@   ë   µ   G   G   î   ë   µ    µ   G   s ÷ë   úë   µ    ∑   	   s ÷µ
+    ∑      s ÷µ    ∑   G   	   s ÷µ
+    ∑   G      s ÷µ   G   ÿG   €s  ÷µ   G   G   î   ë#   µ    µ   G   s ÷ë'   ü0 `Pò 	P8 `P> `Põ0 `Pê PI `PAF `P/P4 `P/P4 `Pî P4 `Pî P4 `Pë P4 `Põ0 `Pê PIP   §  §                  +        µ   ÿG   €µ   G   µ   G   G   &Ho ƒ   ÷∑   ï@   ë   µ   G   G   î   ë   µ    µ   G   s ÷ë   úë   µ    ∑   	   s ÷µ
+    ∑      s ÷µ    ∑   G   	   s ÷µ
+    ∑   G      s ÷µ   G   ÿG   €s  ÷µ   G   G   î   ë'   µ    µ   G   s ÷ë+   ü0 `P<ú@ PH `P> `Põ0 `Pê PI `PAF
+ `P/P4 `P/P4 `Pî P4 `Pî P4 `Pë P4 `Põ0 `Pê PIP   H   H                            µ   µ    ∂  o I   ÷ü0 `P/P9P    ¥  ¥                 $       ’ƒ  ÷µ    µ   G   s ÷∂ î   ë   µ   ÿG   €∏   s ÷ë	   ∑  ÿG   €∏   o ƒ   ÷µ      ∑   G   %I   ÷µ	   ÿG
+   €∑   G   o ƒ  ÷ƒ  ÷∑   I   ÷µ   ÿG   €∏   s ÷∑   ÿG   €s  ÷µ   G   G   îA   ë   µ    ∑     s ÷µ   ÿG   €h   s ÷∑  h   I   ÷ë$   ü6 `Pê P4 `P? `Pë PI `Pê PH `Pö@
+ `Pï 	P8 `PF `P; `Pë PD `P+PD `Põ0 `P/PD `Pë PD `Pî@P  @   @                             µ   ÿG   €s  ÷ü0 `P,P4 P  H   H                             µ   ÿG   €∏   s ÷ü0 `Pë P4 P    ∞  †                        ’ƒ  ÷∑  ÿG   €s  ÷µ   ÿG   €   o ƒ   ÷ƒ  ÷í   ∑  ∑   G   îŒ   ë   µ    ∑   ∑  H   o î'   ë   µ    ∑   ∑  H	   s ÷ìt   ë   µ
+    ∑   ∑  H   s ÷µ    ∑   ∑  H   s ÷µ
+    ∑   ∑  HG      s ÷µ    ∑   ∑  HG      s ÷ë   ∑  .ÿ'ƒ  ÷÷ì#ˇˇˇë   ü6 `P+P4 `Pë 	P8  `P&fPò0 `Pî P= `Pî P>0 `Pî P4 `Pî P4 `Pô P4 `Pô PI #`Pó@P ∞         4   ‚   D  4  µ               ?       ’ƒ  ÷ƒ   ÷í    ∑   ∑  G   îè  ë   µ   µ   ñR   ë   ÷∑  G   ∑   HG   µ   ÿG   €o  ó$   ë   ÷∑  G   ∑   HG   µ   ë   óh   ë   ÷µ   µ   ñR   ë   ÷∑  G   ∑   HG   µ   ÿG   €o  ó$   ë!   ÷∑  G   ∑   HG   µ   ë&   îü   ë'   ∑  G   ∑   HG   îÄ   ë,   ∑  G   ∑   HI	   ÷µ
+   ÿG   €∑  G   ∑   HG   o ƒ  ÷∑  h    ∑  G   ∑   Ho I   ÷∑  G   ∑   HÿG   €s  ÷ë=   ∑   .ÿ'ƒ   ÷÷ìb˛ˇˇë?   ü6  `P&fPò@0 `Pñ0ü 5P?©0ñ0ü 6P?®00 
+`Pü0 `Pï0 `Pü 	P8 `PJ.
+P9 `Pï PI &`Pó@P   D            £  4   4                             h   úü0 
+`PE Q  L   L                             µ   ÿG   €∏   G   s ÷ü0 `Pñ P4 
+P   @  @  Ã                       ’ƒ  ÷µ    µ   G   s ÷∑  ÿG   €∏   o ƒ   ÷µ   ÿG   €∑   G   o ƒ  ÷∑  I   ÷∑   I	   ÷∑   ÿG
+   €s  ÷µ   G   G   îA   ë   µ    ∑     s ÷µ   ÿG   €h   s ÷∑  h   I   ÷ë   ü6 `Pê P4 `Pê P8 `Pï 	P8 `PK `PK `P+PD
+ `Põ0 `P/PD `Pë PD `Pî@P @   @                             µ   ÿG   €s  ÷ü0 `P,P4 P  H   H                             µ   ÿG   €∏   s ÷ü0 `Pí P4 P       m               +       ’ƒ  ÷≤   c    ¡   ÷∑  ÿG   €s  ÷µ   ÿG   €   o ÿG   €   o HÿG   €   o ƒ   ÷ƒ  ÷í   ∑  ∑   G	   îÔ   ë   µ
+    ∑   ∑  H   o î'   ë   µ    ∑   ∑  H   s ÷ìï   ë   µ
+    ∑   ∑  H   o ït   ë   µ    ∑   ∑  H   s ÷µ    ∑   ∑  H   s ÷µ    ∑   ∑  HG      s ÷µ    ∑   ∑  HG      s ÷ë)   ∑  .ÿ'ƒ  ÷÷ìˇˇˇë+   ü6 `Pê0 `P+P4 `P<%P:%P<%P8  `P&fPò0 `Pî P= `Pî P> `Pî P= `Pî P4 `Pî P4 `Pô P4 `Pô PI #`Pó@P           d       ‡  @               Q       ’ƒ  ÷ƒ   ÷í    ∑   ∑  G   î  ë   µ   µ   ñR   ë   ÷∑  G   ∑   HG   µ   ÿG   €o  ó$   ë   ÷∑  G   ∑   HG   µ   ë   óh   ë   ÷µ   µ   ñR   ë   ÷∑  G   ∑   HG   µ   ÿG   €o  ó$   ë!   ÷∑  G   ∑   HG   µ   ë&   î*  ë'   ∑  G   ∑   HG   î  ë,   ∑  G   ∑   HG	   în   ë0   ∑  G   ∑   HI
+   ÷µ   ÿG   €∑  G   o ï-   ë8   µ   ÿG   €∑  G   ∑   HG   s ÷ë>   ìg   ë>   ∑  G   ∑   HI
+   ÷µ   ÿG   €∑  G   ∑   HG   o ƒ  ÷∑  h    ∑  G   ∑   Ho I   ÷ëK   ∑  G   ∑   HÿG   €s  ÷ëO   ∑   .ÿ'ƒ   ÷÷ì◊˝ˇˇëQ   ü6  `P&fPò@0 `Pñ0ü 5P?©0ñ0ü 6P?®00 
+`Pü0 `Pù0 
+`Pï0 `Pï P= `Pü Pì@0 
+`Pï0 `Pü 	P8 
+`PJ.PN `Pï PI &`Pó@P              .  4   4                             h   úü0 `PE 
+Q  L   L                             µ   ÿG   €∏   G   s ÷ü0 `Pó P4 P  Ã   º   n                        µ   G   î\   ë   ƒ   ÷í   ∑   µ   G   î7   ë   µ   ÿG   €µ   ∑   Hs ÷∑   .ÿ'ƒ   ÷÷ìπˇˇˇë   ü0 `Pñ0 	 `P&fPô0 `Pó PD .`Pó@P    Ã             L   h  h        
+          Z        ’ƒ	  ÷µ   ÿG   €   o ƒ   ÷∑   î   ë   µ    ∑   s ÷ì–  ë   µ   ÿG   €   o ƒ  ÷µ   ÿG   €   o ƒ  ÷∑  ÿG   €∑  s ÷∑  ÿG	   €ˇo ƒ  ÷∑  ÿG
+   €ˇo ƒ  ÷∑     I   ÷∑     I   ÷µ   ÿG   €   o ÿG   €∑  s ÷µ   ÿG   €   o ƒ  ÷µ   ÿG   €   o ƒ  ÷∑     I   ÷∑     I   ÷µ      î<   ë$   µ   ÿG   €   o ƒ  ÷µ   ÿG   €   o ƒ  ÷ë*   µ      î<   ë-   µ   ÿG   €   o ƒ  ÷µ   ÿG   €   o ƒ  ÷ë3   µ      î<   ë6   µ   ÿG   €   o ƒ  ÷µ   ÿG   €   o ƒ  ÷ë<   µ      î<   ë?   µ   ÿG   €   o ƒ  ÷µ   ÿG   €   o ƒ  ÷ëE   ∑      µ   %!   %I"   ÷∑  #   I$   ÷∑  ÿG   €∑  s ÷µ   ÿG   €   o ÿG   €∑  s ÷∑  ÿG   €∑  s ÷µ   ÿG   €   o ÿG   €∑  s ÷ëX   ∑	  ÿG%   €s  ÷ü6 `Pë 	P8 `P> `P*P>0 `Pë 	P8 `Pë 	P8 `P/P4 `P-P8 `P-P8 `P? `PO `Pë 	P. PD `Pë 	P8 `Pë 	P8 `P? `PO `Pï0 `P<E PH $`P<E -PM `Pï0 `Pë 	P8 $`P<E -PM" `Pï0 `Pë 	P8 $`P<E$ -PM( `Pï0 `Pë 	P8 $`P<E* -PM. `P4ó0 `PO2 `P/P4 `Pë 	P. PD5 `P/P4 `Pë 	P. PI8 `P+P4P `  `  ª                $       ”≈ 	  ÷’≈ 
+  ÷∏ 
+  ÿG   €∏   o ≈   ÷∏   G   ï   ë    úë   g   ÿG   €∏   G   o îD   ë   ∏   G   ÿG   €g   o ≈   ÷¥    ∏   Hv ﬂ  ÷ì  ë   ∏   G   ≈   ÷∏   G   H¥	   ñ   ë   ÷¥
+      ë   î0   ë      ≈   ÷   ≈   ÷   ≈   ÷ì+   ë   ¥
+   ≈   ÷¥   ≈   ÷¥   ≈   ÷ë   ∏   ÿG   €g   ∏   o ≈   ÷∏   ÿG   €g   ∏   o ≈   ÷∏   ÿG   €g   ∏   o ≈   ÷¥   G   G   ∏   I   ÷ë$   ü> `Pë P9 `Pî0 `PAF `Pñ P= `Pñ 
+P9 `P†00 `Pê0 `P∏0 `P; `P; `Pï00 `P; `P; `Pê@ `Pñ 
+P9 `Pñ 
+P9 `Pñ 
+PI `Pü@P H  8  À                      ’ƒ  ÷ƒ   ÷í    ∑   ∑  G   î£   ë   ∑  G   ∑   HG   ∂  î   ë   ∑  úì\   ë   ∑  G   ∑   HG   î=   ë   ∑  G   ∑   HÿG   €∂  o ƒ  ÷∑  î   ë   ∑  úë   ∑   .ÿ'ƒ   ÷÷ìNˇˇˇë   úü6  `P&fPò0 `P°0 `PDK0 
+`Pü0 `Pò P8 `P> 
+`PDF &`Pó@ `P1Q   H            ∑   º   º   q                        µ   ÿG   €∂  o ƒ   ÷∑   îP   ë   ∑   I   ÷µ   ÿG   €∑   G   o î#   ë
+   µ   ÿG   €∑   G   s ÷ë   ü0 `P/P8 `P> `P; `Pï P= `Pï PIP   h  h  È                  "       ∂ î   ë   √ ÷ë   µ   G   ∂  îQ   ë   µ   ∂  I   ÷µ    µ   G   s ÷µ   ÿG   €s  ÷µ   ÿG   €s  ÷ì   ë   µ   ÿG   €s  ÷ë   µ   ÿG   €∂ ∂ ∂ s ÷µ    s  ÷µ	   ÿG
+   €   o ÿG   €µ	   ÿG
+   €   o s ÷ü0 `P? `PJ `Pò0 `P> `Pê P4 `P,P4 `P,P>0 `P,PI `Pï P4 `P: `P<%P:ë P#ˇˇˇÎP4P P  @  ’                      ’ƒ  ÷ƒ   ÷í    ∑   ∑  G   î≠   ë   ∑  G   ∑   HG   ∂  î   ë   ∑  G   ∑   Húì\   ë
+   ∑  G   ∑   HG   î=   ë   ∑  G   ∑   HÿG   €∂  o ƒ  ÷∑  î   ë   ∑  úë   ∑   .ÿ'ƒ   ÷÷ìDˇˇˇë   úü6  `P&fPò0 `P°0 `PNK0 
+`Pü0 `Pò P8 `P> 
+`PDF &`Pó@ `P1Q P            ¡   ‹   ‹   ä                       ’ƒ  ÷∑  ÿG   €∂  o ƒ   ÷∑   îd   ë   ∂ î*   ë   ∑  ÿG   €∑   G   ∂ s ÷ì2   ë   ∂ î#   ë	   µ   ÿG   €∑   G   s ÷ë   ü6 `P.P8 `P> `P= `Pó P>0 
+`P? `Pï PIP    T   T   !                         ∂  ÿG   €µ   ÿG   €∂ o s ÷ü0 `Pô P#ˇˇˇÎP4P å   |   ?                        ﬁí    ∂  ÿG   €o  î%   ë   ∂  ÿG   €∂  G   s ÷ìÕˇˇˇë   ü1 	fP*P= `Pí PNP    å             8   |   |   H                  	       ∂     ñ   ë   ÷∂  ë   î#   ë   ∂  ÿG   ∂    %%I   ÷ë	   ü0 `P©0 `PíLP   ‘   ‘   ç                        µ   |   ∂ %   ⁄  } ƒ   ÷∂     ñ*   ë   ÷∂  ñ   ë   ÷∂  G      ë   î.   ë   ∂  ∂  G   ÿG   €∑      o I   ÷ë   ü@ `P†@
+0 `Pï0ê0 û00 `Põ $PNP    H   H                            ∂  G   ÿG   €∂ o ˇúü0 `Pí P6Q  3ıÿ  `    ¸            q               ˚           !  "  $  #  %  &  '  (  )  +  *  -  ,  /  .  1  0  3  2  5  4  7  6  9  8  ;  :  <  >  =  @  ?  A  ;   C  B  E  D  G  F  I  H  K  J  M  L  O  N  Q  P  S  R  U  T  W  V  Y  X  [  Z    `&  '      `]  ^  _  .    `  H  ç ^  _  X    `  H  ç ^  _    `  T    `  V    `'  c    &    d    
+    ]  f  g  h  _  ç %  a  i  $  j  [ k       l  m  b  o  p  q    pr    p  ps    pt  u  d      ˚  i  f  w  x  q   y  #  z  {    |  (  }  ~    .  	  `l  Ä  
+  `Å  Ä    `]  É  Ñ  ˝     Z  l    `Å  Ñ    `'  &    0    `'  c    &    d    
+    (  Ü  %    2    `'  c    &    d    
+    (  Ü  %    4    `]  ^    (  ˝   á  à  Å  â  l  ä  ã  å    `]  ^    (  ˝   á  à  Å  ä  l  â  ã  ç    `  é  à    `  6    `  ;     `á    à  H  0  i  %  )  ]  ^    L  2  (  ˝   l  í  :    p  pr    `?  ]  î  g  ˝   ï  ñ  l  í  Å  â  ä  ã    `  ;       `  p  `'  c    &    d    
+    ]  ^  %    pr  ?    `  8    `  <    `á    à  0  ]  ^  %  r    4  (  ˝   Å  í  :    p  p  `  D  ]  ^  ó  î  \  g  ˝   ï  ñ  Å  í  ò  ä  l  â  ã     `  <      `   p  `'  c    &    d    
+        J      Ü  ]  ^  %    pr  D  !  `  ˝     <  "  `]  ^  _  ö  f  \  õ  j  ú  û  ç ü    ó  a  p  †  u  f  {  ¢  §  d  •  ¶  e  ß  ®  i  ©  ™  ¨  ≠  ´    §  ,  #  `0       P•  ^    P     ˚  u  i  f  € 2  ≥  ¥  Z    P  P  P∏  π    ∫  $  `'  &    J  %  `  J      L  &  `∏  º  Ω    F  B  R  ô  ]  ^  ó  j  æ  '  `'  &    P  (  `P  <      H  )  `j  ]  {  *  `¡  ¬  √  +  `˚       ,  `  ƒ  g  ˚    Z  q   -  `  ≈     `  p  p  p  p	  p
+  p  p  p  p  p  p  p  p  p  p  p  p  p  p  p!  p"  p#  p$  p%  p&  p'  p(  p)  p*  p+  p,  p-  p              @        	  
+            ˇXÑ  3                  Q         †  Q      +      †  U      -      †  m   ;   /      †  Z      ∆      † a      ∆      † g      «      † j      »      † ®      U      †  ´      W      †  Æ      Y      †  ∂      [      †  π      1      †  æ      3      †  Õ      5      †  ‹      7      †  Í      9      †  ¯      ;      †             †  ¸      …      † ˇ             †      >      †  ,     @      †  *     À      † &     Ã      † B     A      †  <     Õ      † ?     Œ      † T     C      †  m     E      †  k     œ      † g     –      † É     ô      †  à  &   G      †  Æ     I      †  «     K      †  Ã     M      †  “     O      †  ‡     Q      †  Â     S      †  Î     w      †  Ô     ö      †  Û     l      †  ˜     Å      †  ˇ     ï      †  ùH©¿      G      G                  ™  d	  ö  d	                ®	  E
+  ñ	  E
+  \              _
+  ø
+  G
+  ø
+  b              ÷
+  -  ¡
+  -  g              O  Ø  G  Ø  è               Ï  )  ‰  )  î               S  }  K  }  ò                û  «  ñ  «  õ                B  h  /  h  º               |  •  j  •  ¿               Ω  g  ß  g  ƒ               Å  ∞  i  ∞  Ã              ƒ  ˘  ≤  ˘  –                ˛  ˚  ˛  ‡                 ª     ª  Ù                À  á  Ω  á                 ó  r!  â  r!                 á!  º!  t!  º!  -            ÇÃ!  Ÿ#  æ!  Ÿ#  1              w#  î#  o#  î#  F               ≤#  “#  ™#  “#  J              Ï#  Ä%  €#  Ä%  P             ñ%  Ÿ(  Ç%  Ÿ(  _             Ä+(  å(  #(  å(  m              N(  Å(  F(  Å(  n             ÇÍ(  }*  €(  }*  x              *  3*  *  3*  Ö               Q*  v*  I*  v*  â              ë*  π,  *  π,  è             –,  ˇ0  ª,  ˇ0  ¢             Ä90  ß0  10  ß0  ∂  !            ^0  ö0  V0  ö0  ∑               1  ®1  1  ®1  ¬              æ1  Å:  ™1  Å:                Éî:  Û<  É:  Û<               =  3>  ı<  3>  !              P>  Ò>  5>  Ò>  1              ?  æ@  Û>  æ@  ;             €@  1B  ¿@  1B  N             KB  AC  3B  AC  ^              ZC  ™C  CC  ™C  k              ƒC  D  ¨C  D  o              %D  óD  D  óD  u              ≠D  √F  ôD  √F  {              ÷F  G  ≈F  G  é            5°›L,åè_      a¯^Îa¯^ÎCÎ≥bis   â    O^partitionKey=%28https%2Cswissquote.ch%29,:https://premium.swissquote.ch/website-navigation/navigation/menu/js/engine/left_nav.js?r=1076 necko:classified 1 strongly-framed 1 security-info FnhllAKWRHGAlo+ESXykKAAAAAAAAAAAwAAAAAAAAEaphjojH6pBabDSgSnsfLHeAAAAAgAAAAAAAAAAAAAAAAAAAAEANwFmCjImkVxP+7sgiYWmMt8FvcOXmlQiTNWFiWlrbpbqgwAAAAAAAAZSMIIGTjCCBTagAwIBAgIMHwt8TZKU7VUA7JAWMA0GCSqGSIb3DQEBCwUAMFMxCzAJBgNVBAYTAkJFMRkwFwYDVQQKExBHbG9iYWxTaWduIG52LXNhMSkwJwYDVQQDEyBHbG9iYWxTaWduIEdDQyBSMyBEViBUTFMgQ0EgMjAyMDAeFw0yMTA0MjIwODMxMzZaFw0yMjA1MjQwODMxMzZaMCAxHjAcBgNVBAMTFXByZW1pdW0uc3dpc3NxdW90ZS5jaDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALDo/zhE2HO4G7EMfYI7hlNhaaRGp075Fvym8vZkJcFzkR5+Llhf3uIYowlROv2AbjCakiCmxxDylSqC5WENjjhxUcljJ5CAX0JtLfGJ5XNeJVA+xj1+kxhnCo6WD7IB0wU32YZyrAMrxvGbTBFZ5YzGGF0sTUyYoOdLoNFhO5Anp3M0goc534cOtFX/QEMxw8vdtATcgNiyBdJ2Y83fDwlKJg/ZF1VwN8ppfB/BhTBOkZ+gY+OAAfxNs1QV6v4CzTsKdIUJddqrk2tMihQGssoZgHcc2wKpFMlCdGID62ABESLpvgsfLMZ42QkcQNz1+ENlDS+fYiVBaQQ0s56u2MMCAwEAAaOCA1MwggNPMA4GA1UdDwEB/wQEAwIFoDCBkwYIKwYBBQUHAQEEgYYwgYMwRgYIKwYBBQUHMAKGOmh0dHA6Ly9zZWN1cmUuZ2xvYmFsc2lnbi5jb20vY2FjZXJ0L2dzZ2NjcjNkdnRsc2NhMjAyMC5jcnQwOQYIKwYBBQUHMAGGLWh0dHA6Ly9vY3NwLmdsb2JhbHNpZ24uY29tL2dzZ2NjcjNkdnRsc2NhMjAyMDBWBgNVHSAETzBNMEEGCSsGAQQBoDIBCjA0MDIGCCsGAQUFBwIBFiZodHRwczovL3d3dy5nbG9iYWxzaWduLmNvbS9yZXBvc2l0b3J5LzAIBgZngQwBAgEwCQYDVR0TBAIwADBBBgNVHR8EOjA4MDagNKAyhjBodHRwOi8vY3JsLmdsb2JhbHNpZ24uY29tL2dzZ2NjcjNkdnRsc2NhMjAyMC5jcmwwIAYDVR0RBBkwF4IVcHJlbWl1bS5zd2lzc3F1b3RlLmNoMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAfBgNVHSMEGDAWgBQNmMBzf6u9vdlHS0mtCkoMrD7HfDAdBgNVHQ4EFgQUg+Yzx6bMhoQP5JSEaVTZOk+JkyYwggF+BgorBgEEAdZ5AgQCBIIBbgSCAWoBaAB2AG9Tdqwx8DEZ2JkApFEV/3cVHBHZAsEAKQaNsgiaN9kTAAABePi0u30AAAQDAEcwRQIhAPYVizSl4rrGKARV32iWWLqRAmPPz3RGMDNI7zyzLtH7AiBZ9ZaUWBMHmAzVVG8WM3BWzvIBshZEuycLl5p9aXr4tAB2ACl5vvCeOTkh8FZzn2Old+W+V32cYAr4+U1dJlwlXceEAAABePi0u4EAAAQDAEcwRQIgH50PWLkxh94z8CvZRZ7bLIZZNwvGqvPVQownLaNCEJwCIQDrteZNfklyVJubytU0yqipepq9MK/ZtW/4fpBN5PWCCQB2AFWB1MIWkDYBSuoLm1c8U/DA5Dh4cCUIFy+jqh0HE9MMAAABePi0u6UAAAQDAEcwRQIhAMmN3UOkyqILPAkjxnSdMG7Q7+Xq5qfWfFc6g8d+DkiEAiA9G6BnOJshK9fmgobw1WB5OWFa9+JrqwKcxLdF9F6o5DANBgkqhkiG9w0BAQsFAAOCAQEAkelJ6MgL20ulkqlLLHEvy5b7w2z/URPpNbxPWkrfvpp2hPxn9+SEpcYkOTun8qvXrMD7GYof2T+1pEvIcZqY+Pvfv5nSdz0WoyCeLVnAktZ8ca/FIfIoQXgaVrEkhiT1KJkL7eVTBSkroaQMkr0fKDs2Gyi2rcfva9/QCgJCxBnz1xfx9aMf5pxzC+J6FYMRHvg0lCvpauy7IXeFrqN6t54wG6tBF4nW0JlYMNgks0ooqsCzsDlfh/8rl5ICKEbrOYqTTTs/xIbEwiHS9PQ144FCSfwmKaxIiC59RhIb5egk04Q2W9pqG/u1yDkjjin99Fr9AbLrLyKNgfsMMS0rdMAwAAMAAAAAAQEAAAAAAAAEUDI1NgAAABBSU0EtUEtDUzEtU0hBMjU2AANmCjImkVxP+7sgiYWmMt8FvcOXmlQiTNWFiWlrbpbqgwAAAAAAAAZSMIIGTjCCBTagAwIBAgIMHwt8TZKU7VUA7JAWMA0GCSqGSIb3DQEBCwUAMFMxCzAJBgNVBAYTAkJFMRkwFwYDVQQKExBHbG9iYWxTaWduIG52LXNhMSkwJwYDVQQDEyBHbG9iYWxTaWduIEdDQyBSMyBEViBUTFMgQ0EgMjAyMDAeFw0yMTA0MjIwODMxMzZaFw0yMjA1MjQwODMxMzZaMCAxHjAcBgNVBAMTFXByZW1pdW0uc3dpc3NxdW90ZS5jaDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALDo/zhE2HO4G7EMfYI7hlNhaaRGp075Fvym8vZkJcFzkR5+Llhf3uIYowlROv2AbjCakiCmxxDylSqC5WENjjhxUcljJ5CAX0JtLfGJ5XNeJVA+xj1+kxhnCo6WD7IB0wU32YZyrAMrxvGbTBFZ5YzGGF0sTUyYoOdLoNFhO5Anp3M0goc534cOtFX/QEMxw8vdtATcgNiyBdJ2Y83fDwlKJg/ZF1VwN8ppfB/BhTBOkZ+gY+OAAfxNs1QV6v4CzTsKdIUJddqrk2tMihQGssoZgHcc2wKpFMlCdGID62ABESLpvgsfLMZ42QkcQNz1+ENlDS+fYiVBaQQ0s56u2MMCAwEAAaOCA1MwggNPMA4GA1UdDwEB/wQEAwIFoDCBkwYIKwYBBQUHAQEEgYYwgYMwRgYIKwYBBQUHMAKGOmh0dHA6Ly9zZWN1cmUuZ2xvYmFsc2lnbi5jb20vY2FjZXJ0L2dzZ2NjcjNkdnRsc2NhMjAyMC5jcnQwOQYIKwYBBQUHMAGGLWh0dHA6Ly9vY3NwLmdsb2JhbHNpZ24uY29tL2dzZ2NjcjNkdnRsc2NhMjAyMDBWBgNVHSAETzBNMEEGCSsGAQQBoDIBCjA0MDIGCCsGAQUFBwIBFiZodHRwczovL3d3dy5nbG9iYWxzaWduLmNvbS9yZXBvc2l0b3J5LzAIBgZngQwBAgEwCQYDVR0TBAIwADBBBgNVHR8EOjA4MDagNKAyhjBodHRwOi8vY3JsLmdsb2JhbHNpZ24uY29tL2dzZ2NjcjNkdnRsc2NhMjAyMC5jcmwwIAYDVR0RBBkwF4IVcHJlbWl1bS5zd2lzc3F1b3RlLmNoMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAfBgNVHSMEGDAWgBQNmMBzf6u9vdlHS0mtCkoMrD7HfDAdBgNVHQ4EFgQUg+Yzx6bMhoQP5JSEaVTZOk+JkyYwggF+BgorBgEEAdZ5AgQCBIIBbgSCAWoBaAB2AG9Tdqwx8DEZ2JkApFEV/3cVHBHZAsEAKQaNsgiaN9kTAAABePi0u30AAAQDAEcwRQIhAPYVizSl4rrGKARV32iWWLqRAmPPz3RGMDNI7zyzLtH7AiBZ9ZaUWBMHmAzVVG8WM3BWzvIBshZEuycLl5p9aXr4tAB2ACl5vvCeOTkh8FZzn2Old+W+V32cYAr4+U1dJlwlXceEAAABePi0u4EAAAQDAEcwRQIgH50PWLkxh94z8CvZRZ7bLIZZNwvGqvPVQownLaNCEJwCIQDrteZNfklyVJubytU0yqipepq9MK/ZtW/4fpBN5PWCCQB2AFWB1MIWkDYBSuoLm1c8U/DA5Dh4cCUIFy+jqh0HE9MMAAABePi0u6UAAAQDAEcwRQIhAMmN3UOkyqILPAkjxnSdMG7Q7+Xq5qfWfFc6g8d+DkiEAiA9G6BnOJshK9fmgobw1WB5OWFa9+JrqwKcxLdF9F6o5DANBgkqhkiG9w0BAQsFAAOCAQEAkelJ6MgL20ulkqlLLHEvy5b7w2z/URPpNbxPWkrfvpp2hPxn9+SEpcYkOTun8qvXrMD7GYof2T+1pEvIcZqY+Pvfv5nSdz0WoyCeLVnAktZ8ca/FIfIoQXgaVrEkhiT1KJkL7eVTBSkroaQMkr0fKDs2Gyi2rcfva9/QCgJCxBnz1xfx9aMf5pxzC+J6FYMRHvg0lCvpauy7IXeFrqN6t54wG6tBF4nW0JlYMNgks0ooqsCzsDlfh/8rl5ICKEbrOYqTTTs/xIbEwiHS9PQ144FCSfwmKaxIiC59RhIb5egk04Q2W9pqG/u1yDkjjin99Fr9AbLrLyKNgfsMMS0rdGYKMiaRXE/7uyCJhaYy3wW9w5eaVCJM1YWJaWtuluqDAAAAAAAABLQwggSwMIIDmKADAgECAhB3vQ4HQtXZ6dBJ13TQKm+aMA0GCSqGSIb3DQEBCwUAMEwxIDAeBgNVBAsTF0dsb2JhbFNpZ24gUm9vdCBDQSAtIFIzMRMwEQYDVQQKEwpHbG9iYWxTaWduMRMwEQYDVQQDEwpHbG9iYWxTaWduMB4XDTIwMDcyODAwMDAwMFoXDTI5MDMxODAwMDAwMFowUzELMAkGA1UEBhMCQkUxGTAXBgNVBAoTEEdsb2JhbFNpZ24gbnYtc2ExKTAnBgNVBAMTIEdsb2JhbFNpZ24gR0NDIFIzIERWIFRMUyBDQSAyMDIwMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArGeUlX91746nDK8JcAkhzE8KqQU+HWW21baiWNLehSo8qrypfqbsrQ5UpoobcZeLgInh8dVSBlgTodF2OqOGGe4djoQEIF6BxQWA8bSxwHXZaLwEeb3MqNbGjdjZvCE7wW+vxHjalbR4g1zo5NtBcLRVYUIxXOlyqDPpfj0oxmjAAwVXpeq0i1wbRwxL//104mzigGWm6pf0g3ExManoQBIAX1yeUAbL9FeRVL2c4sIJrukJhX5aAMotMX44rZXHDdFQn+nzTT2VB5QBG/ZQJw008KJ9hfXEiym9quR2PMvDM50tqEN1Bsk43nzM3hX6UyPSayD5zQqfLA8hGncEyQIDAQABo4IBhTCCAYEwDgYDVR0PAQH/BAQDAgGGMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjASBgNVHRMBAf8ECDAGAQH/AgEAMB0GA1UdDgQWBBQNmMBzf6u9vdlHS0mtCkoMrD7HfDAfBgNVHSMEGDAWgBSP8Et/qC5FJK5NUPpjmove4t0bvDB7BggrBgEFBQcBAQRvMG0wLgYIKwYBBQUHMAGGImh0dHA6Ly9vY3NwMi5nbG9iYWxzaWduLmNvbS9yb290cjMwOwYIKwYBBQUHMAKGL2h0dHA6Ly9zZWN1cmUuZ2xvYmFsc2lnbi5jb20vY2FjZXJ0L3Jvb3QtcjMuY3J0MDYGA1UdHwQvMC0wK6ApoCeGJWh0dHA6Ly9jcmwuZ2xvYmFsc2lnbi5jb20vcm9vdC1yMy5jcmwwRwYDVR0gBEAwPjA8BgRVHSAAMDQwMgYIKwYBBQUHAgEWJmh0dHBzOi8vd3d3Lmdsb2JhbHNpZ24uY29tL3JlcG9zaXRvcnkvMA0GCSqGSIb3DQEBCwUAA4IBAQDLyP9znnR5rzqgKR+vZb6m1MJh7qJXO+jsfRXW9QQAMk5Z6VO/Ts5t/5iQRq103UmDT1y2BI2/aH4sxOQpFl0BeawTc3m977PU5r2S6K7vbzguN5LT3MclAHgMkkmS+0huMv/KUwrV9sweEBaLQ7X3hNa8fddZkZdnoHLFNQi/X6QAiqX8y3b0+YqtpNPmOvNxXNDkD2PDXrLKy5FdGss4OWRLWHIGOx/JM1muYvWHXXsgWCe0EDlJA1WX1yR52rmvhFIBTzmNXxcrlQtESNFm3Yjoz0+j1AvuC4Uu7iw8UmnBHWw8m+5tLZMd6jtLFig0O13IEezt65oZwxoP99rJZgoyJpFcT/u7IImFpjLfBb3Dl5pUIkzVhYlpa26W6oMAAAAAAAADYzCCA18wggJHoAMCAQICCwQAAAAAASFYUwiiMA0GCSqGSIb3DQEBCwUAMEwxIDAeBgNVBAsTF0dsb2JhbFNpZ24gUm9vdCBDQSAtIFIzMRMwEQYDVQQKEwpHbG9iYWxTaWduMRMwEQYDVQQDEwpHbG9iYWxTaWduMB4XDTA5MDMxODEwMDAwMFoXDTI5MDMxODEwMDAwMFowTDEgMB4GA1UECxMXR2xvYmFsU2lnbiBSb290IENBIC0gUjMxEzARBgNVBAoTCkdsb2JhbFNpZ24xEzARBgNVBAMTCkdsb2JhbFNpZ24wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDMJXaQeQZ4Ihb1wIO2hMoonv0FdhHFrYhy/EYCQ8eyip0EXyTLLkvhYIJG4VKrDIFHcGzdZNHr9SyjD4I9DCuul9e2FIYQebs7E4B3jAjhSdJqYi8fXvqWaN+JJ5U4nwbXPsnLJlkNc96wyOkmDoMVxu9bi9IEYMpJpij2aTv2y8gokeWdimFXN6x0FNx04Druci8unPvQu7/1PQDhBjPogiuuU6Y6FnOM3UEOIDrAtKeh6bJPkC4yYOlXy7kEkmho5TgmYHWyn3f/kRTvriBJ/K1AFUjRAjFhGV64l++td7dkmnq/X8ET75ti+w1s4FRpFqkD2m7pg5NxdsZphYIXAgMBAAGjQjBAMA4GA1UdDwEB/wQEAwIBBjAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBSP8Et/qC5FJK5NUPpjmove4t0bvDANBgkqhkiG9w0BAQsFAAOCAQEAS0DbwFCq/sgM7/eWVEVJu5YACUGssxOGhigHM8pr5nS5ugAtrqQK0/Xx8Q+Kv3NnSoPHRHt44K9ubG8DKY4zOUXDjuS5V2yq/BKW7FPGLeQkbLmUY/vcU2hnVj6DuM81IcPJaP7O2sJTqsyQiunwXUaMld16WCgaLx3ezQA3QY/tRG3XUyiXfvNnBB4V14qWtNPeTCekTBtzc3b0F5nCH3oO4y0IrQocLP88q1UOD5F+NuvDV0m+4S4tfGCLw0FREyOdzvcya5QBqJnnLDMfOjsl0oZAzjsshnjJYS8Uuu7bVW/fhO4FCU29KNhyztNiUGUe65KXgzHZs7XKR1g/XwAAAAEAAAAAAAEAAAAAVXRsc2ZsYWdzMHgwMDAwMDAwMDpwcmVtaXVtLnN3aXNzcXVvdGUuY2g6NDQzXnBhcnRpdGlvbktleT0lMjhodHRwcyUyQ3N3aXNzcXVvdGUuY2glMjk= request-method GET response-head HTTP/1.1 200 OK
+Date: Mon, 31 Jan 2022 18:48:19 GMT
+Last-Modified: Fri, 05 Mar 2021 09:25:58 GMT
+ETag: "79f3cc-4712-5bcc6abf41580"
+Accept-Ranges: bytes
+Content-Length: 18194
+Content-Type: application/javascript
+Strict-Transport-Security: max-age=300; includeSubDomains
+ original-response-headers Date: Mon, 31 Jan 2022 18:48:19 GMT
+Last-Modified: Fri, 05 Mar 2021 09:25:58 GMT
+ETag: "79f3cc-4712-5bcc6abf41580"
+Accept-Ranges: bytes
+Content-Length: 18194
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Content-Type: application/javascript
+Strict-Transport-Security: max-age=300; includeSubDomains
+ ctid 2 uncompressed-len 0 net-response-time-onstart 57 net-response-time-onstop 58 alt-data 1;18194,javascript/moz-bytecode-20220111210158-8l alt-data-from-child 1   ˝n

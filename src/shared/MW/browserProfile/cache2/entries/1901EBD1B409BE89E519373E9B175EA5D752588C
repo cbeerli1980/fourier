@@ -1,0 +1,348 @@
+/* Translation arrays */
+var loginTranslations = {
+  "en": {
+    "welcomeText": "Welcome.",
+    "askInformationMessage": "Please enter your username and password to access your account.",
+    "errorInformationMessage": "Please make sure your username and password are correct and try again.",
+    "usernameText": "Username",
+    "passwordText": "Password",
+    "loginText": "Log in",
+    "forgotUsernameTextLink": "Forgot your username?",
+    "forgotPasswordTextLink": "Forgot your password?",
+    "notClientText": "Not a client yet?",
+    "openAccountLinkText": "Open your account"
+  },
+  "fr": {
+    "welcomeText": "Bienvenue.",
+    "askInformationMessage": "Veuillez saisir votre nom d’utilisateur et votre mot de passe pour accéder à votre compte.",
+    "errorInformationMessage" : "Veuillez vous assurer que votre nom d’utilisateur et votre mot de passe sont corrects et essayez à nouveau.",
+    "usernameText": "Nom d’utilisateur",
+    "passwordText": "Mot de passe",
+    "loginText": "Se connecter",
+    "forgotUsernameTextLink": "Nom d'utilisateur oublié?",
+    "forgotPasswordTextLink": "Mot de passe oublié?",
+    "notClientText": "Vous n’êtes pas encore client?",
+    "openAccountLinkText": "Ouvrir votre compte"
+  },
+  "de": {
+    "welcomeText": "Willkommen.",
+    "askInformationMessage": "Bitte geben Sie Ihren Benutzernamen und Ihr Passwort ein, um auf Ihr Konto zuzugreifen.",
+    "errorInformationMessage": "Bitte vergewissern Sie sich, dass Ihr Benutzername und Passwort richtig sind, und versuchen Sie es noch einmal.",
+    "usernameText": "Benutzername",
+    "passwordText": "Passwort",
+    "loginText": "Anmeldung",
+    "forgotUsernameTextLink": "Benutzername vergessen?",
+    "forgotPasswordTextLink": "Passwort vergessen?",
+    "notClientText": "Noch kein Kunde?",
+    "openAccountLinkText": "Konto eröffnen"
+  },
+  "it": {
+    "welcomeText": "Benvenuto.",
+    "askInformationMessage": "Inserisci nome utente e password per accedere al tuo conto.",
+    "errorInformationMessage": "Verifica che nome utente e password siano corretti e riprova.",
+    "usernameText": "Nome utente",
+    "passwordText": "Password",
+    "loginText": "Accedi",
+    "forgotUsernameTextLink": "Hai dimenticato il tuo nome utente?",
+    "forgotPasswordTextLink": "Hai dimenticato la password?",
+    "notClientText": "Non sei ancora cliente?",
+    "openAccountLinkText": "Apri un conto"
+  },
+  "es": {
+    "welcomeText": "Bienvenido/a.",
+    "askInformationMessage": "Introduce tu nombre de usuario y tu contraseña para acceder a tu cuenta.",
+    "errorInformationMessage": "Asegúrate de que tu nombre de usuario y tu contraseña son correctos e inténtalo de nuevo.",
+    "usernameText": "Nombre de usuario",
+    "passwordText": "Contraseña",
+    "loginText": "Conexión",
+    "forgotUsernameTextLink": "¿Has olvidado tu nombre de usuario?",
+    "forgotPasswordTextLink": "¿Has olvidado tu contraseña?",
+    "notClientText": "¿Todavía no eres cliente?",
+    "openAccountLinkText": "Abre tu cuenta"
+  },
+  "cs": {
+    "welcomeText": "Vítejte.",
+    "askInformationMessage": "Pro přístup k Vašemu účtu zadejte prosím své ID uživatele a heslo.",
+    "errorInformationMessage": "Zkontrolujte, zda jsou Vaše ID uživatele a heslo správné, a zkuste znovu.",
+    "usernameText": "ID uživatele",
+    "passwordText": "Heslo",
+    "loginText": "Přihlášení",
+    "forgotUsernameTextLink": "Zapomněli jste své ID uživatele?",
+    "forgotPasswordTextLink": "Zapomněli jste heslo?",
+    "notClientText": "Zatím nejste klient?",
+    "openAccountLinkText": "Otevřete si účet"
+  },
+  "ar": {
+    "welcomeText": "مرحباً.",
+    "askInformationMessage": "يرجى إدخال اسم المستخدم وكلمة المرور الخاصة بك للوصول إلى حسابك.",
+    "errorInformationMessage": "يرجى التأكد من صحة اسم المستخدم وكلمة المرور الخاصة بك وحاول مرة أخرى.",
+    "usernameText": "اسم المستخدم",
+    "passwordText": "كلمة المرور",
+    "loginText": "تسجيل الدخول",
+    "forgotUsernameTextLink": "هل نسيت اسم المستخدم؟",
+    "forgotPasswordTextLink": "لم تصبح عميلاً لدينا بعد؟",
+    "notClientText": "لست أحد العملاء حتى الآن؟",
+    "openAccountLinkText": "افتح حسابك!"
+  },
+  "ru": {
+    "welcomeText": "Добро пожаловать.",
+    "askInformationMessage": "Пожалуйста, введите ваше имя пользователя и пароль для доступа к вашему счету.",
+    "errorInformationMessage": "Пожалуйста, убедитесь в том, что ваше имя пользователя и пароль верны, и попробуйте снова.",
+    "usernameText": "Имя пользователя",
+    "passwordText": "Пароль",
+    "loginText": "Войти",
+    "forgotUsernameTextLink": "Забыли своё имя пользователя?",
+    "forgotPasswordTextLink": "Забыли пароль?",
+    "notClientText": "Ещё не являетесь клиентом?",
+    "openAccountLinkText": "Откройте свой счёт"
+  },
+  "tw": {
+    "welcomeText": "歡迎使用",
+    "askInformationMessage": "請輸入您的使用者名稱與密碼以存取您的帳戶。",
+    "errorInformationMessage": "請確定您的使用者名稱與密碼正確，然後再試一次。",
+    "usernameText": "登錄名",
+    "passwordText": "密碼",
+    "loginText": "登入",
+    "forgotUsernameTextLink": "忘記使用者名稱？",
+    "forgotPasswordTextLink": "忘記密碼？",
+    "notClientText": "尚未成為客戶？",
+    "openAccountLinkText": "開立帳戶"
+  },
+  "cn": {
+    "welcomeText": "欢迎使用",
+    "askInformationMessage": "请输入您的用户和密码以访问您的账户。",
+    "errorInformationMessage": "請確定您的使用者名稱與密碼正確，然後再試一次。",
+    "usernameText": "用户名",
+    "passwordText": "密码",
+    "loginText": "登录",
+    "forgotUsernameTextLink": "忘记用户名？",
+    "forgotPasswordTextLink": "忘记密码？",
+    "notClientText": "还不是我们的客户？",
+    "openAccountLinkText": "开设帐户"
+  }
+};
+
+var logoutTranslations = {
+  "en": {
+    "confirmationMessage": "You are now logged out.",
+    "thanksMessage": "Thank you for using our services.",
+    "securityMessage": "For extra security, we recommend that you regularly clear your browser's cache and avoid saving your credentials.",
+    "securityLinkText": "Find out more about security",
+    "loginAgainText": "Login again",
+    "marketingWebsiteLinkText": {
+      INX: "Go to swissquote.lu",
+      SQ: "Go to swissquote.com"
+    }
+  },
+  "fr": {
+    "confirmationMessage": "Vous êtes désormais déconnecté(e).",
+    "thanksMessage": "Merci d’avoir utilisé nos services.",
+    "securityMessage": "Pour plus de sécurité, nous vous recommandons de vider régulièrement le cache de votre navigateur et de ne pas enregistrer vos informations d’identification.",
+    "securityLinkText": "En savoir plus sur la sécurité",
+    "loginAgainText": "Se connecter à nouveau",
+    "marketingWebsiteLinkText": {
+      INX: "Aller sur swissquote.lu",
+      SQ: "Aller sur swissquote.com"
+    }
+  },
+  "de": {
+    "confirmationMessage": "Sie sind nun abgemeldet.",
+    "thanksMessage": "Vielen Dank, dass Sie unsere Dienste in Anspruch genommen haben.",
+    "securityMessage": "Um die Sicherheit zu erhöhen, empfehlen wir Ihnen, regelmässig den Cache Ihres Browsers zu leeren und Ihre Anmeldedaten nicht zu speichern.",
+    "securityLinkText": "Mehr über die Sicherheit erfahren",
+    "loginAgainText": "Erneut anmelden",
+    "marketingWebsiteLinkText": {
+      INX: "Zu swissquote.lu gehen",
+      SQ: "Zu swissquote.com gehen"
+    }
+  },
+  "it": {
+    "confirmationMessage": "Ora sei disconnesso.",
+    "thanksMessage": "Grazie per aver utilizzato i nostri servizi.",
+    "securityMessage": "Per una maggiore sicurezza, ti consigliamo di svuotare regolarmente la cache del browser ed evitare di memorizzare le credenziali.",
+    "securityLinkText": "Ulteriori informazioni sulla sicurezza",
+    "loginAgainText": "Accedi di nuovo",
+    "marketingWebsiteLinkText": {
+      INX: "Vai su swissquote.lu",
+      SQ: "Vai su swissquote.com"
+    }
+  },
+  "es": {
+    "confirmationMessage": "Te has desconectado.",
+    "thanksMessage": "Gracias por utilizar nuestros servicios.",
+    "securityMessage": "Para mayor seguridad, te recomendamos que limpies con frecuencia la caché de tu navegador y que evites guardar tus datos de acceso.",
+    "securityLinkText": "Más información sobre seguridad",
+    "loginAgainText": "Vuelve a conectarte",
+    "marketingWebsiteLinkText": {
+      INX: "Ir a swissquote.lu",
+      SQ: "Ir a swissquote.com"
+    }
+  },
+  "cs": {
+    "confirmationMessage": "Byl(a) jste odhlášen(a).",
+    "thanksMessage": "Děkujeme Vám, že jste použil(a) našich služeb.",
+    "securityMessage": "Pro maximální bezpečnost Vám doporučujeme, abyste pravidelně vymazávali paměť svého prohlížeče a neukládali si své přihlašovací údaje.",
+    "securityLinkText": "Více informací o bezpečnosti",
+    "loginAgainText": "Znovu přihlásit",
+    "marketingWebsiteLinkText": {
+      INX: "Navštivte swissquote.lu",
+      SQ: "Navštivte swissquote.com"
+    }
+  },
+  "ar": {
+    "confirmationMessage": "لقد قمت بتسجيل الخروج الآن.",
+    "thanksMessage": "شكراً لك على استخدامك لخدماتنا.",
+    "securityMessage": "لمزيد من الأمان، نوصيك بمسح ذاكرة التخزين المؤقتة الخاصة بمتصفحك وتجنب حفظ معلومات حسابك.",
+    "securityLinkText": "تعرف على المزيد عن إجراءات الأمان",
+    "loginAgainText": "سجل الدخول مرة أخرى",
+    "marketingWebsiteLinkText": {
+      INX: "توجه إلى swissquote.lu",
+      SQ: "توجه إلى swissquote.com"
+    }
+  },
+  "ru": {
+    "confirmationMessage": "Вы вышли из системы.",
+    "thanksMessage": "Благодарим вас за использование наших сервисов.",
+    "securityMessage": "Для обеспечения дополнительной безопасности мы рекомендуем вам регулярно очищать кэш браузера и избегать сохранения учётных данных.",
+    "securityLinkText": "Узнать больше о безопасности",
+    "loginAgainText": "Войти снова",
+    "marketingWebsiteLinkText": {
+      INX: "Перейти на swissquote.lu",
+      SQ: "Перейти на swissquote.com"
+    }
+  },
+  "tw": {
+    "confirmationMessage": "您現在已登出。",
+    "thanksMessage": "感謝您使用我們的服務。",
+    "securityMessage": "為了強化安全，我們建議您定期清除瀏覽器的快取，並避免儲存您登錄的憑證。",
+    "securityLinkText": "深入了解安全性",
+    "loginAgainText": "再次登入",
+    "marketingWebsiteLinkText": {
+      INX: "前往swissquote.lu",
+      SQ: "前往swissquote.com"
+    }
+  },
+  "cn": {
+    "confirmationMessage": "您已登出账户。",
+    "thanksMessage": "感谢您使用我们的服务。",
+    "securityMessage": "安全起见，我们建议您定期清除浏览器缓存并避免储存您的登录凭证。",
+    "securityLinkText": "了解有关安全的更多信息",
+    "loginAgainText": "再次登录",
+    "marketingWebsiteLinkText": {
+      INX: "前往 swissquote.lu",
+      SQ: "前往 swissquote.com"
+    }
+  }
+};
+
+var denyTranslations = {
+  "en": {
+    "loginImpossibleMessage": "Impossible to log in.",
+    "accessDeniedReasonsMessage": "The access to your account was denied for one of the following reasons:",
+    "tooMuchTrialMessage": "You have entered 3 times incorrect credentials",
+    "notCompleteInformationMessage": "You did not complete all the required fields",
+    "tryAgainText": "Try to log in again",
+    "helpText": "Need help? ",
+    "helpLinkText": "Contact us"
+  },
+  "fr": {
+    "loginImpossibleMessage": "Impossible de se connecter.",
+    "accessDeniedReasonsMessage": "L’accès à votre compte a été refusé pour l’une des raisons suivantes:",
+    "tooMuchTrialMessage": "Vous avez saisi des identifiants incorrects à trois reprises",
+    "notCompleteInformationMessage": "Vous n’avez pas renseigné tous les champs obligatoires",
+    "tryAgainText": "Essayer de se connecter à nouveau",
+    "helpText": "Besoin d’aide? ",
+    "helpLinkText": "Nous contacter"
+  },
+  "de": {
+    "loginImpossibleMessage": "Anmeldung nicht möglich.",
+    "accessDeniedReasonsMessage": "Der Zugriff auf Ihr Konto wurde Ihnen aus einem der folgenden Gründe verwehrt:",
+    "tooMuchTrialMessage": "Sie haben dreimal falsche Anmeldedaten eingegeben",
+    "notCompleteInformationMessage": "Sie haben nicht alle Pflichtfelder ausgefüllt",
+    "tryAgainText": "Versuchen Sie erneut, sich anzumelden",
+    "helpText": "Benötigen Sie Hilfe? ",
+    "helpLinkText": "Kontaktieren Sie uns"
+  },
+  "it": {
+    "loginImpossibleMessage": "Impossibile effettuare l'accesso.",
+    "accessDeniedReasonsMessage": "L'accesso al tuo conto è stato negato per uno dei seguenti motivi:",
+    "tooMuchTrialMessage": "Hai inserito credenziali errate per 3 volte di seguito",
+    "notCompleteInformationMessage": "Non hai compilato tutti i campi obbligatori",
+    "tryAgainText": "Prova ad accedere di nuovo",
+    "helpText": "Hai bisogno di aiuto? ",
+    "helpLinkText": "Contattaci"
+  },
+  "es": {
+    "loginImpossibleMessage": "Error de conexión.",
+    "accessDeniedReasonsMessage": "El acceso a tu cuenta ha sido denegado por una de las siguientes razones:",
+    "tooMuchTrialMessage": "Has introducido tres veces unos datos de acceso incorrectos",
+    "notCompleteInformationMessage": "No has rellenado todos los campos obligatorios",
+    "tryAgainText": "Intenta conectarte de nuevo",
+    "helpText": "¿Necesitas ayuda? ",
+    "helpLinkText": "Contacto"
+  },
+  "cs": {
+    "loginImpossibleMessage": "Přihlášení není možné.",
+    "accessDeniedReasonsMessage": "Přístup k Vašemu účtu byl zablokován z jednoho z těchto důvodů:",
+    "tooMuchTrialMessage": "Zadal(a) jste třikrát chybné přihlašovací údaje",
+    "notCompleteInformationMessage": "Nevyplnil(a) jste všechny povinné údaje",
+    "tryAgainText": "Pokuste se přihlásit znovu",
+    "helpText": "Potřebujete pomoc? ",
+    "helpLinkText": "Kontaktujte nás"
+  },
+  "ar": {
+    "loginImpossibleMessage": "يستحيل تسجيل الدخول.",
+    "accessDeniedReasonsMessage": "لقد تم رفض الوصول إلى حسابك لأحد الأسباب التالية:",
+    "tooMuchTrialMessage": "لقد أدخلت معلومات حساب خاطئة 3 مرات",
+    "notCompleteInformationMessage": "لم تعبيء جميع الحقول المطلوبة",
+    "tryAgainText": "حاول تسجيل الدخول مرة أخرى",
+    "helpText": "هل أنت بحاجة إلى مساعدة؟ ",
+    "helpLinkText": "اتصل بنا"
+  },
+  "ru": {
+    "loginImpossibleMessage": "Невозможно войти.",
+    "accessDeniedReasonsMessage": "В доступе к вашему счету отказано по одной из следующих причин:",
+    "tooMuchTrialMessage": "Вы 3 раза ввели неверные учётные данные",
+    "notCompleteInformationMessage": "Вы не заполнили все обязательные поля",
+    "tryAgainText": "Попробуйте войти снова",
+    "helpText": "Нужна помощь? ",
+    "helpLinkText": "Свяжитесь с нами"
+  },
+  "tw": {
+    "loginImpossibleMessage": "無法登入。",
+    "accessDeniedReasonsMessage": "您的帳戶存取因為以下其中一個原因遭到拒絕：",
+    "tooMuchTrialMessage": "您已經輸入 3 次錯誤登錄資料",
+    "notCompleteInformationMessage": "您尚未完成所有必填的欄位",
+    "tryAgainText": "嘗試再次登入",
+    "helpText": "需要幫忙？ ",
+    "helpLinkText": "聯絡我們"
+  },
+  "cn": {
+    "loginImpossibleMessage": "无法登录。",
+    "accessDeniedReasonsMessage": "由于以下原因，您无法登录您的账户：",
+    "tooMuchTrialMessage": "您输入了 3 次错误登录凭证",
+    "notCompleteInformationMessage": "您未填写所有必填字段",
+    "tryAgainText": "尝试再次登录",
+    "helpText": "需要帮助？ ",
+    "helpLinkText": "联系我们"
+  }
+};
+W+�($      a�\a�\C��Yb �7   i    O^partitionKey=%28https%2Cswissquote.ch%29,:https://trade.swissquote.ch/public/share/js/logon-messages.js necko:classified 1 strongly-framed 1 security-info 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 request-method GET response-head HTTP/1.1 200 OK
+Last-Modified: Sat, 01 May 2021 12:46:23 GMT
+ETag: "4133-5c1441da765c0"
+Accept-Ranges: bytes
+Date: Mon, 31 Jan 2022 18:48:06 GMT
+Age: 29231
+Content-Length: 16691
+Content-Type: application/javascript
+Strict-Transport-Security: max-age=300; includeSubDomains
+ original-response-headers Last-Modified: Sat, 01 May 2021 12:46:23 GMT
+ETag: "4133-5c1441da765c0"
+Accept-Ranges: bytes
+Connection: Keep-Alive
+Date: Mon, 31 Jan 2022 18:48:06 GMT
+Age: 29231
+Content-Length: 16691
+Content-Type: application/javascript
+Strict-Transport-Security: max-age=300; includeSubDomains
+ ctid 2 uncompressed-len 0 net-response-time-onstart 170 net-response-time-onstop 170   A3

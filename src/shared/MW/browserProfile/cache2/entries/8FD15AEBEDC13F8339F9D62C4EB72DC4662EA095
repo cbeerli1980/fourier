@@ -1,0 +1,2126 @@
+/*
+ *  Copyright 2011 Alexandru Craciun, Eyal Kaspi
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ */
+/**** Functionality in Java, but not in JS ********
+ * methods added to JS prototypes
+ */
+
+var stjs={};
+
+stjs.NOT_IMPLEMENTED = function(){
+	throw "This method is not implemented in Javascript.";
+};
+
+stjs.JavalikeEquals = function(value){
+	if (value == null)
+		return false;
+	if (value.valueOf)
+		return this.valueOf() === value.valueOf();
+	return this === value;
+};
+
+stjs.JavalikeGetClass = function(){
+	return this.constructor;
+};
+
+/* String */
+if (!String.prototype.equals) {
+	String.prototype.equals=stjs.JavalikeEquals;
+}
+if (!String.prototype.getBytes) {
+	String.prototype.getBytes=stjs.NOT_IMPLEMENTED;
+}
+if (!String.prototype.getChars) {
+	String.prototype.getChars=stjs.NOT_IMPLEMENTED;
+}
+if (!String.prototype.contentEquals){
+	String.prototype.contentEquals=stjs.NOT_IMPLEMENTED;
+}
+if (!String.prototype.startsWith) {
+	String.prototype.startsWith=function(start, from){
+		var f = from != null ? from : 0;
+		return this.substring(f, f + start.length) == start;
+	}
+}
+if (!String.prototype.endsWith) {
+	String.prototype.endsWith=function(end){
+		if (end == null)
+			return false;
+		if (this.length < end.length)
+			return false;
+		return this.substring(this.length - end.length, this.length) == end;
+	}
+}
+if (!String.prototype.trim) {
+	stjs.trimLeftRegExp = /^\s+/;
+	stjs.trimRightRegExp = /\s+$/;
+	String.prototype.trim = function() {
+		return this.replace(stjs.trimLeftRegExp, "").replace(stjs.trimRightRegExp, "");
+	}
+}
+if (!String.prototype.matches){
+	String.prototype.matches=function(regexp){
+		return this.match("^" + regexp + "$") != null;
+	}
+}
+if (!String.prototype.compareTo){
+	String.prototype.compareTo=function(other){
+		if (other == null)
+			return 1;
+		if (this < other)
+			return -1;
+		if (this == other)
+			return 0;
+		return 1;
+	}
+}
+
+if (!String.prototype.compareToIgnoreCase){
+	String.prototype.compareToIgnoreCase=function(other){
+		if (other == null)
+			return 1;
+		return this.toLowerCase().compareTo(other.toLowerCase());
+	}
+}
+
+if (!String.prototype.equalsIgnoreCase){
+	String.prototype.equalsIgnoreCase=function(other){
+		if (other == null)
+			return false;
+		return this.toLowerCase() === other.toLowerCase();
+	}
+}
+
+if (!String.prototype.codePointAt){
+	String.prototype.codePointAt=String.prototype.charCodeAt;
+}
+
+if (!String.prototype.codePointBefore){
+	String.prototype.codePointBefore=stjs.NOT_IMPLEMENTED;
+}
+if (!String.prototype.codePointCount){
+	String.prototype.codePointCount=stjs.NOT_IMPLEMENTED;
+}
+
+if (!String.prototype.replaceAll){
+	String.prototype.replaceAll=function(regexp, replace){
+		return this.replace(new RegExp(regexp, "g"), replace);
+	}
+}
+
+if (!String.prototype.replaceFirst){
+	String.prototype.replaceFirst=function(regexp, replace){
+		return this.replace(new RegExp(regexp), replace);
+	}
+}
+
+if (!String.prototype.regionMatches){
+	String.prototype.regionMatches=function(ignoreCase, toffset, other, ooffset, len){
+		if (arguments.length == 4){
+			len=arguments[3];
+			ooffset=arguments[2];
+			other=arguments[1];
+			toffset=arguments[0];
+			ignoreCase=false;
+		}
+		if (toffset < 0 || ooffset < 0 || other == null || toffset + len > this.length || ooffset + len > other.length)
+			return false;
+		var s1 = this.substring(toffset, toffset + len);
+		var s2 = other.substring(ooffset, ooffset + len);
+		return ignoreCase ? s1.equalsIgnoreCase(s2) : s1 === s2;
+	}
+}
+
+if(!String.prototype.contains){
+	String.prototype.contains=function(it){
+		return this.indexOf(it)>=0;
+	};
+}
+
+if(!String.prototype.getClass){
+	String.prototype.getClass=stjs.JavalikeGetClass;
+}
+
+
+//force valueof to match the Java's behavior
+String.valueOf=function(value){
+	return new String(value);
+};
+
+/* Number */
+var Byte=Number;
+var Double=Number;
+var Float=Number;
+var Integer=Number;
+var Long=Number;
+var Short=Number;
+
+/* type conversion - approximative as Javascript only has integers and doubles */
+if (!Number.prototype.intValue) {
+	Number.prototype.intValue=function(){
+		return parseInt(this);
+	}
+}
+if (!Number.prototype.shortValue) {
+	Number.prototype.shortValue=function(){
+		return parseInt(this);
+	}
+}
+if (!Number.prototype.longValue) {
+	Number.prototype.longValue=function(){
+		return parseInt(this);
+	}
+}
+if (!Number.prototype.byteValue) {
+	Number.prototype.byteValue=function(){
+		return parseInt(this);
+	}
+}
+
+if (!Number.prototype.floatValue) {
+	Number.prototype.floatValue=function(){
+		return parseFloat(this);
+	}
+}
+
+if (!Number.prototype.doubleValue) {
+	Number.prototype.doubleValue=function(){
+		return parseFloat(this);
+	}
+}
+
+if (!Number.parseInt) {
+	Number.parseInt = parseInt;
+}
+if (!Number.parseShort) {
+	Number.parseShort = parseInt;
+}
+if (!Number.parseLong) {
+	Number.parseLong = parseInt;
+}
+if (!Number.parseByte) {
+	Number.parseByte = parseInt;
+}
+
+if (!Number.parseDouble) {
+	Number.parseDouble = parseFloat;
+}
+
+if (!Number.parseFloat) {
+	Number.parseFloat = parseFloat;
+}
+
+if (!Number.isNaN) {
+	Number.isNaN = isNaN;
+}
+
+if (!Number.prototype.isNaN) {
+	Number.prototype.isNaN = function() {
+		return isNaN(this);
+	}
+}
+if (!Number.prototype.equals) {
+	Number.prototype.equals=stjs.JavalikeEquals;
+}
+if(!Number.prototype.getClass){
+	Number.prototype.getClass=stjs.JavalikeGetClass;
+}
+
+//force valueof to match approximately the Java's behavior (for Integer.valueOf it returns in fact a double)
+Number.valueOf=function(value){
+	return new Number(value).valueOf();
+}
+
+/* Boolean */
+if (!Boolean.prototype.equals) {
+	Boolean.prototype.equals=stjs.JavalikeEquals;
+}
+if(!Boolean.prototype.getClass){
+	Boolean.prototype.getClass=stjs.JavalikeGetClass;
+}
+
+//force valueof to match the Java's behavior
+Boolean.valueOf=function(value){
+	return new Boolean(value).valueOf();
+}
+
+
+
+/************* STJS helper functions ***************/
+stjs.global=this;
+stjs.skipCopy = {"prototype":true, "constructor": true, "$typeDescription":true, "$inherit" : true};
+
+stjs.ns=function(path){
+	var p = path.split(".");
+	var obj = stjs.global;
+	for(var i = 0; i < p.length; ++i){
+		var part = p[i];
+		obj = obj[part] = obj[part] || {};
+	}
+	return obj;
+};
+
+stjs.copyProps=function(from, to){
+	for(var key in from){
+		if (!stjs.skipCopy[key])
+			to[key]	= from[key];
+	}
+	return to;
+};
+
+stjs.copyInexistentProps=function(from, to){
+	for(var key in from){
+		if (!stjs.skipCopy[key] && !to[key])
+			to[key]	= from[key];
+	}
+	return to;
+};
+
+stjs.extend=function(_constructor, _super, _implements, _initializer, _typeDescription, _annotations){
+	if(typeof(_typeDescription) !== "object"){
+		// stjs 1.3+ always passes an non-null object to _typeDescription => The code calling stjs.extend
+		// was generated with version 1.2 or earlier, so let's call the 1.2 version of stjs.extend
+		return stjs.extend12.apply(this, arguments);
+	}
+
+	_constructor.$inherit=[];
+
+	if(_super != null){
+		// I is used as a no-op constructor that has the same prototype as _super
+		// we do this because we cannot predict the result of calling new _super()
+		// without parameters (it might throw an exception).
+		// Basically, the following 3 lines are a safe equivalent for
+		// _constructor.prototype = new _super();
+		var I = function(){};
+		I.prototype	= _super.prototype;
+		_constructor.prototype	= new I();
+
+		// copy static properties for super
+		// assign every method from proto instance
+		stjs.copyProps(_super, _constructor);
+		stjs.copyProps(_super.$typeDescription, _typeDescription);
+		stjs.copyProps(_super.$annotations, _annotations);
+
+		//add the super class to inherit array
+		_constructor.$inherit.push(_super);
+	}
+
+	// copy static properties and default methods from interfaces
+	for(var a = 0; a < _implements.length; ++a){
+		if (!_implements[a]) continue;
+		stjs.copyProps(_implements[a], _constructor);
+		stjs.copyInexistentProps(_implements[a].prototype, _constructor.prototype);
+		_constructor.$inherit.push(_implements[a]);
+	}
+
+	// remember the correct constructor
+	_constructor.prototype.constructor	= _constructor;
+
+	// run the initializer to assign all static and instance variables/functions
+	if(_initializer != null){
+		_initializer(_constructor, _constructor.prototype);
+	}
+
+	_constructor.$typeDescription = _typeDescription;
+	_constructor.$annotations = _annotations;
+
+	// add the default equals method if it is not present yet, and we don't have a superclass
+	if(_super == null){
+		if(!_constructor.prototype.equals) {
+			_constructor.prototype.equals = stjs.JavalikeEquals;
+		}
+		if(!_constructor.prototype.getClass) {
+			_constructor.prototype.getClass = stjs.JavalikeGetClass;
+		}
+	}
+
+	// build package and assign
+	return	_constructor;
+};
+
+/**
+ * 1.2 and earlier version of stjs.extend. Included for backwards compatibility
+ */
+stjs.extend12=function( _constructor,  _super, _implements){
+	var I = function(){};
+	I.prototype	= _super.prototype;
+	_constructor.prototype	= new I();
+
+	//copy static properties for super and interfaces
+	// assign every method from proto instance
+	for(var a = 1; a < arguments.length; ++a){
+		stjs.copyProps(arguments[a], _constructor);
+	}
+	// remember the correct constructor
+	_constructor.prototype.constructor	= _constructor;
+
+	// add the default equals method if we don't have a superclass. Code generated with version 1.2 will
+	// override this method is equals() is present in the original java code.
+	// this was not part of the original 1.2 version of extends, however forward compatibility
+	// with 1.3 requires it
+	if(_super == null){
+		_constructor.prototype.equals = stjs.JavalikeEquals;
+		_constructor.prototype.getClass = stjs.JavalikeGetClass;
+	}
+
+	// build package and assign
+	return	_constructor;
+};
+
+/**
+ * return type's annotations
+ */
+stjs.getAnnotations = function(clz) {
+	return clz.$annotations;
+};
+
+stjs.getTypeAnnotation = function(clz, annType) {
+	var ann = clz.$annotations._;
+	return ann ? ann[annType]: null;
+};
+
+stjs.getMemberAnnotation = function(clz, memberName, annType) {
+	var ann = clz.$annotations.memberName;
+	return ann ? ann[annType]: null;
+};
+
+stjs.getParameterAnnotation = function(clz, methodName, idx, annType) {
+	var ann = clz.$annotations[methodName + "$" + idx];
+	return ann ? ann[annType]: null;
+};
+
+/**
+ * checks if the child is an instanceof parent. it checks recursively if "parent" is the child itself or it's found somewhere in the $inherit array
+ */
+stjs.isInstanceOf=function(child, parent){
+	if (child == null)
+		return false;
+	if (child === parent)
+		return true;
+	if (!child.$inherit)
+		return false;
+	for(var i = 0; i < child.$inherit.length; ++i){
+		if (stjs.isInstanceOf(child.$inherit[i], parent)) {
+			return true;
+		}
+	}
+	return false;
+}
+
+stjs.enumEntry=function(idx, name){
+	this._name = name;
+	this._ordinal = idx;
+};
+
+stjs.enumEntry.prototype.name=function(){
+	return this._name;
+};
+stjs.enumEntry.prototype.ordinal=function(){
+	return this._ordinal;
+};
+stjs.enumEntry.prototype.toString=function(){
+	return this._name;
+};
+stjs.enumEntry.prototype.equals=stjs.JavalikeEquals;
+
+stjs.enumeration=function(){
+	var i;
+	var e = {};
+	e._values = [];
+	for(i = 0; i < arguments.length; ++i){
+		e[arguments[i]] = new stjs.enumEntry(i, arguments[i]);
+		e._values[i] = e[arguments[i]];
+	}
+	e.values = function(){return this._values;};
+	e.valueOf=function(label){
+		return this[label];
+	}
+	return e;
+};
+
+
+/**
+ * if true the execution of generated main methods is disabled.
+ * this is useful when executing unit tests, to no have the main methods executing before the tests
+ */
+stjs.mainCallDisabled = false;
+
+stjs.exception=function(err){
+	return err;
+};
+
+stjs.isEnum=function(obj){
+	return obj != null && obj.constructor == stjs.enumEntry;
+};
+
+if (typeof Math.trunc === "function") {
+	stjs.trunc = Math.trunc;
+} else {
+	stjs.trunc=function(n) {
+		if (n == null)
+			return null;
+		return n >= 0 ? Math.floor(n) : Math.ceil(n);
+	}
+}
+
+stjs.converters = {
+	Date : function(s, type) {
+		var a = /^(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2}(?:\.\d*)?)$/
+				.exec(s);
+		if (a) {
+			return new Date(+a[1], +a[2] - 1, +a[3], +a[4], +a[5], +a[6]);
+		}
+		return null;
+	},
+
+	Enum : function(s, type){
+		return eval(type.arguments[0])[s];
+	}
+};
+
+
+stjs.serializers = {
+	Date : function(d, type) {
+		function pad(n){
+			return n < 10 ? "0" + n : "" + n;
+		}
+		if (d) {
+			return "" + d.getFullYear() + "-" + pad(d.getMonth()+1) + "-" + pad(d.getDate()) + " " + pad(d.getHours()) + ":" + pad(d.getMinutes()) + ":" + pad(d.getSeconds());
+		}
+		return null;
+	},
+
+	Enum : function(e, type){
+		return e != null ? e.toString() : null;
+	}
+};
+
+/**
+ * Used to be able to send method references and lambdas that capture 'this' as callbacks.
+ * This method has a bunch of different usage patterns:
+ *
+ * bind(instance, "methodName"):
+ *     Used when translating a capturing method reference (eg: instance::methodName), or when translating
+ *
+ * bind(this, function):
+ *     Used when translating a lambda that uses 'this' explicitly or implicitly (eg: () -> this.doSomething(3))
+ *
+ * bind(this, function, specialTHISparamPosition)
+ *     Used when translating a lambda that uses the special all-caps 'THIS' parameter
+ *
+ * bind("methodName")
+ *     Used when translating a non-static method reference (eg: TypeName::methodName, where methodName is non-static)
+ */
+stjs.bind=function(obj, method, thisParamPos) {
+	var useFirstParamAsContext = false;
+	if(method == null) {
+		// the bind("methodName") is the only usage where the method argument can be null
+		method = obj;
+		obj = null;
+		useFirstParamAsContext = true;
+	}
+	var addThisToParameters = thisParamPos != null;
+
+	var f = function(){
+		var args = arguments;
+		if (addThisToParameters) {
+			Array.prototype.splice.call(args, thisParamPos, 0, this);
+		}
+		if(useFirstParamAsContext){
+			obj = Array.prototype.shift.call(args);
+		}
+
+		if (typeof method === "string") {
+			return obj[method].apply(obj, args);
+
+		} else {
+			return method.apply(obj, args);
+		}
+	};
+	return f;
+};
+
+
+/** *********** global ************** */
+function exception(err){
+	return err;
+}
+
+function isEnum(obj){
+	return obj != null && obj.constructor == stjs.enumEntry;
+}
+
+/******* parsing *************/
+
+/**
+ * parse a json string using the type definition to build a typed object hierarchy
+ */
+stjs.parseJSON = (function () {
+	  var number
+	      = '(?:-?\\b(?:0|[1-9][0-9]*)(?:\\.[0-9]+)?(?:[eE][+-]?[0-9]+)?\\b)';
+	  var oneChar = '(?:[^\\0-\\x08\\x0a-\\x1f\"\\\\]'
+	      + '|\\\\(?:[\"/\\\\bfnrt]|u[0-9A-Fa-f]{4}))';
+	  var string = '(?:\"' + oneChar + '*\")';
+
+	  // Will match a value in a well-formed JSON file.
+	  // If the input is not well-formed, may match strangely, but not in an unsafe
+	  // way.
+	  // Since this only matches value tokens, it does not match whitespace, colons,
+	  // or commas.
+	  var jsonToken = new RegExp(
+	      '(?:false|true|null|[\\{\\}\\[\\]]'
+	      + '|' + number
+	      + '|' + string
+	      + ')', 'g');
+
+	  // Matches escape sequences in a string literal
+	  var escapeSequence = new RegExp('\\\\(?:([^u])|u(.{4}))', 'g');
+
+	  // Decodes escape sequences in object literals
+	  var escapes = {
+	    '"': '"',
+	    '/': '/',
+	    '\\': '\\',
+	    'b': '\b',
+	    'f': '\f',
+	    'n': '\n',
+	    'r': '\r',
+	    't': '\t'
+	  };
+	  function unescapeOne(_, ch, hex) {
+	    return ch ? escapes[ch] : String.fromCharCode(parseInt(hex, 16));
+	  }
+
+	  var constructors = {};
+
+	  function constr(name, param){
+		  var c = constructors[name];
+		  if (!c)
+			  constructors[name] = c = eval(name);
+		  return new c(param);
+	  }
+
+	  function convert(type, json){
+		  if (!type)
+			  return json;
+		  var cv = stjs.converters[type.name || type];
+		  if (cv)
+			  return cv(json, type);
+		  //hopefully the type has a string constructor
+		 return constr(type, json);
+	  }
+
+	  function builder(type){
+		  if (!type)
+			  return {};
+			if (typeof type == "function")
+				return new type();
+			if (type.name) {
+				if (type.name == "Map")
+					return {};
+				if (type.name == "Array")
+					return [];
+				return constr(type.name);
+			}
+			return constr(type);
+	  }
+
+	  // A non-falsy value that coerces to the empty string when used as a key.
+	  var EMPTY_STRING = new String('');
+	  var SLASH = '\\';
+
+	  // Constructor to use based on an open token.
+	  var firstTokenCtors = { '{': Object, '[': Array };
+
+	  var hop = Object.hasOwnProperty;
+
+	  function nextMatch(str){
+		  var m = jsonToken.exec(str);
+		  return m != null ? m[0] : null;
+	  }
+	  return function (json, type) {
+	    // Split into tokens
+	    // Construct the object to return
+	    var result;
+	    var tok = nextMatch(json);
+	    var topLevelPrimitive = false;
+	    if ('{' === tok) {
+	      result = builder(type, null);
+	    } else if ('[' === tok) {
+	      result = [];
+	    } else {
+	      // The RFC only allows arrays or objects at the top level, but the JSON.parse
+	      // defined by the EcmaScript 5 draft does allow strings, booleans, numbers, and null
+	      // at the top level.
+	      result = [];
+	      topLevelPrimitive = true;
+	    }
+
+	    // If undefined, the key in an object key/value record to use for the next
+	    // value parsed.
+	    var key;
+	    // Loop over remaining tokens maintaining a stack of uncompleted objects and
+	    // arrays.
+	    var stack = [result];
+	    var stack2 = [type];
+	    for (tok = nextMatch(json); tok != null; tok = nextMatch(json)) {
+
+	      var cont;
+	      switch (tok.charCodeAt(0)) {
+	        default:  // sign or digit
+	          cont = stack[0];
+	          cont[key || cont.length] = +(tok);
+	          key = void 0;
+	          break;
+	        case 0x22:  // '"'
+	          tok = tok.substring(1, tok.length - 1);
+	          if (tok.indexOf(SLASH) !== -1) {
+	            tok = tok.replace(escapeSequence, unescapeOne);
+	          }
+	          cont = stack[0];
+	          if (!key) {
+	            if (cont instanceof Array) {
+	              key = cont.length;
+	            } else {
+	              key = tok || EMPTY_STRING;  // Use as key for next value seen.
+	              stack2[0] = cont.constructor.$typeDescription ? cont.constructor.$typeDescription[key] : stack2[1].arguments[1];
+	              break;
+	            }
+	          }
+	          cont[key] = convert(stack2[0],tok);
+	          key = void 0;
+	          break;
+	        case 0x5b:  // '['
+	          cont = stack[0];
+	          stack.unshift(cont[key || cont.length] = []);
+	          stack2.unshift(stack2[0].arguments[0]);
+	          //put the element type desc
+	          key = void 0;
+	          break;
+	        case 0x5d:  // ']'
+	          stack.shift();
+	          stack2.shift();
+	          break;
+	        case 0x66:  // 'f'
+	          cont = stack[0];
+	          cont[key || cont.length] = false;
+	          key = void 0;
+	          break;
+	        case 0x6e:  // 'n'
+	          cont = stack[0];
+	          cont[key || cont.length] = null;
+	          key = void 0;
+	          break;
+	        case 0x74:  // 't'
+	          cont = stack[0];
+	          cont[key || cont.length] = true;
+	          key = void 0;
+	          break;
+	        case 0x7b:  // '{'
+	          cont = stack[0];
+	          stack.unshift(cont[key || cont.length] = builder(stack2[0]));
+	          stack2.unshift(null);
+	          key = void 0;
+	          break;
+	        case 0x7d:  // '}'
+	          stack.shift();
+	          stack2.shift();
+	          break;
+	      }
+	    }
+	    // Fail if we've got an uncompleted object.
+	    if (topLevelPrimitive) {
+	      if (stack.length !== 1) { throw new Error(); }
+	      result = result[0];
+	    } else {
+	      if (stack.length) { throw new Error(); }
+	    }
+
+	    return result;
+	  };
+})();
+
+
+
+
+stjs.isArray=function( obj ) {
+    return stjs.toString.call(obj) === "[object Array]";
+};
+
+/**
+ * cls can by the type of the return.
+ * If it's an array it can be either the type of an element or the type definition of the field.
+ * TODO - for other collections and classes is not done yet
+ */
+stjs.typefy=function(obj, cls){
+	if (stjs.isArray(obj)){
+		var result = [];
+		for(var idx = 0; idx < obj.length; idx++){
+			result.push(stjs.typefy(obj[idx], elementType(cls)));
+		}
+		return result;
+	}
+	 var constructors = {};
+	 function constr(name, param){
+		  var c = constructors[name];
+		  if (!c)
+			  constructors[name] = c = eval(name);
+		  return new c(param);
+	  }
+
+	 function elementType(type){
+		 if (typeof type == "function")
+			 return type;
+		 if (type.arguments) {
+			 return eval(type.arguments[0]);
+		 }
+		 if (typeof type == "string")
+			 return eval(type);
+		 return Object;
+	  }
+
+
+	function convert(type, json){
+		  if (!type)
+			  return json;
+		  var cv = stjs.converters[type.name || type];
+		  if (cv)
+			  return cv(json, type);
+		  //hopefully the type has a string constructor
+		 return constr(type, json);
+	  }
+
+	 function builder(type){
+		  if (!type)
+			  return {};
+			if (typeof type == "function")
+				return new type();
+			if (type.name) {
+				if (type.name == "Map")
+					return {};
+				if (type.name == "Array")
+					return [];
+				return constr(type.name);
+			}
+			return constr(type);
+	  }
+
+	  if (obj == null)
+		  return null;
+
+	  var ret = new cls();
+	  for(var key in obj){
+		  var prop = obj[key];
+		  if (prop == null)
+			  continue;
+		  var td = cls.$typeDescription[key];
+		  if (!td) {
+			  ret[key] = prop;
+			  continue;
+		  }
+		  if (typeof prop == "string")
+			ret[key] = convert(td, prop);
+		  else if (typeof prop == "object") {
+				if (typeof td == "string") {
+					td = eval(td);
+		  		}
+				ret[key] = stjs.typefy(prop, td);
+			}
+	  }
+	  return ret;
+};
+stjs.hydrate=stjs.typefy
+
+stjs.stringify=function(obj, cls){
+	 if (obj == null)
+		  return null;
+
+	 var ret = {};
+	  for(var key in obj){
+		  var td = cls.$typeDescription[key];
+		  var prop = obj[key];
+		  var ser = td != null ? stjs.serializers[td.name || td] : null;
+
+		  if (typeof prop == "function")
+			  continue;
+
+		  if (!td || !ser) {
+			  ret[key] = prop;
+			  continue;
+		  }
+		  if (typeof prop != "string")
+			  if (ser)
+				  ret[key] = ser(prop, td);
+			  else
+				  ret[key] = stjs.typefy(prop, td);
+	  }
+	  return ret;
+};
+/************* STJS asserts ***************/
+stjs.assertHandler = function(position, code, msg) {
+	throw msg + " at " + position;
+};
+
+stjs.STJSAssert = {};
+
+stjs.STJSAssert.setAssertHandler = function(a) {
+	stjs.assertHandler = a;
+}
+
+stjs.STJSAssert.assertArgEquals = function(position, code, expectedValue, testValue) {
+	if (expectedValue != testValue && stjs.assertHandler)
+		stjs.assertHandler(position, code, "Wrong argument. Expected: " + expectedValue + ", got:" + testValue);
+}
+
+stjs.STJSAssert.assertArgNotNull = function(position, code, testValue) {
+	if (testValue == null && stjs.assertHandler)
+		stjs.assertHandler(position, code, "Wrong argument. Null value");
+}
+
+stjs.STJSAssert.assertArgTrue = function(position, code, condition) {
+	if (!condition && stjs.assertHandler)
+		stjs.assertHandler(position, code, "Wrong argument. Condition is false");
+}
+
+stjs.STJSAssert.assertStateEquals = function(position, code, expectedValue, testValue) {
+	if (expectedValue != testValue && stjs.assertHandler)
+		stjs.assertHandler(position, code, "Wrong state. Expected: " + expectedValue + ", got:" + testValue);
+}
+
+stjs.STJSAssert.assertStateNotNull = function(position, code, testValue) {
+	if (testValue == null && stjs.assertHandler)
+		stjs.assertHandler(position, code, "Wrong state. Null value");
+}
+
+stjs.STJSAssert.assertStateTrue = function(position, code, condition) {
+	if (!condition && stjs.assertHandler)
+		stjs.assertHandler(position, code, "Wrong state. Condition is false");
+}
+/** exception **/
+var Throwable = function(message, cause){
+	Error.call(this);
+	if(typeof Error.captureStackTrace === 'function'){
+		// nice way to capture the stack trace for chrome
+		Error.captureStackTrace(this, arguments.callee);
+	} else {
+		// alternate way to capture the stack trace for other browsers
+		try{
+			throw new Error();
+		}catch(e){
+			this.stack = e.stack;
+		}
+	}
+	if (typeof message === "string"){
+		this.detailMessage  = message;
+		this.message = message;
+		this.cause = cause;
+	} else {
+		this.cause = message;
+	}
+};
+stjs.extend(Throwable, Error, [], function(constructor, prototype){
+	prototype.detailMessage = null;
+	prototype.cause = null;
+	prototype.getMessage = function() {
+        return this.detailMessage;
+    };
+
+	prototype.getLocalizedMessage = function() {
+        return this.getMessage();
+    };
+
+	prototype.getCause = function() {
+        return (this.cause==this ? null : this.cause);
+    };
+
+	prototype.toString = function() {
+	        var s = "Exception";//TODO should get the exception's type name here
+	        var message = this.getLocalizedMessage();
+	        return (message != null) ? (s + ": " + message) : s;
+	 };
+
+	 prototype.getStackTrace = function() {
+		 return this.stack;
+	 };
+
+	 prototype.printStackTrace = function(){
+		 console.error(this.getStackTrace());
+	 };
+}, {});
+
+var Exception = function(message, cause){
+	Throwable.call(this, message, cause);
+};
+stjs.extend(Exception, Throwable, [], function(constructor, prototype){
+}, {});
+
+var RuntimeException = function(message, cause){
+	Exception.call(this, message, cause);
+};
+stjs.extend(RuntimeException, Exception, [], function(constructor, prototype){
+}, {});
+
+var Iterator = function() {};
+Iterator = stjs.extend(Iterator, null, [], function(constructor, prototype) {
+    prototype.hasNext = function() {};
+    prototype.next = function() {};
+    prototype.remove = function() {};
+}, {}, {});
+
+var Iterable = function() {};
+Iterable = stjs.extend(Iterable, null, [], function(constructor, prototype) {
+    prototype.iterator = function() {};
+}, {}, {});
+
+/** stjs field manipulation */
+stjs.setField=function(obj, field, value, returnOldValue){
+	if (stjs.setFieldHandler)
+		return stjs.setFieldHandler(obj, field, value, returnOldValue);
+	var toReturn = returnOldValue ? obj[field] : value;
+	obj[field] = value;
+	return toReturn;
+};
+
+stjs.getField=function(obj, field){
+	if (stjs.getFieldHandler)
+		return stjs.getFieldHandler(obj, field);
+	return obj[field];
+};
+
+           20220111210158-8lP   https://premium.swissquote.ch/sqw-navigation/webjars/stjs-client-runtime/stjs.js   k  /*
+ *  Copyright 2011 Alexandru Craciun, Eyal Kaspi
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ */
+/**** Functionality in Java, but not in JS ********
+ * methods added to JS prototypes
+ */
+
+var stjs={};
+
+stjs.NOT_IMPLEMENTED = function(){
+	throw "This method is not implemented in Javascript.";
+};
+
+stjs.JavalikeEquals = function(value){
+	if (value == null)
+		return false;
+	if (value.valueOf)
+		return this.valueOf() === value.valueOf();
+	return this === value;
+};
+
+stjs.JavalikeGetClass = function(){
+	return this.constructor;
+};
+
+/* String */
+if (!String.prototype.equals) {
+	String.prototype.equals=stjs.JavalikeEquals;
+}
+if (!String.prototype.getBytes) {
+	String.prototype.getBytes=stjs.NOT_IMPLEMENTED;
+}
+if (!String.prototype.getChars) {
+	String.prototype.getChars=stjs.NOT_IMPLEMENTED;
+}
+if (!String.prototype.contentEquals){
+	String.prototype.contentEquals=stjs.NOT_IMPLEMENTED;
+}
+if (!String.prototype.startsWith) {
+	String.prototype.startsWith=function(start, from){
+		var f = from != null ? from : 0;
+		return this.substring(f, f + start.length) == start;
+	}
+}
+if (!String.prototype.endsWith) {
+	String.prototype.endsWith=function(end){
+		if (end == null)
+			return false;
+		if (this.length < end.length)
+			return false;
+		return this.substring(this.length - end.length, this.length) == end;
+	}
+}
+if (!String.prototype.trim) {
+	stjs.trimLeftRegExp = /^\s+/;
+	stjs.trimRightRegExp = /\s+$/;
+	String.prototype.trim = function() {
+		return this.replace(stjs.trimLeftRegExp, "").replace(stjs.trimRightRegExp, "");
+	}
+}
+if (!String.prototype.matches){
+	String.prototype.matches=function(regexp){
+		return this.match("^" + regexp + "$") != null;
+	}
+}
+if (!String.prototype.compareTo){
+	String.prototype.compareTo=function(other){
+		if (other == null)
+			return 1;
+		if (this < other)
+			return -1;
+		if (this == other)
+			return 0;
+		return 1;
+	}
+}
+
+if (!String.prototype.compareToIgnoreCase){
+	String.prototype.compareToIgnoreCase=function(other){
+		if (other == null)
+			return 1;
+		return this.toLowerCase().compareTo(other.toLowerCase());
+	}
+}
+
+if (!String.prototype.equalsIgnoreCase){
+	String.prototype.equalsIgnoreCase=function(other){
+		if (other == null)
+			return false;
+		return this.toLowerCase() === other.toLowerCase();
+	}
+}
+
+if (!String.prototype.codePointAt){
+	String.prototype.codePointAt=String.prototype.charCodeAt;
+}
+
+if (!String.prototype.codePointBefore){
+	String.prototype.codePointBefore=stjs.NOT_IMPLEMENTED;
+}
+if (!String.prototype.codePointCount){
+	String.prototype.codePointCount=stjs.NOT_IMPLEMENTED;
+}
+
+if (!String.prototype.replaceAll){
+	String.prototype.replaceAll=function(regexp, replace){
+		return this.replace(new RegExp(regexp, "g"), replace);
+	}
+}
+
+if (!String.prototype.replaceFirst){
+	String.prototype.replaceFirst=function(regexp, replace){
+		return this.replace(new RegExp(regexp), replace);
+	}
+}
+
+if (!String.prototype.regionMatches){
+	String.prototype.regionMatches=function(ignoreCase, toffset, other, ooffset, len){
+		if (arguments.length == 4){
+			len=arguments[3];
+			ooffset=arguments[2];
+			other=arguments[1];
+			toffset=arguments[0];
+			ignoreCase=false;
+		}
+		if (toffset < 0 || ooffset < 0 || other == null || toffset + len > this.length || ooffset + len > other.length)
+			return false;
+		var s1 = this.substring(toffset, toffset + len);
+		var s2 = other.substring(ooffset, ooffset + len);
+		return ignoreCase ? s1.equalsIgnoreCase(s2) : s1 === s2;
+	}
+}
+
+if(!String.prototype.contains){
+	String.prototype.contains=function(it){
+		return this.indexOf(it)>=0;
+	};
+}
+
+if(!String.prototype.getClass){
+	String.prototype.getClass=stjs.JavalikeGetClass;
+}
+
+
+//force valueof to match the Java's behavior
+String.valueOf=function(value){
+	return new String(value);
+};
+
+/* Number */
+var Byte=Number;
+var Double=Number;
+var Float=Number;
+var Integer=Number;
+var Long=Number;
+var Short=Number;
+
+/* type conversion - approximative as Javascript only has integers and doubles */
+if (!Number.prototype.intValue) {
+	Number.prototype.intValue=function(){
+		return parseInt(this);
+	}
+}
+if (!Number.prototype.shortValue) {
+	Number.prototype.shortValue=function(){
+		return parseInt(this);
+	}
+}
+if (!Number.prototype.longValue) {
+	Number.prototype.longValue=function(){
+		return parseInt(this);
+	}
+}
+if (!Number.prototype.byteValue) {
+	Number.prototype.byteValue=function(){
+		return parseInt(this);
+	}
+}
+
+if (!Number.prototype.floatValue) {
+	Number.prototype.floatValue=function(){
+		return parseFloat(this);
+	}
+}
+
+if (!Number.prototype.doubleValue) {
+	Number.prototype.doubleValue=function(){
+		return parseFloat(this);
+	}
+}
+
+if (!Number.parseInt) {
+	Number.parseInt = parseInt;
+}
+if (!Number.parseShort) {
+	Number.parseShort = parseInt;
+}
+if (!Number.parseLong) {
+	Number.parseLong = parseInt;
+}
+if (!Number.parseByte) {
+	Number.parseByte = parseInt;
+}
+
+if (!Number.parseDouble) {
+	Number.parseDouble = parseFloat;
+}
+
+if (!Number.parseFloat) {
+	Number.parseFloat = parseFloat;
+}
+
+if (!Number.isNaN) {
+	Number.isNaN = isNaN;
+}
+
+if (!Number.prototype.isNaN) {
+	Number.prototype.isNaN = function() {
+		return isNaN(this);
+	}
+}
+if (!Number.prototype.equals) {
+	Number.prototype.equals=stjs.JavalikeEquals;
+}
+if(!Number.prototype.getClass){
+	Number.prototype.getClass=stjs.JavalikeGetClass;
+}
+
+//force valueof to match approximately the Java's behavior (for Integer.valueOf it returns in fact a double)
+Number.valueOf=function(value){
+	return new Number(value).valueOf();
+}
+
+/* Boolean */
+if (!Boolean.prototype.equals) {
+	Boolean.prototype.equals=stjs.JavalikeEquals;
+}
+if(!Boolean.prototype.getClass){
+	Boolean.prototype.getClass=stjs.JavalikeGetClass;
+}
+
+//force valueof to match the Java's behavior
+Boolean.valueOf=function(value){
+	return new Boolean(value).valueOf();
+}
+
+
+
+/************* STJS helper functions ***************/
+stjs.global=this;
+stjs.skipCopy = {"prototype":true, "constructor": true, "$typeDescription":true, "$inherit" : true};
+
+stjs.ns=function(path){
+	var p = path.split(".");
+	var obj = stjs.global;
+	for(var i = 0; i < p.length; ++i){
+		var part = p[i];
+		obj = obj[part] = obj[part] || {};
+	}
+	return obj;
+};
+
+stjs.copyProps=function(from, to){
+	for(var key in from){
+		if (!stjs.skipCopy[key])
+			to[key]	= from[key];
+	}
+	return to;
+};
+
+stjs.copyInexistentProps=function(from, to){
+	for(var key in from){
+		if (!stjs.skipCopy[key] && !to[key])
+			to[key]	= from[key];
+	}
+	return to;
+};
+
+stjs.extend=function(_constructor, _super, _implements, _initializer, _typeDescription, _annotations){
+	if(typeof(_typeDescription) !== "object"){
+		// stjs 1.3+ always passes an non-null object to _typeDescription => The code calling stjs.extend
+		// was generated with version 1.2 or earlier, so let's call the 1.2 version of stjs.extend
+		return stjs.extend12.apply(this, arguments);
+	}
+
+	_constructor.$inherit=[];
+
+	if(_super != null){
+		// I is used as a no-op constructor that has the same prototype as _super
+		// we do this because we cannot predict the result of calling new _super()
+		// without parameters (it might throw an exception).
+		// Basically, the following 3 lines are a safe equivalent for
+		// _constructor.prototype = new _super();
+		var I = function(){};
+		I.prototype	= _super.prototype;
+		_constructor.prototype	= new I();
+
+		// copy static properties for super
+		// assign every method from proto instance
+		stjs.copyProps(_super, _constructor);
+		stjs.copyProps(_super.$typeDescription, _typeDescription);
+		stjs.copyProps(_super.$annotations, _annotations);
+
+		//add the super class to inherit array
+		_constructor.$inherit.push(_super);
+	}
+
+	// copy static properties and default methods from interfaces
+	for(var a = 0; a < _implements.length; ++a){
+		if (!_implements[a]) continue;
+		stjs.copyProps(_implements[a], _constructor);
+		stjs.copyInexistentProps(_implements[a].prototype, _constructor.prototype);
+		_constructor.$inherit.push(_implements[a]);
+	}
+
+	// remember the correct constructor
+	_constructor.prototype.constructor	= _constructor;
+
+	// run the initializer to assign all static and instance variables/functions
+	if(_initializer != null){
+		_initializer(_constructor, _constructor.prototype);
+	}
+
+	_constructor.$typeDescription = _typeDescription;
+	_constructor.$annotations = _annotations;
+
+	// add the default equals method if it is not present yet, and we don't have a superclass
+	if(_super == null){
+		if(!_constructor.prototype.equals) {
+			_constructor.prototype.equals = stjs.JavalikeEquals;
+		}
+		if(!_constructor.prototype.getClass) {
+			_constructor.prototype.getClass = stjs.JavalikeGetClass;
+		}
+	}
+
+	// build package and assign
+	return	_constructor;
+};
+
+/**
+ * 1.2 and earlier version of stjs.extend. Included for backwards compatibility
+ */
+stjs.extend12=function( _constructor,  _super, _implements){
+	var I = function(){};
+	I.prototype	= _super.prototype;
+	_constructor.prototype	= new I();
+
+	//copy static properties for super and interfaces
+	// assign every method from proto instance
+	for(var a = 1; a < arguments.length; ++a){
+		stjs.copyProps(arguments[a], _constructor);
+	}
+	// remember the correct constructor
+	_constructor.prototype.constructor	= _constructor;
+
+	// add the default equals method if we don't have a superclass. Code generated with version 1.2 will
+	// override this method is equals() is present in the original java code.
+	// this was not part of the original 1.2 version of extends, however forward compatibility
+	// with 1.3 requires it
+	if(_super == null){
+		_constructor.prototype.equals = stjs.JavalikeEquals;
+		_constructor.prototype.getClass = stjs.JavalikeGetClass;
+	}
+
+	// build package and assign
+	return	_constructor;
+};
+
+/**
+ * return type's annotations
+ */
+stjs.getAnnotations = function(clz) {
+	return clz.$annotations;
+};
+
+stjs.getTypeAnnotation = function(clz, annType) {
+	var ann = clz.$annotations._;
+	return ann ? ann[annType]: null;
+};
+
+stjs.getMemberAnnotation = function(clz, memberName, annType) {
+	var ann = clz.$annotations.memberName;
+	return ann ? ann[annType]: null;
+};
+
+stjs.getParameterAnnotation = function(clz, methodName, idx, annType) {
+	var ann = clz.$annotations[methodName + "$" + idx];
+	return ann ? ann[annType]: null;
+};
+
+/**
+ * checks if the child is an instanceof parent. it checks recursively if "parent" is the child itself or it's found somewhere in the $inherit array
+ */
+stjs.isInstanceOf=function(child, parent){
+	if (child == null)
+		return false;
+	if (child === parent)
+		return true;
+	if (!child.$inherit)
+		return false;
+	for(var i = 0; i < child.$inherit.length; ++i){
+		if (stjs.isInstanceOf(child.$inherit[i], parent)) {
+			return true;
+		}
+	}
+	return false;
+}
+
+stjs.enumEntry=function(idx, name){
+	this._name = name;
+	this._ordinal = idx;
+};
+
+stjs.enumEntry.prototype.name=function(){
+	return this._name;
+};
+stjs.enumEntry.prototype.ordinal=function(){
+	return this._ordinal;
+};
+stjs.enumEntry.prototype.toString=function(){
+	return this._name;
+};
+stjs.enumEntry.prototype.equals=stjs.JavalikeEquals;
+
+stjs.enumeration=function(){
+	var i;
+	var e = {};
+	e._values = [];
+	for(i = 0; i < arguments.length; ++i){
+		e[arguments[i]] = new stjs.enumEntry(i, arguments[i]);
+		e._values[i] = e[arguments[i]];
+	}
+	e.values = function(){return this._values;};
+	e.valueOf=function(label){
+		return this[label];
+	}
+	return e;
+};
+
+
+/**
+ * if true the execution of generated main methods is disabled.
+ * this is useful when executing unit tests, to no have the main methods executing before the tests
+ */
+stjs.mainCallDisabled = false;
+
+stjs.exception=function(err){
+	return err;
+};
+
+stjs.isEnum=function(obj){
+	return obj != null && obj.constructor == stjs.enumEntry;
+};
+
+if (typeof Math.trunc === "function") {
+	stjs.trunc = Math.trunc;
+} else {
+	stjs.trunc=function(n) {
+		if (n == null)
+			return null;
+		return n >= 0 ? Math.floor(n) : Math.ceil(n);
+	}
+}
+
+stjs.converters = {
+	Date : function(s, type) {
+		var a = /^(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2}(?:\.\d*)?)$/
+				.exec(s);
+		if (a) {
+			return new Date(+a[1], +a[2] - 1, +a[3], +a[4], +a[5], +a[6]);
+		}
+		return null;
+	},
+
+	Enum : function(s, type){
+		return eval(type.arguments[0])[s];
+	}
+};
+
+
+stjs.serializers = {
+	Date : function(d, type) {
+		function pad(n){
+			return n < 10 ? "0" + n : "" + n;
+		}
+		if (d) {
+			return "" + d.getFullYear() + "-" + pad(d.getMonth()+1) + "-" + pad(d.getDate()) + " " + pad(d.getHours()) + ":" + pad(d.getMinutes()) + ":" + pad(d.getSeconds());
+		}
+		return null;
+	},
+
+	Enum : function(e, type){
+		return e != null ? e.toString() : null;
+	}
+};
+
+/**
+ * Used to be able to send method references and lambdas that capture 'this' as callbacks.
+ * This method has a bunch of different usage patterns:
+ *
+ * bind(instance, "methodName"):
+ *     Used when translating a capturing method reference (eg: instance::methodName), or when translating
+ *
+ * bind(this, function):
+ *     Used when translating a lambda that uses 'this' explicitly or implicitly (eg: () -> this.doSomething(3))
+ *
+ * bind(this, function, specialTHISparamPosition)
+ *     Used when translating a lambda that uses the special all-caps 'THIS' parameter
+ *
+ * bind("methodName")
+ *     Used when translating a non-static method reference (eg: TypeName::methodName, where methodName is non-static)
+ */
+stjs.bind=function(obj, method, thisParamPos) {
+	var useFirstParamAsContext = false;
+	if(method == null) {
+		// the bind("methodName") is the only usage where the method argument can be null
+		method = obj;
+		obj = null;
+		useFirstParamAsContext = true;
+	}
+	var addThisToParameters = thisParamPos != null;
+
+	var f = function(){
+		var args = arguments;
+		if (addThisToParameters) {
+			Array.prototype.splice.call(args, thisParamPos, 0, this);
+		}
+		if(useFirstParamAsContext){
+			obj = Array.prototype.shift.call(args);
+		}
+
+		if (typeof method === "string") {
+			return obj[method].apply(obj, args);
+
+		} else {
+			return method.apply(obj, args);
+		}
+	};
+	return f;
+};
+
+
+/** *********** global ************** */
+function exception(err){
+	return err;
+}
+
+function isEnum(obj){
+	return obj != null && obj.constructor == stjs.enumEntry;
+}
+
+/******* parsing *************/
+
+/**
+ * parse a json string using the type definition to build a typed object hierarchy
+ */
+stjs.parseJSON = (function () {
+	  var number
+	      = '(?:-?\\b(?:0|[1-9][0-9]*)(?:\\.[0-9]+)?(?:[eE][+-]?[0-9]+)?\\b)';
+	  var oneChar = '(?:[^\\0-\\x08\\x0a-\\x1f\"\\\\]'
+	      + '|\\\\(?:[\"/\\\\bfnrt]|u[0-9A-Fa-f]{4}))';
+	  var string = '(?:\"' + oneChar + '*\")';
+
+	  // Will match a value in a well-formed JSON file.
+	  // If the input is not well-formed, may match strangely, but not in an unsafe
+	  // way.
+	  // Since this only matches value tokens, it does not match whitespace, colons,
+	  // or commas.
+	  var jsonToken = new RegExp(
+	      '(?:false|true|null|[\\{\\}\\[\\]]'
+	      + '|' + number
+	      + '|' + string
+	      + ')', 'g');
+
+	  // Matches escape sequences in a string literal
+	  var escapeSequence = new RegExp('\\\\(?:([^u])|u(.{4}))', 'g');
+
+	  // Decodes escape sequences in object literals
+	  var escapes = {
+	    '"': '"',
+	    '/': '/',
+	    '\\': '\\',
+	    'b': '\b',
+	    'f': '\f',
+	    'n': '\n',
+	    'r': '\r',
+	    't': '\t'
+	  };
+	  function unescapeOne(_, ch, hex) {
+	    return ch ? escapes[ch] : String.fromCharCode(parseInt(hex, 16));
+	  }
+
+	  var constructors = {};
+
+	  function constr(name, param){
+		  var c = constructors[name];
+		  if (!c)
+			  constructors[name] = c = eval(name);
+		  return new c(param);
+	  }
+
+	  function convert(type, json){
+		  if (!type)
+			  return json;
+		  var cv = stjs.converters[type.name || type];
+		  if (cv)
+			  return cv(json, type);
+		  //hopefully the type has a string constructor
+		 return constr(type, json);
+	  }
+
+	  function builder(type){
+		  if (!type)
+			  return {};
+			if (typeof type == "function")
+				return new type();
+			if (type.name) {
+				if (type.name == "Map")
+					return {};
+				if (type.name == "Array")
+					return [];
+				return constr(type.name);
+			}
+			return constr(type);
+	  }
+
+	  // A non-falsy value that coerces to the empty string when used as a key.
+	  var EMPTY_STRING = new String('');
+	  var SLASH = '\\';
+
+	  // Constructor to use based on an open token.
+	  var firstTokenCtors = { '{': Object, '[': Array };
+
+	  var hop = Object.hasOwnProperty;
+
+	  function nextMatch(str){
+		  var m = jsonToken.exec(str);
+		  return m != null ? m[0] : null;
+	  }
+	  return function (json, type) {
+	    // Split into tokens
+	    // Construct the object to return
+	    var result;
+	    var tok = nextMatch(json);
+	    var topLevelPrimitive = false;
+	    if ('{' === tok) {
+	      result = builder(type, null);
+	    } else if ('[' === tok) {
+	      result = [];
+	    } else {
+	      // The RFC only allows arrays or objects at the top level, but the JSON.parse
+	      // defined by the EcmaScript 5 draft does allow strings, booleans, numbers, and null
+	      // at the top level.
+	      result = [];
+	      topLevelPrimitive = true;
+	    }
+
+	    // If undefined, the key in an object key/value record to use for the next
+	    // value parsed.
+	    var key;
+	    // Loop over remaining tokens maintaining a stack of uncompleted objects and
+	    // arrays.
+	    var stack = [result];
+	    var stack2 = [type];
+	    for (tok = nextMatch(json); tok != null; tok = nextMatch(json)) {
+
+	      var cont;
+	      switch (tok.charCodeAt(0)) {
+	        default:  // sign or digit
+	          cont = stack[0];
+	          cont[key || cont.length] = +(tok);
+	          key = void 0;
+	          break;
+	        case 0x22:  // '"'
+	          tok = tok.substring(1, tok.length - 1);
+	          if (tok.indexOf(SLASH) !== -1) {
+	            tok = tok.replace(escapeSequence, unescapeOne);
+	          }
+	          cont = stack[0];
+	          if (!key) {
+	            if (cont instanceof Array) {
+	              key = cont.length;
+	            } else {
+	              key = tok || EMPTY_STRING;  // Use as key for next value seen.
+	              stack2[0] = cont.constructor.$typeDescription ? cont.constructor.$typeDescription[key] : stack2[1].arguments[1];
+	              break;
+	            }
+	          }
+	          cont[key] = convert(stack2[0],tok);
+	          key = void 0;
+	          break;
+	        case 0x5b:  // '['
+	          cont = stack[0];
+	          stack.unshift(cont[key || cont.length] = []);
+	          stack2.unshift(stack2[0].arguments[0]);
+	          //put the element type desc
+	          key = void 0;
+	          break;
+	        case 0x5d:  // ']'
+	          stack.shift();
+	          stack2.shift();
+	          break;
+	        case 0x66:  // 'f'
+	          cont = stack[0];
+	          cont[key || cont.length] = false;
+	          key = void 0;
+	          break;
+	        case 0x6e:  // 'n'
+	          cont = stack[0];
+	          cont[key || cont.length] = null;
+	          key = void 0;
+	          break;
+	        case 0x74:  // 't'
+	          cont = stack[0];
+	          cont[key || cont.length] = true;
+	          key = void 0;
+	          break;
+	        case 0x7b:  // '{'
+	          cont = stack[0];
+	          stack.unshift(cont[key || cont.length] = builder(stack2[0]));
+	          stack2.unshift(null);
+	          key = void 0;
+	          break;
+	        case 0x7d:  // '}'
+	          stack.shift();
+	          stack2.shift();
+	          break;
+	      }
+	    }
+	    // Fail if we've got an uncompleted object.
+	    if (topLevelPrimitive) {
+	      if (stack.length !== 1) { throw new Error(); }
+	      result = result[0];
+	    } else {
+	      if (stack.length) { throw new Error(); }
+	    }
+
+	    return result;
+	  };
+})();
+
+
+
+
+stjs.isArray=function( obj ) {
+    return stjs.toString.call(obj) === "[object Array]";
+};
+
+/**
+ * cls can by the type of the return.
+ * If it's an array it can be either the type of an element or the type definition of the field.
+ * TODO - for other collections and classes is not done yet
+ */
+stjs.typefy=function(obj, cls){
+	if (stjs.isArray(obj)){
+		var result = [];
+		for(var idx = 0; idx < obj.length; idx++){
+			result.push(stjs.typefy(obj[idx], elementType(cls)));
+		}
+		return result;
+	}
+	 var constructors = {};
+	 function constr(name, param){
+		  var c = constructors[name];
+		  if (!c)
+			  constructors[name] = c = eval(name);
+		  return new c(param);
+	  }
+
+	 function elementType(type){
+		 if (typeof type == "function")
+			 return type;
+		 if (type.arguments) {
+			 return eval(type.arguments[0]);
+		 }
+		 if (typeof type == "string")
+			 return eval(type);
+		 return Object;
+	  }
+
+
+	function convert(type, json){
+		  if (!type)
+			  return json;
+		  var cv = stjs.converters[type.name || type];
+		  if (cv)
+			  return cv(json, type);
+		  //hopefully the type has a string constructor
+		 return constr(type, json);
+	  }
+
+	 function builder(type){
+		  if (!type)
+			  return {};
+			if (typeof type == "function")
+				return new type();
+			if (type.name) {
+				if (type.name == "Map")
+					return {};
+				if (type.name == "Array")
+					return [];
+				return constr(type.name);
+			}
+			return constr(type);
+	  }
+
+	  if (obj == null)
+		  return null;
+
+	  var ret = new cls();
+	  for(var key in obj){
+		  var prop = obj[key];
+		  if (prop == null)
+			  continue;
+		  var td = cls.$typeDescription[key];
+		  if (!td) {
+			  ret[key] = prop;
+			  continue;
+		  }
+		  if (typeof prop == "string")
+			ret[key] = convert(td, prop);
+		  else if (typeof prop == "object") {
+				if (typeof td == "string") {
+					td = eval(td);
+		  		}
+				ret[key] = stjs.typefy(prop, td);
+			}
+	  }
+	  return ret;
+};
+stjs.hydrate=stjs.typefy
+
+stjs.stringify=function(obj, cls){
+	 if (obj == null)
+		  return null;
+
+	 var ret = {};
+	  for(var key in obj){
+		  var td = cls.$typeDescription[key];
+		  var prop = obj[key];
+		  var ser = td != null ? stjs.serializers[td.name || td] : null;
+
+		  if (typeof prop == "function")
+			  continue;
+
+		  if (!td || !ser) {
+			  ret[key] = prop;
+			  continue;
+		  }
+		  if (typeof prop != "string")
+			  if (ser)
+				  ret[key] = ser(prop, td);
+			  else
+				  ret[key] = stjs.typefy(prop, td);
+	  }
+	  return ret;
+};
+/************* STJS asserts ***************/
+stjs.assertHandler = function(position, code, msg) {
+	throw msg + " at " + position;
+};
+
+stjs.STJSAssert = {};
+
+stjs.STJSAssert.setAssertHandler = function(a) {
+	stjs.assertHandler = a;
+}
+
+stjs.STJSAssert.assertArgEquals = function(position, code, expectedValue, testValue) {
+	if (expectedValue != testValue && stjs.assertHandler)
+		stjs.assertHandler(position, code, "Wrong argument. Expected: " + expectedValue + ", got:" + testValue);
+}
+
+stjs.STJSAssert.assertArgNotNull = function(position, code, testValue) {
+	if (testValue == null && stjs.assertHandler)
+		stjs.assertHandler(position, code, "Wrong argument. Null value");
+}
+
+stjs.STJSAssert.assertArgTrue = function(position, code, condition) {
+	if (!condition && stjs.assertHandler)
+		stjs.assertHandler(position, code, "Wrong argument. Condition is false");
+}
+
+stjs.STJSAssert.assertStateEquals = function(position, code, expectedValue, testValue) {
+	if (expectedValue != testValue && stjs.assertHandler)
+		stjs.assertHandler(position, code, "Wrong state. Expected: " + expectedValue + ", got:" + testValue);
+}
+
+stjs.STJSAssert.assertStateNotNull = function(position, code, testValue) {
+	if (testValue == null && stjs.assertHandler)
+		stjs.assertHandler(position, code, "Wrong state. Null value");
+}
+
+stjs.STJSAssert.assertStateTrue = function(position, code, condition) {
+	if (!condition && stjs.assertHandler)
+		stjs.assertHandler(position, code, "Wrong state. Condition is false");
+}
+/** exception **/
+var Throwable = function(message, cause){
+	Error.call(this);
+	if(typeof Error.captureStackTrace === 'function'){
+		// nice way to capture the stack trace for chrome
+		Error.captureStackTrace(this, arguments.callee);
+	} else {
+		// alternate way to capture the stack trace for other browsers
+		try{
+			throw new Error();
+		}catch(e){
+			this.stack = e.stack;
+		}
+	}
+	if (typeof message === "string"){
+		this.detailMessage  = message;
+		this.message = message;
+		this.cause = cause;
+	} else {
+		this.cause = message;
+	}
+};
+stjs.extend(Throwable, Error, [], function(constructor, prototype){
+	prototype.detailMessage = null;
+	prototype.cause = null;
+	prototype.getMessage = function() {
+        return this.detailMessage;
+    };
+
+	prototype.getLocalizedMessage = function() {
+        return this.getMessage();
+    };
+
+	prototype.getCause = function() {
+        return (this.cause==this ? null : this.cause);
+    };
+
+	prototype.toString = function() {
+	        var s = "Exception";//TODO should get the exception's type name here
+	        var message = this.getLocalizedMessage();
+	        return (message != null) ? (s + ": " + message) : s;
+	 };
+
+	 prototype.getStackTrace = function() {
+		 return this.stack;
+	 };
+
+	 prototype.printStackTrace = function(){
+		 console.error(this.getStackTrace());
+	 };
+}, {});
+
+var Exception = function(message, cause){
+	Throwable.call(this, message, cause);
+};
+stjs.extend(Exception, Throwable, [], function(constructor, prototype){
+}, {});
+
+var RuntimeException = function(message, cause){
+	Exception.call(this, message, cause);
+};
+stjs.extend(RuntimeException, Exception, [], function(constructor, prototype){
+}, {});
+
+var Iterator = function() {};
+Iterator = stjs.extend(Iterator, null, [], function(constructor, prototype) {
+    prototype.hasNext = function() {};
+    prototype.next = function() {};
+    prototype.remove = function() {};
+}, {}, {});
+
+var Iterable = function() {};
+Iterable = stjs.extend(Iterable, null, [], function(constructor, prototype) {
+    prototype.iterator = function() {};
+}, {}, {});
+
+/** stjs field manipulation */
+stjs.setField=function(obj, field, value, returnOldValue){
+	if (stjs.setFieldHandler)
+		return stjs.setFieldHandler(obj, field, value, returnOldValue);
+	var toReturn = returnOldValue ? obj[field] : value;
+	obj[field] = value;
+	return toReturn;
+};
+
+stjs.getField=function(obj, field){
+	if (stjs.getFieldHandler)
+		return stjs.getFieldHandler(obj, field);
+	return obj[field];
+};
+
+”ò¿Ÿ           õÌ€      stjs   6?˛      NOT_IMPLEMENTED    ⁄| -      This method is not implemented in Javascript.      ¡<#T      JavalikeEquals     Xõ3ï      JavalikeGetClass   ùó       equals     â«„z      getBytes   is'Î      getChars   ÿÕQà      contentEquals	      ›JX?
+      startsWith
+     ﬂY„	      substring      lÁaé      endsWith   π.+      end    óñôb      trim   Â∂ÿ      trimLeftRegExp     JÊ!	      ^\s+   ÎÙ2ª      trimRightRegExp    OK†      \s+$   ®—œ~      matches    *më2      regexp     ÿ~bw	      compareTo      ∑’ƒ◊      compareToIgnoreCase    RâDo      toLowerCase    ~≥-      equalsIgnoreCase   ûÈ˛G      codePointAt    (=S:
+      charCodeAt     1”E      codePointBefore    ÜS¥¿      codePointCount     é
+      replaceAll     ÜÆ`Ó      replaceFirst   ]&ïÄ      regionMatches      ˚∫      toffset     Üï€      ooffset!    €õÕX      len"    µœê^      contains#   ⁄Eú¡      indexOf$    c+ÿ-      getClass%   Òé§I      Byte&   	n       Double'     ∏î›      Float(      ÊêÒ      Integer)    kW‰‡      Long*   ∏‹N&      Short+      ;ËRÈ      intValue,   —±W
+      shortValue-     `!óÒ	      longValue.      hgFi	      byteValue/      ë“√
+      floatValue0     æT*´      doubleValue1    £g§
+      parseShort2     ëß€}	      parseLong3      çÙ9	      parseByte4      *ù&      parseDouble5    
+d      skipCopy6   l<º      $typeDescription7   `±/≠      $inherit8   ":k      path9   ﬂN#9      obj:    ∆ÈI◊      part;   › ˜	      copyProps<      B¸ø;      key=    {Ãà      copyInexistentProps>    ªl‡Ù      extend?     ó¯^Ü      _constructor@   ˜      _superA     “'¯∫      _implementsB    ˘S(u      _initializerC   V¶E      _typeDescriptionD   \Ωﬂ&      _annotationsE   ¸Ï.∞      extend12F   îsñΩ      $annotationsG   Ñu2      pushH   ˝YJ      getAnnotationsI     OR»z      clzJ    ˚v‹      getTypeAnnotationK      Àm`~      annTypeL    3˘      annM    …ŸÇé      getMemberAnnotationN    sÅ	
+      memberNameO     (±∆í      getParameterAnnotationP     tÆ$˚
+      methodNameQ     “≥Lg      idxR    ,k÷      isInstanceOfS   Qj^      childT      ˛Ë˘2      parentU     3ßÊg	      enumEntryV      ï…0      _nameW      ¥	áë      _ordinalX   µÒ∑      ordinalY    7ü      enumerationZ    Çí√ˇ      _values[    Øch$      mainCallDisabled\   €ŒÅ_	      exception]      ºoò      err^    z†Ó      isEnum_     N<G      trunc`      `-Ñó      floora      ËŒ&˙      ceilb   ˛d
+      convertersc     ëô;      ^(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2}(?:\.\d*)?)$d    •K      Enume   æ≈an      serializersf    çÛ      padg    %k‚5      getFullYearh    "ü      getMonthi   ∂≠      getDatej    }:CÂ      getHoursk   *™∏?
+      getMinutesl     ÒÍÆ˛
+      getSecondsm     ‡Õ      bindn   Ωpwm      methodo     ¢ ‡      thisParamPosp   èbo≠      useFirstParamAsContextq     ¿]9'      addThisToParametersr    ‹Ÿú…      argss   ˝ÂgÑ      splicet     Ç=äO      shiftu      Fbù6	      parseJSONv      úIë<      (?:-?\b(?:0|[1-9][0-9]*)(?:\.[0-9]+)?(?:[eE][+-]?[0-9]+)?\b)w   b∫      oneCharz    /†ˇ∏      (?:"{   È„X@      *")|    YˆD	      jsonToken~      Ö≥œº      escapeSequence     ˝˛g      \\(?:([^u])|u(.{4}))Ä   ©IÕ      escapesÅ    ﬁÿ£j      unescapeOneÇ    µlW–      hexÉ    >¬≈      fromCharCodeÑ   _Ÿ      constructorsÖ   lø=      constrÜ     ÅUÄ      paramá      íY∑‚      convertà    .¬      jsonâ   ›∏Ø      EMPTY_STRINGä   —Êp      SLASHã      nsÒi      firstTokenCtorså    .EÃ      hopç    Ù)ö˚	      nextMatché      Ñ6¶1      strè    ßô›ñ      tokê    ÕÖÔÓ      topLevelPrimitiveë      \¨Ã)      stack2í     …·¥≥      contì   Yæçl      unshiftî    ¢]¡Ï      isArrayï    g¡      typefyñ     ^¶LŒ      clsó    t¥NŒ      retò    “P…ù      propô   ©ÖÜΩ      hydrateö    nßÎ	      stringifyõ      Á2ü      serú    †ñ>       assertHandlerù      »Åí      positionû   ähc)      codeü   ˇ?Xã      msg†    ⁄+h¶       at °   Íüdµ
+      STJSAssert¢     {Ìë       setAssertHandler£   ]≠æ6      assertArgEquals§    AA<¿      expectedValue•      ˆ«D+	      testValue¶      J®>      Wrong argument. Expected: ß     òÓı      , got:®     @è¯Í      assertArgNotNull©   ^Õ”      Wrong argument. Null value™     ¥~è-      assertArgTrue´      äv≥ï	      condition¨      úPﬂ2"      Wrong argument. Condition is false≠     ÆÑ©      assertStateEqualsÆ      áÔÆ–      Wrong state. Expected: Ø    sÙHä      assertStateNotNull∞     ùˆÅ⁄      Wrong state. Null value±    x÷C      assertStateTrue≤    yå⁄      Wrong state. Condition is false≥    *C>	      Throwable¥      "Qx"      captureStackTraceµ      ´0ÜÄ      detailMessage∂      U”ì
+      getMessage∑     àÄ˝Ä      getLocalizedMessage∏    ù˛Ùé      getCauseπ   t8.¶	      Exception∫      „–8„      : ª     /U+9      getStackTraceº      ì∆ák      printStackTraceΩ    ˛Q1      consoleæ    ˛tuW      errorø      ›»™Ú      RuntimeException¿   ?<K©      hasNext¡    *N∑∆      remove¬     J s      Iterable√   ˙ùU      setFieldƒ   †“ñ!      field≈      ¯ƒ‚_      returnOldValue∆     $Ç:˜      setFieldHandler«    ¡_A∆      toReturn»   "‰      getField…   ≥«‘À      getFieldHandler     ¡âÛj<      (?:[^\0-\x08\x0a-\x1f"\\]|\\(?:["/\\bfnrt]|u[0-9A-Fa-f]{4}))À   õy!      (?:false|true|null|[\{\}\[\]]|Ã     ëD8≠      stjs.NOT_IMPLEMENTEDÕ   œÊùg      stjs.JavalikeEqualsŒ    †Í≥Ê      stjs.JavalikeGetClassœ      /∏l      String.prototype.startsWith–    Ü4ò˘      String.prototype.endsWith—      Í–º      String.prototype.trim“      r…bë      String.prototype.matches”   jGUÆ      String.prototype.compareTo‘     0Aµ®$      String.prototype.compareToIgnoreCase’   ª—©!      String.prototype.equalsIgnoreCase÷      Õ¨ù§      String.prototype.replaceAll◊    çÎä¿      String.prototype.replaceFirstÿ      &˝p      String.prototype.regionMatchesŸ     ≤≈y%      String.prototype.contains⁄      Oó      String.valueOf€     ¿P≠=      Number.prototype.intValue‹      lÕëÖ      Number.prototype.shortValue›    ££‰n      Number.prototype.longValueﬁ     ∞π⁄      Number.prototype.byteValueﬂ     W ~•      Number.prototype.floatValue‡    pBı      Number.prototype.doubleValue·    t,       Number.prototype.isNaN‚     ∑(KQ      Number.valueOf„     ˛í‰      Boolean.valueOf‰    6T;.      stjs.nsÂ    0‡fÒ      stjs.copyPropsÊ     æ¥      stjs.copyInexistentPropsÁ   fÌ®      stjs.extendÈ    ¯T´q      stjs.extend12Î      ˙ñw      stjs.getAnnotationsÏ    
+'0·      stjs.getTypeAnnotationÌ     ¨s˝A      stjs.getMemberAnnotationÓ   móm‚      stjs.getParameterAnnotationÔ    <⁄ˇ      stjs.isInstanceOf      ıp€      stjs.enumEntryÒ     ÿ+‹ô      stjs.enumEntry.prototype.nameÚ      ≠-7À       stjs.enumEntry.prototype.ordinalÛ   tù~±!      stjs.enumEntry.prototype.toStringÙ      Y'b      stjs.enumerationı   uK∂Ω      stjs.enumeration/e.valuesˆ      @°]G      stjs.enumeration/e.valueOf˜     2µ,â      stjs.exception¯     ™r¯      stjs.isEnum˘    ≥jŒo
+      stjs.trunc˚     ˜	      stjs.bind˝      dõU      stjs.parseJSON<˛    ≈ÏT≈      stjs.parseJSONˇ     Qc≤∂      stjs.isArray   ¨ÄD¶      stjs.typefy   µ◊Ä      stjs.stringify    ¸ı˜m      stjs.assertHandler    m|â       stjs.STJSAssert.setAssertHandler  ˝[Iì      stjs.STJSAssert.assertArgEquals	   —é4       stjs.STJSAssert.assertArgNotNull
+  Ø:ˇã      stjs.STJSAssert.assertArgTrue     ÔLE?!      stjs.STJSAssert.assertStateEquals     ;˙•F"      stjs.STJSAssert.assertStateNotNull    C$Ωh      stjs.STJSAssert.assertStateTrue   Ó∑Ò      prototype.getMessage  ˜JO'      prototype.getLocalizedMessage     ∆O5      prototype.getCause    §Ú~e      prototype.toString    Â∂ôa      prototype.getStackTrace   !ï!µ      prototype.printStackTrace     '´m	      Iterator<     èÈÛO      Iterator</prototype.hasNext   Ãü¯ß      Iterator</prototype.next  Û#5Â      Iterator</prototype.remove    bµ©	      Iterable<     ∂£°◊      Iterable</prototype.iterator  Úì      stjs.setField     Y–‹µ      stjs.getField     d   b  e   d             Ô%,â                                6                  7                                                                                                                                                                  	                  
+                                                                                                                                                                                                                                                                                                                                                                                                                              !                  "                  #                  $                  %                  &                  '                  (                  )      +           *      +           +                  ,                  -                  .                  /                 0                  1      3           2                  3                 4      6           5                 8      8           9      8          :      8           ;      8           <      8           =      8           >                  ?                 @      @          A      @          B      @           C      @           D                  E                  F                  G                  H                  I                  J                  K                  L                  M                  N      N                            O      P           P      P           Q      P           R      P           S      P           T      P           U                  V                  W                  X                  Y                  Z                  [      \           \      \           ]      \           ^                  _                  `      a           a                  b                  c      ≥Oåc            P%  P&  P'  P(  P)  P*  P\  –^  –≥  Pπ  Pø  PU `¬  P             ]               9                              ﬁ  l                 l               ì  û   f  l                 l                 l                 l               K  l               K  l               K  l                 Z  l                 Z  l   	            À     K     !       l               ù l                ﬁ                l                 l                 l                 l                 l                 l                 l                ﬁ               ﬁ              8  p  9  i  :              û   X <              û   X <  
+            ?  @  A  B  C  D  I  a     l                               ?  @  A  I  a                                  I              I  K  L              I  N  K  L              I  P  Q  K  L              S  T  i              Q  $  l                 l                 l                 l                 i  e                   l               ˙   l                ]               9               n              s  æ  a               s `æ `  `l  `            d  æ  f               n               e  æ              9  Pn  Po  Pp  Pq  Pf                r     l                  ˇ `w  P˛ `|  P~  PÄ  PÅ  PÑ  PÖ  Pá  P&  `â  Pä  Pã  På  Pç  P  `l  `             _   Ç               $ `Ü  Pc `  `l  `            æ  à                æ              é  m  	            à  æ  s  è  ê  <  ê  ë  í               9               9  Pñ  Ps `Q  PÑ  PÖ  Po  `á  P&  `ó  P<  Pò  PM`  `l  `             $ `Ü  Pc `  `l  `             æ `  `l  `            æ  à                æ              9  ñ  ó  <  M ò  õ               ù  û  ü               a               ù  û  §  •               ù  û  •               ù  û  ´               ù  û  §  •               ù  û  •               ù  û  ´                8      l            e               G   `                l                 l                 l                 s    l                 l                 l                 8   l                G   `                8   l                G   `                               G   `                                                                               G   `                              9  ƒ  ﬁ  ≈  «               9  ƒ  Ø¬0∞            c      IÙ$KEÆ˙ö                `  G   6  7                     
+    	  d     
+    	  d                     (      "  /  \  b  f  n  r  t             
+     {  [                                                                                                  á&’™ç!´!d         À         	       ·       —   ≤   6   ¡   ÷µ   h   I   ÷µ   h   I   ÷µ   h	   I
+   ÷µ   G   G   ï$   ë   µ   G   µ   G   I   ÷ë   µ   G   G   ï$   ë   µ   G   µ   G   I   ÷ë   µ   G   G   ï$   ë   µ   G   µ   G   I   ÷ë$   µ   G   G   ï$   ë(   µ   G   µ   G   I   ÷ë-   µ   G   G   ï   ë1   µ   G   h   I   ÷ë4   µ   G   G   ï   ë8   µ   G   h   I   ÷ë;   µ   G   G   ï?   ë?   µ   g   I   ÷µ   g   I   ÷µ   G   h   I   ÷ëF   µ   G   G   ï   ëJ   µ   G   h   I   ÷ëM   µ   G   G   ï   ëQ   µ   G   h   I   ÷ëT   µ   G   G   ï   ëX   µ   G   h    I   ÷ë[   µ   G   G!   ï   ë_   µ   G   h"   I!   ÷ëb   µ   G   G#   ï)   ëf   µ   G   µ   G   G$   I#   ÷ël   µ   G   G%   ï$   ëp   µ   G   µ   G   I%   ÷ëu   µ   G   G&   ï$   ëy   µ   G   µ   G   I&   ÷ë~   µ   G   G'   ï   ëÇ   µ   G   h(   I'   ÷ëÖ   µ   G   G)   ï   ëâ   µ   G   h*   I)   ÷ëå   µ   G   G+   ï   ëê   µ   G   h,   I+   ÷ëì   µ   G   G-   ï   ëó   µ   G   h.   I-   ÷ëö   µ   G   G/   ï$   ëû   µ   G   µ   G
+   I/   ÷ë£   µ   h0   I1   ÷≤2   µ3   ¡2   ÷≤4   µ3   ¡4   ÷≤5   µ3   ¡5   ÷≤6   µ3   ¡6   ÷≤7   µ3   ¡7   ÷≤8   µ3   ¡8   ÷µ3   G   G9   ï   ëª   µ3   G   h:   I9   ÷ëæ   µ3   G   G;   ï   ë¬   µ3   G   h<   I;   ÷ë≈   µ3   G   G=   ï   ë…   µ3   G   h>   I=   ÷ëÃ   µ3   G   G?   ï   ë–   µ3   G   h@   I?   ÷ë”   µ3   G   GA   ï   ë◊   µ3   G   hB   IA   ÷ë⁄   µ3   G   GC   ï   ëﬁ   µ3   G   hD   IC   ÷ë·   µ3   GE   ï   ë‰   µ3   µE   IE   ÷ëÁ   µ3   GF   ï   ëÍ   µ3   µE   IF   ÷ëÌ   µ3   GG   ï   ë   µ3   µE   IG   ÷ëÛ   µ3   GH   ï   ëˆ   µ3   µE   IH   ÷ë˘   µ3   GI   ï   ë¸   µ3   µJ   II   ÷ëˇ   µ3   GJ   ï   ë  µ3   µJ   IJ   ÷ë  µ3   GK   ï   ë  µ3   µK   IK   ÷ë  µ3   G   GK   ï   ë  µ3   G   hL   IK   ÷ë  µ3   G   G   ï$   ë  µ3   G   µ   G   I   ÷ë  µ3   G   G/   ï$   ë  µ3   G   µ   G
+   I/   ÷ë$  µ3   hM   I1   ÷µN   G   G   ï$   ë*  µN   G   µ   G   I   ÷ë/  µN   G   G/   ï$   ë3  µN   G   µ   G
+   I/   ÷ë8  µN   hO   I1   ÷µ   0IP   ÷µ   7Q   IR   ÷µ   hS   IT   ÷µ   hU   IV   ÷µ   hW   IX   ÷µ   hY   IZ   ÷µ   h[   I\   ÷µ   h]   I^   ÷µ   h_   I`   ÷µ   ha   Ib   ÷µ   hc   Id   ÷µ   he   If   ÷µ   hg   Ih   ÷µ   Gh   G   hi   Ij   ÷µ   Gh   G   hk   Il   ÷µ   Gh   G   hm   In   ÷µ   Gh   G   µ   G   I   ÷µ   ho   Ip   ÷µ   Iq   ÷µ   hr   Is   ÷µ   ht   Iu   ÷µv   Gw   x   î$   ës  µ   µv   Gw   Iw   ÷ì   ëw  µ   hy   Iw   ÷ëy  µ   6z   h{   9|   h}   9~   I   ÷µ   6Ä   hÅ   9|   hÇ   9~   IÉ   ÷µ   hÑ   IÖ   ÷µ   hÜ    o  Iá   ÷µ   hà   Iâ   ÷µ   hä   Iã   ÷µ   µ   Gã   Iå   ÷µ   hç   Ié   ÷µ   hè   Iê   ÷µ   6ë   Ií   ÷µ   Gí   hì   Iî   ÷µ   Gí   hï   Iñ   ÷µ   Gí   hó   Iò   ÷µ   Gí   hô   Iö   ÷µ   Gí   hõ   Iú   ÷µ   Gí   hù   Iû   ÷µ   Gí   hü   I†   ÷≤°   h¢   ¡°   ÷µ   ÿGZ   €µ°   µ£   c    h§   6•   s ÷≤¶   hß   ¡¶   ÷µ   ÿGZ   €µ¶   µ°   c    h®   6©   s ÷≤™   h´   ¡™   ÷µ   ÿGZ   €µ™   µ¶   c    h¨   6≠   s ÷≤Æ   hØ   ¡Æ   ÷≤Æ   µ   ÿGZ   €µÆ   c    h∞   6±   6≤   o ¡Æ   ÷≤≥   h¥   ¡≥   ÷≤≥   µ   ÿGZ   €µ≥   c    hµ   6∂   6∑   o ¡≥   ÷µ   h∏   Iπ   ÷µ   h∫   Iª   ÷üE%	`PK`Pê@`Pê@!`Pê@& `Pô0 `Pü@) `Pô0 `Pü@, `Pô0 `Pü@/ `Pô0 `Pü@2 `Pô0 `Pö@8 `Pô0 `Pö@A `Pô0 `Pê0 `Pê0 `Pö@H `Pô0 `Pö@M `Pô0 `Pö@Y `Pô0 `Pö@a `Pô0 `Pö@i `Pô0 `P§@m `Pô0 `Pü@p `Pô0 `Pü@t `Pô0 `Pö@z `Pô0 `Pö@Ä  Ä `Pô0 `Pö@Ä  ë `Pô0 `Pö@Ä  ó `Pô0 `Pü@Ä  ù`Pê@Ä  ¢%	`P;%`P;%
+`P;%`P;%	`P;%
+`P;00 `Pô0 `Pö0000 `Pô0 `Pö0000 `Pô0 `Pö0000 `Pô0 `Pö@Ä  ø `Pô0 `Pö@Ä  ≈ `Pô0 `Pö@Ä  À `Pî0 `Pï00 `Pî0 `Pï00 `Pî0 `Pï00 `Pî0 `Pï000 `Pî0 `Pï000 `Pî0 `Pï000 `Pî0 `Pï000 `Pô0 `Pö0000 `Pô0 `Pü00 `Pô0 `Pü0000`Pê@Ä  ˆ `Pô0 `Pü00 `Pô0 `Pü0000`Pê@Ä `P<`Pê00`Pê@Ä `Pê@Ä `Pê@Ä "`Pê@Ä c`Pê@Ä Ä`Pê0000`Pê@Ä â`Pê@Ä é`Pê@Ä ñ`Pê@Ä •`Pê@Ä ™`Pö000`Pö000`Pö000`Pü00`Pê@Ä …`P<0`Pê0000`Pê0000 `Põ0 `Pü00 `Pï@Ä ›`P: JÄ Á ê@Ä Ì`P: JÄ ¯ ê@Ä `Pê@Ä 9`PKÄ  PIÄ ı`Pê@Ä ˛`Pê@Ä K`Pï00`Pê@Ä g`Pê0000`Pê00`Pï0000`Pï@Ä v`Pï@Ä {`Pï@Ä Ä`Pï@Ä Ö`Pï@Ä ä`Pï@Ä è%`PKÄ §`P†@Ä ¿EÄ § PDÄ ¬%`P;00`P†0EÄ ≈ P400%`P;00`P†0EÄ À P400%`P;`P°0000JÄ œ PIÄ ’%`P;`P°00JÄ ÷ PIÄ €`Pê@Ä „`Pê@Ä ÈP  0   0                                 °ü0 `P6P §   §   Z                
+       ’ƒ   ÷∂  î   ë   úë   ∂  G   î'   ë   ∑   ÿG   €o  ∂  ÿG   €o  úë	   ∑   ∂  úü6 `P? `PAF `Pí0 `P+P-PDF `P8Q <   <                           ’ƒ   ÷∑   G   úü6 `P9Q   à   à   R                       ’ƒ  ÷∂ î   ë   ∂ ì   ë   ë   ƒ   ÷∑  ÿG   €∑   ∑   ∂  G   %o ∂  úü6 
+`Pß0 `Pú P7 Q  º   º   n                       ’ƒ   ÷∂  î   ë   úë   ∑   G   ∂  G   î   ë   úë   ∑   ÿG   €∑   G   ∂  G   &∑   G   o ∂  úü6 `P? `PA F `Pú0 `PA F `P¶ P7 Q t   t   >                        ’ƒ   ÷∑   ÿG   €µ   G      o ÿG   €µ   G      o úü6 `Pö Pô !P3 Q    X   X   '                       ’ƒ   ÷∑   ÿG   €   ∂  %   %o úü6 `Pö P5 Q   ¨   ¨   R                       ’ƒ   ÷∂  î   ë   úë   ∑   ∂  î   ë   ˇúë   ∑   ∂  î   ë   úë   úü6 `P? `PA F `Pí0 `PB F `Pí0 `PA F `P1 Q å   å   C                       ’ƒ   ÷∂  î   ë   úë   ∑   ÿG   €o  ÿG   €∂  ÿG   €o  o úü6 `P? `PA F `P+Pî P#ˇˇˇP3 Q   |   |   :                       ’ƒ   ÷∂  î   ë   úë   ∑   ÿG   €o  ∂  ÿG   €o  úü6 `P? `PA F `P+P-P4 Q   d   d   .                       ’ƒ   ÷∑   ÿG   €µ   |∂     ⁄  } ∂ o úü6 `Pù P&ˇˇˇ¯P3 Q  `   `   )                       ’ƒ   ÷∑   ÿG   €µ   |∂  ⁄  } ∂ o úü6 `Pò P&ˇˇˇ¯P3 Q   ¨  ¨  :        	              ”ƒ  ÷’ƒ  ÷∑  G   î9   ë   ∑  H√ ÷∑  H√ ÷∑  H√ ÷∑  H√ ÷√  ÷ë   ∂ óW   ë	   ÷∂ óG   ë   ÷∂ ó7   ë   ÷∂ ∂ %∑  G   ó   ë   ÷∂ ∂ %∂ G   ë   î   ë   úë   ∑  ÿG   €∂ ∂ ∂ %o ƒ   ÷∂ ÿG   €∂ ∂ ∂ %o ƒ  ÷∂  î!   ë   ∑   ÿG   €∑  o ì   ë   ∑   ∑  ë   úü< `Pñ0 `P; `P; `P: `P: `PJ `PÎ0 `PA F
+ `Pï P8 `Pî P8 `Pú Põ0 Q L   L                          ’ƒ   ÷∑   ÿG   €∂  o úü6 `P.P5 Q    @   @                            µ   |∂  ⁄  } úü0 `P-P3Q   D   D                           ’ƒ   ÷µ    ∑   o úü6 `P*P3 Q  D   D                           ’ƒ   ÷µ    ∑   o úü6 `P*P3 Q  D   D                           ’ƒ   ÷µ    ∑   o úü6 `P*P3 Q  D   D                           ’ƒ   ÷µ    ∑   o úü6 `P*P3 Q  D   D                           ’ƒ   ÷µ    ∑   o úü6 `P*P3 Q  D   D                           ’ƒ   ÷µ    ∑   o úü6 `P*P3 Q  D   D                           ’ƒ   ÷µ    ∑   o úü6 `P*P3 Q  L   L                            µ   |∂  ⁄  } ÿG   €o  úü0 `P-P*P3Q  L   L                            µ   |∂  ⁄  } ÿG   €o  úü0 `P-P*P3Q    ¯   ü                       ∂  ÿG   €   o ƒ   ÷µ   G   ƒ  ÷ƒ  ÷í   ∑  ∑   G   îT   ë   ∑   ∑  Hƒ  ÷∑  ∑  ∑  ∑  Hó   ë
+   ÷6   ë   Kƒ  ÷∑  .'ƒ  ÷ìùˇˇˇë   ∑  úü0 	`P/P8 `P?  `P&fPò0 `P> `P¨@ `Pï@ `P4Q          ,   h   ¥   §   Z                       ∂  [í   \]ïC   ë   ƒ   µ   G   ∑   Hï   ë   ∂ ∑   ∂  ∑   HK÷ë   ÷ì∫ˇˇˇë   ^∂ úü0 `Pñ ˇˇˇı4 `Pô0 `Pñ@ L `P3Q  ¥            K   –   ¿   t                       ∂  [í   \]ï]   ë   ƒ   µ   G   ∑   Hñ   ë   ÷∂ ∑   Hë	   î   ë
+   ∂ ∑   ∂  ∑   HK÷ë   ÷ì†ˇˇˇë   ^∂ úü0 `Pñ ˇˇˇı4 `Põ ò0 `Pñ@ L `P3Q –            e   à  x  w               J      ”ƒ  ÷’ƒ  ÷∂    î'   ë   µ   G   ÿG   €∑  ∑  q úë   ∂  c    I   ÷∂ îù   ë   h   ƒ   ÷∑   ∂ G   I   ÷∂  ∑   |⁄  }  I   ÷µ   ÿG   €∂ ∂  s ÷µ   ÿG   €∂ G	   ∂ s ÷µ   ÿG   €∂ G
+   ∂ s ÷∂  G   ÿG   €∂ s ÷ë   ƒ  ÷í   ∑  ∂ G   îñ   ë    ∂ ∑  Hï   ë"   ìe   ë"   µ   ÿG   €∂ ∑  H∂  s ÷µ   ÿG   €∂ ∑  HG   ∂  G   s ÷∂  G   ÿG   €∂ ∑  Hs ÷ë0   ∑  .'ƒ  ÷ì\ˇˇˇë2   ∂  G   ∂  I   ÷∂ î   ë6   ∂  ∂  ∂  G   s ÷ë8   ∂  ∂ I	   ÷∂  ∂ I
+   ÷∂ îm   ë<   ∂  G   G   ï"   ë?   ∂  G   µ   G   I   ÷ëC   ∂  G   G   ï"   ëF   ∂  G   µ   G   I   ÷ëJ   ∂  úü< `Pî@ `Pô PC<F `PN	 `PO 
+`P: `Pí0 `P,PI `Pí P4 `Pó P4 `Pó PD `Pí PI  `P&fPó0 `Pí `P: `Pó P4 `P° P4 `Pó PI (`Pï@& `Pë@) `P? `P/PI- `P< `PL1 `P? `Pó0 `Pù@5 `Pó0 `Pù@; `P3Q    à         ˝   ©   (   (                               ü     p  `  Ê                      ”ƒ  ÷h   ƒ   ÷∑   ∂ G   I   ÷∂  ∑   |⁄  }  I   ÷ƒ  ÷í   ∑  ∑  G   î6   ë   µ   ÿG   €∑  ∑  H∂  s ÷∑  .'ƒ  ÷ìªˇˇˇë   ∂  G   ∂  I   ÷∂ î:   ë   ∂  G   µ   G   I   ÷∂  G   µ   G	   I
+   ÷ë   ∂  úü6 	`P: `Pí0 `P,PI  `P&fPò0 `Pò PD &`Pï@ `Pë@ `P? `Pò0 `Pù@ `P3Q    p         =   J   (   (                               ü     4   4   
+                         ∂  G   úü0 `P8Q  l   l   :                        ∂  G   G   ƒ   ÷∑   î   ë   ∑   ∂ Hì   ë   ë   úü0 `Pí0 `P¶0Q   l   l   :                        ∂  G   G   ƒ   ÷∑   î   ë   ∑   ∂ Hì   ë   ë   úü0 `Pí0 `P¶0Q   t   t   C                        ∂  G   ∂    %∂ %Hƒ   ÷∑   î   ë   ∑   ∂ Hì   ë   ë   úü0 `Põ0 `P¶0Q  D  4  ∑                       ∂  î   ë   úë   ∂  ∂ î   ë   úë   ∂  G   ï   ë   úë   ƒ   ÷í   ∑   ∂  G   G   îJ   ë
+   µ   ÿG   €∂  G   ∑   H∂ o î   ë   úë   ∑   .'ƒ   ÷ì£ˇˇˇë   úü0 `P? `PAF `Pë0 `PAF `Pí0 `PAF  `P&fPú0 `Pú P= `PAF +`Pï@ `P1Q    D         M   b   P   P   !                       ’ƒ   ÷∑   ∂ I   ÷∑   ∂  I   ÷ü6 `P= `P=P  <   <                           ’ƒ   ÷∑   G   úü6 `P9Q   <   <                           ’ƒ   ÷∑   G   úü6 `P9Q   <   <                           ’ƒ   ÷∑   G   úü6 `P9Q   <  ,  «         
+              ”ƒ  ÷6   ƒ  ÷∑  c    I   ÷ƒ   ÷í   ∑   ∑  G   îe   ë   ∑  ∑  ∑   Hµ   G   |∑   ∑  ∑   H⁄  } K÷∑  G   ∑   ∑  ∑  ∑   HHK÷∑   .'ƒ   ÷ìåˇˇˇë   ∑  h   I   ÷∑  h   I	   ÷∑  úü60 	`P: `P? `P&fPò0 `P© P5 `Pù@ "`Pï@ `P? `PO `P4Q  <         %   y   <   <                           ’ƒ   ÷∑   G   úü&`P)Q   <   <                          ’ƒ   ÷∑   ∂  Húü6 `P8 Q  0   0                             ∂  úü0 `P3Q   T   T   *                         ∂  ñ   ë   ÷∂  G   µ   G   ë   úü0 `P®0Q ú   ú   Z                  
+       ∂  î   ë   úë   ∂  î!   ë   µ   ÿG   €∂  o ì   ë   µ   ÿG   €∂  o ë
+   úü0 `P? `PA F `Pû Pú P8 Q ƒ   ƒ   l          
+              g   ÿG   €∂  o ƒ   ÷∑   îI   ë   µ   |∑   H∑   H&∑   H∑   H∑   H∑   H⁄  } úë   úü0 
+`P<#P8 `P> `P&'*(((,ˇˇˇ–PC F `P1 Q    `   `   0                        ”≈   ÷’≈   ÷¥    ∏   G   Hv ﬂÈ  ∏   Húü> `Pí P> Q  4  4  ¡                        h   ƒ   ÷∂  î¨   ë      ∂  ÿG   €o  %   %∑    ∂  ÿG   €o  %o %   %∑    ∂  ÿG   €o  o %   %∑    ∂  ÿG   €o  o %	   %∑    ∂  ÿG
+   €o  o %	   %∑    ∂  ÿG   €o  o %úë   úüJ `P= `P/Pô P%ˇˇˇ˙Pô "P#ˇˇˇ˙Pô P#ˇˇˇ˙Pô  P#ˇˇˇ˙Pô "P#ˇˇˇ˙PD F `P1 Q    `   `   3                         ∂  
+î   ë      ∂  %ì   ë      ∂  %ë   úü0 `P±0 Q  `   `   .                         ∂  î   ë   ∂  ÿG   €o  ì   ë   ë   úü0 `Pô Pì0 Q   §   §   S                        ≈   ÷∏   î#   ë   ∏   ≈   ÷≈   ÷≈   ÷ë   ∏   ≈   ÷h   ƒ   ÷∑   úü0 `P7 `Pë@ `P; `P7 `PL `PM
+ 	`PJ `P4Q P  P  Ê         	               ”ƒ  ÷’ƒ  ÷∑  ƒ   ÷∏   î2   ë   µ   G   G   ÿG   €∑   ∏   ∑  r ÷ë   ∏   î-   ë   µ   G   G   ÿG   €∑   r ≈   ÷ë   ∏      î.   ë   ∏   ∏   HÿG   €∏   ∑   q úì#   ë   ∏   ÿG   €∏   ∑   q úë   ü< `P9 `P? `P§ PI `P? `Pö PN	 `Pñ0 `Põ PC K0 `Pï PC V   0   0                             ∂  úü0 `P3Q   T   T   *                         ∂  ñ   ë   ÷∂  G   µ   G   ë   úü0 `P®0Q     É                        ”≈   ÷’≈   ÷h   ≈   ÷h   ≈ 
+  ÷h   ≈   ÷h   ≈   ÷h   ≈   ÷   ≈   ÷   ≈   ÷   ∏   %	   %≈   ÷µ
+   |   ∏   %   %∏   %   %   ⁄  } ≈   ÷µ
+   |      ⁄  } ≈   ÷6      9      9      9      9      9      9      9      9   ≈   ÷6   ≈ 	  ÷µ   |    ⁄  } ≈   ÷   ≈   ÷6!   µ"   9#   µ$   9%   ≈   ÷µ"   G&   ≈   ÷h'   úü≈00 	`P; `PK `Pó@ `P656<O I `Pù@ `P5 : : : : : : : ê@$ `PKG `Pò0 `PKK `P%*ê@M `Pê@S `PEÄ  ∑Q |   |   D                         ∂ î   ë   ∏   ∂ Hì'   ë   µ   ÿG   €µ    ∂ o o ë   úü0 `P∑ .P#ˇˇˇÛP8 Q    ∞   ∞   k                        ”≈   ÷’≈   ÷¥   ∏   H≈   ÷∏   ï.   ë   ¥   ∏   ¥    ∏   v ﬂc  ≈   K÷ë   ∏   |∏   ⁄  } úü> `Pë0 `P? `Pï Pî0 `P/P3 Q   Ã   Ã   t                 	       ∂  ï   ë   ∂ úë   µ   G   ∂  G   ó   ë   ÷∂  ë   Hƒ   ÷∑   î   ë   ∑    ∂ ∂  o úë   ∏ 
+   ∂  ∂ o úü0 `P= `PC F `P´0 `P> `P+PC F `P,P3 Q    @  @  ∫                         ∂  ï   ë   6   úë   ∂     î   ë   ∂  |⁄  }  úë   ∂  G   îb   ë   ∂  G      î   ë   6   úë   ∂  G      î   ë   c    úë   ∏ 
+   ∂  G   o úë   ∏ 
+   ∂  o úü0 `P= `PE F `Pî0 `P(PC F `Pí0 `Pò0 `PE F `Pò0 `PE F
+ `P.PC F `P)P3 Q    t   t   ?                        ∏   ÿG   €∂  o ƒ   ÷∑   î   ë   ∑   Hì   ë   ë   úü0 `P/
+P8 `P¶0 Q  l  \  c                p      ∏    ∂  o ƒ  ÷ƒ  ÷   ∑  î!   ë   ∏    ∂ o ƒ   ÷ìB   ë      ∑  î   ë   c    ƒ   ÷ì   ë   c    ƒ   ÷ƒ  ÷ë   c   ∑   d    ƒ  ÷c   ∂ d    ƒ  ÷∏    ∂  o ƒ  ÷í   ∑  î!  ë   ∑  ÿG   €o ÿ"ôµ   ë   ÿ[ôÒ  ë   ÿ]ôQ  ë   ÿfôk  ë   ÿnôù  ë   ÿtôœ  ë   ÿ{ô  ë   ÿ}ô_  ë   ö   ë   ∑  Hƒ  ÷∑  ∑  ó   ë   ÷∑  G   ë   ∑  K÷ƒ  ÷ì9  ë   ∑  ÿG   €∑  G   &o ƒ  ÷∑  ÿG   €∏   o ˇî'   ë$   ∑  ÿG   €∏   ∏   o ƒ  ÷ë&   ∑  Hƒ  ÷∑  ïß   ë(   ∑  µ    î   ë+   ∑  G   ƒ  ÷ì{   ë,   ∑  ó   ë-   ÷∏   ë-   ƒ  ÷∑  ∑  G	   G
+   î"   ë0   ∑  G	   G
+   ∑  Hì   ë3   ∑  HG   Hë6   K÷ì  ë7   ∑  ∑  ∏    ∑  H∑  o K÷ƒ  ÷ìÔ  ë:   ∑  Hƒ  ÷∑  ÿG   €∑  ∑  ó   ë=   ÷∑  G   ë>   c    Ks ÷∑  ÿG   €∑  HG   Hs ÷ƒ  ÷ìÅ  ëF   ∑  ÿG   €s  ÷∑  ÿG   €s  ÷ìY  ëJ   ∑  Hƒ  ÷∑  ∑  ó   ëL   ÷∑  G   ëM   K÷ƒ  ÷ì  ëN   ∑  Hƒ  ÷∑  ∑  ó   ëP   ÷∑  G   ëQ   K÷ƒ  ÷ìŸ   ëR   ∑  Hƒ  ÷∑  ∑  ó   ëT   ÷∑  G   ëU   K÷ƒ  ÷ìô   ëV   ∑  Hƒ  ÷∑  ÿG   €∑  ∑  ó   ëY   ÷∑  G   ëZ   ∏    ∑  Ho Ks ÷∑  ÿG   €s ÷ƒ  ÷ì-   ë`   ∑  ÿG   €s  ÷∑  ÿG   €s  ÷ì   ëd   ∏    ∂  o ƒ  ÷ìÿ˚ˇˇëe   ∑  îB   ëf   ∑  G   î   ëi   µ   |⁄  }  °ëk   ∑   Hƒ   ÷ì+   ël   ∑  G   î   ën   µ   |⁄  }  °ëp   ∑   úü@0 `P)	P8 `P6 	`Pî0 `P*	Pí0 `Pî0 `Pî0@ `P: `PK@ `P%> `P%= 
+`P)P(fPê@0 `P,P˝00 `P; `P° 7 `P 7 `P:0 `Pó 
+P8 `Pê Pê0 `Pï 
+PM' `P; `P> `Pî0 `Pò00 `Pû0 `PŒ0 `PJ1 `Pò P5 `P 7 `P:0 `P; `P≤ P4 `Pò PD9 `P 7 `P:0 `P+P4 `P+P4 `P:0 `P; `P§0 `P 7 `P:0 `P; `P§0 `P 7 `P:0 `P; `P§0 `P 7 `P:0 `P; `P∏ )P$ˇˇˇ›P4 `P,P4 `P 7 `P:0 `P+P4 `P+P4 `PJ .`P)Pí@[ 	`P> `Pï `P*P9 `Pï00 `Pì `P*PIb `P4 Q  l         ∫   -  L   L                            µ   G   ÿG   €∂  r    úü0 `Pî P9Q x  X  k                /      ”≈   ÷’≈   ÷h   ≈   ÷h   ≈   ÷h   ≈ 	  ÷h   ≈ 
+  ÷¥   ÿG   €∏   o îì   ë   c    ≈   ÷≈   ÷í   ∏   ∏   G   îV   ë   ∏   ÿG   €¥   ÿG	   €∏   ∏   H∏    ∏   o o s ÷∏   .ÿ'≈   ÷÷ìôˇˇˇë   ∏   úë   6
+   ≈   ÷∏   î   ë   úë   ∏   |⁄  }  ≈   ÷∏   [í   \]ï4  ë   ≈   ∏   ∏   H≈   ÷∏   î   ë   ì¯   ë   ∏   G   ∏   H≈   ÷∏   ï    ë   ∏   ∏   ∏   K÷ì∏   ë   ∏      î.   ë!   ∏   ∏   ∏ 	   ∏   ∏   o K÷ìy   ë#   ∏      îc   ë&   ∏      î#   ë)   ¥    ∏   v ﬂE  ≈   ÷ë+   ∏   ∏   ¥   ÿG	   €∏   ∏   o K÷ë/   ÷ì…˛ˇˇë/   ^∏   úü∫0 `Pë P= `P;  
+`P'fPö0 `PÆ "P#ˇˇˇÔP#ˇˇˇˆPD %`Pô@ `PELF `PK5 `Pë0 `PALF8 `Pì0 `Pò ˇˇˇı5 `Pë0 `Pë0 `P: `Pñ0 `P? `Pë0 `PJB `Pñ0 `Pö P? `Pñ0 `Pñ0 `P+Pì@H `P† PJ9 LK `P5Q x         j   l         "  <  ∞   ∞   k                        ”≈   ÷’≈   ÷¥   ∏   H≈   ÷∏   ï.   ë   ¥   ∏   ¥    ∏   v ﬂ  ≈   K÷ë   ∏   |∏   ⁄  } úü> `Pë0 `P? `Pï Pî0 `P/P3 Q   ¸   ¸   ô                        ”≈   ÷’≈   ÷∏      î   ë   ∏   úë   ∏   G   î%   ë   ¥    ∏   G   Hv ﬂ  úë	   ∏      î   ë   ¥    ∏   v ﬂ  úë   ¥   úü> `Pñ0 `PE	 F `Pî0 `Pí PH	 F `Pñ0 `P+PH	 F `P5 Q  Ã   Ã   t                 	       ∂  ï   ë   ∂ úë   ¥   G   ∂  G   ó   ë   ÷∂  ë   Hƒ   ÷∑   î   ë   ∑    ∂ ∂  o úë   ∏    ∂  ∂ o úü0 `P= `PC F `P´0 `P> `P+PC F `P,P3 Q    @  @  ∫                         ∂  ï   ë   6   úë   ∂     î   ë   ∂  |⁄  }  úë   ∂  G   îb   ë   ∂  G      î   ë   6   úë   ∂  G      î   ë   c    úë   ∏    ∂  G   o úë   ∏    ∂  o úü0 `P= `PE F `Pî0 `P(PC F `Pí0 `Pò0 `PE F `Pò0 `PE F
+ `P.PC F `P)P3 Q    0     Ä                !      ∂  î   ë   úë   6   ƒ   ÷∂  [í   \]ïH  ë   ƒ  ∂ G   ∑  Hƒ  ÷∂  ∑  Hƒ  ÷∑  î7   ë
+   µ   G   ∑  G   ó   ë   ÷∑  ë   Hì   ë   ë   ƒ  ÷∑     î   ë   ìÆ   ë   ∑  ó   ë   ÷∑  ë   î   ë   ∑   ∑  ∑  K÷ìr   ë   ∑     î]   ë   ∑  î)   ë   ∑   ∑  ∑   ∑  ∑  o K÷ì+   ë   ∑   ∑  µ   ÿG   €∑  ∑  o K÷ë!   ÷ìµ˛ˇˇë!   ^∑   úü0 `P? `PAF `P: `Pñ ˇˇˇı4 `Pí0 `P= `PÕ@
+ `Pï0 `PJ `Pê î0 `P> `PJ `Pï0 	`P> `Pï PO `Pú PJ L `P4Q  0        $   P  8   8                            ∂    %∂  %°ü0 `P>P 8   8                            µ   ∂  I   ÷ü0 `P>P ê   ê   Z                         ∂ ∂ ñ   ë   ÷µ   G   ë   î3   ë   µ   ÿG   €∂  ∂    ∂ %   %∂ %s ÷ë   ü0 `P´0 `P• P9P    Ä   Ä   J                         ∂ ñ   ë   ÷µ   G   ë   î%   ë   µ   ÿG   €∂  ∂    s ÷ë   ü0 `P©0 `Pó P9P    |   |   I                         ∂ ñ   ë   ÷µ   G   ë   î%   ë   µ   ÿG   €∂  ∂    s ÷ë   ü0 `P®0 `Pó P9P ê   ê   Z                         ∂ ∂ ñ   ë   ÷µ   G   ë   î3   ë   µ   ÿG   €∂  ∂    ∂ %   %∂ %s ÷ë   ü0 `P´0 `P• P9P    Ä   Ä   J                         ∂ ñ   ë   ÷µ   G   ë   î%   ë   µ   ÿG   €∂  ∂    s ÷ë   ü0 `P©0 `Pó P9P    |   |   I                         ∂ ñ   ë   ÷µ   G   ë   î%   ë   µ   ÿG   €∂  ∂    s ÷ë   ü0 `P®0 `Pó P9P î  t  ˙                      $”ƒ   ÷’ƒ  ÷µ   ÿG   €∑  r ÷µ   G      î,   ë   µ   ÿG   €∑  ∑   G   s ÷ìE   ë   §µ   |⁄  }  °ì,   ë    û¶´¨  ÷¨  ÷∑  ∑  G   I   ÷…ë   ∂     î6   ë   ∑  ∂  I	   ÷∑  ∂  I
+   ÷∑  ∂ I   ÷ì   ë   ∑  ∂  I   ÷ë   ü< `Pê P4 `Põ@ `Pô P>@1 `P*Pë0 ; `Pô@ `Pî0 `P= `P= `Pó00 `Pí@P  î  Ñ     ~      ˇˇˇˇ        c      º   º   i                         ∂ I   ÷∂ I   ÷∂ h   I   ÷∂ h   I   ÷∂ h   I   ÷∂ h	   I
+   ÷∂ h   I   ÷∂ h   I   ÷ü0 `P: `P: `PN `PN `PN `PN `PN `PNP  <   <                           ’ƒ   ÷∑   G   úü6 `P9 Q D   D                           ’ƒ   ÷∑   ÿG   €o  úü6 `P+P3 Q h   h   9                        ’ƒ   ÷∑   G   ∑   î   ë   ì   ë   ∑   G   ë   úü6 `P±0 Q    ê   ê   W                        ’ƒ  ÷   ƒ   ÷∑  ÿG   €o  ƒ  ÷∑  î   ë   ∑      %∑  %ì   ë   ∑   ë   úü6 `P: `P+P8 	`P≤0 Q <   <                           ’ƒ   ÷∑   G   úü6 `P9 Q \   \   %                        ’ƒ   ÷µ   ÿG   €∑   ÿG   €o  s ÷ü6 `Pó P#ˇˇˇıP4 P   P   P   !                       ’ƒ   ÷µ   ÿG   €∑   ∂  ∂ r ÷ü6 `Pñ 
+P4P   $   $                              ü0 P   P   !                       ’ƒ   ÷µ   ÿG   €∑   ∂  ∂ r ÷ü6 `Pñ 
+P4P   $   $                              ü0 (   (                               ü     `   `   +                         ∂ h   I   ÷∂ h   I   ÷∂ h   I   ÷ü0 `P> `P> `P>P   (   (                               ü     (   (                               ü     (   (                               ü     (   (                               ü     8   8                            ∂ h   I   ÷ü0 `P>P (   (                               ü     ∏   ∏   q                 	       µ   G   î&   ë   µ   ÿG   €∂  ∂ ∂ ∂ o úë   ∂ î   ë   ∂  ∂ Hì   ë   ∂ ë   ƒ   ÷∂  ∂ ∂ K÷∑   úü0 `Pî0 `Pò PCF `P´0 `P; `P4Q  t   t   8                         µ   G   î    ë   µ   ÿG   €∂  ∂ o úë   ∂  ∂ Húü0 `Pî0 `Pí PCF `P7Q  3ıÿ  `  `G      U    `    `ﬂ    `G     `
+  ˝     `˝   
+    `Z       q     	  `Y  ^  $  
+  `  `      `    `Z    g    `Z      `˝   
+      `#    `    `Q    `Q    `Q    `Q    `P    `P    `     `  ﬂ    `  ﬂ    `^  .     ∏   ˝     @  `   5    `   5    `  `¸     E     7    p`  ;  6  F  G  ˝   =  G       $    !  `   `  p`  ˝      ;  G         $  "  `F  #  `F  _  $  `F  N  %  `F  $  &  `7  ˝      R  '  `V  W  (  `V  )  `W  *  `V  ,  `Z  -  `+  `  @Z  ˝      U  *  p‡  +  pﬂ  .  `/  `G      U  0  `
+  `  a  1  `  PÄ   	  2  `      4  `0  q   3  `2  pq   g  -  h  i     j  :  k  l  5  `≥  7  `  `  s  /   t  ˛     6  `5  p9  `  É  Q  :  `Ñ     ;  `   b  $  <  `  @˝  $  *    @  =  `Ä   >  `{  [    ˝   
+  #  Z    G   6     ì  t    8  `9  p:  p;  p<  p=  pv     z  {    À  |  )  g      @"  /  \    b    f  
+  n    r  	  t  	  @  q   
+  @  {    [  ≈   >  p?  `   ≥  /   8  A  `Ñ     B  `˝        ˛    C  `   b  $  D  `  @˝  $  *    @  @  `A  pB  pC  pD  p   î  ˝   G  ï    @6  ˛  ¸     E  `  @6     e  $  ˝  ˛  ï  F  `†  G  `   ú  H  `   ú  ¶  ß  I  `   ú  ©  J  `   ú  ¨  K  `   ú  Æ  ß  L  `   ú  ∞  M  `   ú  ≤  N  `  /   ¥  ˝  1   O  `ê  ˛  µ    8   Q  `µ  R  `∂  S  `8   T  `π  ∑  ∫  U  `ê  V  `Ω  æ  ª  P  `µ  8   P  p∂  Q  p∑  R  p∏  S  p≥  T  pª  U  pº  W  `≥  /   X  `Y  `π  /   Z  `[  `]  `^  `_  `\  `\  p¿  ]  p)  ^  p¡  `  `b  `a  `a  pX  c  `   ∆  d  `   …     `6  p7  p      @  p    p    p    `          	    p    p     P    P    p    p    p  	  p  
+  p            p    p    p"    p$    pﬂ  %    &  '  (  )  *  +    p,    p-    p.    p/    p0    pQ  1  2  3  4  P       p  p    p∏     @5    p‹   p;    p=    p>    pE     pH  !  pJ  "  pM  #  pO  $  pR  %  pU  &  p$  '  pX  (  p≥  )  pY  [  ,  p\  -  p^  
+  _  ˝  .  p  @/  p	  0  pd  b    @1  p3  pe  4  pm  8  pu  ?  pî  @  pï  ô  E  pö  F  pú    @°  G  p¢  H  p£  I  p®  J  p™  K  p≠  L  pØ  M  p±  ≥  N  p  O  p  @π  V  pW  p  @ø  X  pY  p  @U  Z  p[  p  @  @¬  _  p`  p  @  @b  p√  c  p»  ˇXÑ¶  º                    Ã      †       Õ      † 	      Œ      †       œ      †       –      †       —      †       “      †       ”      †       ‘      †       ’      † !      ÷      † %      ◊      † (      ÿ      † ,      Ÿ      † .      ⁄      † 0      €      † 2      ‹      † 4      ›      † 6      ﬁ      † 8      ﬂ      † :      ‡      † <      ·      † >      ‚      † A      „      † D      ‰      † K      Â      † N      Ê      † R      Á      † Q      I      †
+ f      È      † e      I      †
+ q      Î      † s      Ï      † v      Ì      † y      Ó      † |      Ô      † Å            † Ñ      Ò      † Ü      Ú      † à      Û      † ç   
+   Ù      † ä      ı      † å      ˆ      † ó      ˜      † ò      ¯      † ú      ˘      † †      	      †
+ §      d      †
+ ™      	      †
+ ß      f      †  ∂      d      †
+ ¿      ˚      † ∏      f      †
+        \      †        ^      †  Â   (   ˝      † ¬      Å      †  ∆      Ö      †  …      á      †  Õ      &       †  ‘      ç      †  ÷      ˛      †      ˇ      † &           †      Ö      †       o       †       á      †       &       †  5  	        † >          † @          † C          † H     	     † L     
+     † P          † U          † Y          † ]     ≥      †
+ y             † i          † k          † m          † o          † s          † u          † à     π      †
+ ã             † å     ø      †
+ è             † ê     U      †
+ î          † ë          † í          † ì          † õ     ¬      †
+ ù          † ú          † †          † £          † ùH©¿      k      k                     L    L                 o  ¸  g  ¸                !  B    B  "                  q  ˚  q  4   %           º  g  ¥  g  :   #           Ì  H  Â  H  E   !            ê  œ  à  œ  J   "           	  †	  	  †	  O   $           
+  o
+  ˙	  o
+  [   .           À
+  5  √
+  5  c   +           µ    ≠    v   %           Y  §  Q  §  |   '           ˙  Ô  Ú  Ô  Ç   (           :  b  2  b  ì   #            
+  1    1  û              R  s  J  s  ¨   #            ¬  „  ∫  „  ±   %            0  Q  (  Q  ∂   $            û  ø  ñ  ø  ª   $              3    3  ¡   %            Ü  ©  ~  ©  «   &            ù  º  ï  º  Ê   "             Ú  #  Í  #  Ú               ,  ^  $  ^  ˇ               (  ◊     ◊  	              Û  _  Î  _                Ö  ˝  }  ˝    !            ‡$    ‡$  #                      2              V%  Ï(  N%  Ï(  d              è%  ì%  á%  ì%  e               7)  \)  /)  \)  Å              Ç)  ÿ)  z)  ÿ)  Ö  !             *  k*  ¯)  k*  ä  #            ñ*  +  é*  +  è  &            —+  Ì,  …+  Ì,  ó             -  C-   -  C-  ¶             n-  â-  f-  â-  ´  &            µ-  ”-  ≠-  ”-  Æ  )             .  .  ¯-  .  ±  *            o.  õ/  g.  õ/  ∂              ;/  S/  3/  S/  æ              i/  å/  a/  å/  ø              ã0  ¢0  É0  ¢0  Ã              ª0  ˇ0  ≥0  ˇ0  –              f1  √1  ^1  √1  ◊              Ô1  ∫2  Á1  ∫2  ﬂ            Éœ2  3  «2  3  Ë             33  J4  +3  J4  Ô              N3  }3  B3  }3                _4  ò4  W4  ò4  ˘            Äë7  5:  â7  5:               Õ8  %:  ≈8  %:                 x:  è:  f:  è:  -              ¢:  Ê:  ì:  Ê:  1            ÇÜ;  Q  };  Q  :               q?  Õ?  ]?  Õ?  Z            É @  á@  Ò?  á@  `              û@  ÇA  é@  ÇA  g              ôA  ≥B  âA  ≥B  q              ÎC  >D  ŸC  >D  â              SD  ˝P  JD  ˝P  ç              $Q  jQ  Q  jQ  ˆ            ÉSR  ”X  KR  ”X  ˇ            É<S  √S  -S  √S              É›S  ∞T  …S  ∞T                «T  ´U  ∑T  ´U                ¡U  €V  ±U  €V  %              	Y  
+[  Y  
+[  N              X[  ì[  P[  ì[  h              ‹[  ˛[  ‘[  ˛[  n  +            ,\  ˇ\  $\  ˇ\  r  *            .]  ¬]  &]  ¬]  w  +            Ó]  É^  Ê]  É^  |  (            ≥^  É_  ´^  É_  Å  ,            ¥_  E`  ¨_  E`  Ü  -            s`  a  k`  a  ã  *           2a  5c  *a  5c  ê             bc  af  Zc  af  •  *           Ÿc  d  —c  d  ®               6d  dd  .d  dd  ¨  )            ád   d  d   d  ∞              Ìd  ∏e  Âd  ∏e  ¥              ·e  f  Ÿe  f  ∫  $            ,f  ]f  $f  ]f  æ  &            Éf  øf  {f  øf  √              f  g  Ëf  g  ∆  .           5g  qg  -g  qg  …              ©g  ≈g  °g  ≈g  Ã  5            Êg  Îg  ﬁg  Îg  œ              !h  ≤h  h  ≤h  –  3            ]h  bh  Uh  bh  —                Çh  áh  zh  áh  “               ©h  Æh  °h  Æh  ”               ◊h  ‹h  œh  ‹h  ÷              i  Xi  
+i  Xi  ◊  3            Oi  Ti  Gi  Ti  ÿ  !             úi  Åj  îi  Åj  ‹              új  	k  îj  	k  ‰            5°›†[3ÅB      a¯^Ïa¯^ÏCÎ≥bis   |    O^partitionKey=%28https%2Cswissquote.ch%29,:https://premium.swissquote.ch/sqw-navigation/webjars/stjs-client-runtime/stjs.js necko:classified 1 strongly-framed 1 security-info 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 request-method GET response-head HTTP/1.1 200 OK
+Date: Mon, 31 Jan 2022 18:48:19 GMT
+Cache-Control: private
+Content-Language: en
+ETag: "64WA2JJ3BPv"
+Last-Modified: Mon, 22 Aug 2016 19:52:00 GMT
+Content-Type: application/x-javascript; charset=ISO-8859-1
+Content-Length: 27406
+Strict-Transport-Security: max-age=300; includeSubDomains
+ original-response-headers Date: Mon, 31 Jan 2022 18:48:19 GMT
+Cache-Control: private
+Content-Language: en
+ETag: "64WA2JJ3BPv"
+Last-Modified: Mon, 22 Aug 2016 19:52:00 GMT
+Content-Type: application/x-javascript; charset=ISO-8859-1
+Content-Length: 27406
+Keep-Alive: timeout=5, max=98
+Connection: Keep-Alive
+Strict-Transport-Security: max-age=300; includeSubDomains
+ ctid 2 uncompressed-len 0 net-response-time-onstart 127 net-response-time-onstop 128 alt-data 1;27406,javascript/moz-bytecode-20220111210158-8l alt-data-from-child 1  ~ä
