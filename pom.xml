@@ -1,31 +1,3 @@
-Skip to content
-Product 
-Team
-Enterprise
-Explore 
-Marketplace
-Pricing 
-Search
-Sign in
-Sign up
-openshift
-/
-test-maven-app
-Public
-Code
-Issues
-Pull requests
-Projects
-Security
-Insights
-test-maven-app/pom.xml
-@php-coder
-php-coder Initial commit.
-Latest commit 57d9fe6 on 18 Jul 2016
- History
- 1 contributor
-54 lines (48 sloc)  1.38 KB
-  
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
@@ -80,16 +52,3 @@ Latest commit 57d9fe6 on 18 Jul 2016
 	</build>
 	
 </project>
-© 2022 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-Loading complete
